@@ -1,6 +1,4 @@
 const Restaurants = [
-
-    //'Cuisine': ['Thai', 'Indian', 'Mexican', 'Tapas', 'British', 'Lebanese', 'Mediterranean', 'Vietnamese', 'American' ],
     
     {
         "restaurantId": 1,
