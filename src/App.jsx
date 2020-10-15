@@ -1,8 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Restaurant from './data/data';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <p>HERE WE GOOOOO.....welcome No1-south-eastERS!!</p>
