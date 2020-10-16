@@ -1,0 +1,79 @@
+@import '../abstracts/variables';
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "topleft middle middle topright"
+        "topleft middle middle topright"
+        "bottomleft middle middle buttons"
+        "bottomleft middle middle buttons"
+    ;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+
+    .topLeft {
+        margin-top: 10vh;
+        grid-area: topleft;
+        background-color: $color-pink;
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        height: 30vh;
+
+        .circle {
+            height: 20vh;
+            width: 20vh;
+            background-color: $color-white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+        }
+    }
+
+    .bottomLeft {
+        grid-area: bottomleft;
+        background-color: $color-copper;
+        border-radius: 0 0 0 50%;
+    }
+
+    .middle {
+        grid-area: middle;
+        background-color: $color-white;
+        border-radius: 30px 0px 30px 0;
+
+        p{
+            @extend %main-font;
+            font-size: 170px;
+            font-weight: 800;
+            margin: 5%;
+            color: $color-green;
+        }
+    }
+
+    .topRight {
+        grid-area: topright;
+        background-color: $color-desert;
+        border-radius: 0 30px 0 0;
+        position: relative;
+
+        .semiCircle {
+            height: 100%;
+            width: 100%;
+            background-color: $color-copper;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 90% 0 0;
+        }
+    }
+
+    .bottomRight {
+        grid-area: buttons;
+        border: 2px solid yellow;
+    }
+}
+
