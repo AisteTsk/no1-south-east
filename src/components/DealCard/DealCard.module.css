@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 304px;
+  height: 475px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.card:hover {
+  box-shadow: 0 4px #666;
+  transform: translateY(0.5px);
+}
+.card h1 {
+  height: 40px;
+  background-color: red;
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+  border-radius: 9px 9px 0 0;
+}
+.card img {
+  height: 250px;
+  width: 300px;
+  margin: 0;
+}
+.card h2 {
+  padding-left: 10px;
+  font-size: 32px;
+  margin: 0;
+  color: black;
+}
+.card p, .card h3 {
+  padding: 0 10px;
+  font-size: 20px;
+  color: red;
+  width: auto;
+}
+.card .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.card .expiry p {
+  margin: 5px 0 10px;
+}
+.card .expiry h3 {
+  border: 2px solid black;
+  width: 55%;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+}

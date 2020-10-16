@@ -1,0 +1,76 @@
+$background-colour: ivory;
+$text-colour: red;
+$title-colour: black;
+$border-radius: 10px;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    border: 2px solid $title-colour;
+    width: 304px;
+    height: 475px;
+    margin: 10px;
+    border-radius: $border-radius;
+    // box-shadow: 0 9px #999;
+
+    &:hover {
+        box-shadow: 0 4px #666;
+        transform: translateY(0.5px);
+      }
+
+    h1 {
+        height: 40px;
+        background-color: red;
+        text-align: center;
+        font-size: 30px;
+        margin: 0;
+        border-radius: 9px 9px 0 0;
+    }
+    
+    img {
+        height: 250px;
+        width: 300px;
+        margin: 0;
+    }
+    
+    h2 {
+        padding-left: 10px;
+        font-size: 32px;
+        margin: 0;
+        color: $title-colour;
+    }
+    
+    p, h3 {  
+        padding: 0 10px;
+        font-size: 20px;
+        color: $text-colour;
+        width: auto;
+    }
+    
+    .info {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+    
+    .expiry {
+        p {
+            margin: 5px 0 10px;
+        }
+        h3 {
+            border: 2px solid black;
+            width: 55%;
+            height: 35px;
+            border-radius: 10px;
+            text-align: center;
+            margin: auto;
+        }
+    }
+}
