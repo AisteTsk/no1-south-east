@@ -47,7 +47,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
         'maximumTableSize': 2,
-        'Location': `51°28'27.6"N 0°02'38.7"E`,
+        'location': `51°28'27.6"N 0°02'38.7"E`,
         'dietaryRequirements':  ['halal', 'vegan', 'vegetarian'],
         'sitting': ['breakfast', 'lunch', 'dinner'],
         'cuisine' : 'seafood'
