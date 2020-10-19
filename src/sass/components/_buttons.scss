@@ -5,48 +5,42 @@
     text-align: left;
 	margin: 40px;
 	padding: 0 50px;
-
-	height: 60px;
+    height: 60px;
 	border-radius: 15px;
 	border: none;
-
 	color: #fff;
-
 	transition: 0.3s ease;
-
     @extend %main-font;
     font-size: 24px;
-}
-
-.LandingPageButton {
 	background-color: $color-copper;
-
 	box-shadow: 0 10px $color-darkercopper;
-}
-.LandingPageButton:hover {
+
+&:hover {
 	box-shadow: 0 8px $color-darkercopper;
-	transform: translateY(1px);
+    transform: translateY(1px);
 }
-.LandingPageButton:active {
+&:active {
 	background-color: $color-darkercopper;
 	box-shadow: 0 5px $color-darkercopper;
     transform: translateY(4px);
     text-decoration: none;
-    
+    outline: none;
+}
 &:focus {
     outline: none;
+    border: none;
 }
 }
 
 
 @media (max-width: 767.98px) and (orientation: portrait ){
-    button.ViewRestaurants {
+    button.LandingPageButton {
         width: 150px;
     }
 }
 
 @media (max-width: 575.98px) and (orientation: portrait) {
-    button.ViewRestaurants {
+    button.LandingPageButton {
         width: 100px;
     }
 }
