@@ -1,22 +1,39 @@
 @import '../abstracts/variables';
 
-button.Signin {
-    border-radius: 200px;
-    background: $color-blue;
-    padding: 20px;
-    width: 100px;
-    height: 50px;
-    color : whitesmoke;
-  
-}
-button.ViewRestaurants {
-    border-radius: 25px;
-    background: $color-blue;
-    padding: 20px;
-    width: 200px;
-    height: 50px;
-    color : whitesmoke;
+.LandingPageButton {
+	margin: 40px;
+	padding: 0 50px;
 
+	height: 60px;
+	border-radius: 15px;
+	border: none;
+
+	color: #fff;
+
+	transition: 0.3s ease;
+
+	font-family: "Poppins", sans-serif;
+	font-size: 24px;
+}
+
+.LandingPageButton {
+	background-color: $color-copper;
+
+	box-shadow: 0 10px $color-pink;
+}
+.LandingPageButton:hover {
+	box-shadow: 0 8px $color-pink;
+	transform: translateY(1px);
+}
+.LandingPageButton:active {
+	background-color: $color-pink;
+	box-shadow: 0 5px $color-pink;
+    transform: translateY(4px);
+    text-decoration: none;
+    
+&:focus {
+    outline: none;
+}
 }
 
 
