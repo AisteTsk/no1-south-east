@@ -30,7 +30,7 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': `51°28'27.6"N 0°02'40.7"E`,
         'sitting': ['lunch', 'dinner'],
-        'cuisine': ['american']
+        'cuisine': 'american'
     },
 
     {
@@ -47,7 +47,7 @@ const restaurants = [
         'Location': `51°28'27.6"N 0°02'38.7"E`,
         'dietaryRequirements':  ['halal', 'vegan', 'vegetarian'],
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine' : ['seafood']
+        'cuisine' : 'seafood'
         
     },
     
@@ -130,7 +130,7 @@ const restaurants = [
         'maximumTableSize': 6,
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': `51°28'9.3"N 0°12'05"W`,
-        'sitting': ['Breakfast', 'lunch', 'dinner'],
+        'sitting': ['breakfast', 'lunch', 'dinner'],
         'cuisine': ['Mexican', 'American']
     },
 
@@ -162,7 +162,7 @@ const restaurants = [
         'discountOnDrinks': true,
         'happyHour': true,
         'daysAvailable': ['wednesday', 'thursday','friday', 'saturday', 'sunday'],
-        'maximumTableSize': 6,
+        'maximumTableSize': 5,
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': `51°24'9.3"N 0°15'11"W`,
         'sitting': ['breakfast', 'lunch', 'dinner'],
@@ -179,27 +179,27 @@ const restaurants = [
         'discountOnDrinks': false,
         'happyHour': false,
         'daysAvailable': ['friday', 'saturday', 'sunday'],
-        'maximumTableSize': 6,
+        'maximumTableSize': 5,
         'location': `51°24'9.3"N 0°06'11"W`,
         'dietaryRequirements':  ['halal', 'vegan', 'vegetarian'],
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['italian']    
+        'cuisine': 'italian'
     },
     
     {
         "restaurantId": 12 ,
-        'name': `dad bod incoming`,
+        'name': `Dad Bod Incoming`,
         'offerPercent': '15%',
         'validUntil': '31 Jul',
         'offerDescription': ``,
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': true,
-        'daysAvailable': ['monday', 'tues', 'wednesday', 'thursday', 'friday', 'saturday'],
-        'maximumTableSize': 6,
+        'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
+        'maximumTableSize': 2,
         'location': `51°27'9.3"N 0°06'11"W`,
         'dietaryRequirements':  ['vegetarian'],
-        'sitting': ['Breakfast', 'lunch', 'dinner'],
+        'sitting': ['breakfast', 'lunch', 'dinner'],
         'cuisine': ['american', 'british']
     },
     {
