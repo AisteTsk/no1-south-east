@@ -3,6 +3,7 @@ const restaurants = [
         "restaurantId": 1,
         'name': `Ollie's Oysterhouse`,
         'offerPercent': '30%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': false,
         'happyHour': false,
@@ -11,13 +12,14 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SW10 4DH',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['tapas', 'mediterranean'],
+        'cuisine': ['tapas', 'mediterranean']
     },
     
     {
         'restaurantId': 2,
         'name': `Billy Big Burgers`,
         'offerPercent': '15%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -33,6 +35,7 @@ const restaurants = [
         "restaurantId": 3,
         'name': `The big Crab`,
         'offerPercent': '25%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -49,6 +52,7 @@ const restaurants = [
         "restaurantId": 4,
         'name': `The Friendly Shark`,
         'offerPercent': '25%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -64,6 +68,7 @@ const restaurants = [
         "restaurantId": 5,
         'name': `Caddy Shack`,
         'offerPercent': '80%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -72,12 +77,13 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SE34 4KH',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['mexican', 'spanish'],
+        'cuisine': ['mexican', 'spanish']
     },
     {
         "restaurantId": 6,
         'name': `The Lovely Wolf`,
         'offerPercent': '15%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -86,12 +92,13 @@ const restaurants = [
         'location': 'SW44 9LL',
         'dietaryRequirements': ['halal', 'vegetarian', 'vegan'], 
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['italian', 'spanish'],
+        'cuisine': ['italian', 'spanish']
     },
     {
         'restaurantId': 7,
         'name': `Thai Delight`,
         'offerPercent': '10%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': false,
@@ -100,13 +107,14 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SE17 9KH',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': 'Thai',
+        'cuisine': 'Thai'
     },
     
     {
         "restaurantId": 8,
         'name': `Krusty Krab`,
         'offerPercent': '10%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -115,7 +123,7 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SE34 4KH',
         'sitting': ['Breakfast', 'lunch', 'dinner'],
-        'cuisine': ['Mexican', 'American'],
+        'cuisine': ['Mexican', 'American']
     },
 
 
@@ -123,6 +131,7 @@ const restaurants = [
         "restaurantId": 9,
         'name': `The Burger Experience`,
         'offerPercent': '80%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': false,
@@ -131,13 +140,14 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SE34 4KH',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['Mexican', 'American'],
+        'cuisine': ['Mexican', 'American']
     },
 
     {
         "restaurantId": 10,
         'name': `Pizza Palace`,
         'offerPercent': '20%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -146,13 +156,14 @@ const restaurants = [
         'dietaryRequirements': ['halal', 'vegan', 'vegetarian'], 
         'location': 'SE4 4KL',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['spanish', 'italian'],
+        'cuisine': ['spanish', 'italian']
     },
 
     {
         "restaurantId": 11,
         'name': `In my Grill`,
         'offerPercent': '5%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': false,
         'happyHour': false,
@@ -161,13 +172,14 @@ const restaurants = [
         'location': 'SW12 0BR',
         'dietaryRequirements':  ['halal', 'vegan', 'vegetarian'],
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['italian'],       
+        'cuisine': ['italian']    
     },
     
     {
         "restaurantId": 12 ,
         'name': `dad bod incoming`,
         'offerPercent': '15%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -176,12 +188,13 @@ const restaurants = [
         'location': 'SW02 5DR',
         'dietaryRequirements':  ['vegetarian'],
         'sitting': ['Breakfast', 'lunch', 'dinner'],
-        'cuisine': ['american', 'british'],
+        'cuisine': ['american', 'british']
     },
     {
         "restaurantId": 13,
         'name': `Peters Piella`,
         'offerPercent': '15%',
+        'offerDescription': '',
         'discountOnFood': false,
         'discountOnDrinks': true,
         'happyHour': true,
@@ -190,13 +203,14 @@ const restaurants = [
         'location': 'SW44 9LL',
         'dietaryRequirements': ['halal', 'vegan','vegetarian'],
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': 'spanish',
+        'cuisine': 'spanish'
     },
     
     {
         "restaurantId": 14,
         'name': `crumbs & cookies`,
         'offerPercent': '10%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': false,
         'happyHour': false,
@@ -205,12 +219,13 @@ const restaurants = [
         'location': 'Se14 6PP',
         'dietaryRequirements': ['vegan','vegetarian'],
         'sitting': 'breakfast',
-        'cuisine': 'tapas',
+        'cuisine': 'tapas'
     },
     {
         "restaurantId": 15,
         'name': `vegan only`,
         'offerPercent': '10%',
+        'offerDescription': '',
         'discountOnFood': true,
         'discountOnDrinks': false,
         'happyHour': false,
@@ -219,7 +234,22 @@ const restaurants = [
         'location': 'SE1 6FF',
         'dietaryRequirements': 'vegan',
         'sitting': ['breakfast', 'lunch', 'dinner'],
-        'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas'],
+        'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas']
+    },
+    {
+        'restaurantId': 16,
+        'name': `The Hall`,
+        'offerPercent': '20%',
+        'offerDescription': '',
+        'discountOnFood': true,
+        'discountOnDrinks': false,
+        'happyHour': false,
+        'daysAvailable': ['tuesday', 'thursday'],
+        'maximumTableSize': 6,
+        'location': 'SE8 8RF',
+        'dietaryRequirements': 'halal',
+        'sitting': ['lunch', 'dinner'],
+        'cuisine': 'mediterranean'
     },
 ]
 
