@@ -32,15 +32,26 @@
 }
 }
 
-
+@media (max-width: 1190px) {
+    button.LandingPageButton {
+        width: 150px;
+        font-size: 20px;
+        padding-left: 5px;
+    }
+}
 @media (max-width: 767.98px) and (orientation: portrait ){
     button.LandingPageButton {
         width: 150px;
+        font-size: 20px;
+        padding-left: 10px;
     }
 }
 
 @media (max-width: 575.98px) and (orientation: portrait) {
     button.LandingPageButton {
         width: 100px;
+        font-size: 18px;
+        align-items: left;
+        padding-left: 10px;
     }
 }
