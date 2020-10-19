@@ -234,7 +234,7 @@ const restaurants = [
     
     {
         "restaurantId": 14,
-        'name': `crumbs & cookies`,
+        'name': `Crumbs & Cookies`,
         'offerPercent': '10%',
         'validUntil': '31 Dec',
         'offerDescription': ``,
@@ -251,7 +251,7 @@ const restaurants = [
     },
     {
         "restaurantId": 15,
-        'name': `vegan only`,
+        'name': `Vegan Only`,
         'offerPercent': '10%',
         'validUntil': '31 Feb',
         'offerDescription': ``,
