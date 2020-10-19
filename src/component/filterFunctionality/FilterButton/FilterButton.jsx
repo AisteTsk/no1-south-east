@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './FilterButton.module.scss';
+import SideBar from '../SideBar';
 
-const FilterButtonn = () => {
-    return <h1>Hello World!</h1>
+const FilterButton = () => {
+    return <SideBar />
 }
 
-export {FilterButtonn as default};
+export {FilterButton as default};
