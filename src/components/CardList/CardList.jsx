@@ -1,20 +1,18 @@
 import React from "react";
 import styles from "./CardList.module.scss";
 import DealCard from "../DealCard/DealCard";
-import restaurant from "../../data/data";
+import restaurants from "../../data/restaurants";
 
 
 const CardList = () => {
-
-    const getCard = (restaurant) => (
-        <div key={restaurant.idRapper}>
-          <DealCard restaurant={restaurant} />
+    const getCard = (restaurants) => (
+        <div key={restaurants.idRapper}>
+          <DealCard restaurants={restaurants} />
         </div>
     );
-
     return (
         <>
-            <span className={styles.cardlist}>{restaurant.map(getCard)}</span>
+            <span className={styles.cardlist}>{restaurants.map(getCard)}</span>
         </>
     );
 };

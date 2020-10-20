@@ -2,15 +2,13 @@ import React from 'react';
 import styles from './App.module.scss';
 import CardList from "./components/CardList";
 import Routes from "./container/Routes"
-import LandingPage from './Components/LandingPage';
-
+import LandingPage from './components/LandingPage';
 
 const App = () => {
   return (
     <>
-        <LandingPage />
       <div>
-    <Routes />
+      <Routes />
     </div>
     </>
     )};

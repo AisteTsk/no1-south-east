@@ -1,12 +1,10 @@
-$background-colour: ivory;
-$text-colour: red;
-$title-colour: black;
-
+@import '../../sass/main.module.scss';
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+a {
     text-decoration: none;
 }
 
@@ -15,18 +13,25 @@ $title-colour: black;
     flex-direction: column;
     width: 350px;
     height: 500px;
-    background-color: ivory;
+    background-color: $color-white;
     margin: 0 0 3px 3px;
-    // box-shadow: 0 9px #999;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.055);
+    display:flex;
+    flex-direction: column;
+    margin: 30px auto;
+
+    &:hover {
+        box-shadow: 7px 7px rgba(0, 0, 0, 0.055);
+        transform: translateY(-4px);
+    }
 
     h1 {
-        background-color: red;
-        opacity: 0.6;
+        background-color: $color-copper;
         text-align: center;
-        font-size: 30px;
+        font-size: 34px;
         margin: 0;
-        padding-bottom: 5px;
-        color: $title-colour;
+        padding: 10px 0 3px;
+        color: $color-blue;
     }
     
     img {
@@ -36,19 +41,18 @@ $title-colour: black;
     }
     
     h2 {
-        padding-left: 10px;
+        padding: 15px 0 8px 10px;
         font-size: 32px;
-        margin: 0;
-        color: $title-colour;
         border-bottom: 1px black solid;
-        padding-bottom: 8px;
+        color: $color-green;
     }
     
     p, h3 {  
         padding: 0 10px;
+        padding-top: 5px;
         font-size: 21px;
-        color: $text-colour;
         width: auto;
+        color: $color-blue;
     }
     
     .info {
@@ -56,34 +60,32 @@ $title-colour: black;
         justify-content: space-between;
         padding: 10px 0;
         width: 100%;
+        background-color: $color-pink;
+        font-weight: bold;
     }
     
     .expiry {
+        background-color: $color-pink;
+        font-weight: bold;
+        padding-top: 8px;
+        padding-bottom: 17px;
+
         p {
-            margin: 5px 0 10px;
+            padding: 15px 10px;
             text-decoration: underline;
+            color: $color-blue;
+            padding-top: 5px;
         }
         h3 {
-            border: 2px solid black;
+            border: 1px solid black;
             width: 55%;
             height: 35px;
             border-radius: 10px;
             text-align: center;
             margin: auto;
+            color: $color-green;
+            background-color: $color-desert;
+            padding-top: 8px;
         }
-    }
-}
-
-.cardborder {
-    background-color: gray;
-    height: 503px;
-    width: 353px;
-    display:flex;
-    flex-direction: column;
-    margin: 30px auto;
-
-    &:hover {
-        box-shadow: -4px 4px rgba(100, 100, 100, 0.5);
-        transform: translateY(-4px) translateX(4px);
     }
 }

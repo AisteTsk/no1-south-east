@@ -5,14 +5,14 @@ import { Link } from "@reach/router";
 
 const DealCard = (props) => {
 
-    const { name, offerPercent, offerDescription, location, cuisine } = props.restaurant;
+    const { name, offerPercent, offerDescription, location, cuisine, validUntil } = props.restaurants;
     
     return (
-        <div className={styles.cardborder}>
-        <div className={styles.card}>
-            <Link to="Restaurant">
+        <Link to="restaurants">
+            <div className={styles.card}>
+            
                 <h1>{offerPercent}</h1>
-                <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="Picture of restautant"/>
+                <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="Picture of restaurant"/>
                 <h2>{name}</h2>
 
                 <div className={styles.info}>
@@ -22,11 +22,10 @@ const DealCard = (props) => {
 
                 <div className={styles.expiry}>
                     <p>Offer valid until</p>
-                    <h3>31st Jan 2065</h3>
+                <h3>{validUntil}</h3>
                 </div>
-            </Link>
-        </div>
-        </div>
+            </div>
+        </Link>
     );
 };
 
