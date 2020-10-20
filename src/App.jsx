@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from "react";
+import styles from "./App.module.scss";
 import library from "./data/fa-library";
-import './App.css';
-import FilterButton from './component/filterFunctionality/FilterButton'
+import FilterButton from './component/filterFunctionality/FilterButton';
+import NavBar from "./component/filterFunctionality/NavBar";
+import Routes from "./containers/Routes";
+import restaurants from "./data/restaurants";
 
 const App = () => {
+  // const [searchText, setsearchText] = useState("")
   return (
-    <div className="App">
-      <p>HERE WE GOOOOO.....welcome No1-south-eastERS!!</p>
-      <FilterButton />
-    </div>
+    <>
+      <section className={styles.nav}>
+        {/* <NavBar updateSearchText={setsearchText} /> */}
+        <FilterButton />
+      </section>
+      {/* <section className={styles.content}>
+        <Routes searchText={searchText}/>
+      </section> */}
+    </>
   );
 }
 
