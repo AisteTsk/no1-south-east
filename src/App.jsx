@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './components/LandingPage';
+import Restaurant from './data/data';
+import LandingPage from './Components/LandingPage';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <LandingPage />
