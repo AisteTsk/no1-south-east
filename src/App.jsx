@@ -1,13 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import DealCard from "./components/DealCard"
+import styles from './App.module.scss';
+import CardList from "./components/CardList";
+import Routes from "./container/Routes"
+
 
 function App() {
   return (
-    <div className="App">
-      <DealCard />
+    <>
+    <div className={styles.App}>
+      <CardList />
     </div>
+
+    <div>
+    <Routes />
+    </div>
+    </>
   );
 }
 
