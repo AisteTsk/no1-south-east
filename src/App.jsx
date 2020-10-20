@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Restaurant from './data/data';
+import Restaurant from '../src/data/restaurants';
 import LandingPage from './Components/LandingPage';
 
 const App = () => {

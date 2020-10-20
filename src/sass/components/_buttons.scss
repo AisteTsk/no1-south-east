@@ -4,49 +4,71 @@
 .LandingPageButton {
     text-align: left;
 	margin: 40px;
-	padding: 0 50px;
-
-	height: 60px;
+	padding: 0 30px;
+    height: 60px;
 	border-radius: 15px;
 	border: none;
-
 	color: #fff;
-
 	transition: 0.3s ease;
-
     @extend %main-font;
     font-size: 24px;
-}
-
-.LandingPageButton {
 	background-color: $color-copper;
-
 	box-shadow: 0 10px $color-darkercopper;
-}
-.LandingPageButton:hover {
-	box-shadow: 0 8px $color-darkercopper;
-	transform: translateY(1px);
-}
-.LandingPageButton:active {
-	background-color: $color-darkercopper;
-	box-shadow: 0 5px $color-darkercopper;
-    transform: translateY(4px);
-    text-decoration: none;
-    
-&:focus {
-    outline: none;
-}
+	width: 250px;
+
+    &:hover {
+        box-shadow: 0 8px $color-darkercopper;
+        transform: translateY(1px);
+    }
+    &:active {
+        background-color: $color-darkercopper;
+        box-shadow: 0 5px $color-darkercopper;
+        transform: translateY(4px);
+        text-decoration: none;
+        outline: none;
+    }
+    &:focus {
+        outline: none;
+        border: none;
+    }
 }
 
+@media (max-width: 1190px) {
+    button.LandingPageButton {
+        width: 170px;
+        font-size: 20px;
+		padding-left: 5px;
+		display: inline;
+    }
+}
+@media (max-width: 978px) and (orientation: portrait ){
+    button.LandingPageButton {
+        width: 150px;
+        font-size: 20px;
+		padding-left: 10px;
+		display: block;
+		margin-left: auto;
+    	margin-right: auto;
+		text-align: center;
+    }
+}
 
 @media (max-width: 767.98px) and (orientation: portrait ){
-    button.ViewRestaurants {
+    button.LandingPageButton {
         width: 150px;
+        font-size: 20px;
+		padding-left: 10px;
+		margin-left: auto;
+    	margin-right: auto;
+		text-align: center;
     }
 }
 
 @media (max-width: 575.98px) and (orientation: portrait) {
-    button.ViewRestaurants {
+    button.LandingPageButton {
         width: 100px;
+        font-size: 18px;
+        align-items: left;
+		padding-left: 10px;
     }
 }
