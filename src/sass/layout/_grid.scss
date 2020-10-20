@@ -1,0 +1,217 @@
+@import '../abstracts/variables';
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "topleft middle middle topright"
+        "topleft middle middle topright"
+        "bottomleft middle middle buttons"
+        "bottomleft middle middle buttons";
+        padding: 5% 5% 0 5%;
+
+    .topLeft {
+        margin-top: 10vh;
+        grid-area: topleft;
+        background-color: $color-pink;
+        border-radius: 30px 30px 0 0;
+        position: relative;
+        height: 33vh;
+
+        .circle {
+            height: 20vh;
+            width: 20vh;
+            background-color: $color-white;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+        }
+    }
+
+    .bottomLeft {
+        grid-area: bottomleft;
+        background-color: $color-copper;
+        border-radius: 0 0 0 50%;
+    }
+
+    .middle {
+        grid-area: middle;
+        background-color: $color-white;
+        border-radius: 30px 0px 30px 0;
+
+        p{
+            @extend %main-font;
+            font-size: 190px;
+            font-weight: 800;
+            margin: 5%;
+            color: $color-green;
+            padding-top: 5%;
+        }
+    }
+
+    .topRight {
+        grid-area: topright;
+        background-color: $color-desert;
+        border-radius: 0 30px 0 0;
+        position: relative;
+
+        .semiCircle {
+            height: 100%;
+            width: 100%;
+            background-color: $color-copper;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 90% 0 0;
+        }
+    }
+
+    .bottomRight {
+        grid-area: buttons;
+        border: 2px solid yellow;
+    }
+}
+
+//---------------------------------------------
+// Large devices (desktops, less than 1280px)
+//---------------------------------------------
+
+@media (max-width: 1280px) {
+    .grid {
+        padding-top: 10%;
+
+        .topLeft {
+            height: 26vh;
+            .circle {
+                height: 15vh;
+                width: 15vh;
+            }
+        }
+        .middle {
+            p {
+                font-size: 160px;
+            }
+        }
+    }
+}
+
+//----------------------------------------------------
+// Medium devices (landscape tablets, less than 992px)
+//----------------------------------------------------
+
+@media (max-width: 991.98px) { 
+    .grid {
+        .middle {
+            p {
+                font-size: 100px;
+            }
+        }
+    }
+}
+
+//----------------------------------------------------
+// Medium devices (portrait tablets, less than 992px)
+//-----------------------------------------------------
+
+@media (max-width: 991.98px) and (orientation: portrait ){ 
+    .grid {
+        padding-top: 25%;
+
+        .topLeft {
+            height: 15vh;
+            .circle {
+                height: 10vh;
+                width: 10vh;
+                left: 20%;
+            }
+        }
+
+        .middle {
+            p {
+                padding-top: 15%;
+                font-size: 100px;
+            }
+        }
+    }
+}
+
+
+//----------------------------------------------------
+// Small devices (landscape phones, less than 768px)
+//----------------------------------------------------
+
+@media (max-width: 767.98px) {
+    .grid {
+        .middle {
+            p {
+                font-size: 75px;
+            }
+        }
+    }
+}
+
+//-------------------------------------------------------
+// Small devices (portrait phones, less than 768px)
+//-------------------------------------------------------
+
+@media (max-width: 767.98px) and (orientation: portrait ){ 
+    .grid {
+        padding-top: 35%;
+
+        .topLeft {
+            height: 15vh;
+            .circle {
+                height:8vh;
+                width: 8vh;
+                left: 20%;
+            }
+        }
+
+        .middle {
+            p {
+                padding-top: 25%;
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------
+// Extra small devices (landscape phones, less than 576px)
+//---------------------------------------------------------
+
+@media (max-width: 575.98px) {
+    .grid {
+        .middle {
+            p {
+                font-size: 60px;
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------
+// Extra small devices (portrait phones, less than 576px)
+//---------------------------------------------------------
+
+@media (max-width: 499px) and (orientation: portrait) {
+    .grid {
+        padding-top: 35%;
+
+        .topLeft {
+            height: 15vh;
+            .circle {
+                height:8vh;
+                width: 8vh;
+                left: 20%;
+            }
+        }
+        .middle {
+            p {
+                padding-top: 25%;
+                font-size: 50px;
+            }
+        }
+    }
+}
