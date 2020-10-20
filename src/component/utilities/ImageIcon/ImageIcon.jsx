@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import styles from './ImageIcon.module.scss';
 
+
 const ImageIcon = ({iconActive, iconInactive}) => {
     
     const [isToggle, setIsToggle] = useState(false);
-
-    // just the image location prefix
-    const srcPrefix = './assets/image_icons';
 
     const handleClick = (e) => {
         e.stopPropagation();
         setIsToggle(!isToggle);
     }
 
-    const toggled = isToggle ? `${srcPrefix}${iconActive}` : `${srcPrefix}/${iconInactive}`;
-    console.log(toggled);
+    // require(toggled)
+    const image = require('../../../assets/image_icons/vegetarian_inactive.png')
+    const toggled = isToggle ? require(`../../../assets/image_icons/${iconActive}`) : require(`../../../assets/image_icons/${iconInactive}`);
+
     return (
-        <div onClick={handleClick}>
+        <span onClick={handleClick}>
             <img src={toggled} alt="not found"/>
-        </div>
+        </span>
     )
 }
 

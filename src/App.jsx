@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styles from "./App.module.scss";
 import library from "./data/fa-library";
 import FilterButton from './component/filterFunctionality/FilterButton';
-import NavBar from "./component/filterFunctionality/NavBar";
-import Routes from "./containers/Routes";
+// import NavBar from "./component/filterFunctionality/NavBar";
+// import Routes from "./containers/Routes";
 import restaurants from "./data/restaurants";
 
 const App = () => {

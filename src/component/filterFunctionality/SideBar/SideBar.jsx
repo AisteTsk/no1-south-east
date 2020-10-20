@@ -7,20 +7,9 @@ import Checkbox from '../../utilities/Checkbox';
 import Slider from '../../utilities/Slider';
 import SearchBar from '../../utilities/SearchBar';
 
-const SideBar = () => {
+import { dealTypeIcons, dietaryIcons } from '../../../data/filterIcons';
 
-    const dealTypeIcons = [
-        {icon: ["fas", "pizza-slice"], id: 'deal1'},
-        {icon: ["fas", "glass-cheers"], id: 'deal2'}
-    ];
-    // ../../../assets/image_icons/
-    const dietaryIcons = [
-        {iconInactive: 'vegetarian_symbol_inactive.png', iconActive: 'vegetarian_symbol_active.png', id: 'diet1'},
-        {iconInactive: 'vegan_symbol_inactive.png', iconActive: 'vegan_symbol_active.png', id: 'diet2'},
-        {iconInactive: 'halal_symbol_inactive.png', iconActive: 'halal_symbol_active.png', id: 'diet3'},
-        {iconInactive: 'gluten_free_inactive.png', iconActive: 'gluten_free_active.png', id: 'diet4'},
-        {iconInactive: 'dairy_free_inactive.png', iconActive: 'dairy_free_active.png', id: 'diet5'}
-    ];
+const SideBar = () => {
 
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
         return <Icon icon={deal.icon} key={deal.key}/>
