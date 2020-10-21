@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
-import Restaurant from './data/data';
-import LandingPage from './Components/LandingPage';
+import styles from './App.module.scss';
+import CardList from "./components/CardList";
+import Routes from "./container/Routes"
+import LandingPage from './components/LandingPage';
 
 const App = () => {
   return (
-    <div className="App">
-      <LandingPage />
+    <>
+      <div>
+      <Routes />
     </div>
-  );
-}
-
+    </>
+    )};
+    
 export default App;
