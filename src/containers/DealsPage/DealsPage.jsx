@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DealsPage.module.scss';
+import styles from './DealsPage.module.scss';
 
 // components
 import CardList from "../../components/CardList";
@@ -54,7 +54,9 @@ const DealsPage = () => {
         <>
         <div className="filter-container">
             <FilterButton filterRestaurants={filterRestaurants}/>
-            <SearchBar placeholder="Search for restaurants..." searchText ={searchText} updateSearchText={setSearchText}/>       
+            <div className={styles.searchbar}>
+            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>       
+            </div>
         </div>
         <section>
             {contentJsx}
