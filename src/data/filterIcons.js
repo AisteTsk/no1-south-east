@@ -1,5 +1,5 @@
 const dealTypeIcons = [
-    {icon: ["fas", "pizza-slice"], id: 'deal1'},
+    {icon: ["fas", "utensils"], id: 'deal1'},
     {icon: ["fas", "glass-cheers"], id: 'deal2'}
 ];
 
@@ -11,4 +11,10 @@ const dietaryIcons = [
     {iconInactive: 'dairy_free_inactive.png', iconActive: 'dairy_free_active.png', id: 'diet5'}
 ];
 
-export {dealTypeIcons, dietaryIcons};
+const mealTimeIcons = [
+    {text: 'Breakfast', iconInactive: 'breakfast_inactive.png', iconActive: 'breakfast_active.png', id: 'time1'},
+    {text: 'Lunch', iconInactive: 'lunch_inactive.png', iconActive: 'lunch_active.png', id: 'time2'},
+    {text: 'Dinner', iconInactive: 'dinner_inactive.png', iconActive: 'dinner_active.png', id: 'time3'}
+];
+
+export {dealTypeIcons, mealTimeIcons, dietaryIcons};

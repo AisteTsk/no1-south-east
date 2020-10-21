@@ -3,6 +3,8 @@ import styles from './FilterButton.module.scss';
 import SideBar from '../SideBar';
 import SearchBar from '../../utilities/SearchBar';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const FilterButton = () => {
 
     // assign filter menu open state, default closed
@@ -18,7 +20,7 @@ const FilterButton = () => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(!isOpen)}>open</button>
+            <button onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
             <SearchBar />   
             <div className="filterMenu">
                 {filterMenu}

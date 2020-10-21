@@ -11,7 +11,6 @@ const Calendar = () => {
 
     return (
         <form id="chooseEatDate">
-            <label htmlFor="diningDate">When do you want to eat? (I know the answer is all the time but be more specific please)</label>
             <input type="date" name="diningDate" min={today} onchange={handleChange}/>
         </form>
     )
