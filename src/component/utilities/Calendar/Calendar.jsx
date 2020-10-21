@@ -11,7 +11,7 @@ const Calendar = () => {
 
     return (
         <form id="chooseEatDate">
-            <input type="date" name="diningDate" min={today} onchange={handleChange}/>
+            <input type="date" name="diningDate" min={today} onChange={handleChange}/>
         </form>
     )
 }

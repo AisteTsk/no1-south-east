@@ -1,6 +1,6 @@
 const dealTypeIcons = [
-    {icon: ["fas", "utensils"], filterType: 'mealDiscount', id: 'deal1'},
-    {icon: ["fas", "glass-cheers"], filterType: 'drinkDiscount', id: 'deal2'}
+    {icon: ["fas", "utensils"], filterType: 'discountOnFood', id: 'deal1'},
+    {icon: ["fas", "glass-cheers"], filterType: 'discountOnDrinks', id: 'deal2'}
 ];
 
 const dietaryIcons = [

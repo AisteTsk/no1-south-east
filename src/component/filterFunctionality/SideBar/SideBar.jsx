@@ -9,10 +9,31 @@ import { dealTypeIcons, mealTimeIcons, dietaryIcons } from '../../../data/filter
 
 const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
+    // create filter parameters array
+    let filterParameters = {
+        discountOnFood : false,
+        discountOnDrinks: false,
+    }
+
+    // function to collect filter data - this will be passed down into the side bar
+    const collectFilters = (filterType, value) => {
+        // update an arary with filter preferences this needs to be passed down to each component
+        filterParameters[`${filterType}`] = value;
+        console.log(filterParameters);
+    }
+
+    // fire filtering as filter button has been clicked
+    const filtering = () => {
+        filterRestaurants(filterParameters);
+        closeFilterMenu();
+    }
+
+    // map loops for all component rendering - this one is for deal icons
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
-        return <Icon icon={deal.icon} key={deal.id}/>
+        return <Icon icon={deal.icon} filterType={deal.filterType} collectFilters={collectFilters} key={deal.id}/>
     });
 
+    // and this one is for meal type icons (breakfast, lunch, dinner)
     const renderMealTypeIcons = mealTimeIcons.map(meal => {
         return (
             <div>
@@ -22,17 +43,15 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         )
     });
 
+    // this little piggy is for dietary icons
     const renderDietaryIcons = dietaryIcons.map(diet => {
         return <ImageIcon iconActive={diet.iconActive} iconInactive={diet.iconInactive} key={diet.id} />
     });
 
-    const collectFilters = () => {
-        // update an arary with filter preferences this needs to be passed down to each component
-    }
-        
+    // return the lot     
     return (
         <div className={styles.filtermenu}>
-            <a href="javascript:void(0)" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
+            <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <div id="when-need">
                 <p>When do you want to eat?</p>
                 <Calendar />
@@ -55,7 +74,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
             <hr/>
             <Slider />
             <hr/> 
-            <button onClick={closeFilterMenu, collectFilters}>Filter</button>
+            <button onClick={filtering}>Filter</button>
         </div>    
     )
 }

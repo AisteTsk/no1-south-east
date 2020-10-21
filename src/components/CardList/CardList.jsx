@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CardList.module.scss";
-import DealCard from "../DealCard/DealCard";
-import FeedbackPanel from "../../component/filterFunctionality/FeedbackPanel";
+import DealCard from "../DealCard";
 
 
 const CardList = ({restaurants}) => {
