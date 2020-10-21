@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DealsPage.module.scss';
+import styles from './DealsPage.module.scss';
 
 // components
 import CardList from "../../Components/CardList";
@@ -41,11 +41,20 @@ const DealsPage = () => {
         // DietaryReq -> dietaryRequirements - array(strings)
         // MealType -> sitting - array(strings)   
     }
+<<<<<<< HEAD
 
 
+=======
+    console.log('search text:', searchText);
+    
+>>>>>>> 0b1a083ec8e989dc4036cac564e92927068ea97c
     const checkRestaurantName = (restaurant) => {
         const restaurantName = restaurant.name.toLowerCase();
-        return restaurantName.includes(searchText.toLowerCase());
+        const space = ' ';
+        const restaurantNameWithSpace = restaurantName.concat(space);
+        const restaurantCuisine = restaurant.cuisine.toString().toLowerCase().replace(/,/g,' ');
+        const restaurantNameAndCuisine = restaurantNameWithSpace.concat(restaurantCuisine);
+        return restaurantNameAndCuisine.includes(searchText.toLowerCase());
       };
     
       const matchingRestaurants = filteredList.filter(checkRestaurantName);
@@ -63,7 +72,9 @@ const DealsPage = () => {
         <>
         <div className="filter-container">
             <FilterButton filterRestaurants={filterRestaurants}/>
-            <SearchBar placeholder="Search for restaurants..." searchText ={searchText} updateSearchText={setSearchText}/>       
+            <div className={styles.searchbar}>
+            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>       
+            </div>
         </div>
         <section>
             {contentJsx}
@@ -74,3 +85,5 @@ const DealsPage = () => {
 
 export default DealsPage;
 
+
+// , cuisine: restaurantCuisine.includes(searchText.toLowerCase())}
