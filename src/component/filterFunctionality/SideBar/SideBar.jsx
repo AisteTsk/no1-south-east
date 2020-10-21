@@ -5,11 +5,11 @@ import Icon from '../../utilities/Icon';
 import ImageIcon from '../../utilities/ImageIcon';
 import Checkbox from '../../utilities/Checkbox';
 import Slider from '../../utilities/Slider';
-import SearchBar from '../../utilities/SearchBar';
+
 
 import { dealTypeIcons, dietaryIcons } from '../../../data/filterIcons';
 
-const SideBar = () => {
+const SideBar = ({closeFilterMenu}) => {
 
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
         return <Icon icon={deal.icon} key={deal.key}/>
@@ -20,7 +20,8 @@ const SideBar = () => {
     });
         
     return (
-        <div>
+        <div className={styles.filtermenu}>
+            <a href="javascript:void(0)" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <Calendar />
             <hr/>
             <p>Do you want a deal on a meal or bevvies?</p>
@@ -36,8 +37,7 @@ const SideBar = () => {
             <Checkbox />
             <hr/>
             <Slider />
-            <hr/>
-            <SearchBar />    
+            <hr/> 
         </div>    
     )
 }
