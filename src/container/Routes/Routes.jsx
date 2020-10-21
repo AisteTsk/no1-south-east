@@ -8,8 +8,8 @@ const Routes = () => {
   return (
     <Router>
       <Dashboard path="/" />
-      <NotFound path="404" />
-      <CardList path="browseDeals" />
+      <NotFound path="/404" />
+      <CardList path="/browseDeals" />
       {/* <Restaurant path="restaurant" /> */}
     </Router>
   );
