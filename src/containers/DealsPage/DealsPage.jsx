@@ -25,9 +25,14 @@ const DealsPage = () => {
         
     }
     console.log('search text:', searchText);
+    
     const checkRestaurantName = (restaurant) => {
         const restaurantName = restaurant.name.toLowerCase();
-        return restaurantName.includes(searchText.toLowerCase());
+        const space = ' ';
+        const restaurantNameWithSpace = restaurantName.concat(space);
+        const restaurantCuisine = restaurant.cuisine.toString().toLowerCase().replace(/,/g,' ');
+        const restaurantNameAndCuisine = restaurantNameWithSpace.concat(restaurantCuisine);
+        return restaurantNameAndCuisine.includes(searchText.toLowerCase());
       };
     
     //   // const toggleFav = (recipe) => {
@@ -60,3 +65,5 @@ const DealsPage = () => {
 
 export default DealsPage;
 
+
+// , cuisine: restaurantCuisine.includes(searchText.toLowerCase())}
