@@ -41,13 +41,8 @@ const DealsPage = () => {
         // DietaryReq -> dietaryRequirements - array(strings)
         // MealType -> sitting - array(strings)   
     }
-<<<<<<< HEAD
 
 
-=======
-    console.log('search text:', searchText);
-    
->>>>>>> 0b1a083ec8e989dc4036cac564e92927068ea97c
     const checkRestaurantName = (restaurant) => {
         const restaurantName = restaurant.name.toLowerCase();
         const space = ' ';
