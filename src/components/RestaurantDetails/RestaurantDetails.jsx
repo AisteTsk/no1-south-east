@@ -3,22 +3,9 @@ import styles from "./Restaurant.module.scss";
 import { Link } from "@reach/router";
 
 const RestaurantDetails = (props) => {
-    console.log("Restaurant props",props.restaurants)
-
-    const { name, 
-            image, 
-            offerPercent, 
-            offerDescription, 
-            location, 
-            cuisine, 
-            validUntil, 
-            daysAvailable, 
-            maximumTableSize, 
-            dietryRequirements, 
-            sitting, 
-            discountOnFood, 
-            discountOnDrink } = props.restaurants      
     
+     const { name, image, offerPercent, offerDescription, location, cuisine, 
+        validUntil, daysAvailable, maximumTableSize, dietryRequirements, sitting, discountOnFood, discountOnDrink } = props.restaurants[0]
 
     return (
         <div className={styles.RestaurantDetails}>
@@ -29,8 +16,8 @@ const RestaurantDetails = (props) => {
                     <img className={styles.responsiveImage} src={image} alt="Restaurant Image"/>
                 </div>
                 <div className={styles.flexCol}>
-                    <button> Redeem Offer</button>
-                    <p>Discount Available {offerPercent} </p>
+                    <button>redeem</button>
+                    <p>Offer {offerPercent}</p>
                 </div>
             </div>
                 <p>Cusine: {cuisine}</p>
