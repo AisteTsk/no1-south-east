@@ -5,7 +5,7 @@ import { Link } from "@reach/router";
 
 const DealCard = (props) => {
 
-    const { name, offerPercent, offerDescription, location, cuisine, validUntil } = props.restaurants;
+    const { name, offerPercent, offerDescription, location, cuisine, validUntil } = props.restaurant;
     
     return (
             <div className={styles.card}>

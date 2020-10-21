@@ -3,13 +3,11 @@ import styles from './SideBar.module.scss';
 import Calendar from '../../utilities/Calendar';
 import Icon from '../../utilities/Icon';
 import ImageIcon from '../../utilities/ImageIcon';
-import Checkbox from '../../utilities/Checkbox';
 import Slider from '../../utilities/Slider';
-
 
 import { dealTypeIcons, mealTimeIcons, dietaryIcons } from '../../../data/filterIcons';
 
-const SideBar = ({closeFilterMenu}) => {
+const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
         return <Icon icon={deal.icon} key={deal.id}/>
@@ -27,6 +25,10 @@ const SideBar = ({closeFilterMenu}) => {
     const renderDietaryIcons = dietaryIcons.map(diet => {
         return <ImageIcon iconActive={diet.iconActive} iconInactive={diet.iconInactive} key={diet.id} />
     });
+
+    const collectFilters = () => {
+        // update an arary with filter preferences this needs to be passed down to each component
+    }
         
     return (
         <div className={styles.filtermenu}>
@@ -51,10 +53,9 @@ const SideBar = ({closeFilterMenu}) => {
                 {renderDietaryIcons}
             </div>
             <hr/>
-            <Checkbox />
-            <hr/>
             <Slider />
             <hr/> 
+            <button onClick={closeFilterMenu, collectFilters}>Filter</button>
         </div>    
     )
 }

@@ -19,3 +19,20 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
+
+// import React from 'react';
+// import styles from './SearchBar.module.scss';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// const SearchBar = () => {
+//     return (
+//         <div>
+//             <input type="text" placeholder="search for a restaurant here..."></input>
+//             <span>
+//             <FontAwesomeIcon icon="search" />
+//             </span>
+//         </div>
+//     )
+// }
+
+// export {SearchBar as default};

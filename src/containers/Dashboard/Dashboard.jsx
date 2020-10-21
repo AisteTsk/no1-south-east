@@ -4,29 +4,18 @@ import Card from "../../component/filterFunctionality/Card";
 import restaurants from "../../data/restaurants";
 import CardList from "../../component/filterFunctionality/CardList";
 import FeedbackPanel from "../../component/filterFunctionality/FeedbackPanel";
+import LandingPage  from "../../components/LandingPage";
 
-const DashBoard = (props) => {
+const DashBoard = () => {
 
-  const checkRestaurantName = (restaurant) => {
-    const restaurantName = restaurant.name.toLowerCase();
-    return restaurantName.includes(props.searchText.toLowerCase());
-  };
-
-  // const toggleFav = (recipe) => {
-  //   recipe.isFav = !recipe.isFav;
-  // };
-
-  const matchingRestaurants = restaurants.filter(checkRestaurantName);
-
-  const contentJsx = matchingRestaurants.length ? (
-    <CardList restaurants={matchingRestaurants} />
-  ) : (
-      <FeedbackPanel
-        header="No matches"
-        text="None of our restaurants matched that search"
-      />
-    )
-  return <section>{contentJsx}</section>;
+  return (
+    <>
+      
+      <div>
+        <LandingPage />
+      </div>
+    </>
+    );
 };
 
 export default DashBoard;

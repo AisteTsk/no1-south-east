@@ -6,10 +6,12 @@ const Slider = () => {
     return (
         <div>
             <div className={styles.slider}>
-                <input type="range" min="1" max="10" value="50" class="slider" id="myRange"></input>
+                <input type="range" min="1" max="12" value={this.state.value} className="slider" onChange={this.handleOnChange}></input>
+
             </div>
         </div>
     )
 }
 
 export {Slider as default};
+

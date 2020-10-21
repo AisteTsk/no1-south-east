@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './FilterButton.module.scss';
 import SideBar from '../SideBar';
-import SearchBar from '../../utilities/SearchBar';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const FilterButton = () => {
+const FilterButton = ({filterRestaurants}) => {
 
     // assign filter menu open state, default closed
     const [isOpen, setIsOpen] = useState(false);
@@ -16,12 +15,12 @@ const FilterButton = () => {
     }
 
     // ternary for checking if the filter bar should be shown or not
-    const filterMenu = isOpen ? <SideBar closeFilterMenu={closeFilterMenu} /> : null;
+    const filterMenu = isOpen ? <SideBar closeFilterMenu={closeFilterMenu} filterRestaurants={filterRestaurants} /> : null;
 
     return (
         <>
             <button onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
-            <SearchBar />   
+
             <div className="filterMenu">
                 {filterMenu}
             </div>
