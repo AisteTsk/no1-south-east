@@ -4,7 +4,7 @@
  import LandingPage  from "../../components/LandingPage";
 
  
- export const Dashboard = () => {
+ const Dashboard = () => {
      return (
        <>
         <div>
