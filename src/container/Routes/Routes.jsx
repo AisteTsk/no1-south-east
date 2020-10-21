@@ -5,6 +5,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import NotFound from "../NotFound/NotFound";
 import RestaurantDetails from "../../components/RestaurantDetails";
 import restaurants from "../../data/restaurants";
+import SignUp from "../../components/SignUp";
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
       <NotFound path="/404" />
       <CardList path="/browseDeals" />
       <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/>
+      <SignUp path="/SignUp" />
     </Router>
   );
 };
