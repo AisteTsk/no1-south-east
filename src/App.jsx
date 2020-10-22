@@ -1,8 +1,7 @@
 import React from 'react';
-import styles from './App.module.scss';
-import CardList from "./components/CardList";
-import Routes from "./container/Routes"
-import LandingPage from './components/LandingPage';
+import './App.css';
+import Restaurant from '../src/data/restaurants';
+import LandingPage from './Components/LandingPage';
 
 const App = () => {
   return (
