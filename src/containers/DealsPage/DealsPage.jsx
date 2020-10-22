@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './DealsPage.module.scss';
 
 // components
-import CardList from "../../Components/CardList";
+import CardList from "../../components/CardList";
 import FilterButton from '../../component/filterFunctionality/FilterButton';
 import SearchBar from '../../component/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../component/filterFunctionality/FeedbackPanel';
