@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import styles from './ImageIcon.module.scss';
 
 
-const ImageIcon = ({iconActive, iconInactive}) => {
+const ImageIcon = ({data , collectFilters}) => {
     
+    const {iconInactive, iconActive, filterType, subFilter} = data;
+
     const [isToggle, setIsToggle] = useState(false);
 
     const handleClick = (e) => {
         e.stopPropagation();
         setIsToggle(!isToggle);
+        collectFilters(filterType, subFilter, !isToggle);
     }
 
     // require(toggled)
-    const image = require('../../../assets/image_icons/vegetarian_inactive.png')
+    const image = require('../../../assets/image_icons/vegetarian_inactive.png');
     const toggled = isToggle ? require(`../../../assets/image_icons/${iconActive}`) : require(`../../../assets/image_icons/${iconInactive}`);
 
     return (

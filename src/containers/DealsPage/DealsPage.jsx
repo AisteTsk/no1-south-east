@@ -25,25 +25,27 @@ const DealsPage = () => {
 
         // here we grab the list of filter keys and cycle over them
         filterParameterKeys.forEach(parameterKey => {
-          // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
-          if(filterParameters[`${parameterKey}`]){
-            filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`] === filterParameters[`${parameterKey}`]);
-          }
+          const subParameterKeys = Object.keys(filterParameters[`${parameterKey}`]);
+
+          subParameterKeys.forEach(subParameter => {
+            // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
+            if(filterParameters[`${parameterKey}`][`${subParameter}`]){
+              filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
+            }
+          });
         });
 
         setFilteredList(filteredRestaurants);
         console.log('filter function fire', filteredRestaurants);
         // do ALL the filtering here
-        // SearchBar -> name -string & cuisine - array(strings)
         // Calendar -> validUntil - Date? & dayAvailable - Array(string)
-        // MealDealType -> discountOnFood & discountOnDrinks - boolean
-        // Slider -> maximumTableSize - number
-        // DietaryReq -> dietaryRequirements - array(strings)
-        // MealType -> sitting - array(strings)   
+        // Slider -> maximumTableSize - number  
+        // location?
     }
 
 
     const checkRestaurantName = (restaurant) => {
+        console.log(restaurant);
         const restaurantName = restaurant.name.toLowerCase();
         const space = ' ';
         const restaurantNameWithSpace = restaurantName.concat(space);
@@ -65,12 +67,10 @@ const DealsPage = () => {
 
     return (
         <>
-        <div className="filter-container">
-            <FilterButton filterRestaurants={filterRestaurants}/>
-            <div className={styles.searchbar}>
-            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>       
-            </div>
-        </div>
+          <div className={styles.searchbar}>
+            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>   
+            <FilterButton filterRestaurants={filterRestaurants}/>    
+          </div>
         <section>
             {contentJsx}
         </section>

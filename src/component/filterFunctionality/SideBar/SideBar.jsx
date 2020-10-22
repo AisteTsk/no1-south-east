@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SideBar.module.scss';
 import Calendar from '../../utilities/Calendar';
 import Icon from '../../utilities/Icon';
@@ -9,17 +9,19 @@ import { dealTypeIcons, mealTimeIcons, dietaryIcons } from '../../../data/filter
 
 const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
-    // create filter parameters array
-    let filterParameters = {
-        discountOnFood : false,
-        discountOnDrinks: false,
-    }
+    // create filter parameters array as state
+    const [filterParameters, setFilterParameters] = useState({
+            discount: {food: false, drink: false},
+            dietaryRequirements: {vegetarian: false, vegan: false, halal: true, glutenfree: false, diaryfree: false},
+            sitting: {breakfast: false, lunch: false, dinner: false}
+    });
 
     // function to collect filter data - this will be passed down into the side bar
-    const collectFilters = (filterType, value) => {
+    const collectFilters = (filterType, subFilter, value) => {
         // update an arary with filter preferences this needs to be passed down to each component
-        filterParameters[`${filterType}`] = value;
-        console.log(filterParameters);
+        let filterParametersNew = filterParameters;
+        filterParametersNew[`${filterType}`][`${subFilter}`] = value;
+        setFilterParameters(filterParametersNew);
     }
 
     // fire filtering as filter button has been clicked
@@ -30,14 +32,14 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
     // map loops for all component rendering - this one is for deal icons
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
-        return <Icon icon={deal.icon} filterType={deal.filterType} collectFilters={collectFilters} key={deal.id}/>
+        return <Icon data={deal} collectFilters={collectFilters} key={deal.id}/>
     });
 
     // and this one is for meal type icons (breakfast, lunch, dinner)
     const renderMealTypeIcons = mealTimeIcons.map(meal => {
         return (
             <div>
-                <ImageIcon iconActive={meal.iconActive} iconInactive={meal.iconInactive} key={meal.id} />
+                <ImageIcon data={meal} collectFilters={collectFilters} key={meal.id} />
                 <p>{meal.text}</p>
             </div>
         )
@@ -45,7 +47,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
     // this little piggy is for dietary icons
     const renderDietaryIcons = dietaryIcons.map(diet => {
-        return <ImageIcon iconActive={diet.iconActive} iconInactive={diet.iconInactive} key={diet.id} />
+        return <ImageIcon data={diet} collectFilters={collectFilters} key={diet.id} />
     });
 
     // return the lot     
@@ -53,28 +55,28 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         <div className={styles.filtermenu}>
             <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <div id="when-need">
-                <p>When do you want to eat?</p>
-                <Calendar />
+            <p>When do you want to eat?</p>
+            <div className={styles.icons}><Calendar /></div>
             </div>
             <hr/>
             <div id="time-need">
                 <p>Breakfast, Lunch or Dinner?</p>
-                {renderMealTypeIcons}
+                <div className={styles.icons}>{renderMealTypeIcons}</div>
             </div>
             <hr/>
             <div id="deal-type">
                 <p>Do you want a deal on a meal or bevvies?</p>
-                {renderDealTypeIcons}
+                <div className={styles.icons}>{renderDealTypeIcons}</div>
             </div>
             <hr/>
             <div id="dietary-need">
                 <p>Any dietary needs?</p>
-                {renderDietaryIcons}
+                <div className={styles.icons}>{renderDietaryIcons}</div>
             </div>
             <hr/>
             <Slider />
             <hr/> 
-            <button onClick={filtering}>Filter</button>
+            <div className={styles.icons}><button onClick={filtering}>Filter</button></div>
         </div>    
     )
 }

@@ -3,14 +3,16 @@ import styles from './Icon.module.scss';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Icon = ({icon, filterType, collectFilters}) => {
+const Icon = ({data, collectFilters}) => {
+
+    const {icon, filterType, subFilter} = data;
 
     const [isToggle, setIsToggle] = useState(false);
 
     const handleClick = (e) => {
         e.stopPropagation();
         setIsToggle(!isToggle);
-        collectFilters(`${filterType}`, !isToggle);
+        collectFilters(filterType, subFilter, !isToggle);
     }
 
     const toggled = isToggle ? styles.toggle : null;
