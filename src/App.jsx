@@ -1,13 +1,15 @@
-import React from 'react';
-import './App.css';
-import Restaurant from './data/data';
-import LandingPage from './Components/LandingPage';
+import React from "react";
+import styles from "./App.module.scss";
+import library from "./data/fa-library";
+import Routes from "./containers/Routes"
+
 
 const App = () => {
+  
   return (
-    <div className="App">
-      <LandingPage />
-    </div>
+      <section className={styles.content}>
+        <Routes />
+      </section>
   );
 }
 
