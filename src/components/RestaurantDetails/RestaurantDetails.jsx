@@ -3,8 +3,6 @@ import styles from "./Restaurant.module.scss";
 import { Link } from "@reach/router";
 
 const RestaurantDetails = (props) => {
-
-    console.log("RestaurantDetails",props)
     
      const { name, image, offerPercent, offerDescription, location, cuisine, 
         validUntil, daysAvailable, maximumTableSize, dietryRequirements, sitting, discountOnFood, discountOnDrink, } = props.restaurants

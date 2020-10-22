@@ -15,9 +15,7 @@ const Routes = (props) => {
       restaurants={props.restaurants} 
       selectedRestaurant={props.selectedRestaurant}      
       path="/browseDeals" />
-      
       <RestaurantDetails restaurants={props.selectedRestaurant} path="/RestaurantDetails"/>
-      {/* <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/> */}
     </Router>
   );
 };

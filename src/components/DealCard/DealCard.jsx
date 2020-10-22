@@ -4,17 +4,14 @@ import { Link } from "@reach/router";
 import RestaurantDetails from "../../components/RestaurantDetails"
 
 const DealCard = (props) => {
-    console.log("dealcard",props)
-
 
     const { name, offerPercent, offerDescription, location, cuisine, validUntil } = props.restaurants;
 
     // not working yet
     //
     const handleClick = (e) => {
-        console.log(e)
         props.individualRestaurant(props.restaurants)
-                   
+
       };
 
     return (
@@ -23,7 +20,7 @@ const DealCard = (props) => {
             onClick={handleClick} 
             >
                     <h1>{offerPercent}</h1>
-                    <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="Picture of restaurant"/>
+                    <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="restaurant"/>
                     <h2>{name}</h2>
 
                     <div className={styles.info}>

@@ -5,11 +5,10 @@ import restaurants from "../../data/restaurants";
 
 
 const CardList = (props) => {
-    console.log("cardlist",props)
 
     const getCard = (restaurants) => (
         <div key={restaurants.idRapper}>
-          <DealCard individualRestaurant={props.individualRestaurant} restaurants={props.restaurants} />
+          <DealCard individualRestaurant={props.individualRestaurant} restaurants={restaurants} />
         </div>
     );
     return (
