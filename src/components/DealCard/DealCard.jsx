@@ -1,23 +1,26 @@
 import React from "react";
 import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
-// import RestaZurantDetails from "../../components/RestaurantDetails"
+import RestaurantDetails from "../../components/RestaurantDetails"
 
 const DealCard = (props) => {
+    console.log("dealcard",props)
+
 
     const { name, offerPercent, offerDescription, location, cuisine, validUntil } = props.restaurants;
 
+    // not working yet
+    //
     const handleClick = (e) => {
-        console.log(props.restaurants)
-        // return  (<div>
-        //         <RestaurantDetails restaurants={props.restaurants} />
-        //         </div>);
+        console.log(e)
+        props.individualRestaurant(props.restaurants)
+                   
       };
 
     return (
         <Link to="/RestaurantDetails">
         <div className={styles.card} 
-            // onClick={handleClick} 
+            onClick={handleClick} 
             >
                     <h1>{offerPercent}</h1>
                     <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="Picture of restaurant"/>

@@ -4,10 +4,12 @@ import DealCard from "../DealCard/DealCard";
 import restaurants from "../../data/restaurants";
 
 
-const CardList = () => {
+const CardList = (props) => {
+    console.log("cardlist",props)
+
     const getCard = (restaurants) => (
         <div key={restaurants.idRapper}>
-          <DealCard restaurants={restaurants} />
+          <DealCard individualRestaurant={props.individualRestaurant} restaurants={props.restaurants} />
         </div>
     );
     return (

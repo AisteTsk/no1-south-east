@@ -4,15 +4,20 @@ import CardList from "../../components/CardList/CardList";
 import Dashboard from "../Dashboard/Dashboard";
 import NotFound from "../NotFound/NotFound";
 import RestaurantDetails from "../../components/RestaurantDetails";
-import restaurants from "../../data/restaurants";
 
-const Routes = () => {
+const Routes = (props) => {
   return (
     <Router>
       <Dashboard path="/" />
       <NotFound path="/404" />
-      <CardList path="/browseDeals" />
-      <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/>
+      <CardList 
+      individualRestaurant={props.individualRestaurant} 
+      restaurants={props.restaurants} 
+      selectedRestaurant={props.selectedRestaurant}      
+      path="/browseDeals" />
+      
+      <RestaurantDetails restaurants={props.selectedRestaurant} path="/RestaurantDetails"/>
+      {/* <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/> */}
     </Router>
   );
 };
