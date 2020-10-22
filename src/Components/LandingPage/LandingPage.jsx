@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../../sass/main.module.scss";
+import { Link } from "@reach/router";
+
 
 const LandingPage = () => {
     return(
@@ -18,7 +20,9 @@ const LandingPage = () => {
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>
                         <button className={styles.LandingPageButton}>Sign In ></button>
+                        <Link to="browseDeals">
                         <button className={styles.LandingPageButton}>View Offers ></button>
+                        </Link>
                     </div>
                 </div>
             </div>
