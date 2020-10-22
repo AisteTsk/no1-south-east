@@ -1,30 +1,55 @@
+@import "../../sass/main.module.scss";
+
 * {
   font-family: "Josefin Sans", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-.sign_up_page {
-  display: grid;
-  height: 40vh;
-  width: 50%;
-  margin: auto;
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-  .signuptitle {
-    font-size: 50px;
-    color: orange;
-  }
+  .sign_up_form {
+    display: flex;
+    background-color: $color-desert;
+    width: 90%;
+    height: 75vh;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-  .name {
-  }
+    h3 {
+      height: auto;
+      font-size: 30px;
+      color: $color-green;
+      margin: 20px 0;
+    }
 
-  .last_name {
-  }
+    .form_container {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      margin: 10px 0;
+    }
 
-  .email {
-  }
+    .terms {
+    }
 
-  .terms {
+    .sign_up_btn {
+      height: 30px;
+      width: 100px;
+      background-color: gray;
+      color: $color-white;
+    }
   }
+}
 
-  .sign_up_btn {
-  }
+input {
+  height: 50px;
+  padding: 20px;
 }
