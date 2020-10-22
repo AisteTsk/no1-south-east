@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
+import './App.module.css';
 import Restaurant from '../src/data/restaurants';
-import LandingPage from './Components/LandingPage';
+import LandingPage from "./components/LandingPage/LandingPage";
 
 const App = () => {
   return (
     <>
       <div>
-      <Routes />
+      <LandingPage />
     </div>
     </>
     )};
