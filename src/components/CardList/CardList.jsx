@@ -1,21 +1,21 @@
 import React from "react";
 import styles from "./CardList.module.scss";
-import DealCard from "../DealCard/DealCard";
-import restaurants from "../../data/restaurants";
+import DealCard from "../DealCard";
 
 
-const CardList = () => {
-    const getCard = (restaurants) => (
-        <div key={restaurants.idRapper}>
-          <DealCard restaurants={restaurants} />
-        </div>
-    );
+const CardList = ({restaurants}) => {
+   
+
     return (
         <>
-            <span className={styles.cardlist}>{restaurants.map(getCard)}</span>
+            <section className={styles.cardlist}>{restaurants.map((restaurant) => (
+                    <DealCard key={restaurant.restaurantId} restaurant={restaurant} />
+            ))}
+            </section>
         </>
     );
 };
+
 
 export default CardList;
 
