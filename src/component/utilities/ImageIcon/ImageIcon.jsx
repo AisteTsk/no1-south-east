@@ -15,7 +15,6 @@ const ImageIcon = ({data , collectFilters}) => {
     }
 
     // require(toggled)
-    const image = require('../../../assets/image_icons/vegetarian_inactive.png');
     const toggled = isToggle ? require(`../../../assets/image_icons/${iconActive}`) : require(`../../../assets/image_icons/${iconInactive}`);
 
     return (

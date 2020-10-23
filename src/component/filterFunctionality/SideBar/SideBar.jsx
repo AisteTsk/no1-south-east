@@ -45,7 +45,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         )
     });
 
-    // this little piggy is for dietary icons
+    // and this one is for dietary type icons (vegan, vegetarian, gluten free etc.)
     const renderDietaryIcons = dietaryIcons.map(diet => {
         return <ImageIcon data={diet} collectFilters={collectFilters} key={diet.id} />
     });
@@ -55,8 +55,8 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         <div className={styles.filtermenu}>
             <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <div id="when-need">
-            <p>When do you want to eat?</p>
-            <div className={styles.icons}><Calendar /></div>
+                <p>When do you want to eat?</p>
+                <div className={styles.icons}><Calendar /></div>
             </div>
             <hr/>
             <div id="time-need">
