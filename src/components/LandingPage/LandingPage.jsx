@@ -3,6 +3,8 @@ import styles from "./LandingPage.module.scss";
 import imageStepOne from '../../Assets/images/image1.png';
 import imageStepTwo from '../../Assets/images/image2.png';
 import imageStepThree from '../../Assets/images/image3.png';
+import { Link } from "@reach/router";
+
 
 const LandingPage = () => {
     return(
@@ -19,8 +21,14 @@ const LandingPage = () => {
                     <div className={styles.semiCircle}></div>
                 </div>
                 <div className={styles.bottomRight}>
-                    <button className={styles.LandingPageButton}>Sign In ></button>
-                    <button className={styles.LandingPageButton}>View Offers ></button>
+                    <div className={styles.buttons}>
+                        <Link to="SignUp">
+                            <button className={styles.LandingPageButton}>Sign In ></button>
+                        </Link>
+                        <Link to="browseDeals">
+                            <button className={styles.LandingPageButton}>View Offers ></button>
+                        </Link>
+                    </div>
                 </div>
             </div>
             <div className={styles.registration}>
