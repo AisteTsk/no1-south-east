@@ -16,7 +16,7 @@ const RestaurantDetails = (props) => {
                     <img className={styles.responsiveImage} src={image} alt="Restaurant Image"/>
                 </div>
                 <div className={styles.flexCol}>
-                <Link to="/SignUp" >   
+                <Link to="/Login" >   
                     <button>redeem</button>
                 </Link>
                     <p>Offer {offerPercent}</p>
