@@ -11,11 +11,11 @@
 
 .gridContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 30% 30% auto;
     grid-template-areas: 
-        "topleft        middle  middle"
-        "bottomleft     middle  middle"
+        "topleft        middle  topright"
+        "bottomleft     middle  bottomright"
         "buttons        buttons buttons";
     padding: 7% 5% 0 5%;
 
@@ -23,16 +23,13 @@
         grid-area: topleft;
         background-color: $color-pink;
         border-radius: 30px 30px 0 0;
-        position: relative;
+        display:flex;
+        align-items:center;
+        justify-content:center;
 
-        .circle {
-            height: 8vh;
-            width: 8vh;
-            background-color: $color-white;
-            border-radius: 50%;
-            position: absolute;
-            top: 20%;
-            left: 30%;
+        img {
+            height: 80%;
+            width: 80%;
         }
     }
 
@@ -56,6 +53,15 @@
             margin-bottom: 10%;
         }
     }
+    
+    .topRight{
+        background-color:$color-copper;
+        border-radius: 0 50% 0 0;
+    }
+    
+    .bottomRightMobile {
+        background-color: $color-pink;
+    }
 
 //BUTTON
     .bottomRight {
@@ -63,22 +69,22 @@
         // padding-top: 10%;
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center; 
 
         .LandingPageButton {
             text-align: left;
             margin: 20px;
-            padding: 0 10px;
+            // padding: 0 10px;
             height: 35px;
             border-radius: 15px;
             border: none;
             color: $color-white;
             transition: 0.3s ease;
             @extend %main-font;
-            font-size: 15px;
+            font-size: 10px;
             background-color: $color-copper;
             box-shadow: 0 10px $color-darkercopper;
-            width: 120px;
+            width: 70px;
             text-align: center;
             align-items: center;
             
@@ -110,7 +116,7 @@
     align-self: flex-start;
 
     .registrationProcess {
-        padding: 7% 5% 0 5%;
+        padding: 1% 13% 0% 0%;
         color: $color-white;
         @extend %secondary-font;
         padding: 15px;
@@ -120,12 +126,13 @@
         font-size: 15px;
         
         img {
-            width: 100px;
+            width: 70px;
             margin-left: auto;
             margin-right: auto;
             display: block;
-            height:80px;
+            height:70px;
             padding-left: none;
+            border-radius: 50%;
         }
 
         p{
@@ -150,11 +157,10 @@
 
         .topLeft {
             margin-top: 25%;
-            height: 90%;
-    
-            .circle {
-                height: 50%;
-                width: 35%;
+            height: 80%;
+
+            img {
+                height: 70%;
             }
         }
 
@@ -165,26 +171,15 @@
                 font-size: 150px;
                 font-weight: 800;
                 margin-bottom: 0;
-                padding: 3% 13% 0% 7%;
+                padding: 1% 13% 0% 0%;
             }
         }
         
         .topRight {
             grid-area: topright;
-            border-radius: 0 30px 0 0;
-            position: relative;
-            background-color: $color-pink;
-            width: 90%;
-    
-            .semiCircle {
-                height: 100%;
-                width: 100%;
-                background-color: $color-copper;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                border-radius: 0 95% 0 0;
-            }
+            border-radius: 0 95% 0 0;
+            background-color: $color-copper;
+
         }
         
         .bottomRight {
@@ -216,7 +211,8 @@
             padding: 3% 5% 4.7% 5%;
 
             img {
-                width: 100px;
+                width: 150px;
+                height: 150px;
             }
 
             p{
