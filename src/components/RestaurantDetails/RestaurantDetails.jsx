@@ -1,11 +1,19 @@
 import React from 'react';
 import styles from "./Restaurant.module.scss";
 import { Link } from "@reach/router";
+import restaurants from "../../data/restaurants";
 
 const RestaurantDetails = (props) => {
-    
-     const { name, image, offerPercent, offerDescription, location, cuisine, 
-        validUntil, daysAvailable, maximumTableSize, dietryRequirements, sitting, discountOnFood, discountOnDrink, } = props.restaurants
+    const { 
+        name, 
+        image, 
+        offerPercent, 
+        cuisine, 
+        validUntil, 
+        location, 
+        daysAvailable, 
+        maximumTableSize
+    } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
 
     return (
         <div className={styles.RestaurantDetails}>
