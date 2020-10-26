@@ -13,14 +13,18 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     const [filterParameters, setFilterParameters] = useState({
             discount: {food: false, drink: false},
             dietaryRequirements: {vegetarian: false, vegan: false, halal: true, glutenfree: false, diaryfree: false},
-            sitting: {breakfast: false, lunch: false, dinner: false}
+            sitting: {breakfast: false, lunch: false, dinner: false},
+            maximumTableSize: 1
     });
 
     // function to collect filter data - this will be passed down into the side bar
     const collectFilters = (filterType, subFilter, value) => {
+        
         // update an arary with filter preferences this needs to be passed down to each component
         let filterParametersNew = filterParameters;
-        filterParametersNew[`${filterType}`][`${subFilter}`] = value;
+
+        const collectNewFilter = (subFilter.length) ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
+
         setFilterParameters(filterParametersNew);
     }
 
@@ -74,7 +78,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
                 <div className={styles.icons}>{renderDietaryIcons}</div>
             </div>
             <hr/>
-            <Slider />
+            <Slider collectFilters={collectFilters} filterType={'maximumTableSize'}/>
             <hr/> 
             <div className={styles.icons}><button onClick={filtering}>Filter</button></div>
         </div>    
