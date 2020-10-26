@@ -27,22 +27,30 @@ const DealsPage = () => {
         // Using the array for filterParameter keys we'll cycle over each key - note each key holds an object which has some further keys inside which relate to specific filters
         // (e.g. the dietary key hold the object {vegetarian: true, vegan: true etc.} we'll be grabbing those keys)
         filterParameterKeys.forEach(parameterKey => {
+
           // so here we collect the keys of the object mentioned above - we need to cycle over these also...
-          const subParameterKeys = Object.keys(filterParameters[`${parameterKey}`]);
-          // here we do the forEach cycle and check if the filter boolean value matches that in the restaurants data
-          subParameterKeys.forEach(subParameter => {
-            // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
-            if(filterParameters[`${parameterKey}`][`${subParameter}`]){
-              filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
-            }
-          });
+          if (typeof filterParameters[`${parameterKey}`] === 'object') {
+            const subParameterKeys = Object.keys(filterParameters[`${parameterKey}`]);
+
+            // here we do the forEach cycle and check if the filter boolean value matches that in the restaurants data
+            subParameterKeys.forEach(subParameter => {
+
+              // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
+              if(filterParameters[`${parameterKey}`][`${subParameter}`]){
+                filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
+              }
+            });
+
+          } else {
+            // checking that the filterParameters[`${parameterKey}`] has a value less than the restaurants data
+            filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant.maximumTableSize >= filterParameters[`${parameterKey}`]);
+          }
         });
 
         setFilteredList(filteredRestaurants);
         // console.log('filter function fire', filteredRestaurants);
         // do ALL the filtering here
         // Calendar -> validUntil - Date? & dayAvailable - Array(string)
-        // Slider -> maximumTableSize - number  
         // location?
     }
 
