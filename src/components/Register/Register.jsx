@@ -26,7 +26,7 @@ const Register = () => {
             </form>
             <p>Already have an account? <button>Sign in</button></p>
         </>
-    )
-}
+    );
+};
 
 export default Register;

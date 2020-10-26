@@ -27,10 +27,10 @@ const RestaurantDetails = (props) => {
                 <p>Location: {location}</p>
                 <p>Days Avalible: {daysAvailable}</p>
                 <p>Maximim Table Size: {maximumTableSize}</p>
-                <p>Dietary Profile: {dietryRequirements}</p>
-                <p>Sitting: {sitting}</p>
-                <p>Discount On Food: {discountOnFood}</p>
-                <p>Discount On Drink: {discountOnDrink}</p>
+                {/* <p>Dietary Profile: {dietryRequirements}</p>
+                <p>Sitting: {sitting}</p> */}
+                {/* <p>Discount On Food: {discountOnFood}</p>
+                <p>Discount On Drink: {discountOnDrink}</p> */}
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./LandingPage.module.scss";
-import imageStepOne from '../../Assets/images/image1.png';
-import imageStepTwo from '../../Assets/images/image2.png';
-import imageStepThree from '../../Assets/images/image3.png';
+import imageStepOne from '../../assets/Images/image1.png';
+import imageStepTwo from '../../assets/Images/image2.png';
+import imageStepThree from '../../assets/Images/image3.png';
 import { Link } from "@reach/router";
 
 
