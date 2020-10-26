@@ -19,7 +19,7 @@ const ImageIcon = ({data , collectFilters}) => {
 
     return (
         <span onClick={handleClick}>
-            <img src={toggled} alt="not found"/>
+            <img className={styles.imageicon} src={toggled} alt="not found"/>
         </span>
     )
 }

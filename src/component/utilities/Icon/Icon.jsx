@@ -15,7 +15,7 @@ const Icon = ({data, collectFilters}) => {
         collectFilters(filterType, subFilter, !isToggle);
     }
 
-    const toggled = isToggle ? styles.toggle : null;
+    const toggled = isToggle ? styles.toggle : styles.untoggle;
 
     return (
         <span className={toggled} onClick={handleClick}>

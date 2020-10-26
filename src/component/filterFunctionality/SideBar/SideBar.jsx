@@ -76,7 +76,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
             <hr/>
             <Slider />
             <hr/> 
-            <div className={styles.icons}><button onClick={filtering}>Filter</button></div>
+            <div className={styles.icon}><button className={styles.filterbtn} onClick={filtering}>Filter</button></div>
         </div>    
     )
 }

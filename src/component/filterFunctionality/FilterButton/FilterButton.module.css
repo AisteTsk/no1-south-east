@@ -1,0 +1,9 @@
+.filterButton {
+  height: 60px;
+  width: 60px;
+  border-radius: 12px;
+  background-color: #186E62;
+  color: #f5dec8;
+  font-size: 20px;
+  margin-top: 10px;
+}

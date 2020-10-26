@@ -1,0 +1,27 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.register input {
+  padding: 25px 15px 20px;
+}
+.register h3 {
+  height: auto;
+  font-size: 30px;
+  color: #186E62;
+  margin: 20px 0;
+}
+.register .form_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px 0;
+}
+.register .sign_up_btn, .register .sign_in_btn {
+  height: 30px;
+  width: 100px;
+  background-color: gray;
+  color: #ffffff;
+}

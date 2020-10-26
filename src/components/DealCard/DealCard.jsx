@@ -8,8 +8,8 @@ const DealCard = ({restaurant}) => {
     const { name, offerPercent, offerDescription, location, cuisine, validUntil } = restaurant;
     
     return (
-        <Link to="/RestaurantDetails">
             <div className={styles.card}>
+                <Link to="/RestaurantDetails">
                     <h1>{offerPercent}</h1>
                     <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="Picture of restaurant"/>
                     <h2>{name}</h2>
@@ -23,8 +23,8 @@ const DealCard = ({restaurant}) => {
                         <p>Offer valid until</p>
                     <h3>{validUntil}</h3>
                     </div>
+                </Link>
             </div>
-        </Link>
        );
 };
 

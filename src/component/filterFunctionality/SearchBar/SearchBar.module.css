@@ -1,9 +1,12 @@
 .search {
-  color: black;
+  color: #186E62;
   width: auto;
 }
 
 .fa {
-  color: black;
+  color: #186E62;
   width: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 3rem;
 }
