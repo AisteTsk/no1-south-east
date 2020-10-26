@@ -25,4 +25,3 @@ export default class Slider extends React.Component {
   }
 
 
-

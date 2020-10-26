@@ -40,7 +40,16 @@ const DealsPage = () => {
                 filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
               }
             });
+          } else if (typeof filterParameters[`${parameterKey}`] === 'string') {
+            // grab date strings and convert to date objects for comparison and filter.
+            
+            const filterDate = new Date(filterParameters[`${parameterKey}`]).getTime();
 
+            filteredRestaurants = filteredRestaurants.filter(restaurant => {
+              const restaurantDate = new Date(restaurant.validUntil).getTime();
+              return restaurantDate >= filterDate;
+            });
+            
           } else {
             // checking that the filterParameters[`${parameterKey}`] has a value less than the restaurants data
             filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant.maximumTableSize >= filterParameters[`${parameterKey}`]);
@@ -48,9 +57,8 @@ const DealsPage = () => {
         });
 
         setFilteredList(filteredRestaurants);
-        // console.log('filter function fire', filteredRestaurants);
+
         // do ALL the filtering here
-        // Calendar -> validUntil - Date? & dayAvailable - Array(string)
         // location?
     }
 

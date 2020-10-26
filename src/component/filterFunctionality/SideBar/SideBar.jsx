@@ -9,12 +9,16 @@ import { dealTypeIcons, mealTimeIcons, dietaryIcons } from '../../../data/filter
 
 const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
+    const today = new Date();
+    const formatToday = today.toISOString().slice(0,10);
+
     // create filter parameters array as state
     const [filterParameters, setFilterParameters] = useState({
             discount: {food: false, drink: false},
             dietaryRequirements: {vegetarian: false, vegan: false, halal: true, glutenfree: false, diaryfree: false},
             sitting: {breakfast: false, lunch: false, dinner: false},
-            maximumTableSize: 1
+            maximumTableSize: 1,
+            validUntil: formatToday,
     });
 
     // function to collect filter data - this will be passed down into the side bar
@@ -60,7 +64,9 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
             <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <div id="when-need">
                 <p>When do you want to eat?</p>
-                <div className={styles.icons}><Calendar /></div>
+                <div className={styles.icons}>
+                    <Calendar collectFilters={collectFilters} filterType={'validUntil'} />
+                </div>
             </div>
             <hr/>
             <div id="time-need">
