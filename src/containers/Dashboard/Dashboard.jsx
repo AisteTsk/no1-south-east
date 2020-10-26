@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Dashboard.module.scss";
-import LandingPage  from "../../Components/LandingPage";
+import LandingPage  from "../../components/LandingPage";
 
 const DashBoard = () => {
 

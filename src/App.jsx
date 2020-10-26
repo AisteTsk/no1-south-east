@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styles from "./App.module.scss";
 import library from "./data/fa-library";
 import Routes from "./containers/Routes"
