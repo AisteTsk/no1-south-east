@@ -4,10 +4,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-a {
-    text-decoration: none;
-}
-
 .card {
     display:flex;
     flex-direction: column;
@@ -23,6 +19,10 @@ a {
     &:hover {
         box-shadow: 7px 7px rgba(0, 0, 0, 0.055);
         transform: translateY(-4px);
+    }
+
+    a {
+        text-decoration: none;
     }
 
     h1 {

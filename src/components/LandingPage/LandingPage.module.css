@@ -1,0 +1,183 @@
+.gridContainer .bottomRight .LandingPageButton, .gridContainer .middle p {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.registration .registrationProcess {
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.landingPage {
+  background-color: #233D2A;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 30% 30% auto;
+  grid-template-areas: "topleft        middle  topright" "bottomleft     middle  bottomright" "buttons        buttons buttons";
+  padding: 7% 5% 0 5%;
+}
+.gridContainer .topLeft {
+  grid-area: topleft;
+  background-color: #D4BCB6;
+  border-radius: 30px 30px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gridContainer .topLeft img {
+  height: 80%;
+  width: 80%;
+}
+.gridContainer .bottomLeft {
+  grid-area: bottomleft;
+  background-color: #CF6B58;
+  border-radius: 0 0 0 50%;
+}
+.gridContainer .middle {
+  grid-area: middle;
+  background-color: #ffffff;
+  border-radius: 30px 0px 30px 0;
+}
+.gridContainer .middle p {
+  font-size: 50px;
+  font-weight: 800;
+  color: #233D2A;
+  padding: 5%;
+  margin-bottom: 10%;
+}
+.gridContainer .topRight {
+  background-color: #CF6B58;
+  border-radius: 0 50% 0 0;
+}
+.gridContainer .bottomRightMobile {
+  background-color: #D4BCB6;
+}
+.gridContainer .bottomRight {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.gridContainer .bottomRight .LandingPageButton {
+  text-align: left;
+  margin: 20px;
+  height: 35px;
+  border-radius: 15px;
+  border: none;
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-size: 10px;
+  background-color: #CF6B58;
+  box-shadow: 0 10px #ad6050;
+  width: 70px;
+  text-align: center;
+  align-items: center;
+}
+.gridContainer .bottomRight .LandingPageButton:hover {
+  box-shadow: 0 8px #ad6050;
+  transform: translateY(1px);
+}
+.gridContainer .bottomRight .LandingPageButton:active {
+  background-color: #ad6050;
+  box-shadow: 0 5px #ad6050;
+  transform: translateY(4px);
+  text-decoration: none;
+  outline: none;
+}
+.gridContainer .bottomRight .LandingPageButton:focus {
+  outline: none;
+  border: none;
+}
+
+.registration {
+  grid-area: howToo;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+}
+.registration .registrationProcess {
+  padding: 1% 13% 0% 0%;
+  color: #ffffff;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 15px;
+}
+.registration .registrationProcess img {
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 70px;
+  padding-left: none;
+  border-radius: 50%;
+}
+.registration .registrationProcess p {
+  padding: 5%;
+}
+
+@media (min-width: 1000px) {
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "topleft    middle topright" "bottomleft middle buttons";
+    padding: 5% 10% 0 10%;
+  }
+  .gridContainer .topLeft {
+    margin-top: 25%;
+    height: 80%;
+  }
+  .gridContainer .topLeft img {
+    height: 70%;
+  }
+  .gridContainer .middle {
+    grid-area: middle;
+  }
+  .gridContainer .middle p {
+    font-size: 150px;
+    font-weight: 800;
+    margin-bottom: 0;
+    padding: 1% 13% 0% 0%;
+  }
+  .gridContainer .topRight {
+    grid-area: topright;
+    border-radius: 0 95% 0 0;
+    background-color: #CF6B58;
+  }
+  .gridContainer .bottomRight {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 0%;
+  }
+  .gridContainer .bottomRight button.LandingPageButton {
+    width: 250px;
+    font-size: 20px;
+    padding-left: 5px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .registration {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 1%;
+  }
+  .registration .registrationProcess {
+    padding: 3% 5% 4.7% 5%;
+  }
+  .registration .registrationProcess img {
+    width: 150px;
+    height: 150px;
+  }
+  .registration .registrationProcess p {
+    font-size: 25px;
+  }
+}
