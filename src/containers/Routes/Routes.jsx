@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
 import DealsPage from '../DealsPage';
-import Login from '../../components/Login';
+import Login from '../../containers/Login';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
 import restaurants from '../../data/restaurants';
