@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "7"
+script:
+ - echo "Deploy!!"
+install:
+  - yarn add -g firebase-tools
+after_success:
+  - firebase deploy --project no1southeast-574a3 --token $FIREBASE_TOKEN
