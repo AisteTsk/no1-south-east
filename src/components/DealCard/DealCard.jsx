@@ -14,6 +14,8 @@ const DealCard = (props) => {
 
       };
 
+    const { name, offerPercent, offerDescription, location, cuisine, validUntil } = restaurant;
+    
     return (
         <Link to="/RestaurantDetails">
         <div className={styles.card} 
@@ -33,7 +35,7 @@ const DealCard = (props) => {
                     <h3>{validUntil}</h3>
                     </div>
             </div>
-            </Link>
+        </Link>
        );
 };
 
