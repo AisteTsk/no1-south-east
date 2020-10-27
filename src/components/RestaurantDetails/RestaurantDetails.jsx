@@ -12,13 +12,16 @@ const RestaurantDetails = (props) => {
         validUntil, 
         location, 
         daysAvailable, 
-        maximumTableSize
+        maximumTableSize,
+        dietaryRequirements,
+        sitting,
+        phoneNumber,
+        email
     } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
+       
 
     return (
         <div className={styles.RestaurantDetails}>
-            <h1>{name}</h1>
-
             <div className={styles.container}>    
                 <div className={styles.image}>
                     <img className={styles.responsiveImage} src={image} alt="Restaurant Image"/>
@@ -30,11 +33,22 @@ const RestaurantDetails = (props) => {
                     <p>Offer {offerPercent}</p>
                 </div>
             </div>
-                <p>Cusine: {cuisine}</p>
-                <p>Valid Until: {validUntil}</p>
+            <h1>{name}</h1>
+            <div>
+                <h3>Restaurant Info</h3>
+                <p>Cuisine: {cuisine}</p>
                 <p>Location: {location}</p>
-                <p>Days Avalible: {daysAvailable}</p>
+                <p>Phone Number: {phoneNumber}</p>
+                <p>Email Address: {email}</p>
+
+            </div>
+            <div className={styles.offerDets}>
+                <h3>Offer Details</h3>
+                <p>Valid until: {validUntil}</p>
+                <p>Days Avalible: {daysAvailable.toString()}</p>
                 <p>Maximim Table Size: {maximumTableSize}</p>
+            </div>  
+
                 {/* <p>Dietary Profile: {dietryRequirements}</p>
                 <p>Sitting: {sitting}</p> */}
                 {/* <p>Discount On Food: {discountOnFood}</p>

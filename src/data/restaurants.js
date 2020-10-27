@@ -13,7 +13,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
         'location': `51°28'27.6"N 0°02'38.7"E`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['tapas', 'mediterranean']
+        'cuisine': ['tapas', 'mediterranean'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     
     {
@@ -30,7 +32,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
         'location': `51°28'27.6"N 0°02'40.7"E`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': 'american'
+        'cuisine': 'american',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
 
     {
@@ -47,7 +51,9 @@ const restaurants = [
         'location': `51°28'27.6"N 0°02'38.7"E`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine' : 'seafood'
+        'cuisine' : 'seafood',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
         
     },
     
@@ -65,7 +71,9 @@ const restaurants = [
         'location': `51°27'10"N 0°13'50"W`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['chinese', 'japanese']
+        'cuisine': ['chinese', 'japanese'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     
     {
@@ -82,7 +90,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
         'location': `51°27'10"N 0°13'20"W`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['mexican', 'spanish']
+        'cuisine': ['mexican', 'spanish'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     {
         "restaurantId": 6,
@@ -98,7 +108,9 @@ const restaurants = [
         'location': `51°27'12"N 0°11'20"W`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['italian', 'spanish']
+        'cuisine': ['italian', 'spanish'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     {
         'restaurantId': 7,
@@ -114,7 +126,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
         'location': `51°28'9.3"N 0°11'20"W`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': 'Thai'
+        'cuisine': 'Thai',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     
     {
@@ -131,7 +145,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false}, 
         'location': `51°28'9.3"N 0°12'05"W`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['Mexican', 'American']
+        'cuisine': ['Mexican', 'American'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
 
 
@@ -149,7 +165,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
         'location': `51°28'9.3"N 0°15'05"W`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': ['Mexican', 'American']
+        'cuisine': ['Mexican', 'American'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
 
     {
@@ -166,7 +184,9 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': true}, 
         'location': `51°24'9.3"N 0°15'11"W`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': ['spanish', 'italian']
+        'cuisine': ['spanish', 'italian'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
 
     {
@@ -183,7 +203,9 @@ const restaurants = [
         'location': `51°24'9.3"N 0°06'11"W`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false},
         'sitting': {'breakfast': false, 'lunch': false, 'dinner': true},
-        'cuisine': 'italian'
+        'cuisine': 'italian',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     
     {
@@ -200,7 +222,9 @@ const restaurants = [
         'location': `51°27'9.3"N 0°06'11"W`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': false, 'halal': false, 'glutenfree': true, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['american', 'british']
+        'cuisine': ['american', 'british'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     {
         "restaurantId": 13,
@@ -216,7 +240,9 @@ const restaurants = [
         'location': `51°29'10"N 0°06'12.1"W`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': 'spanish'
+        'cuisine': 'spanish',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     
     {
@@ -233,7 +259,9 @@ const restaurants = [
         'location': `51°29'13.8"N 0°06'15"W`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': false, 'glutenfree': false, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': false, 'dinner': false},
-        'cuisine': 'tapas'
+        'cuisine': 'tapas',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     {
         "restaurantId": 15,
@@ -249,7 +277,9 @@ const restaurants = [
         'location': `51°22'13.8"N 0°05'15"W`,
         'dietaryRequirements': {'vegetarian': false, 'vegan': true, 'halal': false, 'glutenfree': true, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas']
+        'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
     {
         'restaurantId': 16,
@@ -265,7 +295,9 @@ const restaurants = [
         'location': `51°29'13.1"N 0°05'15.3"W`,
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'diaryfree': false},
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': 'mediterranean'
+        'cuisine': 'mediterranean',
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 2343'
     },
 ]
 
