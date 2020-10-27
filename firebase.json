@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "https://no1southeast-574a3.web.app/",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

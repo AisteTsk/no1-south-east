@@ -17,7 +17,7 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.bottomLeft}></div>
                 <div className={styles.middle}>
-                    <p>No.1 South East</p>
+                    <p>No.1 South West</p>
                 </div>
                 <div className={styles.topRight}>
                     <div className={styles.semiCircle}></div>
