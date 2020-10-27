@@ -5,7 +5,9 @@
 }
 
 .register input {
-  padding: 20px 25px;
+  padding: 20px;
+  margin: 0 10px;
+  width: 225px;
 }
 .register h3 {
   height: auto;
@@ -17,9 +19,9 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin: 15px 0;
+  margin: 10px 0;
 }
-.register .sign_up_btn, .register .sign_in_btn {
+.register .register_btn {
   height: 30px;
   width: 100px;
   background-color: gray;

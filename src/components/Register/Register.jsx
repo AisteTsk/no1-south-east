@@ -6,7 +6,7 @@ const Register = () => {
 
     return(
         <div className={styles.register}>
-            <h3>Sign up to redeem great offers!</h3>
+            <h3>Register to redeem great offers!</h3>
             <form action="">
                 <div className={styles.form_container}>
                     <input type="text" placeholder="First Name" required />
@@ -19,10 +19,10 @@ const Register = () => {
                 {/* <p>Google API=</p> */}
                 <p>By signing up you agree to our
                     <Link to="terms-and-conditions">
-                        <span className={styles.terms}> Terms and Conditions.</span>                
+                        <span className={styles.terms}>Terms and Conditions</span>                
                     </Link>
                 </p>
-                <button type="submit" className={styles.sign_up_btn}>Register</button>
+                <button type="submit" className={styles.register_btn}>Register</button>
             </form>
             <p>Already have an account? <button>Sign in</button></p>
         </div>

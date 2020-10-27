@@ -2,7 +2,9 @@
 
 .register {
     input {
-        padding: 20px 25px;
+        padding: 20px;
+        margin: 0 10px;
+        width: 225px;
     }
 
     h3 {
@@ -20,13 +22,13 @@
         width: 100%;
         display: flex;
         justify-content: space-evenly;
-        margin: 15px 0;
+        margin: 10px 0;
     }
 
     .terms {
     }
 
-    .sign_up_btn, .sign_in_btn {
+    .register_btn {
         height: 30px;
         width: 100px;
         background-color: gray;

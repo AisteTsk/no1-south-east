@@ -7,9 +7,9 @@ const Login = () => {
 
     return(
         <div className={styles.page}>
-            <div className={styles.form}>
+            {/* <div className={styles.form}>
                 <SignIn />
-            </div>
+            </div> */}
             <div className={styles.form}>
                 <Register />
             </div>
