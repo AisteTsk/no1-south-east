@@ -16,14 +16,17 @@
   grid-template-rows: 30% 30% auto;
   grid-template-areas: "topleft        middle  topright" "bottomleft     middle  bottomright" "buttons        buttons buttons";
   padding: 7% 5% 0 5%;
+  margin: 0 1% 0 1%;
 }
 .gridContainer .topLeft {
   grid-area: topleft;
   background-color: #D4BCB6;
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 0px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30%;
+  height: 90%;
 }
 .gridContainer .topLeft img {
   height: 80%;
@@ -32,12 +35,13 @@
 .gridContainer .bottomLeft {
   grid-area: bottomleft;
   background-color: #CF6B58;
-  border-radius: 0 0 0 50%;
+  border-radius: 0 0 0 90%;
+  margin-top: 20%;
 }
 .gridContainer .middle {
   grid-area: middle;
   background-color: #ffffff;
-  border-radius: 30px 0px 30px 0;
+  border-radius: 30px 0px 0px 0;
 }
 .gridContainer .middle p {
   font-size: 50px;
@@ -48,20 +52,29 @@
 }
 .gridContainer .topRight {
   background-color: #CF6B58;
-  border-radius: 0 50% 0 0;
+  border-radius: 0 90% 0 0;
 }
 .gridContainer .bottomRightMobile {
   background-color: #D4BCB6;
+  border-radius: 0 0 10px 0;
+  margin-bottom: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gridContainer .bottomRightMobile img {
+  transform: rotate(-50deg);
 }
 .gridContainer .bottomRight {
   grid-area: buttons;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 .gridContainer .bottomRight .LandingPageButton {
   text-align: left;
-  margin: 20px;
+  margin: 20px 10px;
   height: 35px;
   border-radius: 15px;
   border: none;
@@ -70,7 +83,7 @@
   font-size: 10px;
   background-color: #CF6B58;
   box-shadow: 0 10px #ad6050;
-  width: 70px;
+  width: 90px;
   text-align: center;
   align-items: center;
 }
@@ -123,16 +136,16 @@
   .gridContainer {
     display: grid;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 280px 280px;
     grid-template-areas: "topleft    middle topright" "bottomleft middle buttons";
-    padding: 5% 10% 0 10%;
+    padding: 3% 10% 0 10%;
   }
   .gridContainer .topLeft {
-    margin-top: 25%;
+    margin-top: 30%;
     height: 80%;
   }
-  .gridContainer .topLeft img {
-    height: 70%;
+  .gridContainer .bottomLeft {
+    margin-top: 10%;
   }
   .gridContainer .middle {
     grid-area: middle;
@@ -141,7 +154,7 @@
     font-size: 150px;
     font-weight: 800;
     margin-bottom: 0;
-    padding: 1% 13% 0% 0%;
+    padding: 5% 13% 0% 5%;
   }
   .gridContainer .topRight {
     grid-area: topright;
@@ -155,6 +168,7 @@
     align-items: flex-start;
     justify-content: center;
     padding-top: 0%;
+    padding-left: 2%;
   }
   .gridContainer .bottomRight button.LandingPageButton {
     width: 250px;
@@ -163,21 +177,24 @@
     height: 50px;
     font-size: 30px;
   }
+  .gridContainer .bottomRightMobile {
+    display: none;
+  }
 
   .registration {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 1%;
+    margin-top: 0%;
   }
   .registration .registrationProcess {
-    padding: 3% 5% 4.7% 5%;
+    padding: 2.6% 5% 0% 5%;
   }
   .registration .registrationProcess img {
     width: 150px;
     height: 150px;
   }
   .registration .registrationProcess p {
-    font-size: 25px;
+    font-size: 23px;
   }
 }
