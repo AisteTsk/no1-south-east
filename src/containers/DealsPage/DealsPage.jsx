@@ -3,10 +3,10 @@ import styles from './DealsPage.module.scss';
 
 // components
 import CardList from "../../components/CardList";
-import FilterButton from '../../component/filterFunctionality/FilterButton';
-import SearchBar from '../../component/filterFunctionality/SearchBar';
-import FeedbackPanel from '../../component/filterFunctionality/FeedbackPanel';
-import Location from '../../component/filterFunctionality/Location';
+import FilterButton from '../../components/filterFunctionality/FilterButton';
+import SearchBar from '../../components/filterFunctionality/SearchBar';
+import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
+import Location from '../../components/filterFunctionality/Location';
 
 //  data
 import restaurants from "../../data/restaurants";
