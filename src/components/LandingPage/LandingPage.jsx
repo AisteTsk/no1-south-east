@@ -1,5 +1,8 @@
 import React from "react";
-import styles from "../../sass/main.module.scss";
+import styles from "./LandingPage.module.scss";
+import imageStepOne from '../../assets/images/image1.png';
+import imageStepTwo from '../../assets/images/image2.png';
+import imageStepThree from '../../assets/images/image3.png';
 import { Link } from "@reach/router";
 
 
@@ -19,9 +22,11 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>
-                        <button className={styles.LandingPageButton}>Sign In</button>
+                        <Link to="SignUp">
+                            <button className={styles.LandingPageButton}>Sign In ></button>
+                        </Link>
                         <Link to="browseDeals">
-                        <button className={styles.LandingPageButton}>View Offers</button>
+                            <button className={styles.LandingPageButton}>View Offers ></button>
                         </Link>
                     </div>
                 </div>
