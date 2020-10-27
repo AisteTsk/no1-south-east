@@ -25,7 +25,7 @@ var restaurants = [{
     'glutenfree': true,
     'dairyfree': true
   },
-  'location': "51\xB028'27.6\"N 0\xB002'38.7\"E",
+  'location': "51.474333,0.044083",
   'sitting': {
     'breakfast': true,
     'lunch': true,
@@ -53,7 +53,7 @@ var restaurants = [{
     'glutenfree': false,
     'dairyfree': false
   },
-  'location': "51\xB028'27.6\"N 0\xB002'40.7\"E",
+  'location': "51.474333,0.044639",
   'sitting': {
     'breakfast': false,
     'lunch': true,
@@ -74,7 +74,7 @@ var restaurants = [{
   'happyHour': true,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
   'maximumTableSize': 2,
-  'location': "51\xB028'27.6\"N 0\xB002'38.7\"E",
+  'location': "51.474333,0.044083",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -102,7 +102,7 @@ var restaurants = [{
   'happyHour': true,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
   'maximumTableSize': 6,
-  'location': "51\xB027'10\"N 0\xB013'50\"W",
+  'location': "51.452778,-0.230556",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -137,7 +137,7 @@ var restaurants = [{
     'glutenfree': false,
     'dairyfree': false
   },
-  'location': "51\xB027'10\"N 0\xB013'20\"W",
+  'location': "51.452778,-0.222222",
   'sitting': {
     'breakfast': true,
     'lunch': true,
@@ -158,7 +158,7 @@ var restaurants = [{
   'happyHour': true,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
   'maximumTableSize': 4,
-  'location': "51\xB027'12\"N 0\xB011'20\"W",
+  'location': "51.453333,-0.188889",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -193,7 +193,7 @@ var restaurants = [{
     'glutenfree': true,
     'dairyfree': true
   },
-  'location': "51\xB028'9.3\"N 0\xB011'20\"W",
+  'location': "51.469250,-0.188889",
   'sitting': {
     'breakfast': true,
     'lunch': true,
@@ -221,7 +221,7 @@ var restaurants = [{
     'glutenfree': true,
     'dairyfree': false
   },
-  'location': "51\xB028'9.3\"N 0\xB012'05\"W",
+  'location': "51.469250,-0.201389",
   'sitting': {
     'breakfast': true,
     'lunch': true,
@@ -249,7 +249,7 @@ var restaurants = [{
     'glutenfree': false,
     'dairyfree': false
   },
-  'location': "51\xB028'9.3\"N 0\xB015'05\"W",
+  'location': "51.469250,-0.251389",
   'sitting': {
     'breakfast': false,
     'lunch': true,
@@ -277,7 +277,7 @@ var restaurants = [{
     'glutenfree': false,
     'dairyfree': true
   },
-  'location': "51\xB024'9.3\"N 0\xB015'11\"W",
+  'location': "51.402583,-0.253056",
   'sitting': {
     'breakfast': false,
     'lunch': true,
@@ -298,7 +298,7 @@ var restaurants = [{
   'happyHour': false,
   'daysAvailable': ['friday', 'saturday', 'sunday'],
   'maximumTableSize': 5,
-  'location': "51\xB024'9.3\"N 0\xB006'11\"W",
+  'location': "51.402583,-0.103056",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -326,7 +326,7 @@ var restaurants = [{
   'happyHour': true,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
   'maximumTableSize': 2,
-  'location': "51\xB027'9.3\"N 0\xB006'11\"W",
+  'location': "51.452583,-0.103056",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': false,
@@ -354,7 +354,7 @@ var restaurants = [{
   'happyHour': true,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
   'maximumTableSize': 4,
-  'location': "51\xB029'10\"N 0\xB006'12.1\"W",
+  'location': "51.486111,-0.103361",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -382,7 +382,7 @@ var restaurants = [{
   'happyHour': false,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
   'maximumTableSize': 6,
-  'location': "51\xB029'13.8\"N 0\xB006'15\"W",
+  'location': "51.487167,-0.104167",
   'dietaryRequirements': {
     'vegetarian': true,
     'vegan': true,
@@ -410,7 +410,7 @@ var restaurants = [{
   'happyHour': false,
   'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
   'maximumTableSize': 6,
-  'location': "51\xB022'13.8\"N 0\xB005'15\"W",
+  'location': "51.370500,-0.087500",
   'dietaryRequirements': {
     'vegetarian': false,
     'vegan': true,
@@ -438,7 +438,7 @@ var restaurants = [{
   'happyHour': false,
   'daysAvailable': ['tuesday', 'thursday'],
   'maximumTableSize': 12,
-  'location': "51\xB029'13.1\"N 0\xB005'15.3\"W",
+  'location': "51.486972,-0.087583",
   'dietaryRequirements': {
     'vegetarian': false,
     'vegan': false,

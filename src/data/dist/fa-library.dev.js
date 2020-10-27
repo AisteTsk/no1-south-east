@@ -13,6 +13,6 @@ var _freeBrandsSvgIcons = require("@fortawesome/free-brands-svg-icons");
 
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 
-var _default = _fontawesomeSvgCore.library.add(_freeSolidSvgIcons.faUtensils, _freeSolidSvgIcons.faGlassCheers, _freeSolidSvgIcons.faFilter, _freeSolidSvgIcons.faSearch);
+var _default = _fontawesomeSvgCore.library.add(_freeSolidSvgIcons.faUtensils, _freeSolidSvgIcons.faGlassCheers, _freeSolidSvgIcons.faFilter, _freeSolidSvgIcons.faSearch, _freeSolidSvgIcons.faSearchLocation);
 
 exports["default"] = _default;

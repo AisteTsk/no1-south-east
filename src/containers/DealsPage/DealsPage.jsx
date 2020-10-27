@@ -6,6 +6,7 @@ import CardList from "../../components/CardList";
 import FilterButton from '../../component/filterFunctionality/FilterButton';
 import SearchBar from '../../component/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../component/filterFunctionality/FeedbackPanel';
+import Location from '../../component/filterFunctionality/Location';
 
 //  data
 import restaurants from "../../data/restaurants";
@@ -79,6 +80,32 @@ const DealsPage = () => {
       };
     
       const matchingRestaurants = filteredList.filter(checkRestaurantName);
+                
+      const sortLocation = (userLocation) => {
+        
+        // store the API key as a const
+        const googleAPIKey = 'AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro';
+
+        // grab all the restaurant locations store an array?
+        const destinations = matchingRestaurants.map(restaurant => restaurant.location)
+        const destinationsString = destinations.join('|');
+        
+        // create the API URL query string using userlocation, restaurant locations and API key
+        const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${userLocation}&destinations=${destinationsString}&key=${googleAPIKey}`;
+        const testurl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=51.5253954,0.1790877&destinations=51.474333,0.044083&key=AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro"
+        // do fetch request, parse data and store somewhere
+        fetch(testurl)
+          .then(res => {
+            res.json();
+          }).then(data => {
+            console.log(data);
+          }).catch((error) => {
+            console.log(error);
+          })
+       
+        // use distance returned to sort restaurant array - might need to add a distance property to each restaurant object 
+      }
+
 
       const contentJsx = matchingRestaurants.length ? (
         <CardList restaurants={matchingRestaurants} />
@@ -93,7 +120,8 @@ const DealsPage = () => {
         <>
           <div className={styles.searchbar}>
             <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>   
-            <FilterButton filterRestaurants={filterRestaurants}/>    
+            <FilterButton filterRestaurants={filterRestaurants}/>   
+            <Location sortLocation={sortLocation}/> 
           </div>
         <section>
             {contentJsx}

@@ -11,7 +11,7 @@ const restaurants = [
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
         'maximumTableSize': 4,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
-        'location': `51°28'27.6"N 0°02'38.7"E`,
+        'location': `51.474333,0.044083`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['tapas', 'mediterranean']
     },
@@ -28,7 +28,7 @@ const restaurants = [
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         'maximumTableSize': 4,
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
-        'location': `51°28'27.6"N 0°02'40.7"E`,
+        'location': `51.474333,0.044639`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
         'cuisine': 'american'
     },
@@ -44,7 +44,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
         'maximumTableSize': 2,
-        'location': `51°28'27.6"N 0°02'38.7"E`,
+        'location': `51.474333,0.044083`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine' : 'seafood'
@@ -62,7 +62,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         'maximumTableSize': 6,
-        'location': `51°27'10"N 0°13'50"W`,
+        'location': `51.452778,-0.230556`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['chinese', 'japanese']
@@ -80,7 +80,7 @@ const restaurants = [
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','sunday'],
         'maximumTableSize': 6,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
-        'location': `51°27'10"N 0°13'20"W`,
+        'location': `51.452778,-0.222222`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['mexican', 'spanish']
     },
@@ -95,7 +95,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
         'maximumTableSize': 4,
-        'location': `51°27'12"N 0°11'20"W`,
+        'location': `51.453333,-0.188889`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['italian', 'spanish']
@@ -112,7 +112,7 @@ const restaurants = [
         'daysAvailable': ['wednesday', 'thursday','sunday'],
         'maximumTableSize': 6,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
-        'location': `51°28'9.3"N 0°11'20"W`,
+        'location': `51.469250,-0.188889`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': 'Thai'
     },
@@ -129,7 +129,7 @@ const restaurants = [
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','sunday'],
         'maximumTableSize': 6,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false}, 
-        'location': `51°28'9.3"N 0°12'05"W`,
+        'location': `51.469250,-0.201389`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['Mexican', 'American']
     },
@@ -147,7 +147,7 @@ const restaurants = [
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','saturday'],
         'maximumTableSize': 6,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
-        'location': `51°28'9.3"N 0°15'05"W`,
+        'location': `51.469250,-0.251389`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
         'cuisine': ['Mexican', 'American']
     },
@@ -164,7 +164,7 @@ const restaurants = [
         'daysAvailable': ['wednesday', 'thursday','friday', 'saturday', 'sunday'],
         'maximumTableSize': 5,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': true}, 
-        'location': `51°24'9.3"N 0°15'11"W`,
+        'location': `51.402583,-0.253056`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
         'cuisine': ['spanish', 'italian']
     },
@@ -180,7 +180,7 @@ const restaurants = [
         'happyHour': false,
         'daysAvailable': ['friday', 'saturday', 'sunday'],
         'maximumTableSize': 5,
-        'location': `51°24'9.3"N 0°06'11"W`,
+        'location': `51.402583,-0.103056`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false},
         'sitting': {'breakfast': false, 'lunch': false, 'dinner': true},
         'cuisine': 'italian'
@@ -197,7 +197,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         'maximumTableSize': 2,
-        'location': `51°27'9.3"N 0°06'11"W`,
+        'location': `51.452583,-0.103056`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': false, 'halal': false, 'glutenfree': true, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['american', 'british']
@@ -213,7 +213,7 @@ const restaurants = [
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
         'maximumTableSize': 4,
-        'location': `51°29'10"N 0°06'12.1"W`,
+        'location': `51.486111,-0.103361`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': 'spanish'
@@ -230,7 +230,7 @@ const restaurants = [
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         'maximumTableSize': 6,
-        'location': `51°29'13.8"N 0°06'15"W`,
+        'location': `51.487167,-0.104167`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': false, 'glutenfree': false, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': false, 'dinner': false},
         'cuisine': 'tapas'
@@ -246,7 +246,7 @@ const restaurants = [
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         'maximumTableSize': 6,
-        'location': `51°22'13.8"N 0°05'15"W`,
+        'location': `51.370500,-0.087500`,
         'dietaryRequirements': {'vegetarian': false, 'vegan': true, 'halal': false, 'glutenfree': true, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas']
@@ -262,11 +262,11 @@ const restaurants = [
         'happyHour': false,
         'daysAvailable': ['tuesday', 'thursday'],
         'maximumTableSize': 12,
-        'location': `51°29'13.1"N 0°05'15.3"W`,
+        'location': `51.486972,-0.087583`,
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'diaryfree': false},
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
         'cuisine': 'mediterranean'
-    },
+    }
 ]
 
 
