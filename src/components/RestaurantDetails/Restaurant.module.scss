@@ -1,15 +1,28 @@
+@import '../../sass/abstracts/variables';
+
+*{
+    background-color: $color-green;
+    color: $color-white;
+
+}
+
 .RestaurantDetails {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-top: auto;
     padding: 10px;
-    
-    .container {
+
+    .imageLogo {
         display: flex;
-        width: 100%;
+        width: 60%;
 
-
+        .responsiveImageLogo {
+            height: auto;
+            width: 100%;
+        }
+    }
         .image {
             display: flex;
             width: 50%;
@@ -19,39 +32,31 @@
                 width: 100%;
             }
         }
-
-        .flexCol {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
     
             button {
                 width: 100%;
-                height: 100px;
+                height: 50px;
                 font-size: 20px;
-                background-color: #186E62;
-                color: rgb(245, 222, 200);
+                background-color:$color-pink;
+                color: $color-white;
                 font-size: 20px;
+                border-radius: 5%;
             }
             p {
                 display: flex;
                 width: 100%;
                 height: 100%;
-                font-size: 20px;
+                font-size: 15px;
                 justify-content: center;
                 align-items: center;
             }            
-        }
-    }
     
     h1 {
         margin-top: 10px;
         text-align: center;
+        font-size: 200%;
+
     }
 
-    .offerDets{
-        margin-top: 10px;
-    }
 }
 
