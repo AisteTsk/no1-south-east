@@ -15,7 +15,7 @@ const ImageIcon = ({data , collectFilters}) => {
     }
 
     // require(toggled)
-    const toggled = isToggle ? require(`../../../assets/image_icons/${iconActive}`) : require(`../../../assets/image_icons/${iconInactive}`);
+    const toggled = isToggle ? require(`../../../Assets/image_icons/${iconActive}`) : require(`../../../Assets/image_icons/${iconInactive}`);
 
     return (
         <span onClick={handleClick}>
