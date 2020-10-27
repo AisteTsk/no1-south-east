@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./LandingPage.module.scss";
-import imageStepOne from '../../assets/images/image1.png';
-import imageStepTwo from '../../assets/images/image2.png';
-import imageStepThree from '../../assets/images/image3.png';
+import imageStepOne from '../../assets/images/imagestep1.png';
+import imageStepTwo from '../../assets/images/imagestep2.png';
+import imageStepThree from '../../assets/images/imagestep3.png';
+import logoCutlery from "../../assets/images/logoCutlery.png";
+import imagePin from '../../assets/images/pin-white.png';
 import { Link } from "@reach/router";
 
 
