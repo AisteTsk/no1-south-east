@@ -3,6 +3,9 @@ import styles from "./Restaurant.module.scss";
 import { Link } from "@reach/router";
 import restaurants from "../../data/restaurants";
 import logo from '../../Assets/images/logo.png';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 const RestaurantDetails = (props) => {
     const { 
@@ -41,6 +44,12 @@ const RestaurantDetails = (props) => {
             <Link to="/SignUp" >   
                 <button>Get Code</button>
             </Link>
+            <span>
+            <FontAwesomeIcon icon={["fab", "instagram"]}/>
+            <FontAwesomeIcon icon={["fa", "globe"]}/>
+            <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
+            <FontAwesomeIcon icon={["fas", "envelope"]}/>
+            </span>
         </div>
     )
 }

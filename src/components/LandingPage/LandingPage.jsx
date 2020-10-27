@@ -25,13 +25,13 @@ const LandingPage = () => {
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>
                         <Link to="SignUp">
-                            <button className={styles.LandingPageButton}>Sign In ></button>
+                            <button className={styles.LandingPageButton}>Sign In</button>
                         </Link>
                         <Link to="SignUp">
-                            <button className={styles.LandingPageButton}>Register ></button>
+                            <button className={styles.LandingPageButton}>Register</button>
                         </Link>
                         <Link to="browseDeals">
-                            <button className={styles.LandingPageButton}>View Offers ></button>
+                            <button className={styles.LandingPageButton}>View Offers</button>
                         </Link>
                     </div>
                 </div>
