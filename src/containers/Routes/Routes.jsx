@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Router } from "@reach/router";
 import NotFound from "../../container/NotFound";
 import Dashboard from "../../container/Dashboard";
