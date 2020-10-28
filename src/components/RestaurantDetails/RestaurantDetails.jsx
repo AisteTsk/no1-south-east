@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./Restaurant.module.scss";
+import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import restaurants from "../../data/restaurants";
 import logo from '../../assets/images/logo.png';
@@ -99,8 +99,3 @@ const RestaurantDetails = (props) => {
 }
 
 export default RestaurantDetails;
-
-                /* <p>Dietary Profile: {dietryRequirements}</p>
-                <p>Sitting: {sitting}</p> */
-                /* <p>Discount On Food: {discountOnFood}</p>
-                <p>Discount On Drink: {discountOnDrink}</p> */

@@ -1,10 +1,5 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-// import { 
-        
-//         faHeart
-    
-//     } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import {
     faGlobe,
