@@ -4,7 +4,7 @@ import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
 import SignIn from '../../components/SignIn';
 import Register from '../../components/Register';
-import CardList from '../../components/CardList'
+import DealsPage from '../../containers/';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
 
@@ -18,10 +18,8 @@ const Routes = (props) => {
       <NotFound path="/404" />
       <SignIn path="/sign-in" /> 
       <Register path="/register" />
-      <CardList 
-        restaurants={restaurants} 
-        path="/browseDeals" />
       <RestaurantDetails path="/restaurants/:restaurantId"/>
+      <DealsPage path="/browseDeals" />
     </Router>
   );
 };

@@ -1,3 +1,9 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .gridContainer .bottomRight .LandingPageButton, .gridContainer .middle p {
   font-family: "Josefin Sans", sans-serif;
 }
