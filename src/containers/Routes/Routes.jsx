@@ -1,5 +1,8 @@
 import React from "react";
 import { Router } from "@reach/router";
+import DealsPage from "../DealsPage/DealsPage";
+//  import SignUp from '../../components/SignUp';
+// import CardList from '../../components/CardList'
 import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
 import SignIn from '../../components/SignIn';
@@ -16,10 +19,11 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <NotFound path="/404" />
+      <DealsPage 
+        path="/browseDeals" />
       <SignIn path="/sign-in" /> 
       <Register path="/register" />
       <RestaurantDetails path="/restaurants/:restaurantId"/>
-      {/* <DealsPage path="/browseDeals" /> */}
     </Router>
   );
 };

@@ -4,7 +4,10 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import {
     faGlobe,
     faEnvelope,
-    faPhoneAlt
+    faPhoneAlt,
+    faFilter,
+    faSearch,
+    faStreetView
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,6 +15,9 @@ export default library.add(
     faGlobe,
     faInstagram,
     faEnvelope,
-    faPhoneAlt
+    faPhoneAlt,
+    faFilter,
+    faSearch,
+    faStreetView
 );
 
