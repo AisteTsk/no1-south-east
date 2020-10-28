@@ -4,11 +4,10 @@
 width: 80%;
 display: flex;
 justify-content: center;
-::-webkit-calendar-picker-indicator { background: transparent;}
 margin: 10px;
 
  .Calender {
-    appearance: none;
+    // appearance: none;
     box-sizing: border-box;
     width: 80%;
     border: 1px solid $color-green;

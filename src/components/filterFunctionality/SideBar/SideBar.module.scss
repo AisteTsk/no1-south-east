@@ -5,9 +5,9 @@
   position: fixed; /* Stay in place */
   top: 10px; /* Place content 60px from the top */
   right: 10px;
-  width: 290px;
-  height: calc(100% - 20px);
-  background: $color-copper;
+  width: 320px;
+  height: calc(100% - 30px);
+  background-color: $color-copper;
   color: rgb(44, 41, 38);
   border-bottom-left-radius: 140px;
   z-index: 1; /* Stay on top */
@@ -21,7 +21,10 @@
   padding: 10px;
   padding-top: 10px;
   line-height: 1.6;
-}
+  box-sizing: initial;
+  border: initial;
+  margin: initial;
+
 
   .closebtn {
     position: absolute;
@@ -36,3 +39,4 @@
 .icons 
 {display: flex;
 justify-content: space-around}
+}

@@ -38,7 +38,9 @@ const DealsPage = () => {
 
               // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
               if(filterParameters[`${parameterKey}`][`${subParameter}`]){
+                console.log(filterParameters, subParameterKeys)
                 filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
+                
               }
             });
           } else if (typeof filterParameters[`${parameterKey}`] === 'string') {
