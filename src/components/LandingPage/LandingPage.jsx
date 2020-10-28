@@ -24,10 +24,10 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>
-                        <Link to="SignUp">
+                        <Link to="sign-in">
                             <button className={styles.LandingPageButton}>Sign In ></button>
                         </Link>
-                        <Link to="SignUp">
+                        <Link to="register">
                             <button className={styles.LandingPageButton}>Register ></button>
                         </Link>
                         <Link to="browseDeals">
