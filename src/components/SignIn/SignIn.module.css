@@ -22,13 +22,13 @@
   margin-top: 10px;
 }
 .page .logoContainer img {
-  height: 115px;
-  width: 215px;
+  height: 80px;
+  width: 140px;
 }
 .page .form {
   display: flex;
   background-color: #ffffff;
-  width: 50%;
+  width: 80vw;
   height: 70vh;
   margin: auto;
   flex-direction: column;
@@ -36,10 +36,11 @@
   justify-content: center;
   text-align: center;
   border: 8px solid #CF6B58;
+  margin: 0 auto;
 }
 .page .form .signin h3 {
   height: auto;
-  font-size: 54px;
+  font-size: 35px;
   color: #233D2A;
   cursor: default;
   line-height: 2.5rem;
@@ -47,7 +48,7 @@
 .page .form .signin input {
   padding: 10px;
   margin: 10px 0;
-  width: 275px;
+  width: 200px;
   border-bottom: 2px solid black;
   font-size: 18px;
   outline: none;
@@ -102,28 +103,28 @@
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
 }
 
-@media (max-width: 900px) {
+@media (min-height: 800px) {
+  .page .logoContainer img {
+    height: 110px;
+    width: 200px;
+  }
+}
+@media (min-width: 720px) {
   .page .form .signin h3 {
     font-size: 45px;
   }
-}
-@media (max-width: 720px) {
-  .page .form .signin h3 {
-    font-size: 35px;
-  }
   .page .form .signin input {
     width: 200px;
   }
 }
-@media (max-width: 600px) {
+@media (min-width: 900px) {
   .page .form {
-    width: 80vw;
-    margin: 0 auto;
+    width: 50%;
   }
   .page .form .signin h3 {
-    font-size: 35px;
+    font-size: 54px;
   }
   .page .form .signin input {
-    width: 200px;
+    width: 275px;
   }
 }

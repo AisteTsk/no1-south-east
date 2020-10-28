@@ -19,13 +19,13 @@ const Register = () => {
                             <input type="text" placeholder="Last Name" required />
                         </div>
                         <div className={styles.form_container}>
-                        <input type="text" name="email" placeholder="Email Address" required />
-                        <input type="text" name="password" placeholder="Password" required />
+                            <input type="text" name="email" placeholder="Email Address" required />
+                            <input type="text" name="password" placeholder="Password" required />
                         </div>
                         <p>By signing up you agree to our
-                        <p className={styles.terms}>
-                            <Link to="terms-and-conditions">Terms and Conditions</Link>
-                        </p> 
+                            <p className={styles.terms}>
+                                <Link to="terms-and-conditions">Terms and Conditions</Link>
+                            </p> 
                         </p>
                         <button type="submit" className={styles.register_btn}>Register</button>
                     </form>

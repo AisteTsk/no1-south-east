@@ -10,24 +10,23 @@
   background-color: $color-green;
 
   .logoContainer {
-      width: 100%;
-      display: flex;
-      position: absolute;
-      top: 0;
-      justify-content: center;
-      margin-top: 10px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    margin-top: 10px;
 
-      img {
-        height: 115px;
-        width: 215px;
+    img {
+      height: 80px;
+      width: 140px;
     }
   }
- 
 
   .form {
     display: flex;
     background-color: $color-white;
-    width: 50%;
+    width: 80vw;
     height: 70vh;
     margin: auto;
     flex-direction: column;
@@ -35,11 +34,12 @@
     justify-content: center;
     text-align: center;
     border: 8px solid $color-copper;
+    margin: 0 auto;
 
     .signin {
       h3 {
         height: auto;
-        font-size: 54px;
+        font-size: 35px;
         color: $color-green;
         cursor: default;
         line-height: 2.5rem;
@@ -48,7 +48,7 @@
       input {
         padding: 10px;
         margin: 10px 0;
-        width: 275px;
+        width: 200px;
         border-bottom: 2px solid black;
         font-size: 18px;
         outline: none;
@@ -113,26 +113,24 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (min-height: 800px) {
+  .page {
+    .logoContainer {
+      img {
+        height: 110px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) {
   .page {
     .form {
       .signin {
         h3 {
           font-size: 45px;
         }
-      }
-    }
-  }
-}
-@media (max-width: 720px) {
-  .page {
-    .form {
-      .signin {
-        // width: 80vw;
-
-        h3 {
-          font-size: 35px;
-        }
 
         input {
           width: 200px;
@@ -142,18 +140,17 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 900px) {
   .page {
     .form {
-      width: 80vw;
-      margin: 0 auto;
-
+      width: 50%;
+      
       .signin {
         h3 {
-          font-size: 35px;
+          font-size:  54px;
         }
         input {
-          width: 200px;
+          width: 275px;
         }
       }
     }
