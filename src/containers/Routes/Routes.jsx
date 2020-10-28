@@ -1,10 +1,13 @@
 import React from "react";
 import { Router } from "@reach/router";
-import NotFound from "../../containers/NotFound";
-import Dashboard from "../../containers/Dashboard";
 import DealsPage from "../DealsPage/DealsPage";
 //  import SignUp from '../../components/SignUp';
 // import CardList from '../../components/CardList'
+import NotFound from "../NotFound";
+import Dashboard from "../Dashboard";
+import SignIn from '../../components/SignIn';
+import Register from '../../components/Register';
+// import DealsPage from '../../containers';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
 
@@ -18,6 +21,8 @@ const Routes = (props) => {
       <NotFound path="/404" />
       <DealsPage 
         path="/browseDeals" />
+      <SignIn path="/sign-in" /> 
+      <Register path="/register" />
       <RestaurantDetails path="/restaurants/:restaurantId"/>
     </Router>
   );
