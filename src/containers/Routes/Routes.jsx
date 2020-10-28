@@ -1,10 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
-import NotFound from "../../containers/NotFound";
-import Dashboard from "../../containers/Dashboard";
-// import DealsPage from '../DealsPage';
-//  import SignUp from '../../components/SignUp';
-import CardList from '../../components/CardList'
+import NotFound from "../NotFound";
+import Dashboard from "../Dashboard";
+import DealsPage from '../DealsPage';
+import SignUp from '../../components/SignUp';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
 
@@ -16,10 +15,9 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <NotFound path="/404" />
-      <CardList 
-        restaurants={restaurants} 
-        path="/browseDeals" />
-      <RestaurantDetails path="/restaurants/:restaurantId"/>
+      <DealsPage path="/browseDeals" />
+      <SignUp path="/SignUp" />
+      <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/>
     </Router>
   );
 };

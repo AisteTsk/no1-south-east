@@ -16,7 +16,7 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.bottomLeft}></div>
                 <div className={styles.middle}>
-                    <p>No.1 South East</p>
+                    <p>No.1 South West</p>
                 </div>
                 <div className={styles.topRight}></div>
                 <div className={styles.bottomRightMobile}>
@@ -24,8 +24,8 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>
-                        <Link to="SignUp">
-                            <button className={styles.LandingPageButton}>Sign In</button>
+                        <Link to="sign-in">
+                            <button className={styles.LandingPageButton}>Sign In ></button>
                         </Link>
                         <Link to="register">
                             <button className={styles.LandingPageButton}>Register ></button>
