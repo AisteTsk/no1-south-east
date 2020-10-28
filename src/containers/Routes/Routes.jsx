@@ -1,9 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
-import NotFound from "../../container/NotFound";
-import Dashboard from "../../container/Dashboard";
+import NotFound from "../../containers/NotFound";
+import Dashboard from "../../containers/Dashboard";
 // import DealsPage from '../DealsPage';
-// import SignUp from '../../components/SignUp';
+//  import SignUp from '../../components/SignUp';
 import CardList from '../../components/CardList'
 import RestaurantDetails from '../../components/RestaurantDetails';
 
