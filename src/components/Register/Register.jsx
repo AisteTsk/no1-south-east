@@ -8,7 +8,9 @@ const Register = () => {
     return(
         <div className={styles.page}>
             <div className={styles.logoContainer}>
-                <img src={Logo} />
+                <Link to="/">
+                    <img src={Logo} />
+                </Link>
             </div>
             <div className={styles.form}>
                 <div className={styles.register}>
