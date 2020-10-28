@@ -18,7 +18,7 @@ const DealsPage = () => {
     const [filteredList, setFilteredList] = useState(restaurants);
 
     const filterRestaurants = (filterParameters) => {
-
+      
       // here we grab the list of filter keys from the filterParameters object - we will cycle over them below
         const filterParameterKeys = Object.keys(filterParameters);
 
@@ -43,7 +43,6 @@ const DealsPage = () => {
             });
           } else if (typeof filterParameters[`${parameterKey}`] === 'string') {
             // grab date strings and convert to date objects for comparison and filter.
-            
             const filterDate = new Date(filterParameters[`${parameterKey}`]).getTime();
 
             filteredRestaurants = filteredRestaurants.filter(restaurant => {
@@ -56,7 +55,6 @@ const DealsPage = () => {
             filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant.maximumTableSize >= filterParameters[`${parameterKey}`]);
           }
         });
-
         setFilteredList(filteredRestaurants);
 
         // do ALL the filtering here

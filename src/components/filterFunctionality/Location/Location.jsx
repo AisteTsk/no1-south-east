@@ -19,11 +19,11 @@ const Location = ({sortLocation}) => {
         }
     }
         
-        const sharedPos = userPosition.length? null : <p>Please share your location</p>
+        const sharedPos = userPosition.length? null : <p className={styles.location}>Please click above to share your location</p>
         
     return (
         <div>
-            <span onClick={getLocation}><FontAwesomeIcon icon="search-location" /></span>
+            <span className={styles.fa} onClick={getLocation}><FontAwesomeIcon icon="street-view" className={styles.fa} /></span>
             {sharedPos}
         </div>
     );

@@ -40,7 +40,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
 
     // map loops for all component rendering - this one is for deal icons
     const renderDealTypeIcons = dealTypeIcons.map(deal => {
-        return <Icon data={deal} collectFilters={collectFilters} key={deal.id}/>
+        return <ImageIcon data={deal} collectFilters={collectFilters} key={deal.id}/>
     });
 
     // and this one is for meal type icons (breakfast, lunch, dinner)
@@ -75,7 +75,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
             </div>
             <hr/>
             <div id="deal-type">
-                <p>Do you want a deal on a meal or bevvies?</p>
+                <p>Discount on food or drink?</p>
                 <div className={styles.icons}>{renderDealTypeIcons}</div>
             </div>
             <hr/>
@@ -90,5 +90,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         </div>    
     )
 }
+
+
 
 export {SideBar as default};

@@ -1,11 +1,11 @@
+@import '../../../sass/abstracts/variables';
 
 button {
     height: 60px;
     width: 60px;
     border-radius: 12px;
-    background-color: #186E62;
-    color: rgb(245, 222, 200);
+    background-color: $color-green;
+    color: $color-white;
     font-size: 20px;
     margin-top: 10px;
-
 }

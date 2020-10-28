@@ -11,8 +11,8 @@ const Calendar = ({collectFilters, filterType}) => {
     }
 
     return (
-        <form id="chooseEatDate">
-            <input type="date" name="diningDate" min={formatToday} onChange={handleChange}/>
+        <form id="chooseEatDate" className={styles.CalendarContainer}>
+            <input type="date" name="diningDate" min={formatToday} className={styles.Calendar} onChange={handleChange}/>
         </form>
     )
 }

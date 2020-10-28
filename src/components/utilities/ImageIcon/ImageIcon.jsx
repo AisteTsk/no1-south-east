@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ImageIcon.module.scss';
-
 
 const ImageIcon = ({data , collectFilters}) => {
     
@@ -13,7 +12,7 @@ const ImageIcon = ({data , collectFilters}) => {
         setIsToggle(!isToggle);
         collectFilters(filterType, subFilter, !isToggle);
     }
-
+    
     // require(toggled)
     const toggled = isToggle ? require(`../../../assets/image_icons/${iconActive}`) : require(`../../../assets/image_icons/${iconInactive}`);
 

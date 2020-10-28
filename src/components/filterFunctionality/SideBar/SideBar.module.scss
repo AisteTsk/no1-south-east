@@ -1,35 +1,36 @@
 /* The side navigation menu */
+@import '../../../sass/abstracts/variables';
+
 .filtermenu {
   position: fixed; /* Stay in place */
-  top: 40px; /* Place content 60px from the top */
+  top: 10px; /* Place content 60px from the top */
   right: 10px;
   width: 290px;
-  height: calc(100% - 70px);
-  background: #CF6B58;
+  height: calc(100% - 20px);
+  background: $color-copper;
   color: rgb(44, 41, 38);
-  border-bottom-left-radius: 180px;
+  border-bottom-left-radius: 140px;
   z-index: 1; /* Stay on top */
   overflow-x: hidden; /* Disable horizontal scroll */ 
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: space-around;
   padding: 10px;
-  padding-top: 90px;
+  padding-top: 10px;
   line-height: 1.6;
-
 }
 
   .closebtn {
     position: absolute;
-    top: 0;
-    right: 15px;
-    font-size: 36px;
+    top: -15px;
+    right: 5px;
+    font-size: 42px;
     margin-left: 50px;
     text-decoration: none;
-    color: #186E62;
+    color:$color-green;
   }
 
 .icons 
