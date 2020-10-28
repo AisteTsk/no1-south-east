@@ -2,8 +2,8 @@ import React from "react";
 import { Router } from "@reach/router";
 import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
-import DealsPage from '../DealsPage';
-import SignUp from '../../components/SignUp';
+// import DealsPage from '../DealsPage';
+// import SignUp from '../../components/SignUp';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
 
@@ -15,8 +15,8 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <NotFound path="/404" />
-      <DealsPage path="/browseDeals" />
-      <SignUp path="/SignUp" />
+      {/* <DealsPage path="/browseDeals" /> */}
+      {/* <SignUp path="/SignUp" /> */}
       <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/>
     </Router>
   );
