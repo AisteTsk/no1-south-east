@@ -19,7 +19,7 @@ const FilterButton = ({filterRestaurants}) => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
+            <button className={styles.filterButton} onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
 
             <div className="filterMenu">
                 {filterMenu}
