@@ -1,10 +1,5 @@
 @import '../../sass/abstracts/variables';
 @import '../../sass/base/typography';
-*{
-    background-color: $color-green;
-    color: $color-white;
-    @extend %main-font;
-}
 
 .RestaurantDetails {
     display: flex;
