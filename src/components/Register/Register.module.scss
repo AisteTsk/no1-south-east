@@ -168,18 +168,3 @@
     }
   }
 }
-
-@media (max-width: 400px) {
-  .page {
-    .form {
-      width: 80%;
-
-      .register {
-        input {
-          padding: 8px 10px;
-          width: 150px;
-        }
-      }
-    }
-  }
-}

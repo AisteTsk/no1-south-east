@@ -133,12 +133,3 @@
     width: 150px;
   }
 }
-@media (max-width: 400px) {
-  .page .form {
-    width: 80%;
-  }
-  .page .form .register input {
-    padding: 8px 10px;
-    width: 150px;
-  }
-}

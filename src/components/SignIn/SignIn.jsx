@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import styles from './SignIn.module.scss'
-import Logo from "../../Assets/images/Homepagelogo.png"
+import Logo from "../../assets/images/Homepagelogo.png"
 
 const SignIn = () => {
 
