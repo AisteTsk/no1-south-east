@@ -1,5 +1,17 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import {faUtensils, faGlassCheers, faFilter, faSearch} from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+    faGlobe,
+    faEnvelope,
+    faPhoneAlt
 
-export default library.add(faUtensils, faGlassCheers, faFilter, faSearch);
+} from "@fortawesome/free-solid-svg-icons";
+
+export default library.add(
+    faGlobe,
+    faInstagram,
+    faEnvelope,
+    faPhoneAlt
+);
+
