@@ -7,6 +7,7 @@
     align-items: center;
     margin-top: auto;
     padding: 10px;
+    background-color: $color-green;
 
     .dietaryImages {
         display: flex;
@@ -26,11 +27,11 @@
         justify-content: space-evenly;
         font-size: 25px;
         width:60%;
+        color: $color-white;
 
 
         .span{
             width:100%;
-
         }
     }
 
@@ -50,26 +51,28 @@
         padding: 1%;
 
         .responsiveImage {
-             height: auto;
+            height: auto;
             width: 100%;
         }
     }
     
     button {
-    width: 100%;
     height: 50px;
     font-size: 20px;
     background-color:$color-pink;
     color: $color-white;
     font-size: 20px;
     border-radius: 5%;
+    padding: 10px;
     }
+
     p {
     display: flex;
     text-align: left;
     width: 60%;
     height: 100%;
     font-size: 15px;
+    color: $color-white;
     // align-items: center;
     // justify-content: center;
 
@@ -81,7 +84,17 @@
         text-align: center;
         font-size: 300%;
         border-bottom: 2px white solid;
+        color: $color-white;
     }
+}
 
+@media (min-width:750px) {
+    .RestaurantDetails{
+
+        .dietaryImages {
+            width: 30%;
+            
+        }
+    }    
 }
 

@@ -32,27 +32,27 @@ const RestaurantDetails = (props) => {
     
     const dietaryRequirementsVegetarian = () => {
         if (dietaryRequirements.vegetarian == true) {
-            return (<img  src={vegetarian} alt="vegan option"/>)
+            return ('Vegetarian')
             } 
         }
     const dietaryRequirementsVegan = () => {
         if (dietaryRequirements.vegan == true) {
-            return (<img  src={vegan} alt="vegan option"/>)
+            return ('Vegan')
             } 
         }
     const dietaryRequirementsGlutenFree = () => {
         if (dietaryRequirements.glutenfree == true){
-            return (<img  src={glutenfree} alt="glutenfree option"/>)
+            return ('glutenfree')
                 } 
             }
     const dietaryRequirementsHalal = () => {
         if (dietaryRequirements.halal == true) {
-            return (<img  src={halal} alt="glutenfree option"/>)
+            return ('Halal')
             }
         }
     const dietaryRequirementsDiaryFree = () => {
             if (dietaryRequirements.diaryfree == true) {
-                return (<img  src={dairyfree} alt="glutenfree option"/>)
+                return ('diaryfree')
                 }
             }      
 
@@ -75,21 +75,22 @@ const RestaurantDetails = (props) => {
             <p>Email Address: {email}</p>
             <p>Valid until: {validUntil}</p>
             <p>Days Avalible: {daysAvailable.toString()}</p>
-            <p>Maximim Table Size: {maximumTableSize}</p>
-            <span className={styles.dietaryImages}>
-                {dietaryRequirementsVegan()}
-                {dietaryRequirementsVegetarian()}
-                {dietaryRequirementsGlutenFree()}
-                {dietaryRequirementsHalal()}
+            <p>Maximim Table Size: {maximumTableSize}</p>            
+            <p> {dietaryRequirementsVegan()},               
+                {dietaryRequirementsVegetarian()},
+                {dietaryRequirementsGlutenFree()},
+                {dietaryRequirementsHalal()},
                 {dietaryRequirementsDiaryFree()}
-            </span>
+            </p>
             <span className={styles.fontawesomeContainer}>
                 <span>
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
                 </span>
                 <FontAwesomeIcon icon={["fa", "globe"]}/>
                 <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
-                <FontAwesomeIcon icon={["fas", "envelope"]}/>
+                <a href={"mailto:`${email}`subject=test%20email"} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fas", "envelope"]} />
+                </a>
             </span>
             <Link to="/SignUp" >   
                 <button>Get Code</button>
