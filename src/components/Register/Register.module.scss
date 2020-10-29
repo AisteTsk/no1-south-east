@@ -65,6 +65,15 @@
         margin: 3px 0;
       }
 
+      .faqs {
+        font-size: 15px;
+        margin-top: 10px;
+
+        :link {
+          margin-left: 4px;
+        }
+      }
+
       .register_btn {
         font-size: 22px;
         height: 30px;
@@ -72,7 +81,7 @@
         background-color: $color-lightgreen;
         color: $color-white;
         cursor: pointer;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
 
         &:hover {
           background-color: $color-green;
@@ -84,7 +93,7 @@
       p {
         font-size: 19px;
         color: black;
-        margin-top: 20px;
+        margin-top: 10px;
 
         button {
           font-size: 18px;

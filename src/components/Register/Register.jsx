@@ -26,7 +26,7 @@ const Register = () => {
                         </div>
                         <p>By signing up you agree to our
                             <p className={styles.terms}>
-                                <Link to="terms-and-conditions">Terms and Conditions</Link>
+                                <Link to="/terms-and-conditions">Terms and Conditions</Link>
                             </p> 
                         </p>
                         <button type="submit" className={styles.register_btn}>Register</button>
@@ -35,6 +35,9 @@ const Register = () => {
                         <Link to="/sign-in">
                             <button>Sign in</button>
                         </Link>
+                    </p>
+                    <p className={styles.faqs}>Feeling inquisitive? Check out our
+                        <Link to="/faq">FAQ's</Link>
                     </p>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const SignIn = () => {
                         <button type="submit" className={styles.sign_in_btn}>Sign in</button>
                     </form>
                     <p className={styles.terms}>
-                        <Link to="terms-and-conditions">Terms and Conditions</Link>
+                        <Link to="/terms-and-conditions">Terms and Conditions</Link>
                     </p>                
                     <p>New to the area?
                         <Link to="/register">
