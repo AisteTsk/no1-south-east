@@ -8,9 +8,7 @@ import Register from '../../components/Register';
 // import DealsPage from '../../containers';
 import RestaurantDetails from '../../components/RestaurantDetails';
 
-import restaurants from '../../data/restaurants';
-
-const Routes = (props) => {
+const Routes = () => {
   
   return (
     <Router>

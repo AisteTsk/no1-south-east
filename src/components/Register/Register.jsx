@@ -9,7 +9,7 @@ const Register = () => {
         <div className={styles.page}>
             <div className={styles.logoContainer}>
                 <Link to="/">
-                    <img src={Logo} />
+                    <img src={Logo} alt="no1se-logo" />
                 </Link>
             </div>
             <div className={styles.form}>
