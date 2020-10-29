@@ -73,6 +73,7 @@
 
         img {
             transform: rotate(-50deg);
+            height: 50px;
         }
     }
 
@@ -88,30 +89,17 @@
             text-align: left;
             margin: 20px 10px;
             height: 35px;
-            border-radius: 15px;
+            border-radius: 2px;
             border: none;
             color: $color-white;
             transition: 0.3s ease;
             @extend %main-font;
             font-size: 10px;
             background-color: $color-copper;
-            box-shadow: 0 10px $color-darkercopper;
             width: 90px;
             text-align: center;
             align-items: center;
             
-        
-            &:hover {
-                box-shadow: 0 8px $color-darkercopper;
-                transform: translateY(1px);
-            }
-            &:active {
-                background-color: $color-darkercopper;
-                box-shadow: 0 5px $color-darkercopper;
-                transform: translateY(4px);
-                text-decoration: none;
-                outline: none;
-            }
             &:focus {
                 outline: none;
                 border: none;
