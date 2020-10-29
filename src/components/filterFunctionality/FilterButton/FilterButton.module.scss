@@ -1,0 +1,13 @@
+@import '../../../sass/abstracts/variables';
+
+.filter {
+    button {
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    background-color: $color-green;
+    color: $color-white;
+    font-size: 20px;
+    margin-top: 10px;
+    }
+}

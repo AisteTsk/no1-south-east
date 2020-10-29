@@ -1,9 +1,12 @@
 .searchbar {
-  width: 320px;
+  width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 .searchbar input {
-  width: 270px;
+  width: 291px;
+  height: 40px;
 }

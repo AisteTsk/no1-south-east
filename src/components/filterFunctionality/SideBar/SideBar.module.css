@@ -1,0 +1,42 @@
+/* The side navigation menu */
+.filtermenu {
+  position: fixed;
+  /* Stay in place */
+  top: 10px;
+  /* Place content 60px from the top */
+  right: 10px;
+  width: 290px;
+  height: calc(100% - 20px);
+  background: #CF6B58;
+  color: #2c2926;
+  border-bottom-left-radius: 140px;
+  z-index: 1;
+  /* Stay on top */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  padding: 10px;
+  padding-top: 10px;
+  line-height: 1.6;
+}
+
+.closebtn {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  font-size: 42px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: #186E62;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import { Router } from "@reach/router";
+import DealsPage from "../DealsPage/DealsPage";
 import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
-import DealsPage from '../DealsPage';
-import SignUp from '../../components/SignUp';
+import SignIn from '../../components/SignIn';
+import Register from '../../components/Register';
+// import DealsPage from '../../containers';
 import RestaurantDetails from '../../components/RestaurantDetails';
-
-import restaurants from '../../data/restaurants';
 
 const Routes = () => {
   
@@ -15,12 +15,11 @@ const Routes = () => {
       <Dashboard path="/" />
       <NotFound path="/404" />
       <DealsPage path="/browseDeals" />
-      <SignUp path="/SignUp" />
-      <RestaurantDetails path="/RestaurantDetails" restaurants={restaurants}/>
+      <SignIn path="/sign-in" /> 
+      <Register path="/register" />
+      <RestaurantDetails path="/restaurants/:restaurantId"/>
     </Router>
   );
 };
 
 export default Routes;
-
-
