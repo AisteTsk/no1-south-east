@@ -8,7 +8,9 @@ const SignIn = () => {
     return(
         <div className={styles.page}>
             <div className={styles.logoContainer}>
-                <img src={Logo} />
+                <Link to="/">
+                    <img src={Logo} alt="no1se-logo" />
+                </Link>
             </div>
             <div className={styles.form}>
                 <div className={styles.signin}>

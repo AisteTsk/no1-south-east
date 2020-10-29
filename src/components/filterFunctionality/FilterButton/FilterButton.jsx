@@ -18,13 +18,13 @@ const FilterButton = ({filterRestaurants}) => {
     const filterMenu = isOpen ? <SideBar closeFilterMenu={closeFilterMenu} filterRestaurants={filterRestaurants} /> : null;
 
     return (
-        <>
-            <button className={styles.filterButton} onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
+        <div className={styles.filter}>
+            <button onClick={() => setIsOpen(!isOpen)}><FontAwesomeIcon icon={['fas', 'filter']} /></button>
 
             <div className="filterMenu">
                 {filterMenu}
             </div>
-        </>
+        </div>
     )
 }
 
