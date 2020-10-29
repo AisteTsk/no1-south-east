@@ -8,6 +8,8 @@
     margin-top: auto;
     padding: 10px;
     background-color: $color-green;
+    
+ 
 
     .dietaryImages {
         display: flex;
@@ -29,6 +31,13 @@
         width:60%;
         color: $color-white;
 
+    // change default link behavior
+        a { 
+            text-decoration: none;
+            color: $color-white;
+
+        }
+        
 
         .span{
             width:100%;

@@ -25,8 +25,8 @@ const RestaurantDetails = (props) => {
         sitting,
         phoneNumber,
         email
+        
     } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
-
 
     // function for each diary requirment image - can be improved
     
@@ -70,7 +70,12 @@ const RestaurantDetails = (props) => {
             <p>Offer {offerPercent}</p>
             <p>Restaurant Info</p>
             <p>Cuisine: {cuisine}</p>
-            <p>sitting: {sitting.toString()}</p>
+            
+            {/* not right yet */}
+            
+            {/* <p>sitting: {sitting[0]}</p> */}
+
+
             <p>Phone Number: {phoneNumber}</p>
             <p>Email Address: {email}</p>
             <p>Valid until: {validUntil}</p>
@@ -83,12 +88,16 @@ const RestaurantDetails = (props) => {
                 {dietaryRequirementsDiaryFree()}
             </p>
             <span className={styles.fontawesomeContainer}>
-                <span>
+                <a href="www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
-                </span>
-                <FontAwesomeIcon icon={["fa", "globe"]}/>
-                <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
-                <a href={"mailto:`${email}`subject=test%20email"} target="_blank" rel="noopener noreferrer">
+                </a>
+                <a href="www.google.com" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fa", "globe"]}/>
+                </a>
+                <a href={`tel: ${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
+                </a>
+                <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fas", "envelope"]} />
                 </a>
             </span>
