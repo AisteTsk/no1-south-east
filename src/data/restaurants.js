@@ -3,7 +3,7 @@ const restaurants = [
         "restaurantId": 1,
         'name': `Ollie's Oysterhouse`,
         'offerPercent': '30%',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'validUntil': '31 Nov 2020',
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
@@ -16,16 +16,17 @@ const restaurants = [
         'cuisine': ['tapas', 'mediterranean'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     
     {
         'restaurantId': 2,
         'name': `Billy Big Burgers`,
         'offerPercent': '15%',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'validUntil': '31 Nov 2020',
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
@@ -38,16 +39,17 @@ const restaurants = [
         'cuisine': ['american'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
 
     {
         "restaurantId": 3,
         'name': `The big Crab`,
         'offerPercent': '25%',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'validUntil': '31 Apr 2021',
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
@@ -60,10 +62,10 @@ const restaurants = [
         'cuisine' : ['seafood'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
-        
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     
     {
@@ -71,7 +73,7 @@ const restaurants = [
         'name': `The Friendly Shark`,
         'offerPercent': '25%',
         'validUntil': '31 Mar 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
@@ -83,9 +85,10 @@ const restaurants = [
         'cuisine': ['chinese', 'japanese'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     
     {
@@ -93,7 +96,7 @@ const restaurants = [
         'name': `Caddy Shack`,
         'offerPercent': '80%',
         'validUntil': '31 May 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': true,
@@ -105,16 +108,17 @@ const restaurants = [
         'cuisine': ['mexican', 'spanish'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     {
         "restaurantId": 6,
         'name': `The Lovely Wolf`,
         'offerPercent': '15%',
         'validUntil': '31 Sep 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': true,
@@ -126,16 +130,18 @@ const restaurants = [
         'cuisine': ['italian', 'spanish'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
+
     {
         'restaurantId': 7,
         'name': `Thai Delight`,
         'offerPercent': '10%',
         'validUntil': '31 Aug 2022',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': false,
@@ -147,9 +153,10 @@ const restaurants = [
         'cuisine': ['thai'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     
     {
@@ -157,7 +164,7 @@ const restaurants = [
         'name': `Krusty Krab`,
         'offerPercent': '10%',
         'validUntil': '31 Nov 2023',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': true,
@@ -169,9 +176,10 @@ const restaurants = [
         'cuisine': ['mexican', 'american'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
 
 
@@ -180,7 +188,7 @@ const restaurants = [
         'name': `The Burger Experience`,
         'offerPercent': '80%',
         'validUntil': '31 Jun 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': false,
@@ -192,9 +200,10 @@ const restaurants = [
         'cuisine': ['mexican', 'american'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
 
     {
@@ -202,7 +211,7 @@ const restaurants = [
         'name': `Pizza Palace`,
         'offerPercent': '20%',
         'validUntil': '31 Oct 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
@@ -214,9 +223,10 @@ const restaurants = [
         'cuisine': ['spanish', 'italian'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
 
     {
@@ -224,7 +234,7 @@ const restaurants = [
         'name': `In my Grill`,
         'offerPercent': '5%',
         'validUntil': '31 Oct 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
@@ -236,9 +246,11 @@ const restaurants = [
         'cuisine': ['italian'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
+        
     },
     
     {
@@ -246,7 +258,7 @@ const restaurants = [
         'name': `Dad Bod Incoming`,
         'offerPercent': '15%',
         'validUntil': '31 Jul 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
@@ -258,16 +270,17 @@ const restaurants = [
         'cuisine': ['american', 'british'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     {
         "restaurantId": 13,
         'name': `Peters Piella`,
         'offerPercent': '15%',
         'validUntil': '31 Mar 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': true,
@@ -279,9 +292,10 @@ const restaurants = [
         'cuisine': ['spanish'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     
     {
@@ -289,7 +303,7 @@ const restaurants = [
         'name': `Crumbs & Cookies`,
         'offerPercent': '10%',
         'validUntil': '31 Dec 2020',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
@@ -301,16 +315,17 @@ const restaurants = [
         'cuisine': ['tapas'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     {
         "restaurantId": 15,
         'name': `Vegan Only`,
         'offerPercent': '10%',
         'validUntil': '31 Feb 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': false,
@@ -322,16 +337,17 @@ const restaurants = [
         'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 2343',
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     },
     {
         'restaurantId': 16,
         'name': `The Hall`,
         'offerPercent': '20%',
         'validUntil': '31 Jan 2021',
-        'offerDescription': ``,
+        'offerDescription': `Get 20% off the Total Bill Mon-Wed at Lunch and dinner. Offer available on the A La Carte Menu only.`,
         'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
@@ -343,9 +359,10 @@ const restaurants = [
         'cuisine': ['mediterranean'],
         'email': 'testemail@testemail.co.uk',
         'phoneNumber': '0234 343 237', 
-        'twitter': 'https://twitter.com/explore',
         'instagram': 'https://www.instagram.com/',
-        'website': 'https://asakusa.has.restaurant/'
+        'website': 'https://asakusa.has.restaurant/',
+        'restaurantDescription': 'The Bank was launched in 2019 and offers a wide range of luxury wines and tapas meals.',
+        'termsAndConditions': 'Bookings must be made in advance and No.1 South East should be noted in the booked and on arrival.'
     }
 ]
 
