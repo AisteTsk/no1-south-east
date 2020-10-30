@@ -20,7 +20,7 @@ const LandingPage = () => {
                 </div>
                 <div className={styles.topRight}></div>
                 <div className={styles.bottomRightMobile}>
-                    <img src={imagePin}></img>
+                    <img src={imagePin} alt={"alt goes here"}></img>
                 </div>
                 <div className={styles.bottomRight}>
                     <div className={styles.buttons}>

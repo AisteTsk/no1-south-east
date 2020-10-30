@@ -25,33 +25,33 @@ const RestaurantDetails = (props) => {
         sitting,
         phoneNumber,
         email
-    } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
+    } = restaurants.find(restaurant => restaurant.restaurantId === props.restaurantId);
 
 
     // function for each diary requirment image - can be improved
     
     const dietaryRequirementsVegetarian = () => {
-        if (dietaryRequirements.vegetarian == true) {
+        if (dietaryRequirements.vegetarian === true) {
             return (<img  src={vegetarian} alt="vegan option"/>)
             } 
         }
     const dietaryRequirementsVegan = () => {
-        if (dietaryRequirements.vegan == true) {
+        if (dietaryRequirements.vegan === true) {
             return (<img  src={vegan} alt="vegan option"/>)
             } 
         }
     const dietaryRequirementsGlutenFree = () => {
-        if (dietaryRequirements.glutenfree == true){
+        if (dietaryRequirements.glutenfree === true){
             return (<img  src={glutenfree} alt="glutenfree option"/>)
                 } 
             }
     const dietaryRequirementsHalal = () => {
-        if (dietaryRequirements.halal == true) {
+        if (dietaryRequirements.halal === true) {
             return (<img  src={halal} alt="glutenfree option"/>)
             }
         }
     const dietaryRequirementsDiaryFree = () => {
-            if (dietaryRequirements.diaryfree == true) {
+            if (dietaryRequirements.diaryfree === true) {
                 return (<img  src={dairyfree} alt="glutenfree option"/>)
                 }
             }      
