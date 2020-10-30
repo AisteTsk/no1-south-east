@@ -94,7 +94,7 @@
             color: $color-white;
             transition: 0.3s ease;
             @extend %main-font;
-            font-size: 10px;
+            font-size: 12px;
             background-color: $color-copper;
             width: 90px;
             text-align: center;
@@ -137,6 +137,7 @@
 
         p{
             padding: 5%;
+            line-height: 1.2;
         }
     }
 }
@@ -153,7 +154,7 @@
         grid-template-areas: 
             "topleft    middle topright"
             "bottomleft middle buttons";
-        padding: 3% 10% 0 10%;
+        padding: 2.4% 10% 0 10%;
 
         .topLeft {
             margin-top: 30%;
