@@ -84,11 +84,11 @@ const DealsPage = () => {
       const sortLocation = (userLocation) => {
         
         // store the API key as a const
-        const googleAPIKey = 'AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro';
+        // const googleAPIKey = 'AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro';
 
         // grab all the restaurant locations store an array?
-        const destinations = matchingRestaurants.map(restaurant => restaurant.location)
-        const destinationsString = destinations.join('|');
+        // const destinations = matchingRestaurants.map(restaurant => restaurant.location)
+        // const destinationsString = destinations.join('|');
         
         // create the API URL query string using userlocation, restaurant locations and API key
         // const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${userLocation}&destinations=${destinationsString}&key=${googleAPIKey}`;
