@@ -5,7 +5,7 @@ const mockUserData = [
         'email': 'danny@testest.com',
         'password': 'password',
         'phoneNumber': '07788996622',
-        'postcode': 'SW2 4ER',
+        'postcode': 'SE16 3DL',
     },
 
     {
@@ -14,7 +14,7 @@ const mockUserData = [
         'email': 'manuela@testest.com',
         'password': 'password',
         'phoneNumber': '07799996622',
-        'postcode': 'SW2 4EL',
+        'postcode': 'SE16 3LF',
     },
 
     {
@@ -23,7 +23,7 @@ const mockUserData = [
         'email': 'harry@testest.com',
         'password': 'password',
         'phoneNumber': '07709996622',
-        'postcode': 'SW2 4EW',
+        'postcode': 'SE16 2BE',
     },
 
     {
@@ -32,7 +32,7 @@ const mockUserData = [
         'email': 'ellis@testest.com',
         'password': 'password',
         'phoneNumber': '07719996622',
-        'postcode': 'SW2 4EE',
+        'postcode': 'SE16 7LF',
     },
 
     {
@@ -41,7 +41,7 @@ const mockUserData = [
         'email': 'aiste@testest.com',
         'password': 'password',
         'phoneNumber': '07729996622',
-        'postcode': 'SW2 4ET',
+        'postcode': 'SE16 2LS',
     },
 
     {
@@ -50,7 +50,7 @@ const mockUserData = [
         'email': 'joe@testest.com',
         'password': 'password',
         'phoneNumber': '07729996622',
-        'postcode': 'SW2 4EY',
+        'postcode': 'SE16 3QT',
     },
 
     {
@@ -59,7 +59,7 @@ const mockUserData = [
         'email': 'manuel@testest.com',
         'password': 'password',
         'phoneNumber': '07739996622',
-        'postcode': 'SW2 4EY',
+        'postcode': 'SE16 3LL',
     },
 
     {
@@ -68,7 +68,7 @@ const mockUserData = [
         'email': 'sophie@testest.com',
         'password': 'password',
         'phoneNumber': '07749996622',
-        'postcode': 'SW2 4EU',
+        'postcode': 'SE16 2XB',
     },
 
     {
@@ -77,7 +77,7 @@ const mockUserData = [
         'email': 'ollie@testest.com',
         'password': 'password',
         'phoneNumber': '07769996622',
-        'postcode': 'SW2 4EY',
+        'postcode': 'SE16 7lf',
     },
 
     {
@@ -95,7 +95,7 @@ const mockUserData = [
         'email': 'holden@testest.com',
         'password': 'password',
         'phoneNumber': '0770096622',
-        'postcode': 'SW2 4ED',
+        'postcode': 'SE16 4RA',
     },
 ]
 export default mockUserData;
