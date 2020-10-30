@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SideBar.module.scss';
 import Calendar from '../../utilities/Calendar';
-import Icon from '../../utilities/Icon';
 import ImageIcon from '../../utilities/ImageIcon';
 import Slider from '../../utilities/Slider';
 
@@ -27,7 +26,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         // update an arary with filter preferences this needs to be passed down to each component
         let filterParametersNew = filterParameters;
 
-        const collectNewFilter = (subFilter.length) ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
+        // const collectNewFilter = (subFilter.length) ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
 
         setFilterParameters(filterParametersNew);
     }
@@ -61,7 +60,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     // return the lot     
     return (
         <div className={styles.filtermenu}>
-            <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
+            <a href='www.-.com' className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
             <div id="when-need">
                 <p>When do you want to eat?</p>
                 <div className={styles.icons}>

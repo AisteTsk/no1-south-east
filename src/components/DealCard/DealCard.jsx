@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
-import RestaurantDetails from "../../components/RestaurantDetails"
+
 
 const DealCard = (props) => {
-    const { name, offerPercent, offerDescription, location, cuisine, validUntil, restaurantId } = props.restaurant;
+    const { name, offerPercent, cuisine, validUntil, restaurantId } = props.restaurant;
     
     return (
         <div className={styles.card} >

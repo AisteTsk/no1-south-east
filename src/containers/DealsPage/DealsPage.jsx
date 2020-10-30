@@ -91,7 +91,7 @@ const DealsPage = () => {
         const destinationsString = destinations.join('|');
         
         // create the API URL query string using userlocation, restaurant locations and API key
-        const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${userLocation}&destinations=${destinationsString}&key=${googleAPIKey}`;
+        // const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${userLocation}&destinations=${destinationsString}&key=${googleAPIKey}`;
         const testurl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=51.5253954,0.1790877&destinations=51.474333,0.044083&key=AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro"
         // do fetch request, parse data and store somewhere
         fetch(testurl)
