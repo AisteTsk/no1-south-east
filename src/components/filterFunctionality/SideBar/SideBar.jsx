@@ -91,6 +91,4 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     )
 }
 
-
-
 export {SideBar as default};
