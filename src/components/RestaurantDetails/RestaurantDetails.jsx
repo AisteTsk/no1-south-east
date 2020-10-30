@@ -2,13 +2,13 @@ import React from 'react';
 import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import restaurants from "../../data/restaurants";
-import logo from '../../assets/images/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import halal from '../../assets/image_icons/halal_active.png';
 import glutenfree from '../../assets/image_icons/gluten_free_active.png';
 import vegan from '../../assets/image_icons/vegan_active.png';
 import vegetarian from '../../assets/image_icons/vegetarian_active.png';
 import dairyfree from '../../assets/image_icons/dairy_free_active.png';
+import Logo from "../Logo/Logo";
 
 
 const RestaurantDetails = (props) => {
@@ -28,65 +28,26 @@ const RestaurantDetails = (props) => {
         
     } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
 
-    // function for each diary requirment image - can be improved
-    
-    const dietaryRequirementsVegetarian = () => {
-        if (dietaryRequirements.vegetarian == true) {
-            return ('Vegetarian')
-            } 
-        }
-    const dietaryRequirementsVegan = () => {
-        if (dietaryRequirements.vegan == true) {
-            return ('Vegan')
-            } 
-        }
-    const dietaryRequirementsGlutenFree = () => {
-        if (dietaryRequirements.glutenfree == true){
-            return ('glutenfree')
-                } 
-            }
-    const dietaryRequirementsHalal = () => {
-        if (dietaryRequirements.halal == true) {
-            return ('Halal')
-            }
-        }
-    const dietaryRequirementsDiaryFree = () => {
-            if (dietaryRequirements.diaryfree == true) {
-                return ('diaryfree')
-                }
-            }      
+    const ConvertBooleanToText = (inputBooleanArray) => {
+        const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).toString();
+        return outputString ;
+    };
 
     return (
+
         <div className={styles.RestaurantDetails}>
-            <div className={styles.imageLogo}>
-                <img className={styles.responsiveImageLogo} src={logo} alt="logo"></img>
-            </div>
+            <Logo/>
             <h1>{name}</h1>
-            <div className={styles.image}>
-                <img className={styles.responsiveImage} src={image} alt="Restaurant"/>
-            </div>
             <p>Location: {location}</p>
             <p>Offer Details</p>
             <p>Offer {offerPercent}</p>
             <p>Restaurant Info</p>
             <p>Cuisine: {cuisine}</p>
-            
-            {/* not right yet */}
-            
-            {/* <p>sitting: {sitting[0]}</p> */}
-
-
-            <p>Phone Number: {phoneNumber}</p>
-            <p>Email Address: {email}</p>
+            <p>Sitting: {ConvertBooleanToText(sitting)}</p>
             <p>Valid until: {validUntil}</p>
             <p>Days Avalible: {daysAvailable.toString()}</p>
             <p>Maximim Table Size: {maximumTableSize}</p>            
-            <p> {dietaryRequirementsVegan()},               
-                {dietaryRequirementsVegetarian()},
-                {dietaryRequirementsGlutenFree()},
-                {dietaryRequirementsHalal()},
-                {dietaryRequirementsDiaryFree()}
-            </p>
+            <p>{ConvertBooleanToText(dietaryRequirements)}</p>
             <span className={styles.fontawesomeContainer}>
                 <a href="www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
