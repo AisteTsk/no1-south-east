@@ -2,25 +2,15 @@
 @import '../../sass/base/typography';
 
 .RestaurantDetails {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: auto;
+    margin-top: 20%;
     padding: 10px;
     background-color: $color-green;
-
-    .dietaryImages {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 60%;
-
-        img {
-            height: auto;
-            width: 10%;
-        }
-    }
-
+    
     .fontawesomeContainer{
         display: flex;
         flex-direction: row;
@@ -29,19 +19,16 @@
         width:60%;
         color: $color-white;
 
+    // change default link behavior
+        a { 
+            text-decoration: none;
+            color: $color-white;
+
+        }
+        
 
         .span{
             width:100%;
-        }
-    }
-
-    .imageLogo {
-        display: flex;
-        width: 60%;
-
-        .responsiveImageLogo {
-            height: auto;
-            width: 100%;
         }
     }
 
@@ -70,8 +57,8 @@
     display: flex;
     text-align: left;
     width: 60%;
-    height: 100%;
-    font-size: 15px;
+    height: 80%;
+    font-size: 80%;
     color: $color-white;
     // align-items: center;
     // justify-content: center;
