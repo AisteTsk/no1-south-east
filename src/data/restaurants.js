@@ -5,7 +5,7 @@ const restaurants = [
         'offerPercent': '30%',
         'offerDescription': ``,
         'validUntil': '31 Nov 2020',
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
@@ -15,7 +15,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['tapas', 'mediterranean'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     
     {
@@ -24,7 +27,7 @@ const restaurants = [
         'offerPercent': '15%',
         'offerDescription': ``,
         'validUntil': '31 Nov 2020',
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
@@ -32,9 +35,12 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
         'location': `51.474333,0.044639`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': 'american',
+        'cuisine': ['american'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
 
     {
@@ -43,7 +49,7 @@ const restaurants = [
         'offerPercent': '25%',
         'offerDescription': ``,
         'validUntil': '31 Apr 2021',
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
@@ -51,9 +57,12 @@ const restaurants = [
         'location': `51.474333,0.044083`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine' : 'seafood',
+        'cuisine' : ['seafood'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
         
     },
     
@@ -63,7 +72,7 @@ const restaurants = [
         'offerPercent': '25%',
         'validUntil': '31 Mar 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
@@ -73,7 +82,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['chinese', 'japanese'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     
     {
@@ -82,7 +94,7 @@ const restaurants = [
         'offerPercent': '80%',
         'validUntil': '31 May 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','sunday'],
@@ -92,7 +104,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['mexican', 'spanish'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     {
         "restaurantId": 6,
@@ -100,7 +115,7 @@ const restaurants = [
         'offerPercent': '15%',
         'validUntil': '31 Sep 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
@@ -110,7 +125,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['italian', 'spanish'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     {
         'restaurantId': 7,
@@ -118,7 +136,7 @@ const restaurants = [
         'offerPercent': '10%',
         'validUntil': '31 Aug 2022',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': false,
         'daysAvailable': ['wednesday', 'thursday','sunday'],
@@ -126,9 +144,12 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': true}, 
         'location': `51.469250,-0.188889`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': 'Thai',
+        'cuisine': ['thai'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     
     {
@@ -137,7 +158,7 @@ const restaurants = [
         'offerPercent': '10%',
         'validUntil': '31 Nov 2023',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','sunday'],
@@ -145,9 +166,12 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false}, 
         'location': `51.469250,-0.201389`,
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': ['Mexican', 'American'],
+        'cuisine': ['mexican', 'american'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
 
 
@@ -157,7 +181,7 @@ const restaurants = [
         'offerPercent': '80%',
         'validUntil': '31 Jun 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday','saturday'],
@@ -165,9 +189,12 @@ const restaurants = [
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false}, 
         'location': `51.469250,-0.251389`,
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': ['Mexican', 'American'],
+        'cuisine': ['mexican', 'american'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
 
     {
@@ -176,7 +203,7 @@ const restaurants = [
         'offerPercent': '20%',
         'validUntil': '31 Oct 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['wednesday', 'thursday','friday', 'saturday', 'sunday'],
@@ -186,7 +213,10 @@ const restaurants = [
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
         'cuisine': ['spanish', 'italian'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
 
     {
@@ -195,7 +225,7 @@ const restaurants = [
         'offerPercent': '5%',
         'validUntil': '31 Oct 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
         'daysAvailable': ['friday', 'saturday', 'sunday'],
@@ -203,9 +233,12 @@ const restaurants = [
         'location': `51.402583,-0.103056`,
         'dietaryRequirements':  {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': false, 'dairyfree': false},
         'sitting': {'breakfast': false, 'lunch': false, 'dinner': true},
-        'cuisine': 'italian',
+        'cuisine': ['italian'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     
     {
@@ -214,7 +247,7 @@ const restaurants = [
         'offerPercent': '15%',
         'validUntil': '31 Jul 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
@@ -224,7 +257,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['american', 'british'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     {
         "restaurantId": 13,
@@ -232,7 +268,7 @@ const restaurants = [
         'offerPercent': '15%',
         'validUntil': '31 Mar 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': false, 'drink': true},
         'happyHour': true,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday'],
@@ -240,9 +276,12 @@ const restaurants = [
         'location': `51.486111,-0.103361`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': true, 'glutenfree': true, 'dairyfree': false},
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
-        'cuisine': 'spanish',
+        'cuisine': ['spanish'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     
     {
@@ -251,7 +290,7 @@ const restaurants = [
         'offerPercent': '10%',
         'validUntil': '31 Dec 2020',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
@@ -259,9 +298,12 @@ const restaurants = [
         'location': `51.487167,-0.104167`,
         'dietaryRequirements': {'vegetarian': true, 'vegan': true, 'halal': false, 'glutenfree': false, 'dairyfree': true},
         'sitting': {'breakfast': true, 'lunch': false, 'dinner': false},
-        'cuisine': 'tapas',
+        'cuisine': ['tapas'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     {
         "restaurantId": 15,
@@ -269,7 +311,7 @@ const restaurants = [
         'offerPercent': '10%',
         'validUntil': '31 Feb 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': true},
         'happyHour': false,
         'daysAvailable': ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
@@ -279,7 +321,10 @@ const restaurants = [
         'sitting': {'breakfast': true, 'lunch': true, 'dinner': true},
         'cuisine': ['italian', 'spanish', 'french', 'british', 'tapas'],
         'email': 'testemail@testemail.co.uk',
-        'phoneNumber': '0234 343 2343'
+        'phoneNumber': '0234 343 2343',
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     },
     {
         'restaurantId': 16,
@@ -287,7 +332,7 @@ const restaurants = [
         'offerPercent': '20%',
         'validUntil': '31 Jan 2021',
         'offerDescription': ``,
-        'image': 'https://source.unsplash.com/500x500/?food',
+        'image': 'https://static.standard.co.uk/s3fs-public/thumbnails/image/2019/10/11/12/norma-restaurant-fitzrovia.jpg?width=1000&height=614&fit=bounds&format=pjpg&auto=webp&quality=70&crop=16:9,offset-y0.5',
         'discount': {'food': true, 'drink': false},
         'happyHour': false,
         'daysAvailable': ['tuesday', 'thursday'],
@@ -295,7 +340,12 @@ const restaurants = [
         'location': `51.486972,-0.087583`,
         'dietaryRequirements': {'vegetarian': false, 'vegan': false, 'halal': true, 'glutenfree': false, 'diaryfree': false},
         'sitting': {'breakfast': false, 'lunch': true, 'dinner': true},
-        'cuisine': 'mediterranean'
+        'cuisine': ['mediterranean'],
+        'email': 'testemail@testemail.co.uk',
+        'phoneNumber': '0234 343 237', 
+        'twitter': 'https://twitter.com/explore',
+        'instagram': 'https://www.instagram.com/',
+        'website': 'https://asakusa.has.restaurant/'
     }
 ]
 
