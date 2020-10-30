@@ -8,20 +8,6 @@
   justify-content: center;
   background-color: $color-green;
 
-  .logoContainer {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    top: 0;
-    justify-content: center;
-    margin-top: 10px;
-
-    img {
-      height: 80px;
-      width: 140px;
-    }
-  }
-
   .form {
     display: flex;
     background-color: $color-white;
@@ -35,6 +21,7 @@
     border: 8px solid $color-copper;
 
     .register {
+
       h3 {
         height: auto;
         font-size: 23px;
@@ -68,7 +55,10 @@
       .faqs {
         font-size: 15px;
         margin-top: 10px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8eb333e548270ea63c10c052c4322b6ac0062930
         :link {
           margin-left: 4px;
         }
@@ -117,35 +107,24 @@
 
 @media (min-height: 800px) {
   .page {
-    .logoContainer {
-      img {
-        height: 110px;
-        width: 200px;
-      }
-    }
     .form {
       .register {
         h3 {
           font-size: 30px;
           margin-bottom: 30px;
         }
-    
         input {
           padding: 8px 10px;
           margin: 7.5px 0;
         }
-
-        
         .terms {
           margin: 5px 0;
         }
-  
         .register_btn {
           height: 40px;
           width: 170px;
           margin-bottom: 15px;
         }
-  
         p {
           font-size: 20px;
         }
@@ -153,7 +132,6 @@
     }
   } 
 }    
-
 
 @media (min-width: 600px) {
   .page {
@@ -172,7 +150,6 @@
   .page {
     .form {
       width: 50%;
-
       .register {
         h3 {
           font-size: 44px;
@@ -180,7 +157,6 @@
         input {
           width: 200px;
         }
-        
         .form_container {
           flex-direction: row;
         }

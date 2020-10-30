@@ -8,13 +8,13 @@ import Register from '../../components/Register';
 import RestaurantDetails from '../../components/RestaurantDetails';
 import FaQs from "../FaQs/FaQs";
 import Terms from "../Terms/Terms";
-
+import Logo from "../../components/Logo";
 
 const Routes = () => {
-  
   return (
     <Router>
       <Dashboard path="/" />
+      <Logo path="/" />
       <NotFound path="/404" />
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />

@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import styles from './Register.module.scss'
-import Logo from "../../assets/images/Homepagelogo.png"
+import Logo from "../Logo/Logo";
 
 const Register = () => {
 
     return(
         <div className={styles.page}>
-            <div className={styles.logoContainer}>
-                <Link to="/">
-                    <img src={Logo} alt="no1se-logo" />
-                </Link>
-            </div>
+            <Logo />
             <div className={styles.form}>
                 <div className={styles.register}>
                     <h3>Register to redeem great offers!</h3>

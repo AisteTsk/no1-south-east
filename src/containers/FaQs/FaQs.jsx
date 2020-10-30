@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./FaQs.module.scss";
 
 const FaQs = () => {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8eb333e548270ea63c10c052c4322b6ac0062930
   return (
     <section className={styles.background}>
       <div className={styles.feedback}>

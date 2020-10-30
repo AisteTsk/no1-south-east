@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import styles from './SignIn.module.scss'
-import Logo from "../../assets/images/Homepagelogo.png"
+import Logo from "../Logo/Logo";
+
 
 const SignIn = () => {
 
     return(
         <div className={styles.page}>
-            <div className={styles.logoContainer}>
-                <Link to="/">
-                    <img src={Logo} alt="no1se-logo" />
-                </Link>
-            </div>
+            <Logo />
             <div className={styles.form}>
                 <div className={styles.signin}>
                     <h3>Welcome back!</h3>
