@@ -3,13 +3,7 @@ import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import restaurants from "../../data/restaurants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import halal from '../../assets/image_icons/halal_active.png';
-import glutenfree from '../../assets/image_icons/gluten_free_active.png';
-import vegan from '../../assets/image_icons/vegan_active.png';
-import vegetarian from '../../assets/image_icons/vegetarian_active.png';
-import dairyfree from '../../assets/image_icons/dairy_free_active.png';
 import Logo from "../Logo/Logo";
-
 
 const RestaurantDetails = (props) => {
     const { 
@@ -24,9 +18,17 @@ const RestaurantDetails = (props) => {
         dietaryRequirements,
         sitting,
         phoneNumber,
-        email
+        email,
+        instagram,
+        website,
+        offerDescription,
+        restaurantDescription
+
+        
         
     } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
+
+    //this function will take the array of Booleans, filter for true and show
 
     const ConvertBooleanToText = (inputBooleanArray) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).toString();
@@ -34,27 +36,32 @@ const RestaurantDetails = (props) => {
     };
 
     return (
-
+        <>
+        <Logo/>
         <div className={styles.RestaurantDetails}>
-            <Logo/>
             <h1>{name}</h1>
-            <p>Location: {location}</p>
-            <p>Offer Details</p>
-            <p>Offer {offerPercent}</p>
-            <p>Restaurant Info</p>
-            <p>Cuisine: {cuisine}</p>
-            <p>Sitting: {ConvertBooleanToText(sitting)}</p>
-            <p>Valid until: {validUntil}</p>
-            <p>Days Avalible: {daysAvailable.toString()}</p>
-            <p>Maximim Table Size: {maximumTableSize}</p>            
+            <div className={styles.image}>
+                <img className={styles.responsiveImage} src={image} alt={name}/> 
+            </div>          
+            <p>Location: {location}</p><br/>
+            <p>Offer Details:</p>
+            <p>{offerDescription}</p><br/>
+            <p>Restaurant Info:</p>
+            <p>{restaurantDescription}</p><br/>
+            <p>Cuisine: {cuisine}</p><br/>
+            <p>Sitting: {ConvertBooleanToText(sitting)}</p><br/>
+            <p>Valid until: {validUntil}</p><br/>
+            <p>Days Avalible: {daysAvailable.toString()}</p><br/>
+            <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
             <p>{ConvertBooleanToText(dietaryRequirements)}</p>
+             
             <span className={styles.fontawesomeContainer}>
-                <a href="www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href={instagram} target="_blank" > 
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
                 </a>
-                <a href="www.google.com" target="_blank" rel="noopener noreferrer">
+                <a href={website} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fa", "globe"]}/>
-                </a>
+                </a> 
                 <a href={`tel: ${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
                 </a>
@@ -66,6 +73,7 @@ const RestaurantDetails = (props) => {
                 <button>Get Code</button>
             </Link>
         </div>
+        </>
     )
 }
 

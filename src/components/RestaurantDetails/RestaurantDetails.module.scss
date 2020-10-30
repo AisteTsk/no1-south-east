@@ -2,13 +2,13 @@
 @import '../../sass/base/typography';
 
 .RestaurantDetails {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20%;
-    padding: 10px;
+    justify-content: space-evenly;
+    padding-top: 25%;
     background-color: $color-green;
     
     .fontawesomeContainer{
@@ -34,7 +34,7 @@
 
     .image {
         display: flex;
-        width: 45%;
+        width: 30%;
         padding: 1%;
 
         .responsiveImage {
@@ -51,22 +51,20 @@
     font-size: 20px;
     border-radius: 5%;
     padding: 10px;
+    margin: 5px;
     }
 
     p {
-    display: flex;
     text-align: left;
-    width: 60%;
+    width: 40%;
     height: 80%;
-    font-size: 80%;
+    font-size: 10px;
     color: $color-white;
-    // align-items: center;
-    // justify-content: center;
-
 
     }            
     
     h1 {
+        width: 60%;
         margin-top: 10px;
         text-align: center;
         font-size: 300%;
@@ -75,13 +73,25 @@
     }
 }
 
-@media (min-width:750px) {
+@media (min-width:500px) {
     .RestaurantDetails{
+        padding-top:12%;
+    }
+}    
 
-        .dietaryImages {
-            width: 30%;
-            
+@media (min-width:800px) {
+    .RestaurantDetails{
+        padding-top:8%;
+        height: auto;
+
+        .fontawesomeContainer{
+            font-size: 30px;
+            margin-top: 5px;
         }
-    }    
-}
 
+        p {
+            font-size: 20px ;
+        }
+
+    }
+}
