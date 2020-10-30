@@ -3,7 +3,6 @@ import { Link } from '@reach/router'
 import styles from './SignIn.module.scss'
 import Logo from "../Logo/Logo";
 
-
 const SignIn = () => {
 
     return(
