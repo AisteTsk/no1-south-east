@@ -9,20 +9,6 @@
   text-align: center;
   background-color: $color-green;
 
-  .logoContainer {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    top: 0;
-    justify-content: center;
-    margin-top: 10px;
-
-    img {
-      height: 80px;
-      width: 140px;
-    }
-  }
-
   .form {
     display: flex;
     background-color: $color-white;
@@ -37,6 +23,7 @@
     margin: 0 auto;
 
     .signin {
+
       h3 {
         height: auto;
         font-size: 35px;
@@ -113,17 +100,6 @@
   }
 }
 
-@media (min-height: 800px) {
-  .page {
-    .logoContainer {
-      img {
-        height: 110px;
-        width: 200px;
-      }
-    }
-  }
-}
-
 @media (min-width: 720px) {
   .page {
     .form {
@@ -131,7 +107,6 @@
         h3 {
           font-size: 45px;
         }
-
         input {
           width: 200px;
         }
@@ -144,7 +119,6 @@
   .page {
     .form {
       width: 50%;
-      
       .signin {
         h3 {
           font-size:  54px;
