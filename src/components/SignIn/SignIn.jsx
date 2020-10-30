@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import styles from './SignIn.module.scss'
-import Logo from "../../assets/images/Homepagelogo.png"
+import Logo from "../Logo/Logo";
+
 
 const SignIn = () => {
 
     return(
         <div className={styles.page}>
-            <div className={styles.logoContainer}>
-                <Link to="/">
-                    <img src={Logo} alt="no1se-logo" />
-                </Link>
-            </div>
+            <Logo />
             <div className={styles.form}>
                 <div className={styles.signin}>
                     <h3>Welcome back!</h3>
@@ -23,7 +20,7 @@ const SignIn = () => {
                         <button type="submit" className={styles.sign_in_btn}>Sign in</button>
                     </form>
                     <p className={styles.terms}>
-                        <Link to="terms-and-conditions">Terms and Conditions</Link>
+                        <Link to="/terms-and-conditions">Terms and Conditions</Link>
                     </p>                
                     <p>New to the area?
                         <Link to="/register">

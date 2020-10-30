@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from '@reach/router'
 import styles from './Register.module.scss'
-import Logo from "../../assets/images/Homepagelogo.png"
+import Logo from "../Logo/Logo";
 
 const Register = () => {
 
     return(
         <div className={styles.page}>
-            <div className={styles.logoContainer}>
-                <Link to="/">
-                    <img src={Logo} alt="no1se-logo" />
-                </Link>
-            </div>
+            <Logo />
             <div className={styles.form}>
                 <div className={styles.register}>
                     <h3>Register to redeem great offers!</h3>
@@ -26,7 +22,7 @@ const Register = () => {
                         </div>
                         <p>By signing up you agree to our
                             <p className={styles.terms}>
-                                <Link to="terms-and-conditions">Terms and Conditions</Link>
+                                <Link to="/terms-and-conditions">Terms and Conditions</Link>
                             </p> 
                         </p>
                         <button type="submit" className={styles.register_btn}>Register</button>
@@ -35,6 +31,9 @@ const Register = () => {
                         <Link to="/sign-in">
                             <button>Sign in</button>
                         </Link>
+                    </p>
+                    <p className={styles.faqs}>Feeling inquisitive? Check out our
+                        <Link to="/faq">FAQ's</Link>
                     </p>
                 </div>
             </div>

@@ -68,9 +68,6 @@
   align-items: center;
   justify-content: center;
 }
-.gridContainer .bottomRightMobile img {
-  transform: rotate(-50deg);
-}
 .gridContainer .bottomRight {
   grid-area: buttons;
   display: flex;
