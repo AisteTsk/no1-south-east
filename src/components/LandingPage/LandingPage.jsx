@@ -4,7 +4,7 @@ import imageStepOne from '../../assets/images/imagestep1.png';
 import imageStepTwo from '../../assets/images/imagestep2.png';
 import imageStepThree from '../../assets/images/imagestep3.png';
 import logoCutlery from "../../assets/images/logoCutlery.png";
-import imagePin from '../../assets/images/placeholder.png';
+import imagePin from '../../assets/images/pin-white.png';
 import { Link } from "@reach/router";
 
 const LandingPage = () => {

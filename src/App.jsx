@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
-import firebase from "./firebase";
-
-
+import firebase, { provider } from "./firebase";
 
 const App = () => {
-  const [user, setUser] = useState (null);
+  const [user, setUser] = useState(null);
 
   const signIn = () => {
     firebase.auth().signInWithRedirect(provider);
@@ -19,15 +17,33 @@ const App = () => {
         setUser(null);
       })
       .catch((error) => {
-
+        console.log(error);
       });
   };
+
+  const getUser = () => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user)
+      } else {
+        setUser(null)
+      }
+    });
+  };
+
+  useEffect(() => {
+    getUser();
+  });
 
 
   return (
     <>
       <div>
-        <Routes/>
+        <Routes 
+          user={user}
+          signIn={signIn}
+          signOut={signOut}
+        />
       </div>
     </>
   )

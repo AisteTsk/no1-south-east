@@ -4,7 +4,6 @@ import styles from './SignIn.module.scss'
 import Logo from "../Logo/Logo";
 
 const SignIn = () => {
-
     return(
         <div className={styles.page}>
             <Logo />

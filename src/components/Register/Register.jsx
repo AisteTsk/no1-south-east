@@ -4,7 +4,6 @@ import styles from './Register.module.scss'
 import Logo from "../Logo/Logo";
 
 const Register = () => {
-
     return(
         <div className={styles.page}>
             <Logo />
