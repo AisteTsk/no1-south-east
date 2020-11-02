@@ -1,91 +1,92 @@
 @import '../../sass/main.module.scss';
 
-* {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
 .card {
-    display:flex;
-    flex-direction: column;
-    width: 350px;
-    height: 500px;
-    background-color: $color-white;
-    margin: 0 0 3px 3px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.055);
-    display:flex;
-    flex-direction: column;
-    margin: 30px auto;
+    @extend %main-font;
 
-    &:hover {
-        box-shadow: 7px 7px rgba(0, 0, 0, 0.055);
-        transform: translateY(-4px);
-    }
+    width: 350px;
+    height: 560px;
+    background-color: $color-green;
 
     a {
         text-decoration: none;
+        outline: none;
+    }
+
+    hr {
+        border-top: 3px solid $color-white;
+        margin: 0px 0 20px 0;
     }
 
     h1 {
-        background-color: $color-copper;
-        text-align: center;
+        text-align: left;
         font-size: 34px;
-        margin: 0;
+        margin: 0 auto;
         padding: 10px 0 3px;
-        color: $color-blue;
+        color: $color-white;
     }
-    
+
     img {
         height: 250px;
         width: 100%;
         margin: 0;
     }
-    
-    h2 {
-        padding: 15px 0 8px 10px;
-        font-size: 32px;
-        border-bottom: 1px black solid;
-        color: $color-green;
-    }
-    
-    p, h3 {  
-        padding: 0 10px;
-        padding-top: 5px;
-        font-size: 21px;
-        width: auto;
-        color: $color-blue;
-    }
-    
-    .info {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        width: 100%;
-        background-color: $color-pink;
-        font-weight: bold;
-    }
-    
-    .expiry {
-        background-color: $color-pink;
-        font-weight: bold;
-        padding-top: 8px;
-        padding-bottom: 17px;
 
-        p {
-            padding: 15px 10px;
-            text-decoration: underline;
-            color: $color-blue;
-            padding-top: 5px;
+    h2 {
+        padding: 15px 0 8px 0px;
+        font-size: 16px;
+        line-height: 1.4rem;
+        color: $color-white;
+        opacity: 0.5;
+    }
+
+    .locationContainer {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 30px;
+            width: auto;
+            padding-right: 3px;
         }
-        h3 {
-            border: 1px solid black;
-            width: 55%;
-            height: 35px;
-            border-radius: 10px;
-            text-align: center;
-            margin: auto;
-            color: $color-green;
-            background-color: $color-desert;
-            padding-top: 8px;
+    }
+
+    button {
+        font-size: 20px;
+        width: 120px;
+        margin: 20px auto;
+        background-color: #82A28B;
+        color: $color-white;
+        padding: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        border-radius: 2px;
+
+        &:hover {
+            box-shadow: 0px 0px 2px black, 0 0 5px lightgrey, 0 0 5px black;
+        }
+    }
+
+
+}
+
+@media (min-width: 1000px) {
+    .card {
+        width: 550px;
+        height: 750px;
+
+        h1 {
+            font-size: 42px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        img {
+            height: 350px;
+            margin: 0;
         }
     }
 }

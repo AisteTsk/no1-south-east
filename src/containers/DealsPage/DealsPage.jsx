@@ -108,7 +108,7 @@ const DealsPage = () => {
 
 
       const contentJsx = matchingRestaurants.length ? (
-        <CardList restaurants={matchingRestaurants} />
+        <CardList restaurants={matchingRestaurants}/>
       ) : (
           <FeedbackPanel
             header="No matches"
@@ -117,16 +117,17 @@ const DealsPage = () => {
         )
 
     return (
-        <>
+        <div className={styles.dealsPage}>
           <div className={styles.searchbar}>
             <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>   
             <FilterButton filterRestaurants={filterRestaurants}/>   
             <Location sortLocation={sortLocation}/> 
           </div>
         <section>
-            {contentJsx}
+          <h1>Latest Offers</h1>
+          {contentJsx}
         </section>
-        </>
+        </div>
     )
 }
 
