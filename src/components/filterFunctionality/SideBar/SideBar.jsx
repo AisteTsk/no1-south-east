@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SideBar.module.scss';
 import Calendar from '../../utilities/Calendar';
-import Icon from '../../utilities/Icon';
 import ImageIcon from '../../utilities/ImageIcon';
 import Slider from '../../utilities/Slider';
 

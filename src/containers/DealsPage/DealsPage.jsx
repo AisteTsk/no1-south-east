@@ -128,7 +128,7 @@ const DealsPage = ({google}) => {
             destinations: restaurantLocations,
             travelMode: 'DRIVING',
         }, (response, status) => {
-            if(status == 'OK'){
+            if(status === 'OK'){
               
                 // grab response and drill down to data we need i.e. distances to
                 const results = response.rows[0].elements;
