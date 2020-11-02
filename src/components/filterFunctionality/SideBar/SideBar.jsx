@@ -26,7 +26,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         // update an arary with filter preferences this needs to be passed down to each component
         let filterParametersNew = filterParameters;
 
-        const collectNewFilter = (subFilter.length) ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
+        subFilter.length ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
 
         setFilterParameters(filterParametersNew);
     }
@@ -60,7 +60,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     // return the lot     
     return (
         <div className={styles.filtermenu}>
-            <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
+            <button className={styles.closebtn} onClick={closeFilterMenu}>&times;</button>
             <div id="when-need">
                 <p>When do you want to eat?</p>
                 <div className={styles.icons}>

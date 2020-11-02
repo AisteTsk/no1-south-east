@@ -28,10 +28,12 @@
 
   .closebtn {
     position: absolute;
+    background: none;
+    height: 30px;
+    width: 30px;
     top: -15px;
-    right: 5px;
-    font-size: 42px;
-    margin-left: 50px;
+    right: 15px;
+    font-size: 72px;
     text-decoration: none;
     color:$color-green;
   }
