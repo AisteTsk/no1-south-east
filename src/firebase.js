@@ -21,6 +21,8 @@ export const firestore = firebase.firestore();
 
 export const provider = new firebase.auth.GoogleAuthProvider();
 
-console.log(process.env.GOOGLE_MAPS_API_KEY);
+// OLLIE WILL RETURN
+console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
+console.log(firebase.functions())
 
 export default firebase;

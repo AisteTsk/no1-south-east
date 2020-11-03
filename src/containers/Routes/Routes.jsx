@@ -20,7 +20,7 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <Logo path="/" />
-      <NotFound path="/404" />``
+      <NotFound path="/404" />
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
