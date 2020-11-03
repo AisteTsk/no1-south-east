@@ -2,14 +2,8 @@ import React from 'react';
 import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import restaurants from "../../data/restaurants";
-import logo from '../../assets/images/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import halal from '../../assets/image_icons/halal_active.png';
-import glutenfree from '../../assets/image_icons/gluten_free_active.png';
-import vegan from '../../assets/image_icons/vegan_active.png';
-import vegetarian from '../../assets/image_icons/vegetarian_active.png';
-import dairyfree from '../../assets/image_icons/dairy_free_active.png';
-
+import Logo from "../Logo/Logo";
 
 const RestaurantDetails = (props) => {
     const { 
@@ -24,9 +18,17 @@ const RestaurantDetails = (props) => {
         dietaryRequirements,
         sitting,
         phoneNumber,
-        email
-    } = restaurants.find(restaurant => restaurant.restaurantId === props.restaurantId);
+        email,
+        instagram,
+        website,
+        offerDescription,
+        restaurantDescription
 
+        
+        
+    } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
+
+    //this function will take the array of Booleans, filter for true and show
 
     // function for each diary requirment image - can be improved
     
@@ -55,46 +57,49 @@ const RestaurantDetails = (props) => {
                 return (<img  src={dairyfree} alt="glutenfree option"/>)
                 }
             }      
+    const ConvertBooleanToText = (inputBooleanArray) => {
+        const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
+        return outputString ;
+    };
 
     return (
+        <>
+        <Logo/>
         <div className={styles.RestaurantDetails}>
-            <div className={styles.imageLogo}>
-                <img className={styles.responsiveImageLogo} src={logo} alt="logo"></img>
-            </div>
             <h1>{name}</h1>
             <div className={styles.image}>
-                <img className={styles.responsiveImage} src={image} alt="Restaurant"/>
-            </div>
-            <p>Location: {location}</p>
-            <p>Offer Details</p>
-            <p>Offer {offerPercent}</p>
-            <p>Restaurant Info</p>
-            <p>Cuisine: {cuisine}</p>
-            <p>sitting: {sitting.toString()}</p>
-            <p>Phone Number: {phoneNumber}</p>
-            <p>Email Address: {email}</p>
-            <p>Valid until: {validUntil}</p>
-            <p>Days Avalible: {daysAvailable.toString()}</p>
-            <p>Maximim Table Size: {maximumTableSize}</p>
-            <span className={styles.dietaryImages}>
-                {dietaryRequirementsVegan()}
-                {dietaryRequirementsVegetarian()}
-                {dietaryRequirementsGlutenFree()}
-                {dietaryRequirementsHalal()}
-                {dietaryRequirementsDiaryFree()}
-            </span>
+                <img className={styles.responsiveImage} src={image} alt={name}/> 
+            </div>          
+            <p>Location: {location}</p><br/>
+            <p>Offer Details:</p>
+            <p>{offerDescription}</p><br/>
+            <p>Restaurant Info:</p>
+            <p>{restaurantDescription}</p><br/>
+            <p>Cuisine: {cuisine.join(', ')}</p><br/>
+            <p>Sitting: {ConvertBooleanToText(sitting)}</p><br/>
+            <p>Valid until: {validUntil}</p><br/>
+            <p>Days Avalible: {daysAvailable.join(', ')}</p><br/>
+            <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
+            <p>{ConvertBooleanToText(dietaryRequirements)}</p>
             <span className={styles.fontawesomeContainer}>
-                <span>
+                <a href={instagram} target="_blank" > 
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
-                </span>
-                <FontAwesomeIcon icon={["fa", "globe"]}/>
-                <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
-                <FontAwesomeIcon icon={["fas", "envelope"]}/>
+                </a>
+                <a href={website} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fa", "globe"]}/>
+                </a> 
+                <a href={`tel: ${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
+                </a>
+                <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fas", "envelope"]} />
+                </a>
             </span>
             <Link to="/SignUp" >   
                 <button>Get Code</button>
             </Link>
         </div>
+        </>
     )
 }
 
