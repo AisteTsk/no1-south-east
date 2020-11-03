@@ -1,15 +1,16 @@
 @import '../../../sass/abstracts/variables';
 
 .fa {
-    color: $color-green;
+    color: $color-pink;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
     font-size: 4.5rem;
+    cursor: pointer;
   }
   
   .location {
     display: flex;
-    color: $color-green;
+    color: $color-pink;
   }
