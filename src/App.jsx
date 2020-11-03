@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
 import firebase, { provider } from "./firebase";
+import "./data/fa-library";
+
 
 const App = () => {
   const [user, setUser] = useState(null);

@@ -1,3 +1,6 @@
+@import '../../sass/abstracts/variables';
+//@import '../../sass/base/typography';
+
 .searchbar{
     width: 100vw;
     display: flex;
@@ -10,4 +13,12 @@
         width: 291px;
         height: 40px;
     }
+}
+
+.profilelink {
+    height: 40px;
+    width: 40px;
+    color: $color-green;
+    justify-content: left;
+    font-size: 200%;
 }
