@@ -2,6 +2,8 @@ import firebase from "@firebase/app";
 import "firebase/firestore";
 import "firebase/storage";
 import "firebase/auth";
+import "firebase/functions";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAMh_LPlNk1c-eF-RpoSCHxSdIF30AXoKM",
@@ -18,5 +20,7 @@ firebase.initializeApp(firebaseConfig);
 export const firestore = firebase.firestore();
 
 export const provider = new firebase.auth.GoogleAuthProvider();
+
+console.log(process.env.GOOGLE_MAPS_API_KEY);
 
 export default firebase;

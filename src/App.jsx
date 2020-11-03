@@ -1,13 +1,10 @@
 import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
-import firebase, { provider } from "./firebase";
+import firebase from "./firebase";
+import faLibrary from "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
-
-  const signIn = () => {
-    firebase.auth().signInWithRedirect(provider);
-  };
 
   const signOut = () => {
     firebase
@@ -41,7 +38,6 @@ const App = () => {
       <div>
         <Routes 
           user={user}
-          signIn={signIn}
           signOut={signOut}
         />
       </div>

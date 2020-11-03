@@ -16,8 +16,8 @@ const Register = () => {
                             <input type="text" placeholder="Last Name" required />
                         </div>
                         <div className={styles.form_container}>
-                            <input type="text" name="email" placeholder="Email Address" required />
-                            <input type="text" name="password" placeholder="Password" required />
+                            <input id="email" type="text" name="email" placeholder="Email Address" required />
+                            <input id="password" type="text" name="password" placeholder="Password" required />
                         </div>
                         <p>By signing up you agree to our
                             <p className={styles.terms}>

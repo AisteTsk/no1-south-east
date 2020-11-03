@@ -1,6 +1,6 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { fab, faInstagram, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import {
     faGlobe,
     faEnvelope,
@@ -12,12 +12,14 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default library.add(
+    fab,
     faGlobe,
     faInstagram,
     faEnvelope,
     faPhoneAlt,
     faFilter,
     faSearch,
-    faStreetView
+    faStreetView,
+    faGoogle
 );
 

@@ -92,7 +92,7 @@ const mockUserData = [
     {
         'firstName': 'Bex',
         'secondName': 'Fennelly',
-        'email': 'holden@testest.com',
+        'email': 'bex@testest.com',
         'password': 'password',
         'phoneNumber': '0770096622',
         'postcode': 'SE16 4RA',
