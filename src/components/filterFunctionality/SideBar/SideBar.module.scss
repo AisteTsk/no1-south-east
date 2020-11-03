@@ -3,14 +3,14 @@
 
 .filtermenu {
   position: fixed; /* Stay in place */
-  top: 10px; /* Place content 60px from the top */
-  right: 10px;
+  top: 0px; /* Place content 60px from the top */
   width: 320px;
+  right: 0px;
   height: calc(100% - 30px);
   background-color: $color-copper;
   color: rgb(44, 41, 38);
   border-bottom-left-radius: 140px;
-  z-index: 1; /* Stay on top */
+  z-index: 2; /* Stay on top */
   overflow-x: hidden; /* Disable horizontal scroll */ 
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   font-family: 'Josefin Sans', sans-serif;
@@ -28,10 +28,12 @@
 
   .closebtn {
     position: absolute;
+    background: none;
+    height: 30px;
+    width: 30px;
     top: -15px;
-    right: 5px;
-    font-size: 42px;
-    margin-left: 50px;
+    right: 15px;
+    font-size: 72px;
     text-decoration: none;
     color:$color-green;
   }

@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const { placeholder, updateSearchText } = props;
+  const { placeholder, searchFilter } = props;
 
-  const input = isOpen ? <input type="text" placeholder={placeholder} onInput={e => updateSearchText(e.target.value)} /> : null;
+  const input = isOpen ? <input type="text" placeholder={placeholder} onInput={e => searchFilter(e.target.value)} /> : null;
 
   return (
     <div className={styles.search}>

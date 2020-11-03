@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
 
 const RestaurantDetails = (props) => {
+
     const { 
         name, 
         image, 
-        offerPercent, 
         cuisine, 
-        validUntil, 
+        validUntil,
         location, 
         daysAvailable, 
         maximumTableSize,
@@ -55,7 +55,7 @@ const RestaurantDetails = (props) => {
             <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
             <p>{ConvertBooleanToText(dietaryRequirements)}</p>
             <span className={styles.fontawesomeContainer}>
-                <a href={instagram} target="_blank" > 
+                <a href={instagram} target="_blank" rel="noopener noreferrer" > 
                     <FontAwesomeIcon icon={["fab", "instagram"]}/>
                 </a>
                 <a href={website} target="_blank" rel="noopener noreferrer">
