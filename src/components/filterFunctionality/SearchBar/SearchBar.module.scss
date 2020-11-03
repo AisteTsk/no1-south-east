@@ -2,11 +2,16 @@
 
 .search {
   color: $color-green;
-  width: auto}
-  
-.fa {
-  color: $color-green;
-  width: 100px;
-  padding: 10px;
-  margin-top: 10px;
+  width: auto;
+
+  .fa {
+    color: $color-green;
+    position: relative;
+    top: 10px;
+    width: 100px;
+    padding-left: 5px;
+    margin-top: 0px;
+    font-size: 40px;
+  }
 }
+  

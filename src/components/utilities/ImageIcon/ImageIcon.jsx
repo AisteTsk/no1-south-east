@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import styles from './ImageIcon.module.scss';
+import React, { useState } from 'react';
 
 const ImageIcon = ({data , collectFilters}) => {
     
