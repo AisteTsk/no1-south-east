@@ -24,11 +24,10 @@ const App = () => {
       .auth()
       .signInWithPopup(provider)
       .then(({user}) => {
-        console.log(user)
         setUser(user);
         navigate("/browseDeals")
-      });
-  }
+      })
+  };
   
   const signIn = (email, password) => {
     firebase
@@ -37,7 +36,10 @@ const App = () => {
       .then(({user}) => {
         setUser(user);
         navigate("/browseDeals")
-      })
+      }).catch((error) => {
+        (alert("The email or password you have entered is incorrect, please try again."));
+        console.log(error);
+      });
   }
 
   const getUser = () => {

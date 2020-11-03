@@ -8,6 +8,7 @@ import imagePin from '../../assets/images/pin-white.png';
 import { Link } from "@reach/router";
 
 const LandingPage = () => {
+
     return(
         <section className={styles.landingPage}>
             <div className={styles.gridContainer}>
