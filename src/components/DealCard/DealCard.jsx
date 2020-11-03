@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
-import RestaurantDetails from "../../components/RestaurantDetails"
 import pin from '../../assets/images/pin-white.png'
 
 
-const DealCard = (props) => {
-    const { name, offerPercent, offerDescription, location, cuisine, validUntil, restaurantId, restaurantDescription } = props.restaurant;
 
+const DealCard = (props) => {
+    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription } = props.restaurant;
+    
     return (
         <div className={styles.card} >
             <Link to={`/restaurants/${restaurantId}`}>    

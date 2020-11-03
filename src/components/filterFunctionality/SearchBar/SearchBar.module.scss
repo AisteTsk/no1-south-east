@@ -2,7 +2,8 @@
 
 .search {
   color: $color-pink;
-  width: auto}
+  width: auto
+}
   
 .fa {
   color: $color-pink;
@@ -10,4 +11,11 @@
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
+  position: relative;
+  top: 10px;
+  padding-left: 5px;
+  margin-top: 0px;
+  font-size: 40px;
 }
+
+  

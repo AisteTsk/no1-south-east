@@ -1,127 +1,182 @@
 import React, { useState } from 'react';
 import styles from './DealsPage.module.scss';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GoogleApiWrapper } from 'google-maps-react';
 
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
-import Location from '../../components/filterFunctionality/Location';
 
 //  data
 import restaurants from "../../data/restaurants";
 
-const DealsPage = () => {
+const DealsPage = ({google}) => {
 
-    // set the state
-    const [searchText, setSearchText] = useState("");  
-    const [filteredList, setFilteredList] = useState(restaurants);
+  //format offAdded to time since last epoch (use getTime()) property in rastaurants array
+  const restaurantsEpochTime = restaurants.map((restaurant) => {
+    restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
+    return restaurant;
+  });
+    
+  const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
 
-    const filterRestaurants = (filterParameters) => {
-      
-      // here we grab the list of filter keys from the filterParameters object - we will cycle over them below
-        const filterParameterKeys = Object.keys(filterParameters);
+  // set up states
+  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [filteredList, setFilteredList] = useState(latestRestaurants);
+  const [userLocation, setUserLocation] = useState("");
+  const [distanceSortedList, setDistanceSortedList] = useState([]);
 
-        // just incase it hasn't been reset
-        let filteredRestaurants = restaurants;
+    // function cycles over all filter properties and filters the restaurants array using only matching values
+  const filterRestaurants = (filterParameters) => {
 
-        // Using the array for filterParameter keys we'll cycle over each key - note each key holds an object which has some further keys inside which relate to specific filters
-        // (e.g. the dietary key hold the object {vegetarian: true, vegan: true etc.} we'll be grabbing those keys)
-        filterParameterKeys.forEach(parameterKey => {
+    // just incase it hasn't been reset
+    let filteredRestaurants = restaurants;
+  
+    const filterParameterKeys = Object.keys(filterParameters);
 
-          // so here we collect the keys of the object mentioned above - we need to cycle over these also...
-          if (typeof filterParameters[`${parameterKey}`] === 'object') {
-            const subParameterKeys = Object.keys(filterParameters[`${parameterKey}`]);
+    filterParameterKeys.forEach(parameterKey => {
 
-            // here we do the forEach cycle and check if the filter boolean value matches that in the restaurants data
-            subParameterKeys.forEach(subParameter => {
+      if (typeof filterParameters[`${parameterKey}`] === 'object') {
+        const subParameterKeys = Object.keys(filterParameters[`${parameterKey}`]);
 
-              // for each filter key we want to filter those restaurants accordingly BUT only if the filter is true or has a value
-              if(filterParameters[`${parameterKey}`][`${subParameter}`]){
-                console.log(filterParameters, subParameterKeys)
-                filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]);
-                
-              }
-            });
-          } else if (typeof filterParameters[`${parameterKey}`] === 'string') {
-            // grab date strings and convert to date objects for comparison and filter.
-            const filterDate = new Date(filterParameters[`${parameterKey}`]).getTime();
+        subParameterKeys.forEach(subParameter => {
 
+          if(filterParameters[`${parameterKey}`][`${subParameter}`]){
             filteredRestaurants = filteredRestaurants.filter(restaurant => {
-              const restaurantDate = new Date(restaurant.validUntil).getTime();
-              return restaurantDate >= filterDate;
+              return restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]
             });
-            
-          } else {
-            // checking that the filterParameters[`${parameterKey}`] has a value less than the restaurants data
-            filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant.maximumTableSize >= filterParameters[`${parameterKey}`]);
           }
         });
-        setFilteredList(filteredRestaurants);
+      } else if (typeof filterParameters[`${parameterKey}`] === 'string') {
+        // grab date strings and convert to date objects for comparison and filter.
+        const filterDate = new Date(filterParameters[`${parameterKey}`]).getTime();
 
-        // do ALL the filtering here
-        // location?
-    }
-
-
-    const checkRestaurantName = (restaurant) => {
-        // pass restaurant (1 restaurant from data array of restaurants) as a prop
-        const restaurantName = restaurant.name.toLowerCase();
-        //grab name value from restaurant data
-        const space = ' ';
-        const restaurantNameWithSpace = restaurantName.concat(space);
-        // add space to end of restaurant name
-        const restaurantCuisine = restaurant.cuisine.toString().toLowerCase().replace(/,/g,' ');
-        // make restaurant cuisine type string - cuisine array converted to lower case string, commas replaced with spaces
-        const restaurantNameAndCuisine = restaurantNameWithSpace.concat(restaurantCuisine);
-        // combine restaurant name string with cuisine type string
-        return restaurantNameAndCuisine.includes(searchText.toLowerCase());
-        // return restaurant if restaurant name/cuisine string includes text user has searched for
-      };
-    
-      const matchingRestaurants = filteredList.filter(checkRestaurantName);
-                
-      const sortLocation = (userLocation) => {
+        filteredRestaurants = filteredRestaurants.filter(restaurant => {
+          const restaurantDate = new Date(restaurant.validUntil).getTime();
+          return restaurantDate >= filterDate;
+        });
         
-        // store the API key as a const
-        const googleAPIKey = 'AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro';
-
-        // grab all the restaurant locations store an array?
-        const destinations = matchingRestaurants.map(restaurant => restaurant.location)
-        const destinationsString = destinations.join('|');
-        
-        // create the API URL query string using userlocation, restaurant locations and API key
-        const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${userLocation}&destinations=${destinationsString}&key=${googleAPIKey}`;
-        const testurl = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=51.5253954,0.1790877&destinations=51.474333,0.044083&key=AIzaSyCLoboiJXEKQDw2TtA5jSs9wVawSJeJzro"
-        // do fetch request, parse data and store somewhere
-        fetch(testurl)
-          .then(res => {
-            res.json();
-          }).then(data => {
-            console.log(data);
-          }).catch((error) => {
-            console.log(error);
-          })
-       
-        // use distance returned to sort restaurant array - might need to add a distance property to each restaurant object 
+      } else {
+        // checking that the filterParameters[`${parameterKey}`] has a value less than the restaurants data
+        filteredRestaurants = filteredRestaurants.filter(restaurant => restaurant.maximumTableSize >= filterParameters[`${parameterKey}`]);
       }
+    });
+    // just a catch function to ensure filters or location sorting reverts if user deselects whilst filtering is active.
+    if(userLocation){
+      calcDistances(userLocation, filteredRestaurants);
+    } else {
+      setFilteredList(filteredRestaurants);
+    } 
+  }
 
+  // search filter function
+  const searchFilter = (searchValue) => {
 
-      const contentJsx = matchingRestaurants.length ? (
-        <CardList restaurants={matchingRestaurants}/>
-      ) : (
-          <FeedbackPanel
-            header="No matches"
-            text="None of our restaurants matched that search"
-          />
-        )
+    const searchRestaurants = restaurants;
+
+    const searchFilteredList = searchRestaurants.filter(restaurant => {
+
+      const cuisineAndNameArray = restaurant.cuisine.concat([restaurant.name.toLowerCase()]);
+      const cuisineAndNameString = cuisineAndNameArray.join(' ');
+      return cuisineAndNameString.includes(searchValue.toLowerCase());
+
+    });
+    // just a catch function to ensure filters or location sorting reverts if user deselections whilst filtering is active.
+    if(userLocation){
+      calcDistances(userLocation, searchFilteredList);
+    } else {
+      setFilteredList(searchFilteredList);
+    } 
+  };
+
+  // get users location when share location button is clicked.
+  const getLocation = () => {
+
+    if (navigator.geolocation){
+      if(!userLocation){
+        navigator.geolocation.getCurrentPosition(position => {
+
+          // grab user location and set state
+          const userPosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+          const listToSort = [...filteredList];
+          calcDistances(userPosition, listToSort);
+        });
+      } else {
+        // a catch to ensure filters or location sorting reverts if user deselections whilst filtering is active.
+        setUserLocation("");
+        const latestRestaurants = distanceSortedList.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
+        setFilteredList(latestRestaurants);
+      }        
+    } else {
+      setUserLocation("");
+    }
+  }
+
+  const calcDistances = (userPosition, listToSort) => {
+
+    // create google coords objects for each restaurant location
+    const restaurantLocations = listToSort.map(restaurant => new google.maps.LatLng(restaurant.location[0], restaurant.location[1])); 
+
+    // TODO - google API services will only take 25 origins and destinations in a single request, this will need dealing with...
+    const service = new google.maps.DistanceMatrixService();
+
+    service.getDistanceMatrix(
+        {
+            origins: [userPosition],
+            destinations: restaurantLocations,
+            travelMode: 'DRIVING',
+        }, (response, status) => {
+            if(status === 'OK'){
+              
+                // grab response and drill down to data we need i.e. distances to
+                const results = response.rows[0].elements;
+
+                // for each restaurant cycle over the returned data and pull out the distance
+                for (let i = 0; i < results.length; i++) {
+
+                    const element = results[i];
+
+                    listToSort[i].distanceTo = element.distance.value;
+                    listToSort[i].distanceToText = element.distance.text;
+
+                }
+                const sortedList = listToSort.sort((restaurantA, restaurantB) => restaurantA.distanceTo - restaurantB.distanceTo);
+                
+                setUserLocation(userPosition);
+                setDistanceSortedList(sortedList);
+            }
+        }
+    );
+  }
+
+  const renderLocationBtn = userLocation ? 
+    <span className={styles.fa} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.fa} /></span> :
+    <span className={styles.faActive} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.faActive} /></span>
+  
+  const renderList = userLocation ? distanceSortedList : filteredList;
+
+    // create and pass the filtered restaurants list to CardList
+    const contentJsx = renderList.length ? (
+      <CardList restaurants={renderList} />
+    ) : (
+        <FeedbackPanel
+          header="No matches"
+          text="None of our restaurants matched that search"
+        />
+      )
 
     return (
-        <div className={styles.dealsPage}>
+        <div className={styles.container}>
           <div className={styles.searchbar}>
-            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchText ={searchText} updateSearchText={setSearchText}/>   
-            <FilterButton filterRestaurants={filterRestaurants}/>   
-            <Location sortLocation={sortLocation}/> 
+            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter}/> 
+          </div>  
+          <div className={styles.filterOptions}>
+            <FilterButton filterRestaurants={filterRestaurants}/> 
+            <div className={styles.location}>
+              {renderLocationBtn}
+            </div>
           </div>
         <section>
           <h1>Latest Offers</h1>
@@ -131,7 +186,6 @@ const DealsPage = () => {
     )
 }
 
-export default DealsPage;
-
-
-// , cuisine: restaurantCuisine.includes(searchText.toLowerCase())}
+export default GoogleApiWrapper({
+  apiKey: (process.env.REACT_APP_GOOGLE_API_KEY)
+})(DealsPage)
