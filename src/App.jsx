@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import styles from './App.module.scss';
+import React from "react";
 import Routes from "./containers/Routes";
-import library from "./data/fa-library";
-
+import library from './data/fa-library';
 
 const App = () => {
 
