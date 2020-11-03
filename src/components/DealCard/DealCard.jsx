@@ -6,7 +6,9 @@ import pin from '../../assets/images/pin-white.png'
 
 
 const DealCard = (props) => {
-    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription } = props.restaurant;
+    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription, distanceSortedList } = props.restaurant;
+   
+
     
     return (
         <div className={styles.card} >
@@ -18,7 +20,7 @@ const DealCard = (props) => {
                 <h2 className={styles.description}>{restaurantDescription}</h2>
                 <div className={styles.locationContainer}>
                     <img src={pin} alt="pin symbol" />
-                    <h2>7 miles from current location</h2>
+                    <h2>You are away</h2>
                 </div> 
                 <button>View offer</button>     
             </Link>

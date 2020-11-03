@@ -7,7 +7,7 @@ const CardList = (props) => {
         <>
             <section className={styles.cardlist}>
                 {props.restaurants.map((restaurant) => {
-                    return (<DealCard key={restaurant.restaurantId} restaurant={restaurant} />)
+                    return (<DealCard key={restaurant.restaurantId} restaurant={restaurant} distanceSortedList={props.distanceSortedList} />)
                 })}    
             </section>
         </>

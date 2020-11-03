@@ -27,7 +27,7 @@ const DealsPage = ({google}) => {
   const [filteredList, setFilteredList] = useState(latestRestaurants);
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
-
+  console.log(distanceSortedList);
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
 
@@ -159,7 +159,7 @@ const DealsPage = ({google}) => {
 
     // create and pass the filtered restaurants list to CardList
     const contentJsx = renderList.length ? (
-      <CardList restaurants={renderList} />
+      <CardList restaurants={renderList} distanceSortedList={distanceSortedList} />
     ) : (
         <FeedbackPanel
           header="No matches"
