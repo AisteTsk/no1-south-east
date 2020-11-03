@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
 
 const RestaurantDetails = (props) => {
+
     const { 
         name, 
         image, 
         cuisine, 
-        validUntil, 
+        validUntil,
         location, 
         daysAvailable, 
         maximumTableSize,
@@ -25,7 +26,7 @@ const RestaurantDetails = (props) => {
 
         
         
-    } = restaurants.find(restaurant => restaurant.restaurantId === props.restaurantId);
+    } = restaurants.find(restaurant => restaurant.restaurantId == props.restaurantId);
 
     //this function will take the array of Booleans, filter for true and show
 
