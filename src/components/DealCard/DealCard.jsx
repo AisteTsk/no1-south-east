@@ -6,10 +6,16 @@ import pin from '../../assets/images/pin-white.png'
 
 
 const DealCard = (props) => {
-    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription, distanceSortedList } = props.restaurant;
+    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription } = props.restaurant;
    
+    const distanceFromRestaurant = () => {
+        if(props.restaurant.distanceToText) {
+            return <h2>You are {props.restaurant.distanceToText} away</h2>
+    } else {
+        return <h2>You're location is inactive</h2>
+    }
+}
 
-    
     return (
         <div className={styles.card} >
             <Link to={`/restaurants/${restaurantId}`}>    
@@ -20,7 +26,7 @@ const DealCard = (props) => {
                 <h2 className={styles.description}>{restaurantDescription}</h2>
                 <div className={styles.locationContainer}>
                     <img src={pin} alt="pin symbol" />
-                    <h2>You are away</h2>
+                    {distanceFromRestaurant()}
                 </div> 
                 <button>View offer</button>     
             </Link>

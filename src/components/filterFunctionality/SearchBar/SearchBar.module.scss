@@ -1,21 +1,27 @@
 ﻿@import '../../../sass/abstracts/variables';
 
 .search {
-  color: $color-pink;
-  width: auto
-}
-  
-.fa {
-  color: $color-pink;
-  width: 100px;
-  padding: 10px;
-  margin-top: 10px;
-  cursor: pointer;
-  position: relative;
-  top: 10px;
-  padding-left: 5px;
-  margin-top: 0px;
-  font-size: 40px;
+  color: $color-green;
+  width: auto;
+
+  .fa {
+    color: $color-green;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  input {
+    width: 220px;
+    line-height: 39px;
+    margin: 0 10px;
+
+  }
 }
 
-  
+@media (min-width: 1000px) {
+ .search {
+   input {
+    width: 250px;
+   }
+ }
+}
