@@ -14,7 +14,7 @@ import RedeemOfferPage from "../../components/RedeemOfferPage";
 import PrivateRoutes from "../PrivateRoutes";
 
 const Routes = (props) => {
-  const { user, signIn, signOut } = props;
+  const { user, googleSignIn, signIn, signOut } = props;
 
   return (
     <Router>
@@ -24,7 +24,7 @@ const Routes = (props) => {
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
-      <SignIn path="/sign-in" signIn={signIn} /> 
+      <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} /> 
       <Register path="/register" />
       <RestaurantDetails path="/restaurants/:restaurantId" />
       <PrivateRoutes path="/" user={user} >
