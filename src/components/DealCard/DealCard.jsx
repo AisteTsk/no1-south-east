@@ -3,11 +3,11 @@ import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
 
 const DealCard = (props) => {
-    const { name, offerPercent, cuisine, validUntil, restaurantId } = props.restaurant;
+    const { name, offerPercent, cuisine, validUntil, databaseId } = props.restaurant;
     
     return (
         <div className={styles.card} >
-                <Link to={`/restaurants/${restaurantId}`}>
+                <Link to={`/restaurants/${databaseId}`}>
                 <h1>{offerPercent}</h1>
                 <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="restaurant"/>
                 <h2>{name}</h2>

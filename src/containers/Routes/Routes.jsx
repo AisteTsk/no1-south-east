@@ -21,7 +21,7 @@ const Routes = () => {
       <DealsPage path="/browseDeals" />
       <SignIn path="/sign-in" /> 
       <Register path="/register" />
-      <RestaurantDetails path="/restaurants/:restaurantId"/>
+      <RestaurantDetails path="/restaurants/:databaseId"/>
     </Router>
   );
 };
