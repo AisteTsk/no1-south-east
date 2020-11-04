@@ -36,8 +36,4 @@ const Routes = (props) => {
   )
 };
 
-    </Router>
-  );
-};
-
 export default Routes;
