@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from 'google-maps-react';
 import { firestore } from '../../firebase';
 
-// import logo from '../../assets/images/logocut.png';
+import logo from '../../assets/images/logocut.png';
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
@@ -196,7 +196,7 @@ const DealsPage = ({google}) => {
     return (
         <div className={styles.container}>
           <div className={styles.searchbar}>
-            {/* <img src={logo} /> */}
+            <img src={logo} />
             <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter}/> 
           </div>  
           <div className={styles.filterOptions}>
