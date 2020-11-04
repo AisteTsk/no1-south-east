@@ -61,30 +61,28 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     return (
         <div className={styles.filtermenu}>
             <button className={styles.closebtn} onClick={closeFilterMenu}>&times;</button>
-            <div id="when-need">
+            <div className={styles.whenNeed}>
                 <p>When do you want to eat?</p>
                 <div className={styles.icons}>
                     <Calendar collectFilters={collectFilters} filterType={'validUntil'} />
                 </div>
             </div>
             <hr/>
-            <div id="time-need">
+            <div className={styles.timeNeed}>
                 <p>Breakfast, Lunch or Dinner?</p>
                 <div className={styles.icons}>{renderMealTypeIcons}</div>
             </div>
             <hr/>
-            <div id="deal-type">
+            <div className={styles.dealNeed}>
                 <p>Discount on food or drink?</p>
                 <div className={styles.icons}>{renderDealTypeIcons}</div>
             </div>
             <hr/>
-            <div id="dietary-need">
+            <div className={styles.dietaryNeed}>
                 <p>Any dietary needs?</p>
                 <div className={styles.icons}>{renderDietaryIcons}</div>
             </div>
-            <hr/>
             <Slider collectFilters={collectFilters} filterType={'maximumTableSize'}/>
-            <hr/> 
             <div className={styles.icons}><button onClick={filtering}>Filter</button></div>
         </div>    
     )
