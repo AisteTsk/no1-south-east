@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './DealsPage.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from 'google-maps-react';
+import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
 // import logo from '../../assets/images/logocut.png';
@@ -214,5 +215,5 @@ const DealsPage = ({google}) => {
 }
 
 export default GoogleApiWrapper({
-  apiKey: (process.env.REACT_APP_GOOGLE_API_KEY)
+  apiKey: (googleMapsApiKey)
 })(DealsPage)

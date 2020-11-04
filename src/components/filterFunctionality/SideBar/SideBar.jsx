@@ -14,7 +14,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     // create filter parameters array as state
     const [filterParameters, setFilterParameters] = useState({
             discount: {food: false, drink: false},
-            dietaryRequirements: {vegetarian: false, vegan: false, halal: true, glutenfree: false, diaryfree: false},
+            dietaryRequirements: {vegetarian: false, vegan: false, halal: false, glutenfree: false, diaryfree: false},
             sitting: {breakfast: false, lunch: false, dinner: false},
             maximumTableSize: 1,
             validUntil: formatToday,
