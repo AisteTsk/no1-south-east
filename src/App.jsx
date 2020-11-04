@@ -1,8 +1,8 @@
 import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
 import firebase, { provider } from "./firebase";
-import faLibrary from "./data/fa-library";
 import { navigate } from "@reach/router";
+import "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -34,6 +34,7 @@ const App = () => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(({user}) => {
+        console.log(user)
         setUser(user);
         navigate("/browseDeals")
       }).catch((error) => {

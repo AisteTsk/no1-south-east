@@ -7,7 +7,8 @@ import {
     faPhoneAlt,
     faFilter,
     faSearch,
-    faStreetView
+    faStreetView,
+    faUser,
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,6 +21,7 @@ export default library.add(
     faFilter,
     faSearch,
     faStreetView,
-    faGoogle
+    faGoogle,
+    faUser
 );
 
