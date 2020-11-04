@@ -5,6 +5,7 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import { firestore } from '../../firebase';
 
 import logo from '../../assets/images/logocut.png';
+
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
