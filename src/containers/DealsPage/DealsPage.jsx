@@ -11,11 +11,7 @@ import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
 import Location from '../../components/filterFunctionality/Location';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@reach/router";
-
-
-
 
 const DealsPage = ({google}) => {
 
