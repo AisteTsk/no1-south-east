@@ -26,13 +26,14 @@ const Routes = (props) => {
       <DealsPage path="/browseDeals" />
       <SignIn path="/sign-in" signIn={signIn} /> 
       <Register path="/register" />
-      <RestaurantDetails path="/restaurants/:restaurantId" />
+      <RestaurantDetails path="/restaurants/:databaseId"/>
       <AccountPage path="/account" />
 
       {/* <PrivateRoutes path="/" user={user} > */}
         {/* <AccountPage path="/account" signOut={signOut} /> */}
         {/* <RedeemOfferPage path="/redeem-offer" />
       </PrivateRoutes> */}
+      
     </Router>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const FeedbackPanel = (props) => {
   const {header, text} = props;
   return (
