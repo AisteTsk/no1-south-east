@@ -48,5 +48,8 @@
     "node": "^14.15.0",
     "node-sass": "^4.14.1",
     "sass": "^1.28.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["web.js", "js", "web.ts", "ts", "web.tsx", "tsx", "json", "web.jsx", "jsx", "node", "png"]
   }
 }
