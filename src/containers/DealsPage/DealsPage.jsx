@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 
+// import logo from '../../assets/images/logocut.png';
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
@@ -28,7 +29,7 @@ const DealsPage = ({google}) => {
   const [filteredList, setFilteredList] = useState(latestRestaurants);
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
-
+  
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
 
@@ -160,7 +161,7 @@ const DealsPage = ({google}) => {
 
     // create and pass the filtered restaurants list to CardList
     const contentJsx = renderList.length ? (
-      <CardList restaurants={renderList} />
+      <CardList restaurants={renderList}  />
     ) : (
         <FeedbackPanel
           header="No matches"
@@ -171,6 +172,7 @@ const DealsPage = ({google}) => {
     return (
         <div className={styles.container}>
           <div className={styles.searchbar}>
+            {/* <img src={logo} /> */}
             <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter}/> 
           </div>  
           <div className={styles.filterOptions}>
@@ -179,9 +181,10 @@ const DealsPage = ({google}) => {
               {renderLocationBtn}
             </div>
           </div>
-          <section>
-              {contentJsx}
-          </section>
+        <section className={styles.dealsPage}>
+          <h1 className={styles.title}>Latest Offers</h1>
+          {contentJsx}
+        </section>
         </div>
     )
 }

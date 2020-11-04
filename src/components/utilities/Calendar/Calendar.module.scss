@@ -4,22 +4,21 @@
 width: 80%;
 display: flex;
 justify-content: center;
-margin: 10px;
 
- .Calender {
-    // appearance: none;
+    .Calendar {
     box-sizing: border-box;
+    padding: 3%;
     width: 80%;
     border: 1px solid $color-green;
-    border-radius: 20px;
-    background: transparent;
-    font-size: 1rem;
-    padding-bottom: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    flex-direction: row;
     ::-webkit-datetime-edit-text { padding: 0 2rem; }
-    ::-webkit-datetime-edit-month-field { text-transform: uppercase; }
-    ::-webkit-datetime-edit-day-field { text-transform: uppercase; }
-    ::-webkit-datetime-edit-year-field { text-transform: uppercase; }
+    ::-webkit-datetime-edit-month-field { text-transform: uppercase; text-align: center; }
+    ::-webkit-datetime-edit-day-field { text-transform: uppercase; text-align: center; }
+    ::-webkit-datetime-edit-year-field { text-transform: uppercase; text-align: center; }
     ::-webkit-inner-spin-button { display: none; }
     ::-webkit-calendar-picker-indicator { background: transparent;}
+
 }
 }
