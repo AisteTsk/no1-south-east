@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './DealsPage.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
+import { firestore } from '../../firebase';
 
 // import logo from '../../assets/images/logocut.png';
 // components
@@ -11,22 +12,41 @@ import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
 
-//  data
-import restaurants from "../../data/restaurants";
 
 const DealsPage = ({google}) => {
 
-  //format offAdded to time since last epoch (use getTime()) property in rastaurants array
-  const restaurantsEpochTime = restaurants.map((restaurant) => {
-    restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
-    return restaurant;
-  });
-    
-  const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
+  //*****importing data from firestore*****//
+  const restaurants = [];
 
+  const fetchRestaurants = () => {
+    firestore
+      .collection("deals")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach( (doc) => {
+          const retaurantData = doc.data();
+          restaurants.push({...retaurantData, databaseId: doc.id})
+        })      
+        
+        //format offAdded to time since last epoch (use getTime()) property in rastaurants array
+        const restaurantsEpochTime = restaurants.map((restaurant) => {
+          restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
+          return restaurant;
+        });
+
+        const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
+        
+        setFilteredList(latestRestaurants);
+      }).catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchRestaurants()
+  },[])
+  
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
-  const [filteredList, setFilteredList] = useState(latestRestaurants);
+  const [filteredList, setFilteredList] = useState();
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
   
@@ -160,14 +180,19 @@ const DealsPage = ({google}) => {
   const renderList = userLocation ? distanceSortedList : filteredList;
 
     // create and pass the filtered restaurants list to CardList
-    const contentJsx = renderList.length ? (
-      <CardList restaurants={renderList}  />
-    ) : (
-        <FeedbackPanel
+    const contentJsx = () => {
+
+      if (renderList === undefined){
+        return <p>Deals loading...</p> 
+      } else if (renderList.length) {
+        return <CardList restaurants={renderList} />
+      } else {
+          return (<FeedbackPanel
           header="No matches"
           text="None of our restaurants matched that search"
-        />
-      )
+        />)
+      }
+    }
 
     return (
         <div className={styles.container}>
@@ -183,7 +208,7 @@ const DealsPage = ({google}) => {
           </div>
         <section className={styles.dealsPage}>
           <h1 className={styles.title}>Latest Offers</h1>
-          {contentJsx}
+          {contentJsx()}
         </section>
         </div>
     )

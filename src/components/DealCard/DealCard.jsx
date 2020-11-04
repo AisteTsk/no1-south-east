@@ -6,8 +6,8 @@ import pin from '../../assets/images/pin-white.png'
 
 
 const DealCard = (props) => {
-    const { name, offerPercent, cuisine, validUntil, restaurantId, restaurantDescription } = props.restaurant;
-   
+    const { name, offerPercent, cuisine, validUntil, databaseId, restaurantDescription } = props.restaurant;
+
     const distanceFromRestaurant = () => {
         if(props.restaurant.distanceToText) {
             return <h2>You are {props.restaurant.distanceToText} away</h2>
@@ -15,10 +15,9 @@ const DealCard = (props) => {
         return <h2>You're location is inactive</h2>
     }
 }
-
     return (
         <div className={styles.card} >
-            <Link to={`/restaurants/${restaurantId}`}>    
+            <Link to={`/restaurants/${databaseId}`}>    
                 <hr />
                 <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="restaurant" />
                 <h1>{name}</h1>
