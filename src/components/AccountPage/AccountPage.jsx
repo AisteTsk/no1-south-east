@@ -7,7 +7,9 @@ import CardList from "../CardList";
 import FeedbackPanel from '../filterFunctionality/FeedbackPanel';
 
 
-const AccountPage = () => {
+const AccountPage = (props) => {
+
+    const { signOut } = props;
 
         // we have used a placeholder for the FAVs, Saved and redeemed
 
