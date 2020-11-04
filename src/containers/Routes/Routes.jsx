@@ -27,14 +27,12 @@ const Routes = (props) => {
       <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
       <Register path="/register" />
       <RestaurantDetails path="/restaurants/:databaseId"/>
-
-
-      <PrivateRoutes path="/" user={user} > 
-        <AccountPage path="/account" signOut={signOut} />
-        <RedeemOfferPage path="/redeem-offer" />
-      </PrivateRoutes>
+      <PrivateRoutes path="/" user={user} >
+          <AccountPage path="/account" signOut={signOut} />
+          <RedeemOfferPage path="/redeem-offer" /> 
+      </PrivateRoutes> 
     </Router>
-  );
+  )
 };
 
 export default Routes;
