@@ -4,7 +4,6 @@ import styles from './Register.module.scss'
 import Logo from "../Logo/Logo";
 
 const Register = () => {
-
     return(
         <div className={styles.page}>
             <Logo />
@@ -17,8 +16,8 @@ const Register = () => {
                             <input type="text" placeholder="Last Name" required />
                         </div>
                         <div className={styles.form_container}>
-                            <input type="text" name="email" placeholder="Email Address" required />
-                            <input type="text" name="password" placeholder="Password" required />
+                            <input id="email" type="text" name="email" placeholder="Email Address" required />
+                            <input id="password" type="text" name="password" placeholder="Password" required />
                         </div>
                         <p>By signing up you agree to our
                             <p className={styles.terms}>
@@ -42,3 +41,18 @@ const Register = () => {
 };
 
 export default Register;
+
+// useEffect ( () => {
+//     const individualUser = userData.forEach( (user) => {
+//       firestore
+//       .collection('users')
+//       .doc(user.uid)
+//       .set({...user})
+//       .then( () => {
+//         console.log('succesfully uploaded')
+//       })
+//       .catch( (err) =>{
+//         console.log(err)
+//       })
+//     })
+//   }, [])
