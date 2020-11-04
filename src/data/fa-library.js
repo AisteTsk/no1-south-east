@@ -1,6 +1,8 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { fab, faInstagram, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faCompass } from "@fortawesome/free-regular-svg-icons";
+
 import {
     faGlobe,
     faEnvelope,
@@ -22,6 +24,7 @@ export default library.add(
     faSearch,
     faStreetView,
     faGoogle,
-    faUser
+    faUser,
+    faCompass
 );
 

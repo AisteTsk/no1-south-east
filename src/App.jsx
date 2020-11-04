@@ -2,7 +2,7 @@ import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
 import firebase, { provider } from "./firebase";
 import { navigate } from "@reach/router";
-import "./data/fa-library";
+import libary from "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -70,4 +70,5 @@ const App = () => {
     </>
   )
 };
+
 export default App;

@@ -1,101 +1,100 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
-import restaurants from "../../data/restaurants";
-import logo from '../../assets/images/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import halal from '../../assets/image_icons/halal_active.png';
-import glutenfree from '../../assets/image_icons/gluten_free_active.png';
-import vegan from '../../assets/image_icons/vegan_active.png';
-import vegetarian from '../../assets/image_icons/vegetarian_active.png';
-import dairyfree from '../../assets/image_icons/dairy_free_active.png';
+import Logo from "../Logo/Logo";
 
+import { firestore } from '../../firebase';
 
 const RestaurantDetails = (props) => {
-    const { 
-        name, 
-        image, 
-        offerPercent, 
-        cuisine, 
-        validUntil, 
-        location, 
-        daysAvailable, 
-        maximumTableSize,
-        dietaryRequirements,
-        sitting,
-        phoneNumber,
-        email
-    } = restaurants.find(restaurant => restaurant.restaurantId === props.restaurantId);
 
+    const [restaurantData, setrestaurantData] = useState()
 
-    // function for each diary requirment image - can be improved
+    //*****importing data from firestore*****//    
     
-    const dietaryRequirementsVegetarian = () => {
-        if (dietaryRequirements.vegetarian === true) {
-            return (<img  src={vegetarian} alt="vegan option"/>)
-            } 
-        }
-    const dietaryRequirementsVegan = () => {
-        if (dietaryRequirements.vegan === true) {
-            return (<img  src={vegan} alt="vegan option"/>)
-            } 
-        }
-    const dietaryRequirementsGlutenFree = () => {
-        if (dietaryRequirements.glutenfree === true){
-            return (<img  src={glutenfree} alt="glutenfree option"/>)
-                } 
-            }
-    const dietaryRequirementsHalal = () => {
-        if (dietaryRequirements.halal === true) {
-            return (<img  src={halal} alt="glutenfree option"/>)
-            }
-        }
-    const dietaryRequirementsDiaryFree = () => {
-            if (dietaryRequirements.diaryfree === true) {
-                return (<img  src={dairyfree} alt="glutenfree option"/>)
-                }
-            }      
+    const fetchRestaurants = () => {
 
-    return (
-        <div className={styles.RestaurantDetails}>
-            <div className={styles.imageLogo}>
-                <img className={styles.responsiveImageLogo} src={logo} alt="logo"></img>
-            </div>
-            <h1>{name}</h1>
-            <div className={styles.image}>
-                <img className={styles.responsiveImage} src={image} alt="Restaurant"/>
-            </div>
-            <p>Location: {location}</p>
-            <p>Offer Details</p>
-            <p>Offer {offerPercent}</p>
-            <p>Restaurant Info</p>
-            <p>Cuisine: {cuisine}</p>
-            <p>sitting: {sitting.toString()}</p>
-            <p>Phone Number: {phoneNumber}</p>
-            <p>Email Address: {email}</p>
-            <p>Valid until: {validUntil}</p>
-            <p>Days Avalible: {daysAvailable.toString()}</p>
-            <p>Maximim Table Size: {maximumTableSize}</p>
-            <span className={styles.dietaryImages}>
-                {dietaryRequirementsVegan()}
-                {dietaryRequirementsVegetarian()}
-                {dietaryRequirementsGlutenFree()}
-                {dietaryRequirementsHalal()}
-                {dietaryRequirementsDiaryFree()}
-            </span>
-            <span className={styles.fontawesomeContainer}>
-                <span>
-                    <FontAwesomeIcon icon={["fab", "instagram"]}/>
+        firestore
+        .collection("deals")
+        .doc(props.databaseId)
+        .get()
+        .then((doc) => {
+            setrestaurantData(doc.data());
+        }).catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        fetchRestaurants()
+    },[])
+
+    const ConvertBooleanToText = (inputBooleanArray) => {
+        const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
+        return outputString ;
+    };
+
+    if(restaurantData) {
+
+        const { 
+            name, 
+            image, 
+            cuisine, 
+            validUntil,
+            location, 
+            daysAvailable, 
+            maximumTableSize,
+            dietaryRequirements,
+            sitting,
+            phoneNumber,
+            email,
+            instagram,
+            website,
+            offerDescription,
+            restaurantDescription
+        } = restaurantData;
+        return (
+            <>
+            <Logo/>
+            <div className={styles.RestaurantDetails}>
+                <h1>{name}</h1>
+                <div className={styles.image}>
+                    <img className={styles.responsiveImage} src={image} alt={name}/> 
+                </div>          
+                <p>Location: {location}</p><br/>
+                <p>Offer Details:</p>
+                <p>{offerDescription}</p><br/>
+                <p>Restaurant Info:</p>
+                <p>{restaurantDescription}</p><br/>
+                <p>Cuisine: {cuisine.join(', ')}</p><br/>
+                <p>Sitting: {ConvertBooleanToText(sitting)}</p><br/>
+                <p>Valid until: {validUntil}</p><br/>
+                <p>Days Avalible: {daysAvailable.join(', ')}</p><br/>
+                <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
+                <p>{ConvertBooleanToText(dietaryRequirements)}</p>
+                <span className={styles.fontawesomeContainer}>
+                    <a href={instagram} target="_blank" rel="noopener noreferrer" > 
+                        <FontAwesomeIcon icon={["fab", "instagram"]}/>
+                    </a>
+                    <a href={website} target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={["fa", "globe"]}/>
+                    </a> 
+                    <a href={`tel: ${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
+                    </a>
+                    <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={["fas", "envelope"]} />
+                    </a>
                 </span>
-                <FontAwesomeIcon icon={["fa", "globe"]}/>
-                <FontAwesomeIcon icon={["fas", "phone-alt"]}/>
-                <FontAwesomeIcon icon={["fas", "envelope"]}/>
-            </span>
-            <Link to="/SignUp" >   
-                <button>Get Code</button>
-            </Link>
-        </div>
-    )
+                <Link to="/SignUp" >   
+                    <button>Get Code</button>
+                </Link>
+            </div>
+            </>
+        )
+    } else { 
+        return (
+            <p>Loading....</p>
+        )
+    } 
 }
 
 export default RestaurantDetails;

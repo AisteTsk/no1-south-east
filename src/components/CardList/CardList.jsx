@@ -16,4 +16,3 @@ const CardList = (props) => {
 };
 
 export default CardList;
-

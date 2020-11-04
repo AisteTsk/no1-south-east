@@ -4,7 +4,6 @@ import "firebase/storage";
 import "firebase/auth";
 import "firebase/functions";
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyAMh_LPlNk1c-eF-RpoSCHxSdIF30AXoKM",
     authDomain: "no1southeast.firebaseapp.com",
