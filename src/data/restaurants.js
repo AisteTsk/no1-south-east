@@ -1,4 +1,4 @@
-const restaurants = [
+    const restaurants = [
     {
         "restaurantId": 1,
         'name': `Ollie's Oysterhouse`,

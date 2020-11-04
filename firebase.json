@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "https://no1southeast-574a3.web.app/",
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
