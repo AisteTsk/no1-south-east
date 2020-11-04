@@ -9,8 +9,10 @@ import FeedbackPanel from '../filterFunctionality/FeedbackPanel';
 
 const AccountPage = () => {
 
+        // we have used a placeholder for the FAVs, Saved and redeemed
+
     const contentJsx = favourites.length ? (
-        <CardList restaurants={favourites} />
+        <CardList restaurants={favourites}/>
     ) : (
         <FeedbackPanel
             header="No matches"
@@ -19,9 +21,11 @@ const AccountPage = () => {
         )
     return (
         <div>
-            <div className={styles.page}>
             <a name="profile"></a>
+            <div className={styles.page}>
+
                 <Logo />
+                <div className={styles.profileBox}>
                 <section className={styles.form}>
                     <div className={styles.updateDetails}>
                         <h3>Update your info</h3>
@@ -36,10 +40,13 @@ const AccountPage = () => {
                                 <input type="text" name="password" placeholder="Password" required />
                                 <input type="text" name="confirmpassword" placeholder="Confirm Password" required />
                             </div>
-                            <button type="submit" className={styles.register_btn}>Update Details</button>
+                            <button type="submit" className={styles.update_btn}>Update Details</button>
                         </form>
                     </div>
                 </section>
+                </div>
+
+
                 <div className={styles.bottomRight}>
                             <div className={styles.buttons}>
                             <a href="#profile">
@@ -64,7 +71,8 @@ const AccountPage = () => {
             </div>
 
             <div className={styles.page}>
-                <a name="favourites"></a>
+            <a name="favourites"></a>
+            <h2 className={styles.boxtitle}>Favourites</h2>
                 <section className={styles.form}>
                     <section className={styles.favourites}>
                         <div className={styles.favouritesCard}>
@@ -75,32 +83,31 @@ const AccountPage = () => {
             </div>
 
             <div className={styles.page}>
-                <a name="recentlyViewed"></a>
+            <a name="recentlyViewed"></a>
+            <h2 className={styles.boxtitle}> Recently Viewed</h2>
                 <section className={styles.form}>
-                    <p> Recently Viewed Offers
                     {contentJsx}
-                    </p>
                 </section>
             </div>
 
             <div className={styles.page}>
                 <a name="redeemed"></a>
+                <h2 className={styles.boxtitle}> Redeemed Offers</h2>
                 <section className={styles.form}>
-                    <p>Redeemed Offers
                     {contentJsx}
-                    </p>
                 </section>
             </div>
 
             <div className={styles.page}>
-                <a name="referFriend"></a>
+            <a name="referFriend"></a>
+            <h2 className={styles.boxtitle}>Refer a Friend</h2>
                 <section className={styles.form}>
-                    <p>Refer a friend
-                    </p>
-                    <p className={styles.faqs}>
-                        Code:
-                    </p>
+                <div className={styles.refer}>
+                    <button className={styles.update_btn}>Click for a referral code:</button>
+                   <p></p>
+                    </div>
                 </section>
+                
             </div>
         </div>
     )

@@ -21,7 +21,6 @@ export default library.add(
     faPhoneAlt,
     faFilter,
     faSearch,
-    faStreetView,
     faUser,
     faCompass
 );

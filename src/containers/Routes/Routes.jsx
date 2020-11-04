@@ -11,7 +11,7 @@ import Terms from "../Terms/Terms";
 import Logo from "../../components/Logo";
 import AccountPage from "../../components/AccountPage";
 import RedeemOfferPage from "../../components/RedeemOfferPage";
-//import PrivateRoutes from "../PrivateRoutes";
+import PrivateRoutes from "../PrivateRoutes";
 
 const Routes = (props) => {
   const { user, signIn, signOut } = props;
@@ -28,12 +28,14 @@ const Routes = (props) => {
       <Register path="/register" />
       <RestaurantDetails path="/restaurants/:databaseId"/>
       <AccountPage path="/account" />
+      <PrivateRoutes path="/" user={user} >
+          <AccountPage path="/account" signOut={signOut} />
+          <RedeemOfferPage path="/redeem-offer" /> 
+      </PrivateRoutes> 
+    </Router>
+  )
+};
 
-      {/* <PrivateRoutes path="/" user={user} > */}
-        {/* <AccountPage path="/account" signOut={signOut} /> */}
-        {/* <RedeemOfferPage path="/redeem-offer" />
-      </PrivateRoutes> */}
-      
     </Router>
   );
 };
