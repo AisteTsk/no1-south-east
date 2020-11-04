@@ -5,7 +5,10 @@ import Logo from "../Logo/Logo";
 import favourites from '../../data/restaurants'
 import CardList from "../CardList";
 import FeedbackPanel from '../filterFunctionality/FeedbackPanel';
+
+
 const AccountPage = () => {
+
     const contentJsx = favourites.length ? (
         <CardList restaurants={favourites} />
     ) : (
@@ -29,6 +32,7 @@ const AccountPage = () => {
                             </div>
                             <div className={styles.form_container}>
                                 <input type="text" name="email" placeholder="Email Address" required />
+
                                 <input type="text" name="password" placeholder="Password" required />
                                 <input type="text" name="confirmpassword" placeholder="Confirm Password" required />
                             </div>
@@ -41,9 +45,11 @@ const AccountPage = () => {
                             <a href="#profile">
                                     <button className={styles.LandingPageButton}>Profile ></button>
                                 </a>
+
                                 <a href="#favourites">
                                     <button className={styles.LandingPageButton}>Favourites ></button>
                                 </a>
+
                                 <a href="#recentlyViewed">
                                     <button className={styles.LandingPageButton}>Recently Viewed></button>
                                 </a>
@@ -56,6 +62,7 @@ const AccountPage = () => {
                             </div>
                         </div>
             </div>
+
             <div className={styles.page}>
                 <a name="favourites"></a>
                 <section className={styles.form}>
@@ -66,20 +73,25 @@ const AccountPage = () => {
                     </section>
                 </section>
             </div>
+
             <div className={styles.page}>
                 <a name="recentlyViewed"></a>
                 <section className={styles.form}>
                     <p> Recently Viewed Offers
+                    {contentJsx}
                     </p>
                 </section>
             </div>
+
             <div className={styles.page}>
                 <a name="redeemed"></a>
                 <section className={styles.form}>
                     <p>Redeemed Offers
+                    {contentJsx}
                     </p>
                 </section>
             </div>
+
             <div className={styles.page}>
                 <a name="referFriend"></a>
                 <section className={styles.form}>
@@ -93,4 +105,5 @@ const AccountPage = () => {
         </div>
     )
 };
+
 export default AccountPage;
