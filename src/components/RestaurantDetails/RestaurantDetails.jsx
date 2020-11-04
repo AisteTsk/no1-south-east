@@ -31,32 +31,7 @@ const RestaurantDetails = (props) => {
     //this function will take the array of Booleans, filter for true and show
 
     // function for each diary requirment image - can be improved
-    
-    const dietaryRequirementsVegetarian = () => {
-        if (dietaryRequirements.vegetarian === true) {
-            return (<img  src={vegetarian} alt="vegan option"/>)
-            } 
-        }
-    const dietaryRequirementsVegan = () => {
-        if (dietaryRequirements.vegan === true) {
-            return (<img  src={vegan} alt="vegan option"/>)
-            } 
-        }
-    const dietaryRequirementsGlutenFree = () => {
-        if (dietaryRequirements.glutenfree === true){
-            return (<img  src={glutenfree} alt="glutenfree option"/>)
-                } 
-            }
-    const dietaryRequirementsHalal = () => {
-        if (dietaryRequirements.halal === true) {
-            return (<img  src={halal} alt="glutenfree option"/>)
-            }
-        }
-    const dietaryRequirementsDiaryFree = () => {
-            if (dietaryRequirements.diaryfree === true) {
-                return (<img  src={dairyfree} alt="glutenfree option"/>)
-                }
-            }      
+       
     const ConvertBooleanToText = (inputBooleanArray) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
         return outputString ;
