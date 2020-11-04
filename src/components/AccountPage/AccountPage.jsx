@@ -4,7 +4,9 @@ import styles from './AccountPage.module.scss'
 import Logo from "../Logo/Logo";
 
 
-const AccountPage = () => {
+const AccountPage = (props) => {
+    const { signOut } = props;
+
     return (
         <div>
             <div className={styles.page}>
@@ -22,7 +24,8 @@ const AccountPage = () => {
                                 <input type="text" name="email" placeholder="Email Address" required />
                                 <input type="text" name="password" placeholder="Password" required />
                             </div>
-                            <button type="submit" className={styles.register_btn}>Update Details</button>
+                            <button type="submit" className={styles.account_btn}>Update Details</button>
+                            <button onClick={signOut} className={styles.account_btn}>Sign out</button>
                         </form>
                     </div>
                 </section>

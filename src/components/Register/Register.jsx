@@ -41,3 +41,18 @@ const Register = () => {
 };
 
 export default Register;
+
+// useEffect ( () => {
+//     const individualUser = userData.forEach( (user) => {
+//       firestore
+//       .collection('users')
+//       .doc(user.uid)
+//       .set({...user})
+//       .then( () => {
+//         console.log('succesfully uploaded')
+//       })
+//       .catch( (err) =>{
+//         console.log(err)
+//       })
+//     })
+//   }, [])

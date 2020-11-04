@@ -11,7 +11,7 @@ import Terms from "../Terms/Terms";
 import Logo from "../../components/Logo";
 import AccountPage from "../../components/AccountPage";
 import RedeemOfferPage from "../../components/RedeemOfferPage";
-//import PrivateRoutes from "../PrivateRoutes";
+import PrivateRoutes from "../PrivateRoutes";
 
 const Routes = (props) => {
   const { user, googleSignIn, signIn, signOut } = props;
@@ -24,15 +24,14 @@ const Routes = (props) => {
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
-      <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} /> 
+      <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
       <Register path="/register" />
       <RestaurantDetails path="/restaurants/:restaurantId" />
-      <AccountPage path="/account" />
 
-      {/* <PrivateRoutes path="/" user={user} > */}
-        {/* <AccountPage path="/account" signOut={signOut} /> */}
-        {/* <RedeemOfferPage path="/redeem-offer" />
-      </PrivateRoutes> */}
+      <PrivateRoutes path="/" user={user} > 
+        <AccountPage path="/account" signOut={signOut} />
+        <RedeemOfferPage path="/redeem-offer" />
+      </PrivateRoutes>
     </Router>
   );
 };

@@ -61,14 +61,15 @@
         }
       }
 
-      .register_btn {
+      .account_btn {
         font-size: 22px;
         height: 30px;
         width: 150px;
         background-color: $color-lightgreen;
         color: $color-white;
         cursor: pointer;
-        margin-bottom: 5px;
+        // margin-bottom: 5px;
+        margin: 5px;
 
         &:hover {
           background-color: $color-green;
