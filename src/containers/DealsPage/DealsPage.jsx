@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './DealsPage.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from 'google-maps-react';
-import logo from '../../assets/images/logocut.png';
+// import logo from '../../assets/images/logocut.png';
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
