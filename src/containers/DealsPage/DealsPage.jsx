@@ -5,7 +5,7 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
-import logo from '../../assets/images/logocut.png';
+import * as logo from '../../assets/images/logocut.png';
 
 // components
 import CardList from "../../components/CardList";

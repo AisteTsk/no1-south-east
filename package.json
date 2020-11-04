@@ -14,7 +14,6 @@
     "@testing-library/user-event": "^7.1.2",
     "firebase": "^8.0.0",
     "axios": "^0.21.0",
-    "firebase": "^8.0.0",
     "google-map-react": "^2.1.9",
     "google-maps-react": "^2.0.6",
     "node-sass": "^4.14.1",
@@ -48,8 +47,5 @@
     "node": "^14.15.0",
     "node-sass": "^4.14.1",
     "sass": "^1.28.0"
-  },
-  "jest": {
-    "moduleFileExtensions": ["web.js", "js", "web.ts", "ts", "web.tsx", "tsx", "json", "web.jsx", "jsx", "node", "png"]
   }
 }
