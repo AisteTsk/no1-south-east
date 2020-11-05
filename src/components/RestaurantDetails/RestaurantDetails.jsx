@@ -4,11 +4,16 @@ import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
 
+
 import { firestore } from '../../firebase';
+import GenerateCode from '../GenerateCode/GenerateCode';
 
 const RestaurantDetails = (props) => {
 
     const [restaurantData, setrestaurantData] = useState()
+    const [isClicked, setIsClicked] = useState(false);
+
+    console.log(props.user)
 
     //*****importing data from firestore*****//    
     
@@ -33,6 +38,21 @@ const RestaurantDetails = (props) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
         return outputString ;
     };
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
+
+    const redeemOfferButton = props.user !== null ? ( 
+        <button onClick={handleClick}>Get Code</button>
+    ) :
+    (
+        <Link to="/SignUp" >   
+            <button>Get Code</button>
+        </Link>
+    )
+
+    const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick}/> : null;
 
     if(restaurantData) {
 
@@ -86,10 +106,9 @@ const RestaurantDetails = (props) => {
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
                 </span>
-                <Link to="/SignUp" >   
-                    <button>Get Code</button>
-                </Link>
+                {redeemOfferButton}
             </div>
+            {offerCodeModal}
             </>
         )
     } else { 

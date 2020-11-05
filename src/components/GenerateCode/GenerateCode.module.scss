@@ -1,0 +1,74 @@
+@import '../../sass/abstracts/variables';
+
+/* The Modal (background) */
+.modal {
+    // display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    font-family: 'Josefin Sans', sans-serif;
+  
+  
+  /* Modal Content/Box */
+  .modalContent {
+    background-color: $color-desert;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 35px;
+    border: 3px solid $color-lightgreen;
+    width: 50%; /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 0px 50px 0px 50px;
+  }
+
+  h3{
+      font-weight: bold;
+      font-size: 3rem;
+      color: $color-green;
+      margin: 10px;
+  }
+
+  h5{
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: 5px;
+  }
+
+  p{
+      margin: 5px;
+  }
+
+  a{
+      text-decoration: none;
+      font-weight: bold;
+      color: $color-lightgreen;
+
+      &:hover{
+        color: $color-green;
+      }
+  }
+  
+  /* The Close Button */
+  .close {
+    position: relative;
+    top: -25px;
+    right: -10px;
+    color: $color-lightgreen;
+    float: right;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: $color-green;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+}
