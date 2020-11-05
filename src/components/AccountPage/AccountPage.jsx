@@ -14,7 +14,7 @@ const AccountPage = (props) => {
         // we have used a placeholder for the FAVs, Saved and redeemed
 
     const contentJsx = favourites.length ? (
-        <CardList restaurants={favourites}/>
+        <CardList restaurants={favourites} className={styles.dealCard}/>
     ) : (
         <FeedbackPanel
             header="No matches"
@@ -77,11 +77,11 @@ const AccountPage = (props) => {
             <a name="favourites"></a>
             <h2 className={styles.boxtitle}>Favourites</h2>
                 <section className={styles.form}>
-                    <section className={styles.favourites}>
-                        <div className={styles.favouritesCard}>
+                    {/* <section className={styles.favourites}> */}
+                        {/* <div className={styles.favouritesCard}> */}
                     {contentJsx}
-                    </div>
-                    </section>
+                    {/* </div> */}
+                    {/* </section> */}
                 </section>
             </div>
 
