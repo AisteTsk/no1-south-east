@@ -1,0 +1,17 @@
+
+@import "../../sass/main.module.scss";
+
+.profilelink {
+    background-color: $color-lightgreen ;
+    display: flex;
+    height: 140%;
+    width: 140%;
+    color: $color-green;
+    font-size: 30px;
+    z-index: 10;
+    top: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}

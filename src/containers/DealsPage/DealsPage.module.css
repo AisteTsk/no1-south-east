@@ -58,19 +58,6 @@
   height: 40px;
   width: 40px;
 }
-.container .filterOptions .profilelink {
-  display: flex;
-  height: 200px;
-  width: 200px;
-  color: #233D2A;
-  font-size: 200%;
-  z-index: 10;
-  top: 15px;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-}
 .container .dealsPage {
   background-color: #233D2A;
   padding-top: 80px;

@@ -12,6 +12,7 @@ import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
 // import Location from '../../components/filterFunctionality/Location';
+import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
 
@@ -206,11 +207,7 @@ const DealsPage = ({ google }) => {
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
-        <Link to="/account">
-        <span className={styles.profilelink}>
-          <FontAwesomeIcon icon={["fas", "user"]} />
-        </span>
-      </Link>
+        <div className={styles.profilelink}><ManageAccountButton /></div>
         <div className={styles.location}>
           {renderLocationBtn}
         </div>

@@ -29,7 +29,6 @@ const AccountPage = (props) => {
                 <Logo />
                 <div className={styles.profileBox}>
                 <section className={styles.form}>
-                    <div className={styles.updateDetails}>
                         <h3>Update your info</h3>
                         <form action="">
                             <div className={styles.form_container}>
@@ -42,10 +41,9 @@ const AccountPage = (props) => {
                                 <input type="text" name="password" placeholder="Password" required />
                                 <input type="text" name="confirmpassword" placeholder="Confirm Password" required />
                             </div>
-                            <button type="submit" className={styles.account_btn}>Update Details</button>
+                            <button type="submit" className={styles.account_btn}>Update</button>
                             <button onClick={signOut} className={styles.account_btn}>Sign out</button>
                         </form>
-                    </div>
                 </section>
                 </div>
 
@@ -77,11 +75,7 @@ const AccountPage = (props) => {
             <a name="favourites"></a>
             <h2 className={styles.boxtitle}>Favourites</h2>
                 <section className={styles.form}>
-                    {/* <section className={styles.favourites}>
-                        <div className={styles.favouritesCard}> */}
                     {contentJsx}
-                    {/* </div>
-                    </section> */}
                 </section>
             </div>
 
@@ -106,7 +100,7 @@ const AccountPage = (props) => {
             <h2 className={styles.boxtitle}>Refer a Friend</h2>
                 <section className={styles.form}>
                 <div className={styles.refer}>
-                    <button className={styles.update_btn}>Click for a referral code:</button>
+                    <button className={styles.account_btn}>Click for a referral code:</button>
                    <p></p>
                     </div>
                 </section>
