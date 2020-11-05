@@ -77,11 +77,11 @@ const AccountPage = (props) => {
             <a name="favourites"></a>
             <h2 className={styles.boxtitle}>Favourites</h2>
                 <section className={styles.form}>
-                    {/* <section className={styles.favourites}> */}
-                        {/* <div className={styles.favouritesCard}> */}
+                    {/* <section className={styles.favourites}>
+                        <div className={styles.favouritesCard}> */}
                     {contentJsx}
-                    {/* </div> */}
-                    {/* </section> */}
+                    {/* </div>
+                    </section> */}
                 </section>
             </div>
 
