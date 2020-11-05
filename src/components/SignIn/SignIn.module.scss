@@ -9,20 +9,6 @@
   text-align: center;
   background-color: $color-green;
 
-  .logoContainer {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    top: 0;
-    justify-content: center;
-    margin-top: 10px;
-
-    img {
-      height: 80px;
-      width: 140px;
-    }
-  }
-
   .form {
     display: flex;
     background-color: $color-white;
@@ -37,6 +23,7 @@
     margin: 0 auto;
 
     .signin {
+
       h3 {
         height: auto;
         font-size: 35px;
@@ -81,7 +68,26 @@
           box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
         }
       }
-
+    
+        .google_sign_in {
+          display: flex;
+          align-items: center;
+          border: 2px solid black;
+          border-radius: 50px;
+          justify-content: center;
+          cursor: pointer;
+          margin: 1% 20% 5%;
+          span {
+            color: #4285f4;
+            font-size: 20px;
+          }
+          p {
+            font-size: 17px;
+            margin: 0;
+          }
+        }
+      }
+      
       .terms {
         font-size: 17px;
         margin: -10px 0 20px;
@@ -110,19 +116,38 @@
         }
       }
     }
-  }
-}
 
-@media (min-height: 800px) {
-  .page {
-    .logoContainer {
-      img {
-        height: 110px;
-        width: 200px;
+    .signedInMessage {
+      h3 {
+        height: auto;
+        color: $color-green;
+        cursor: default;
+        font-size: 30px;
+        padding-bottom: 15px;
+      }
+
+      button {
+        width: auto;
+        font-size: 18px;
+        height: 40px;
+        background-color: $color-lightgreen;
+        color: $color-white;
+        text-decoration: underline;
+        cursor: pointer;
+        border-radius: 2px;
+        text-decoration: none;
+        margin: 10px 5px 0;
+        
+
+        &:hover {
+          background-color: $color-green;
+          text-shadow: 0 0 2px white;
+          box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+        }
       }
     }
   }
-}
+
 
 @media (min-width: 720px) {
   .page {
@@ -131,7 +156,6 @@
         h3 {
           font-size: 45px;
         }
-
         input {
           width: 200px;
         }
@@ -144,7 +168,6 @@
   .page {
     .form {
       width: 50%;
-      
       .signin {
         h3 {
           font-size:  54px;

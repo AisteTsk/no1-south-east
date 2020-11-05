@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/yarn.lock
+/package-lock.json
 /.pnp
 .pnp.js
 
@@ -18,6 +20,11 @@
 .env.test.local
 .env.production.local
 
+# api keys
+.env
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
