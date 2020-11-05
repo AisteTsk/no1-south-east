@@ -13,26 +13,25 @@ import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
+// import Location from '../../components/filterFunctionality/Location';
 import { Link } from "@reach/router";
 
 
-
-
-const DealsPage = ({google}) => {
+const DealsPage = ({ google }) => {
 
   //*****importing data from firestore*****//
-  const restaurants = [];
+  let restaurants = [];
 
   const fetchRestaurants = () => {
     firestore
       .collection("deals")
       .get()
       .then((querySnapshot) => {
-        querySnapshot.forEach( (doc) => {
+        querySnapshot.forEach((doc) => {
           const retaurantData = doc.data();
-          restaurants.push({...retaurantData, databaseId: doc.id})
-        })      
-        
+          restaurants.push({ ...retaurantData, databaseId: doc.id })
+        })
+
         //format offAdded to time since last epoch (use getTime()) property in rastaurants array
         const restaurantsEpochTime = restaurants.map((restaurant) => {
           restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
@@ -41,26 +40,29 @@ const DealsPage = ({google}) => {
 
         const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
         
+        setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
   };
 
   useEffect(() => {
     fetchRestaurants()
-  },[])
-  
+  }, [])
+
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants]  = useState();
   const [filteredList, setFilteredList] = useState();
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
   
+
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
 
     // just incase it hasn't been reset
-    let filteredRestaurants = restaurants;
-  
+    let filteredRestaurants = allRestaurants;
+
     const filterParameterKeys = Object.keys(filterParameters);
 
     filterParameterKeys.forEach(parameterKey => {
@@ -70,7 +72,7 @@ const DealsPage = ({google}) => {
 
         subParameterKeys.forEach(subParameter => {
 
-          if(filterParameters[`${parameterKey}`][`${subParameter}`]){
+          if (filterParameters[`${parameterKey}`][`${subParameter}`]) {
             filteredRestaurants = filteredRestaurants.filter(restaurant => {
               return restaurant[`${parameterKey}`][`${subParameter}`] === filterParameters[`${parameterKey}`][`${subParameter}`]
             });
@@ -91,17 +93,17 @@ const DealsPage = ({google}) => {
       }
     });
     // just a catch function to ensure filters or location sorting reverts if user deselects whilst filtering is active.
-    if(userLocation){
+    if (userLocation) {
       calcDistances(userLocation, filteredRestaurants);
     } else {
       setFilteredList(filteredRestaurants);
-    } 
+    }
   }
 
   // search filter function
   const searchFilter = (searchValue) => {
 
-    const searchRestaurants = restaurants;
+    const searchRestaurants = allRestaurants;
 
     const searchFilteredList = searchRestaurants.filter(restaurant => {
 
@@ -111,18 +113,18 @@ const DealsPage = ({google}) => {
 
     });
     // just a catch function to ensure filters or location sorting reverts if user deselections whilst filtering is active.
-    if(userLocation){
+    if (userLocation) {
       calcDistances(userLocation, searchFilteredList);
     } else {
       setFilteredList(searchFilteredList);
-    } 
+    }
   };
 
   // get users location when share location button is clicked.
   const getLocation = () => {
 
-    if (navigator.geolocation){
-      if(!userLocation){
+    if (navigator.geolocation) {
+      if (!userLocation) {
         navigator.geolocation.getCurrentPosition(position => {
 
           // grab user location and set state
@@ -135,7 +137,7 @@ const DealsPage = ({google}) => {
         setUserLocation("");
         const latestRestaurants = distanceSortedList.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
         setFilteredList(latestRestaurants);
-      }        
+      }
     } else {
       setUserLocation("");
     }
@@ -144,79 +146,84 @@ const DealsPage = ({google}) => {
   const calcDistances = (userPosition, listToSort) => {
 
     // create google coords objects for each restaurant location
-    const restaurantLocations = listToSort.map(restaurant => new google.maps.LatLng(restaurant.location[0], restaurant.location[1])); 
+    const restaurantLocations = listToSort.map(restaurant => new google.maps.LatLng(restaurant.location[0], restaurant.location[1]));
 
     // TODO - google API services will only take 25 origins and destinations in a single request, this will need dealing with...
     const service = new google.maps.DistanceMatrixService();
 
     service.getDistanceMatrix(
-        {
-            origins: [userPosition],
-            destinations: restaurantLocations,
-            travelMode: 'DRIVING',
-        }, (response, status) => {
-            if(status === 'OK'){
-              
-                // grab response and drill down to data we need i.e. distances to
-                const results = response.rows[0].elements;
+      {
+        origins: [userPosition],
+        destinations: restaurantLocations,
+        travelMode: 'DRIVING',
+      }, (response, status) => {
+        if (status === 'OK') {
 
-                // for each restaurant cycle over the returned data and pull out the distance
-                for (let i = 0; i < results.length; i++) {
+          // grab response and drill down to data we need i.e. distances to
+          const results = response.rows[0].elements;
 
-                    const element = results[i];
+          // for each restaurant cycle over the returned data and pull out the distance
+          for (let i = 0; i < results.length; i++) {
 
-                    listToSort[i].distanceTo = element.distance.value;
-                    listToSort[i].distanceToText = element.distance.text;
+            const element = results[i];
 
-                }
-                const sortedList = listToSort.sort((restaurantA, restaurantB) => restaurantA.distanceTo - restaurantB.distanceTo);
-                
-                setUserLocation(userPosition);
-                setDistanceSortedList(sortedList);
-            }
+            listToSort[i].distanceTo = element.distance.value;
+            listToSort[i].distanceToText = element.distance.text;
+
+          }
+          const sortedList = listToSort.sort((restaurantA, restaurantB) => restaurantA.distanceTo - restaurantB.distanceTo);
+
+          setUserLocation(userPosition);
+          setDistanceSortedList(sortedList);
         }
+      }
     );
   }
 
-  const renderLocationBtn = userLocation ? 
+  const renderLocationBtn = userLocation ?
     <span className={styles.fa} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.fa} /></span> :
     <span className={styles.faActive} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.faActive} /></span>
-  
+
   const renderList = userLocation ? distanceSortedList : filteredList;
 
-    // create and pass the filtered restaurants list to CardList
-    const contentJsx = () => {
+  // create and pass the filtered restaurants list to CardList
+  const contentJsx = () => {
 
-      if (renderList === undefined){
-        return <p>Deals loading...</p> 
-      } else if (renderList.length) {
-        return <CardList restaurants={renderList} />
-      } else {
-          return (<FeedbackPanel
-          header="No matches"
-          text="None of our restaurants matched that search"
-        />)
-      }
+    if (renderList === undefined) {
+      return <p>Deals loading...</p>
+    } else if (renderList.length) {
+      return <CardList restaurants={renderList} />
+    } else {
+      return (<FeedbackPanel
+        header="No matches"
+        text="None of our restaurants matched that search"
+      />)
     }
+  }
 
-    return (
-        <div className={styles.container}>
-          <div className={styles.searchbar}>
-            <img src={logo} />
-            <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter}/> 
-          </div>  
-          <div className={styles.filterOptions}>
-            <FilterButton filterRestaurants={filterRestaurants}/> 
-            <div className={styles.location}>
-              {renderLocationBtn}
-            </div>
-          </div>
-        <section className={styles.dealsPage}>
-          <h1 className={styles.title}>Latest Offers</h1>
-          {contentJsx()}
-        </section>
+  return (
+    <div className={styles.container}>
+      <div className={styles.searchbar}>
+        {/* <img src={logo} /> */}
+        <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter} />
+      </div>
+      <div className={styles.filterOptions}>
+        <FilterButton filterRestaurants={filterRestaurants} />
+        <Link to="/account">
+        <span className={styles.profilelink}>
+          <FontAwesomeIcon icon={["fas", "user"]} />
+        </span>
+      </Link>
+        <div className={styles.location}>
+          {renderLocationBtn}
         </div>
-    )
+      </div>
+      <section className={styles.dealsPage}>
+        <h1 className={styles.title}>Latest Offers</h1>
+        {contentJsx()}
+      </section>
+    </div>
+  )
 }
 
 export default GoogleApiWrapper({

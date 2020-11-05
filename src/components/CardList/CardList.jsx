@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./CardList.module.scss";
 import DealCard from "../DealCard/DealCard";
 
-
 const CardList = (props) => {
     return (
         <>

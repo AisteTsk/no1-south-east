@@ -27,6 +27,8 @@ const RestaurantDetails = (props) => {
         fetchRestaurants()
     },[])
 
+    // function for each diary requirment image - can be improved
+       
     const ConvertBooleanToText = (inputBooleanArray) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
         return outputString ;
