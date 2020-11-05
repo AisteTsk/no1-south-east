@@ -30,7 +30,7 @@ const LandingPage = () => {
                         </Link>
                         <Link to="register">
                             <button className={styles.LandingPageButton}>Register </button>
-                        </Link>
+                        </Link> 
                         <Link to="browseDeals">
                             <button className={styles.LandingPageButton}>View Offers </button>
                         </Link>
