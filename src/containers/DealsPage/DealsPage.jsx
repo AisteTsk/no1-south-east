@@ -18,7 +18,7 @@ import { Link } from "@reach/router";
 const DealsPage = ({ google }) => {
 
   //*****importing data from firestore*****//
-  const restaurants = [];
+  let restaurants = [];
 
   const fetchRestaurants = () => {
     firestore
@@ -37,7 +37,8 @@ const DealsPage = ({ google }) => {
         });
 
         const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
-
+        
+        setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
   };
@@ -48,15 +49,17 @@ const DealsPage = ({ google }) => {
 
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants]  = useState();
   const [filteredList, setFilteredList] = useState();
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
+  
 
-  // function cycles over all filter properties and filters the restaurants array using only matching values
+    // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
 
     // just incase it hasn't been reset
-    let filteredRestaurants = restaurants;
+    let filteredRestaurants = allRestaurants;
 
     const filterParameterKeys = Object.keys(filterParameters);
 
@@ -97,8 +100,7 @@ const DealsPage = ({ google }) => {
 
   // search filter function
   const searchFilter = (searchValue) => {
-
-    const searchRestaurants = restaurants;
+    const searchRestaurants = allRestaurants;
 
     const searchFilteredList = searchRestaurants.filter(restaurant => {
 
