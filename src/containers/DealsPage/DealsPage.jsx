@@ -100,7 +100,6 @@ const DealsPage = ({ google }) => {
 
   // search filter function
   const searchFilter = (searchValue) => {
-
     const searchRestaurants = allRestaurants;
 
     const searchFilteredList = searchRestaurants.filter(restaurant => {
