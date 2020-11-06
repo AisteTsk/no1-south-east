@@ -13,8 +13,6 @@ const RestaurantDetails = (props) => {
     const [restaurantData, setrestaurantData] = useState()
     const [isClicked, setIsClicked] = useState(false);
 
-    console.log(props.user)
-
     //*****importing data from firestore*****//    
     
     const fetchRestaurants = () => {
@@ -24,7 +22,9 @@ const RestaurantDetails = (props) => {
         .doc(props.databaseId)
         .get()
         .then((doc) => {
-            setrestaurantData(doc.data());
+            const data = doc.data();
+            data.uid = (doc.id)
+            setrestaurantData(data);
         }).catch((err) => console.log(err));
     };
 
@@ -52,10 +52,9 @@ const RestaurantDetails = (props) => {
         </Link>
     )
 
-    const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick}/> : null;
+    const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick} user={props.user} restaurantData={restaurantData}/> : null;
 
     if(restaurantData) {
-
         const { 
             name, 
             image, 
