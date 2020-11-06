@@ -12,18 +12,6 @@
   justify-content: center;
   background-color: #233D2A;
 }
-.page .logoContainer {
-  width: 100%;
-  display: flex;
-  position: absolute;
-  top: 0;
-  justify-content: center;
-  margin-top: 10px;
-}
-.page .logoContainer img {
-  height: 80px;
-  width: 140px;
-}
 .page .form {
   display: flex;
   background-color: #ffffff;
@@ -62,6 +50,13 @@
   font-size: 17px;
   margin: 3px 0;
 }
+.page .form .register .faqs {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.page .form .register .faqs :link {
+  margin-left: 4px;
+}
 .page .form .register .register_btn {
   font-size: 22px;
   height: 30px;
@@ -69,7 +64,7 @@
   background-color: #82A28B;
   color: #ffffff;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .page .form .register .register_btn:hover {
   background-color: #233D2A;
@@ -79,7 +74,7 @@
 .page .form .register p {
   font-size: 19px;
   color: black;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .page .form .register p button {
   font-size: 18px;
@@ -95,12 +90,32 @@
   text-shadow: 0 0 1px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
 }
+.page .form .signedInMessage h3 {
+  height: auto;
+  color: #233D2A;
+  cursor: default;
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+.page .form .signedInMessage button {
+  width: auto;
+  font-size: 18px;
+  height: 50px;
+  background-color: #82A28B;
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+  border-radius: 2px;
+  text-decoration: none;
+  margin: 10px 10px 0;
+}
+.page .form .signedInMessage button:hover {
+  background-color: #233D2A;
+  text-shadow: 0 0 2px white;
+  box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+}
 
 @media (min-height: 800px) {
-  .page .logoContainer img {
-    height: 110px;
-    width: 200px;
-  }
   .page .form .register h3 {
     font-size: 30px;
     margin-bottom: 30px;
