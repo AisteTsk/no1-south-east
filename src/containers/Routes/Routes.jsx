@@ -25,7 +25,7 @@ const Routes = (props) => {
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
       <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
-      <Register path="/register" />
+      <Register path="/register" signOut={signOut} user={user} />
       <RestaurantDetails path="/restaurants/:databaseId"/>
       <PrivateRoutes path="/" user={user} >
           <AccountPage path="/account" signOut={signOut} />

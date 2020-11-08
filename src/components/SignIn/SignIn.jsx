@@ -68,7 +68,7 @@ const SignIn = (props) => {
                 <div className={styles.signedInMessage}>
                     <h3>You are already signed in</h3>
                     <Link to="/browseDeals">
-                        <button>Continue as {user.email}</button>
+                        <button><span>Continue as </span> <span>{user.email}</span></button>
                     </Link>
                     <button onClick={signOut}>Sign Out</button>
                 </div>    
