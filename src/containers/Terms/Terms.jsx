@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Terms.module.scss";
 import { Link } from '@reach/router';
+import footerLogo from "../../assets/images/footerLogo.png"
 
 const Terms = () => {
 
@@ -13,6 +14,7 @@ const Terms = () => {
       <p className={styles.faqs}>Feeling inquisitive? Check out our
         <Link to="/faq">FAQ's</Link>
       </p>
+      <img src={footerLogo} alt="footer logo"/>
     </section>
   );
 };
