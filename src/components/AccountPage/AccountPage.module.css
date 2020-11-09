@@ -179,6 +179,11 @@
     font-size: 20px;
   }
 }
+@media (min-width: 525px) {
+  .wrapper {
+    height: 90vh;
+  }
+}
 @media (min-width: 700px) {
   .page .form input {
     padding: 10px 15px;
@@ -188,6 +193,10 @@
   .navButtons .buttons button {
     width: 130px;
     font-size: 14px;
+  }
+
+  .wrapper {
+    height: 70vh;
   }
 }
 @media (min-width: 920px) {
@@ -202,6 +211,11 @@
   }
   .page .form .form_container {
     flex-direction: column;
+  }
+}
+@media (min-width: 1000px) {
+  .wrapper {
+    height: 140vh;
   }
 }
 @media (max-width: 600px) {
@@ -224,8 +238,18 @@
     margin-top: 120px;
   }
 }
+@media (min-width: 1118px) {
+  .wrapper {
+    height: 120vh;
+  }
+}
 @media (min-width: 1200px) {
   .page .form input {
     width: 275px;
+  }
+}
+@media (min-width: 1600px) {
+  .wrapper {
+    height: 90vh;
   }
 }
