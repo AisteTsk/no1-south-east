@@ -1,5 +1,8 @@
 @import "../../sass/main.module.scss";
 
+.account {
+  background-color: $color-green;
+}
 .boxtitle {
   color: $color-white;
   background-color: $color-green;
@@ -12,29 +15,23 @@
 
 .wrapper{
   overflow: hidden;
+  margin: 30px 0;
   height: 120vh;
   background-color: $color-green;
 
 .cardRender {
-  padding: 0;
+  padding: 0 0;
   margin: 0;
-  // width: 50%;
-  // height:auto;
   background-color: $color-green;
   font-family: 'Josefin Sans', sans-serif;
   color: $color-white;
-  // justify-content: center;
-  // flex-direction: column;
-  // align-items: center;
   transform: scale(.5);
-  transform-origin: 0  0;
+  transform-origin: 0 0;
   box-sizing: border-box;
-  overflow: hidden;
   width: 200%;
-  // display: cover;
+  overflow: hidden;
 }
 }
-
 
 .page {
   @extend %main-font;
@@ -226,7 +223,7 @@
 }
 }
 .wrapper {
-  height: 70vh;
+  height: 80vh;
 }
 }
 

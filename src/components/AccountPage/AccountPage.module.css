@@ -8,6 +8,10 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
+.account {
+  background-color: #233D2A;
+}
+
 .boxtitle {
   color: #ffffff;
   background-color: #233D2A;
@@ -20,11 +24,12 @@
 
 .wrapper {
   overflow: hidden;
+  margin: 30px 0;
   height: 120vh;
   background-color: #233D2A;
 }
 .wrapper .cardRender {
-  padding: 0;
+  padding: 0 0;
   margin: 0;
   background-color: #233D2A;
   font-family: "Josefin Sans", sans-serif;
@@ -32,8 +37,8 @@
   transform: scale(0.5);
   transform-origin: 0 0;
   box-sizing: border-box;
-  overflow: hidden;
   width: 200%;
+  overflow: hidden;
 }
 
 .page {
@@ -196,7 +201,7 @@
   }
 
   .wrapper {
-    height: 70vh;
+    height: 80vh;
   }
 }
 @media (min-width: 920px) {

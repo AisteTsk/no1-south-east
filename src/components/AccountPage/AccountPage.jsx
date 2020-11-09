@@ -22,7 +22,7 @@ const AccountPage = (props) => {
 
     return (
         
-           <>
+           <div className={styles.account}>
             <div className={styles.page}>
             <a name="profile"></a>
                 <Logo />
@@ -100,7 +100,7 @@ const AccountPage = (props) => {
                     </div>
                 </section>
             </div>
-      </>
+      </div>
     )
 };
 
