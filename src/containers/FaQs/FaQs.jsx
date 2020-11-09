@@ -9,6 +9,7 @@ const FaQs = () => {
     <section className={styles.page}>
       <Logo />
       <div className={styles.faqs}>
+        <div className ={styles.faqscontainer}>
         <h3>FAQ's</h3>
         <span>
             <p>How do I sign up?</p>
@@ -43,6 +44,7 @@ const FaQs = () => {
             <p>Each offer is individual and the finer details are outlined within each offering</p>
         </span>
         <img src={footerLogo} alt="footer logo"/>
+      </div>
       </div>
     </section>
   );
