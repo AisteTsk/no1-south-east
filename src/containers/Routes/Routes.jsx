@@ -3,9 +3,9 @@ import { Router } from "@reach/router";
 import DealsPage from "../DealsPage/DealsPage";
 import NotFound from "../NotFound";
 import Dashboard from "../Dashboard";
-import SignIn from '../../components/SignIn';
-import Register from '../../components/Register';
-import RestaurantDetails from '../../components/RestaurantDetails';
+import SignIn from "../../components/SignIn";
+import Register from "../../components/Register";
+import RestaurantDetails from "../../components/RestaurantDetails";
 import FaQs from "../FaQs/FaQs";
 import Terms from "../Terms/Terms";
 import Logo from "../../components/Logo";
@@ -23,16 +23,22 @@ const Routes = (props) => {
       <NotFound path="/404" />
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
-      <DealsPage path="/browseDeals" />
-      <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
+      <DealsPage path="/browseDeals" user={user} />
+      <SignIn
+        path="/sign-in"
+        googleSignIn={googleSignIn}
+        signIn={signIn}
+        signOut={signOut}
+        user={user}
+      />
       <Register path="/register" signOut={signOut} user={user} />
-      <RestaurantDetails path="/restaurants/:databaseId"/>
-      <PrivateRoutes path="/" user={user} >
-          <AccountPage path="/account" signOut={signOut} />
-          <RedeemOfferPage path="/redeem-offer" /> 
-      </PrivateRoutes> 
+      <RestaurantDetails path="/restaurants/:databaseId" />
+      <PrivateRoutes path="/" user={user}>
+        <AccountPage path="/account" signOut={signOut} />
+        <RedeemOfferPage path="/redeem-offer" />
+      </PrivateRoutes>
     </Router>
-  )
+  );
 };
 
 export default Routes;

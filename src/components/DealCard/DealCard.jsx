@@ -11,14 +11,20 @@ const DealCard = (props) => {
     validUntil,
     databaseId,
     restaurantDescription,
+    isFav,
   } = props.restaurant;
 
-  const [favState, setFavState] = useState(true);
+  const { restaurant, toggleFav } = props;
 
-  const handleFavCLick = () => {
+  const [favState, setFavState] = useState(isFav);
+
+  const handleFavClick = (e) => {
     e.stopPropagation();
-    setFavState;
+    toggleFav(restaurant);
+    setFavState(!isFav);
   };
+
+  const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
 
   const distanceFromRestaurant = () => {
     if (props.restaurant.distanceToText) {
@@ -37,12 +43,11 @@ const DealCard = (props) => {
       />
       <div className={styles.restaurantName}>
         <h1>{name}</h1>
-        <span className={styles.heart} onClick={() => handleFavClick()}>
-          <FontAwesomeIcon icon={["fa", "heart"]} className={styles.heart} />
+        <span className={styles.heart} onClick={handleFavClick}>
+          <FontAwesomeIcon icon={heartIcon} className={styles.heart} />
         </span>
       </div>
       <h2 className={styles.offer}>
-        {" "}
         {offerPercent} Off Total Bill - Selected Days Only
       </h2>
       <h2 className={styles.description}>{restaurantDescription}</h2>
