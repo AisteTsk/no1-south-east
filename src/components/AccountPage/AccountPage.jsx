@@ -133,7 +133,7 @@ const AccountPage = ({ signOut, user }) => {
                 <a name="redeemed"></a>
                 <h2 className={styles.boxtitle}> Redeemed Offers</h2>
                 <section className={styles.offerForm}>
-                    {offerJsx}
+                        {offerJsx} 
                 </section>
             </div>
 
