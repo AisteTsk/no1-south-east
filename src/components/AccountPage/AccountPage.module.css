@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.bottomRight .LandingPageButton {
+  font-family: "Josefin Sans", sans-serif;
+}
+
 .page {
   height: 100vh;
   width: 100%;
@@ -11,10 +15,14 @@
   flex-direction: column;
   justify-content: center;
   background-color: #233D2A;
+  font-family: "Josefin Sans", sans-serif;
 }
 .page .form {
+  width: 40px;
   display: flex;
-  background-color: #ffffff;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #233D2A;
   width: 80%;
   height: 70vh;
   margin: auto;
@@ -23,41 +31,49 @@
   justify-content: center;
   text-align: center;
   border: 8px solid #CF6B58;
+  font-family: "Josefin Sans", sans-serif;
 }
-.page .form .register h3 {
+.page .form h3 {
   height: auto;
   font-size: 23px;
-  color: #233D2A;
+  color: #ffffff;
   cursor: default;
   margin-bottom: 5px;
 }
-.page .form .register input {
+.page .form h2 {
+  color: #ffffff;
+}
+.page .form input {
   padding: 6px 8px;
-  margin: 6px 0;
-  width: 160px;
+  margin: 8px 0;
+  width: 250px;
   border: 2px solid black;
   font-size: 18px;
   outline: none;
 }
-.page .form .register .form_container {
+.page .form .form_container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
-.page .form .register .terms {
+.page .form .update_btn {
+  font-size: 22px;
+  height: 55px;
+}
+.page .form .update_btn .terms {
   font-size: 17px;
   margin: 3px 0;
 }
-.page .form .register .faqs {
+.page .form .update_btn .faqs {
   font-size: 15px;
   margin-top: 10px;
 }
-.page .form .register .faqs :link {
+.page .form .update_btn .faqs :link {
   margin-left: 4px;
 }
-.page .form .register .register_btn {
+.page .form .update_btn .register_btn {
   font-size: 22px;
   height: 30px;
   width: 150px;
@@ -66,17 +82,17 @@
   cursor: pointer;
   margin-bottom: 5px;
 }
-.page .form .register .register_btn:hover {
+.page .form .update_btn .register_btn:hover {
   background-color: #233D2A;
   text-shadow: 0 0 2px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
 }
-.page .form .register p {
+.page .form .update_btn p {
   font-size: 19px;
   color: black;
   margin-top: 10px;
 }
-.page .form .register p button {
+.page .form .update_btn p button {
   font-size: 18px;
   background-color: #82A28B;
   color: #ffffff;
@@ -85,33 +101,9 @@
   cursor: pointer;
   margin-left: 3px;
 }
-.page .form .register p button:hover {
+.page .form .update_btn p button:hover {
   background-color: #233D2A;
   text-shadow: 0 0 1px white;
-  box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
-}
-.page .form .signedInMessage h3 {
-  height: auto;
-  color: #233D2A;
-  cursor: default;
-  font-size: 30px;
-  padding-bottom: 15px;
-}
-.page .form .signedInMessage button {
-  width: auto;
-  font-size: 18px;
-  height: 50px;
-  background-color: #82A28B;
-  color: #ffffff;
-  text-decoration: underline;
-  cursor: pointer;
-  border-radius: 2px;
-  text-decoration: none;
-  margin: 10px 10px 0;
-}
-.page .form .signedInMessage button:hover {
-  background-color: #233D2A;
-  text-shadow: 0 0 2px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
 }
 
@@ -127,7 +119,7 @@
   .page .form .register .terms {
     margin: 5px 0;
   }
-  .page .form .register .register_btn {
+  .page .form .register .update_btn {
     height: 40px;
     width: 170px;
     margin-bottom: 15px;
@@ -160,4 +152,59 @@
   .page .form .register input {
     width: 275px;
   }
+}
+.bottomRight {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  position: fixed;
+  width: 100%;
+  bottom: 5px;
+  align-items: center;
+  z-index: 1;
+  font-family: "Josefin Sans", sans-serif;
+}
+.bottomRight .buttons {
+  display: flex;
+}
+.bottomRight .LandingPageButton {
+  text-align: left;
+  margin: 20px 10px;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-size: 12px;
+  background-color: #CF6B58;
+  width: 90px;
+  text-align: center;
+  align-items: center;
+}
+.bottomRight .LandingPageButton:focus {
+  outline: none;
+  border: none;
+}
+
+.boxtitle {
+  color: white;
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.favourites {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 200px;
 }

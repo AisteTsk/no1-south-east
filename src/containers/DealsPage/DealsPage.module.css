@@ -1,12 +1,83 @@
-.searchbar {
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.searchbar input {
-  width: 291px;
+
+.container .dealsPage .title {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.container {
+  position: relative;
+}
+.container .searchbar {
+  width: 100%;
+  line-height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 0.3% 2%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #82A28B;
+}
+.container .searchbar img {
+  height: 50px;
+  width: auto;
+}
+.container .filterOptions {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #82A28B;
+}
+.container .filterOptions .location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #233D2A;
+}
+.container .filterOptions .location .fa {
+  color: #CF6B58;
   height: 40px;
+  width: 40px;
+}
+.container .filterOptions .location .faActive {
+  color: #233D2A;
+  height: 40px;
+  width: 40px;
+}
+.container .filterOptions .profilelink {
+  display: flex;
+  height: 200px;
+  width: 200px;
+  color: #233D2A;
+  font-size: 200%;
+  z-index: 10;
+  top: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.container .dealsPage {
+  background-color: #233D2A;
+  padding-top: 80px;
+}
+.container .dealsPage .title {
+  color: #ffffff;
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 1.5%;
 }
