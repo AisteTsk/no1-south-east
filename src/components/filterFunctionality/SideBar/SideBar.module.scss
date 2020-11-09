@@ -1,5 +1,5 @@
 /* The side navigation menu */
-@import '../../../sass/abstracts/variables';
+@import "../../../sass/abstracts/variables";
 
 .filtermenu {
   position: fixed;
@@ -18,7 +18,7 @@
   /* Disable horizontal scroll */
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   box-sizing: initial;
   border: initial;
   margin: initial;
-
+  z-index: 200;
 
   .closebtn {
     position: absolute;
@@ -43,10 +43,14 @@
     color: $color-green;
   }
 
-  .whenNeed, .timeNeed, .dealNeed, .dietaryNeed, .slider {
+  .whenNeed,
+  .timeNeed,
+  .dealNeed,
+  .dietaryNeed,
+  .slider {
     padding: 6px;
-    
-    p{
+
+    p {
       text-align: center;
       font-weight: 700;
       font-size: 18px;
