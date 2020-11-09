@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import Routes from "./containers/Routes";
+import styles from "./App.module.scss";
 import firebase, { provider } from "./firebase";
 import { navigate } from "@reach/router";
 import libary from "./data/fa-library";
@@ -67,6 +68,7 @@ const App = () => {
           signOut={signOut}
         />
       </div>
+      <footer class={styles.footer}>Copyright © 2020 No1SouthEast. All Rights Reserved.</footer>
     </>
   )
 };

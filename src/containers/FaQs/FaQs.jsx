@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./FaQs.module.scss";
+import footerLogo from "../../assets/images/footerLogo.png"
 
 const FaQs = () => {
 
@@ -40,6 +41,7 @@ const FaQs = () => {
             <p>Each offer is individual and the finer details are outlined within each offering</p>
         </div>
       </div>
+      <img src={footerLogo} alt="footer logo"/>
     </section>
   );
 };
