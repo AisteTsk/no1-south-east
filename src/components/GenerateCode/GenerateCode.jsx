@@ -31,7 +31,6 @@ const GenerateCode = ({handleClick, user, restaurantData}) => {
             });
         }).then(() => {
             if(matchingOffer.length){
-                console.log(matchingOffer)
                 setDetailsCode({
                     codeid: matchingOffer[0].codeid,
                     restaurantName: matchingOffer[0].restaurantName,
