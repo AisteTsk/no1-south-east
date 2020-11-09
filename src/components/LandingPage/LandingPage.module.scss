@@ -1,13 +1,10 @@
 @import '../../sass/main.module.scss';
-
 //------------------------------
 // Mobile first approach
 //------------------------------
-
 .landingPage {
     background-color: $color-green;
 }
-
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -18,7 +15,6 @@
         "buttons        buttons buttons";
     padding: 7% 5% 0 5%;
     margin: 0 1% 0 1%;
-
     .topLeft {
         grid-area: topleft;
         background-color: $color-pink;
@@ -28,25 +24,21 @@
         justify-content:center;
         margin-top: 30%;
         height: 90%;
-
         img {
             height: 80%;
             width: 80%;
         }
     }
-
     .bottomLeft {
         grid-area: bottomleft;
         background-color: $color-copper;
         border-radius: 0 0 0 90%;
         margin-top: 20%;
     }
-
     .middle {
         grid-area: middle;
         background-color: $color-white;
         border-radius: 30px 0px 0px 0;
-
         p{
             @extend %main-font;
             font-size: 50px;
@@ -56,12 +48,10 @@
             margin-bottom: 10%;
         }
     }
-    
     .topRight{
         background-color:$color-copper;
         border-radius: 0 90% 0 0;
     }
-    
     .bottomRightMobile {
         background-color: $color-pink;
         border-radius: 0 0 10px 0;
@@ -69,13 +59,11 @@
         display:flex;
         align-items:center;
         justify-content:center;
-
         img {
             transform: rotate(-50deg);
             height: 50px;
         }
     }
-
 //BUTTON
     .bottomRight {
         grid-area: buttons;
@@ -83,7 +71,6 @@
         flex-direction: row;
         justify-content: space-evenly; 
         flex-wrap: nowrap;
-
         .LandingPageButton {
             text-align: left;
             margin: 20px 10px;
@@ -98,7 +85,6 @@
             width: 90px;
             text-align: center;
             align-items: center;
-            
             &:focus {
                 outline: none;
                 border: none;
@@ -106,14 +92,12 @@
         }
     }
 }
-
 .registration {
     grid-area: howToo;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: flex-start;
-
     .registrationProcess {
         padding: 1% 13% 0% 0%;
         color: $color-white;
@@ -123,7 +107,6 @@
         margin-right: auto;
         text-align: center;
         font-size: 15px;
-        
         img {
             width: 70px;
             margin-left: auto;
@@ -133,18 +116,15 @@
             padding-left: none;
             border-radius: 50%;
         }
-
         p{
             padding: 5%;
             line-height: 1.2;
         }
     }
 }
-
 //------------------------------------------
 // Large devices laptops 
 //------------------------------------------
-
 @media (min-width: 1000px) {
     .gridContainer {
         display: grid;
@@ -154,33 +134,28 @@
             "topleft    middle topright"
             "bottomleft middle buttons";
         padding: 2.4% 10% 0 10%;
-
         .topLeft {
             margin-top: 30%;
             height: 80%;
         }
-
         .bottomLeft {
             margin-top: 10%;
         }
-
         .middle {
             grid-area: middle;
-    
             p{
                 font-size: 150px;
                 font-weight: 800;
                 margin-bottom: 0;
                 padding: 5% 13% 0% 5%;
+                line-height: 1;
             }
         }
-        
         .topRight {
             grid-area: topright;
             border-radius: 0 95% 0 0;
             background-color: $color-copper;
         }
-        
         .bottomRight {
             grid-area: buttons;
             display: flex;
@@ -189,31 +164,25 @@
             justify-content: center;
             padding-top: 0%;
             padding-left: 2%;
-
             button.LandingPageButton {
                 width: 250px;
                 font-size: 20px;
                 padding-left: 5px;
                 height: 50px;
                 font-size: 30px;
-                
             }
         }
-
         .bottomRightMobile {
             display: none;
         }
     }
-
     .registration {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         margin-top: 0%;
-
         .registrationProcess {
             padding: 2.6% 5% 0% 5%;
-
             img {
                 width: 150px;
                 height: 150px;
@@ -224,3 +193,54 @@
         }
     }
 }
+
+
+// .LandingPageButton {
+//     text-align: left;
+// 	margin: 40px;
+// 	padding: 0 50px;
+
+// 	height: 60px;
+// 	border-radius: 15px;
+// 	border: none;
+
+// 	color: #fff;
+
+// 	transition: 0.3s ease;
+
+//     @extend %main-font;
+//     font-size: 24px;
+// }
+
+// .LandingPageButton {
+// 	background-color: $color-copper;
+
+
+// }
+// .LandingPageButton:hover {
+// 	box-shadow: 0 8px $color-darkercopper;
+// 	transform: translateY(1px);
+// }
+// .LandingPageButton:active {
+// 	background-color: $color-darkercopper;
+// 	box-shadow: 0 5px $color-darkercopper;
+//     transform: translateY(4px);
+//     text-decoration: none;
+    
+// &:focus {
+//     outline: none;
+// }
+// }
+
+
+// @media (max-width: 767.98px) and (orientation: portrait ){
+//     button.ViewRestaurants {
+//         width: 150px;
+//     }
+// }
+
+// @media (max-width: 575.98px) and (orientation: portrait) {
+//     button.ViewRestaurants {
+//         width: 100px;
+//     }
+// }

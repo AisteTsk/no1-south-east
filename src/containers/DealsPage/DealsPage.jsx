@@ -5,7 +5,9 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
-// import logo from '../../assets/images/logocut.png';
+import logoImage from '../../assets/images/logocut.png';
+
+
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
@@ -177,10 +179,18 @@ const DealsPage = ({ google }) => {
     );
   }
 
-  const renderLocationBtn = userLocation ?
-    <span className={styles.fa} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.fa} /></span> :
-    <span className={styles.faActive} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.faActive} /></span>
-
+  const renderLocationBtn = userLocation ? (
+    <div className={styles.fa} onClick={() => getLocation()}>
+      <FontAwesomeIcon icon={["fas", "map-marker-alt"]} className={styles.fa} />
+    </div>
+  ) : (
+    <div className={styles.faActive} onClick={() => getLocation()}>
+      <FontAwesomeIcon
+        icon={["fas", "map-marker-alt"]}
+        className={styles.faActive}
+      />
+    </div>
+  );
   const renderList = userLocation ? distanceSortedList : filteredList;
 
   // create and pass the filtered restaurants list to CardList
@@ -201,8 +211,10 @@ const DealsPage = ({ google }) => {
   return (
     <div className={styles.container}>
       <div className={styles.searchbar}>
-        {/* <img src={logo} /> */}
-        <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter} />
+        <Link to="/">
+          <img src={logoImage} />
+        </Link>
+        <SearchBar placeholder="Search by restaurants or cuisine..." searchFilter={searchFilter} />
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
