@@ -5,7 +5,6 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
-// import logo from '../../assets/images/logocut.png';
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
@@ -200,7 +199,6 @@ const DealsPage = ({google}) => {
     return (
         <div className={styles.container}>
           <div className={styles.searchbar}>
-            {/* <img src={logo} /> */}
             <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter}/> 
           </div>  
           <div className={styles.filterOptions}>
@@ -210,6 +208,7 @@ const DealsPage = ({google}) => {
             </div>
           </div>
         <section className={styles.dealsPage}>
+        
           <h1 className={styles.title}>Latest Offers</h1>
           {contentJsx()}
         </section>
