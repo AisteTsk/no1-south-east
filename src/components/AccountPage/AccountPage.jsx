@@ -34,18 +34,17 @@ const AccountPage = ({ signOut, user }) => {
         }
     }, [user])
 
-    console.log(offerCodes)
+
     const offerJsx = offerCodes.length ? (
         offerCodes.map(offer => {
             return(
-                <div>
-                    <p className={styles.offer}>{offer.codeid}</p>
-                    <p className={styles.offer}>{offer.restaurantName}</p>
-                    <p className={styles.offer}>{moment(offer.createdAt.toDate()).calendar()}</p>
+                <div className={styles.offer}>
+                    <span className={styles.offerCode}>{offer.codeid}</span>
+                    <span className={styles.offerRestaurant}>{offer.restaurantName}</span>
+                    <p>{moment(offer.createdAt.toDate()).calendar()}</p>
                 </div> 
             )
-        })
-               
+        })               
     ) : 
     <p>You have no redeemed offers</p>
 
@@ -88,26 +87,26 @@ const AccountPage = ({ signOut, user }) => {
 
 
                 <div className={styles.bottomRight}>
-                            <div className={styles.buttons}>
-                            <a href="#profile">
-                                    <button className={styles.LandingPageButton}>Profile</button>
-                                </a>
+                    <div className={styles.buttons}>
+                        <a href="#profile">
+                            <button className={styles.LandingPageButton}>Profile</button>
+                        </a>
 
-                                <a href="#favourites">
-                                    <button className={styles.LandingPageButton}>Favourites</button>
-                                </a>
+                        <a href="#favourites">
+                            <button className={styles.LandingPageButton}>Favourites</button>
+                        </a>
 
-                                <a href="#recentlyViewed">
-                                    <button className={styles.LandingPageButton}>Recently Viewed</button>
-                                </a>
-                                <a href="#redeemed">
-                                    <button className={styles.LandingPageButton}>Redeemed Offers</button>
-                                </a>
-                                <a href="#referFriend">
-                                    <button className={styles.LandingPageButton}> Refer a Friend</button>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="#recentlyViewed">
+                            <button className={styles.LandingPageButton}>Recently Viewed</button>
+                        </a>
+                        <a href="#redeemed">
+                            <button className={styles.LandingPageButton}>Redeemed Offers</button>
+                        </a>
+                        <a href="#referFriend">
+                            <button className={styles.LandingPageButton}> Refer a Friend</button>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div className={styles.page}>
@@ -133,7 +132,7 @@ const AccountPage = ({ signOut, user }) => {
             <div className={styles.page}>
                 <a name="redeemed"></a>
                 <h2 className={styles.boxtitle}> Redeemed Offers</h2>
-                <section className={styles.form}>
+                <section className={styles.offerForm}>
                     {offerJsx}
                 </section>
             </div>
@@ -144,7 +143,7 @@ const AccountPage = ({ signOut, user }) => {
                 <section className={styles.form}>
                 <div className={styles.refer}>
                     <button className={styles.update_btn}>Click for a referral code:</button>
-                   <p></p>
+                    <p></p>
                     </div>
                 </section>
                 

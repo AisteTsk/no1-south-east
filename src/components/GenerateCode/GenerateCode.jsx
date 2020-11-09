@@ -64,8 +64,8 @@ const GenerateCode = ({handleClick, user, restaurantData}) => {
                 <h3>Nice one!</h3>
                 <h5>Here's your code...</h5>
                 <p className={styles.code}>{offerDetails.codeid}</p>
-                <p className={styles.code}>{offerDetails.restaurantName}</p>
-                <p className={styles.code}>{moment(offerDetails.createdAt).calendar()}</p>
+                <p className={styles.codeRestaurant}>{offerDetails.restaurantName}</p>
+                <p>{moment(offerDetails.createdAt).calendar()}</p>
                 <p>This offer has now been saved to your <Link to="/account" >profile</Link></p>
             </div>
         </div>
