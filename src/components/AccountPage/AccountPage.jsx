@@ -20,11 +20,11 @@ const AccountPage = (props) => {
             />
         )
 
-
     return (
-        <div>
-            <a name="profile"></a>
+        
+           <>
             <div className={styles.page}>
+            <a name="profile"></a>
                 <Logo />
                 <div className={styles.profileBox}>
                     <section className={styles.form}>
@@ -68,22 +68,28 @@ const AccountPage = (props) => {
 
             <a name="favourites"></a>
             <h2 className={styles.boxtitle}>Favourites</h2>
+            <div className={styles.wrapper}>
                 <div className={styles.cardRender}>
                 {renderCards}
+                </div>
                 </div>
 
             <a name="recentlyViewed"></a>
             <h2 className={styles.boxtitle}> Recently Viewed</h2>
-            <div className={styles.cardRender}>
+            <div className={styles.wrapper}>
+                <div className={styles.cardRender}>
                 {renderCards}
-            </div>
+                </div>
+                </div>
 
 
             <a name="redeemed"></a>
             <h2 className={styles.boxtitle}> Redeemed Offers</h2>
-            <div className={styles.cardRender}>
+            <div className={styles.wrapper}>
+                <div className={styles.cardRender}>
                 {renderCards}
-            </div>
+                </div>
+                </div>
 
             <div className={styles.page}>
                 <a name="referFriend"></a>
@@ -94,7 +100,7 @@ const AccountPage = (props) => {
                     </div>
                 </section>
             </div>
-        </div>
+      </>
     )
 };
 

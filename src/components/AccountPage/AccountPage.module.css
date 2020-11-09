@@ -18,19 +18,22 @@
   margin: 0;
 }
 
-.cardRender {
+.wrapper {
+  overflow: hidden;
+  height: 120vh;
+  background-color: #233D2A;
+}
+.wrapper .cardRender {
   padding: 0;
-  width: 100%;
-  height: auto;
+  margin: 0;
   background-color: #233D2A;
   font-family: "Josefin Sans", sans-serif;
   color: #ffffff;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin: -140px, -87.5px;
-  transform-origin: center center;
-  display: inline-block;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 200%;
 }
 
 .page {
