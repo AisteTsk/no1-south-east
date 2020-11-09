@@ -4,11 +4,14 @@ import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
 
+
 import { firestore } from '../../firebase';
+import GenerateCode from '../GenerateCode/GenerateCode';
 
 const RestaurantDetails = (props) => {
 
     const [restaurantData, setrestaurantData] = useState()
+    const [isClicked, setIsClicked] = useState(false);
 
     //*****importing data from firestore*****//    
     
@@ -19,7 +22,9 @@ const RestaurantDetails = (props) => {
         .doc(props.databaseId)
         .get()
         .then((doc) => {
-            setrestaurantData(doc.data());
+            const data = doc.data();
+            data.uid = (doc.id)
+            setrestaurantData(data);
         }).catch((err) => console.log(err));
     };
 
@@ -34,8 +39,22 @@ const RestaurantDetails = (props) => {
         return outputString ;
     };
 
-    if(restaurantData) {
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
 
+    const redeemOfferButton = props.user !== null ? ( 
+        <button onClick={handleClick}>Get Code</button>
+    ) :
+    (
+        <Link to="/SignUp" >   
+            <button>Get Code</button>
+        </Link>
+    )
+
+    const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick} user={props.user} restaurantData={restaurantData}/> : null;
+
+    if(restaurantData) {
         const { 
             name, 
             image, 
@@ -86,10 +105,9 @@ const RestaurantDetails = (props) => {
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
                 </span>
-                <Link to="/SignUp" >   
-                    <button>Get Code</button>
-                </Link>
+                {redeemOfferButton}
             </div>
+            {offerCodeModal}
             </>
         )
     } else { 
