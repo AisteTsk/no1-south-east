@@ -12,6 +12,7 @@ import {
     faStreetView,
     faUser,
     faHeart,
+    faMapMarkerAlt
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,6 +28,7 @@ export default library.add(
     faGoogle,
     faUser,
     faCompass,
-    faHeart
+    faHeart,
+    faMapMarkerAlt
 );
 

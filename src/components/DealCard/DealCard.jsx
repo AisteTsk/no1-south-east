@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
-import pin from "../../assets/images/pin-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DealCard = (props) => {
@@ -14,7 +13,7 @@ const DealCard = (props) => {
     restaurantDescription,
   } = props.restaurant;
 
-  const [favState, setFavState] = useState(isFav);
+  const [favState, setFavState] = useState(true);
 
   const handleFavCLick = () => {
     e.stopPropagation();
@@ -28,6 +27,7 @@ const DealCard = (props) => {
       return <h2>Your location is inactive</h2>;
     }
   };
+
   return (
     <div className={styles.card}>
       <hr />
@@ -37,17 +37,20 @@ const DealCard = (props) => {
       />
       <div className={styles.restaurantName}>
         <h1>{name}</h1>
-        <span className={styles.heart} onClick={handleFavClick()}>
+        <span className={styles.heart} onClick={() => handleFavClick()}>
           <FontAwesomeIcon icon={["fa", "heart"]} className={styles.heart} />
         </span>
       </div>
-
       <h2 className={styles.offer}>
+        {" "}
         {offerPercent} Off Total Bill - Selected Days Only
       </h2>
       <h2 className={styles.description}>{restaurantDescription}</h2>
       <div className={styles.locationContainer}>
-        <img src={pin} alt="pin symbol" />
+        <FontAwesomeIcon
+          icon={["fas", "map-marker-alt"]}
+          className={styles.pin}
+        />
         {distanceFromRestaurant()}
       </div>
       <Link to={`/restaurants/${databaseId}`}>
