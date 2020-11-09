@@ -113,7 +113,6 @@
 }
 
 .offerForm{
-  width: 40px;
   display: flex;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -123,7 +122,6 @@
   margin: auto;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
   border: 8px solid $color-copper;
   font-family: 'Josefin Sans', sans-serif;

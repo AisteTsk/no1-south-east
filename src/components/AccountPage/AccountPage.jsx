@@ -27,13 +27,13 @@ const AccountPage = ({ signOut, user }) => {
             querySnapshot.forEach((doc) => {
                 const offers = {...doc.data(), codeid: doc.id};
                 allOffers.push(offers)
-            })
-            setOfferCodes(allOffers.filter(code => code.userid === user.uid));
+            });
+            
+            setOfferCodes(allOffers.filter(code => code.userid === user.uid).sort((offerA, offerB) => offerB.createdAt.seconds - offerA.createdAt.seconds));
             
         }).catch((err) => console.log(err));
         }
     }, [user])
-
 
     const offerJsx = offerCodes.length ? (
         offerCodes.map(offer => {
