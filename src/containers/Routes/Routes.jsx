@@ -9,8 +9,13 @@ import RestaurantDetails from '../../components/RestaurantDetails';
 import FaQs from "../FaQs/FaQs";
 import Terms from "../Terms/Terms";
 import Logo from "../../components/Logo";
+import AccountPage from "../../components/AccountPage";
+import RedeemOfferPage from "../../components/RedeemOfferPage";
+import PrivateRoutes from "../PrivateRoutes";
 
-const Routes = () => {
+const Routes = (props) => {
+  const { user, googleSignIn, signIn, signOut } = props;
+
   return (
     <Router>
       <Dashboard path="/" />
@@ -19,11 +24,15 @@ const Routes = () => {
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
-      <SignIn path="/sign-in" /> 
-      <Register path="/register" />
-      <RestaurantDetails path="/restaurants/:restaurantId"/>
+      <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
+      <Register path="/register" signOut={signOut} user={user} />
+      <RestaurantDetails path="/restaurants/:databaseId"/>
+      <PrivateRoutes path="/" user={user} >
+          <AccountPage path="/account" signOut={signOut} />
+          <RedeemOfferPage path="/redeem-offer" /> 
+      </PrivateRoutes> 
     </Router>
-  );
+  )
 };
 
 export default Routes;

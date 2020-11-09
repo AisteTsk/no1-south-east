@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CardList.module.scss";
 import DealCard from "../DealCard/DealCard";
-import restaurants from "../../data/restaurants";
 
 const CardList = (props) => {
     return (
@@ -16,4 +15,3 @@ const CardList = (props) => {
 };
 
 export default CardList;
-

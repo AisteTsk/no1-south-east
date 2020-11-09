@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SideBar.module.scss';
 import Calendar from '../../utilities/Calendar';
-import Icon from '../../utilities/Icon';
 import ImageIcon from '../../utilities/ImageIcon';
 import Slider from '../../utilities/Slider';
 
@@ -15,7 +14,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     // create filter parameters array as state
     const [filterParameters, setFilterParameters] = useState({
             discount: {food: false, drink: false},
-            dietaryRequirements: {vegetarian: false, vegan: false, halal: true, glutenfree: false, diaryfree: false},
+            dietaryRequirements: {vegetarian: false, vegan: false, halal: false, glutenfree: false, diaryfree: false},
             sitting: {breakfast: false, lunch: false, dinner: false},
             maximumTableSize: 1,
             validUntil: formatToday,
@@ -27,7 +26,7 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
         // update an arary with filter preferences this needs to be passed down to each component
         let filterParametersNew = filterParameters;
 
-        const collectNewFilter = (subFilter.length) ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
+        subFilter.length ? (filterParametersNew[`${filterType}`][`${subFilter}`] = value) : (filterParametersNew[`${filterType}`] = value)
 
         setFilterParameters(filterParametersNew);
     }
@@ -61,36 +60,32 @@ const SideBar = ({closeFilterMenu, filterRestaurants}) => {
     // return the lot     
     return (
         <div className={styles.filtermenu}>
-            <a href="#" className={styles.closebtn} onClick={closeFilterMenu}>&times;</a>
-            <div id="when-need">
+            <button className={styles.closebtn} onClick={closeFilterMenu}>&times;</button>
+            <div className={styles.whenNeed}>
                 <p>When do you want to eat?</p>
                 <div className={styles.icons}>
                     <Calendar collectFilters={collectFilters} filterType={'validUntil'} />
                 </div>
             </div>
             <hr/>
-            <div id="time-need">
+            <div className={styles.timeNeed}>
                 <p>Breakfast, Lunch or Dinner?</p>
                 <div className={styles.icons}>{renderMealTypeIcons}</div>
             </div>
             <hr/>
-            <div id="deal-type">
+            <div className={styles.dealNeed}>
                 <p>Discount on food or drink?</p>
                 <div className={styles.icons}>{renderDealTypeIcons}</div>
             </div>
             <hr/>
-            <div id="dietary-need">
+            <div className={styles.dietaryNeed}>
                 <p>Any dietary needs?</p>
                 <div className={styles.icons}>{renderDietaryIcons}</div>
             </div>
-            <hr/>
             <Slider collectFilters={collectFilters} filterType={'maximumTableSize'}/>
-            <hr/> 
             <div className={styles.icons}><button onClick={filtering}>Filter</button></div>
         </div>    
     )
 }
-
-
 
 export {SideBar as default};

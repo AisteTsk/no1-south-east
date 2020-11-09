@@ -3,12 +3,12 @@ import { Link } from '@reach/router'
 import styles from './Register.module.scss'
 import Logo from "../Logo/Logo";
 
-const Register = () => {
+const Register = (props) => {
+    const { user, signOut } = props;
 
-    return(
-        <div className={styles.page}>
-            <Logo />
-            <div className={styles.form}>
+    const checkSignIn = () => {
+        if (user === null) {
+            return (
                 <div className={styles.register}>
                     <h3>Register to redeem great offers!</h3>
                     <form action="">
@@ -17,8 +17,8 @@ const Register = () => {
                             <input type="text" placeholder="Last Name" required />
                         </div>
                         <div className={styles.form_container}>
-                            <input type="text" name="email" placeholder="Email Address" required />
-                            <input type="text" name="password" placeholder="Password" required />
+                            <input id="email" type="text" name="email" placeholder="Email Address" required />
+                            <input id="password" type="text" name="password" placeholder="Password" required />
                         </div>
                         <p>By signing up you agree to our
                             <p className={styles.terms}>
@@ -36,9 +36,43 @@ const Register = () => {
                         <Link to="/faq">FAQ's</Link>
                     </p>
                 </div>
+            )   
+        } else {
+            return (
+                <div className={styles.signedInMessage}>
+                    <h3>You are already signed in</h3>
+                    <Link to="/browseDeals">
+                        <button><span>Continue as </span> <span>{user.email}</span></button>
+                    </Link>
+                    <button onClick={signOut}>Sign Out</button>
+                </div>    
+            )   
+        }
+    }
+
+    return(
+        <div className={styles.page}>
+            <Logo />
+            <div className={styles.form}>
+                {checkSignIn()}
             </div>
         </div>
-    );
+    )
 };
 
 export default Register;
+
+// useEffect ( () => {
+//     const individualUser = userData.forEach( (user) => {
+//       firestore
+//       .collection('users')
+//       .doc(user.uid)
+//       .set({...user})
+//       .then( () => {
+//         console.log('succesfully uploaded')
+//       })
+//       .catch( (err) =>{
+//         console.log(err)
+//       })
+//     })
+//   }, [])
