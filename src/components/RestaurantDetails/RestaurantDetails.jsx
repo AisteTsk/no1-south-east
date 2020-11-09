@@ -18,7 +18,7 @@ const RestaurantDetails = (props) => {
 
         firestore
         .collection("deals")
-        .doc(props.databaseId)
+        .doc(props.id)
         .get()
         .then((doc) => {
             setrestaurantData(doc.data());

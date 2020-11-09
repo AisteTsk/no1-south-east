@@ -4,8 +4,33 @@
   box-sizing: border-box;
 }
 
-.page .navButtons .navButton {
+.navButtons .navButton, .page {
   font-family: "Josefin Sans", sans-serif;
+}
+
+.boxtitle {
+  color: #ffffff;
+  background-color: #233D2A;
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.cardRender {
+  padding: 0;
+  width: 100%;
+  height: auto;
+  background-color: #233D2A;
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffffff;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: -140px, -87.5px;
+  transform-origin: center center;
+  display: inline-block;
 }
 
 .page {
@@ -15,7 +40,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: #233D2A;
-  font-family: "Josefin Sans", sans-serif;
 }
 .page .form {
   width: 40px;
@@ -38,7 +62,7 @@
   font-size: 23px;
   color: #ffffff;
   cursor: default;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 .page .form h2 {
   color: #ffffff;
@@ -51,6 +75,7 @@
   color: #ffffff;
   cursor: pointer;
   margin: 5px;
+  margin-bottom: 5px;
 }
 .page .form .account_btn:hover {
   background-color: #233D2A;
@@ -59,7 +84,7 @@
 }
 .page .form input {
   padding: 6px 8px;
-  margin: 8px 0;
+  margin: 6px 0;
   width: 250px;
   border: 2px solid black;
   font-size: 18px;
@@ -77,15 +102,8 @@
   color: black;
   margin-top: 10px;
 }
-.page .boxtitle {
-  color: #ffffff;
-  font-size: 50px;
-  font-family: "Josefin Sans", sans-serif;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-.page .navButtons {
+
+.navButtons {
   grid-area: buttons;
   display: flex;
   flex-direction: row;
@@ -99,7 +117,7 @@
   z-index: 1;
   font-family: "Josefin Sans", sans-serif;
 }
-.page .navButtons .buttons {
+.navButtons .buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -108,13 +126,13 @@
   margin: 0%;
   width: 100%;
 }
-.page .navButtons .buttons button {
+.navButtons .buttons button {
   height: 40px;
   width: 66px;
   margin: 0%;
   padding: 0%;
 }
-.page .navButtons .navButton {
+.navButtons .navButton {
   text-align: left;
   margin: 20px 10px;
   height: 40px;
@@ -124,15 +142,24 @@
   transition: 0.3s ease;
   font-size: 12px;
   background-color: #CF6B58;
-  width: 90px;
   text-align: center;
   align-items: center;
 }
-.page .navButtons .navButton:focus {
+.navButtons .navButton:focus {
   outline: none;
   border: none;
 }
-.page ::-webkit-scrollbar {
+
+.boxtitle {
+  color: #ffffff;
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
   display: none;
 }
 
@@ -149,10 +176,15 @@
     font-size: 20px;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   .page .form input {
     padding: 10px 15px;
-    width: 175px;
+    width: 200px;
+  }
+
+  .navButtons .buttons button {
+    width: 130px;
+    font-size: 14px;
   }
 }
 @media (min-width: 920px) {
@@ -166,10 +198,14 @@
     width: 200px;
   }
   .page .form .form_container {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 @media (max-width: 600px) {
+  .cardRender {
+    zoom: 90%;
+  }
+
   .page .boxtitle {
     font-size: 40px;
     margin-top: 30px;
@@ -182,7 +218,7 @@
   .profileBox {
     width: 100%;
     height: 90vh;
-    margin-top: 50px;
+    margin-top: 120px;
   }
 }
 @media (min-width: 1200px) {

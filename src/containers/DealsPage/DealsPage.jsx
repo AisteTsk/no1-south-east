@@ -17,29 +17,30 @@ import { Link } from "@reach/router";
 
 
 const DealsPage = ({ google }) => {
-
-  //*****importing data from firestore*****//
-  let restaurants = [];
+  // set up states
+  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants] = useState();
+  const [filteredList, setFilteredList] = useState();
+  const [userLocation, setUserLocation] = useState("");
+  const [distanceSortedList, setDistanceSortedList] = useState([]);
 
   const fetchRestaurants = () => {
     firestore
       .collection("deals")
       .get()
       .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const retaurantData = doc.data();
-          restaurants.push({ ...retaurantData, databaseId: doc.id })
+        const restaurants = querySnapshot.docs.map((doc) => {
+          return {
+            ...doc.data(), 
+            id: doc.id,
+            //format offAdded to time since last epoch (use getTime()) property in restaurants array
+            offerAdded: new Date(doc.offerAdded).getTime()
+          };
         })
 
-        //format offAdded to time since last epoch (use getTime()) property in rastaurants array
-        const restaurantsEpochTime = restaurants.map((restaurant) => {
-          restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
-          return restaurant;
-        });
-
-        const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
-        
-        setAllRestaurants(latestRestaurants);
+        const latestRestaurants = restaurants.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
+        console.log(latestRestaurants)
+        setAllRestaurants(restaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
   };
@@ -47,18 +48,10 @@ const DealsPage = ({ google }) => {
   useEffect(() => {
     fetchRestaurants()
   }, [])
-
-  // set up states
-  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
-  const [allRestaurants, setAllRestaurants]  = useState();
-  const [filteredList, setFilteredList] = useState();
-  const [userLocation, setUserLocation] = useState("");
-  const [distanceSortedList, setDistanceSortedList] = useState([]);
   
 
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
-
     // just incase it hasn't been reset
     let filteredRestaurants = allRestaurants;
 
