@@ -1,46 +1,47 @@
 @import "../../sass/main.module.scss";
 
 .page {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: $color-green;
-
-  .terms {
+    height: 100vh; 
+    width: 100%;
     display: flex;
-    background-color: $color-white;
-    width: 80%;
-    height: 70vh;
-    margin: auto;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    border: 8px solid $color-copper;
+    background-color: $color-green;
+
+    .terms {
+        display: flex;
+        background-color: $color-white;
+        width: 80%;
+        height: 70vh;
+        margin: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 8px solid $color-copper;
 
         h3 {
-        height: auto;
-        font-size: 23px;
-        color: $color-green;
-        cursor: default;
-        margin-bottom: 5px;
+            height: auto;
+            font-size: 23px;
+            color: $color-green;
+            cursor: default;
+            margin-bottom: 5px;
         }
 
         .faqs {
-        font-size: 15px;
-        margin-top: 10px;
+            font-size: 15px;
+            margin-top: 10px;
+            
             :link {
                 margin-left: 4px;
             }
         }
 
         p {
-        font-size: 12px;
-        color: black;
-        margin-top: 2px;
-        width: 70%;
+            font-size: 12px;
+            color: black;
+            margin-top: 2px;
+            width: 70%;
         }
 
         img {
@@ -73,14 +74,13 @@
     .page {
         .terms {
             width: 50%;
-
             h3 {
             font-size: 44px;
             }
             img {
                 height: 130px;
                 width: 380px;
-              }
+            }
         }
     }
 }

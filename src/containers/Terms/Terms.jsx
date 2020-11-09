@@ -10,7 +10,7 @@ const Terms = () => {
     <section className={styles.page}>
       <Logo />
       <div className={styles.terms}>
-        <h3>Terms & Conditions</h3>
+        <h3>Terms &amp; Conditions</h3>
         <p>No.1 South East is responsible for sharing offers with members. Members must ensure that they read the full offer details to obtain the offer.</p>
         <p>Details such as days available, times available, number of guests allowed, pre-booking and discounts on selected menus only will need to be noted and No.1 South East are not responsible for restaurants not offering the discount on these basis.</p>
         <p>No.1 South East are not responsible should a restaurant not offer the discount.</p>
