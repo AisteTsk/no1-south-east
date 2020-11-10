@@ -115,8 +115,8 @@ const AccountPage = ({ signOut, user }) => {
 
             <a name="redeemed"></a>
             <h2 className={styles.boxtitle}> Redeemed Offers</h2>
-            <div className={styles.wrapper}>
-                <div className={styles.cardRender}>
+            <div className={styles.wrapperRedeemed}>
+                <div className={styles.cardRenderRedeemed}>
                     <section className={styles.offerForm}>
                         {offerJsx}
                     </section>

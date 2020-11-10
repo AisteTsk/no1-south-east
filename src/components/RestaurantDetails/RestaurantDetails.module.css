@@ -2,6 +2,10 @@
   position: fixed;
   padding: 1%;
 }
+.accountLink .profileButton {
+  color: #ffffff;
+  background-color: #233D2A;
+}
 
 .RestaurantDetails {
   height: 100%;

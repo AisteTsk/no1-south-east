@@ -30,8 +30,6 @@ const RestaurantDetails = (props) => {
         }).catch((err) => console.log(err));
     };
 
-    // console.log(user)
-
     useEffect(() => {
         fetchRestaurants()
     },[])

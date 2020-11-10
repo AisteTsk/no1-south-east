@@ -26,7 +26,6 @@ const App = () => {
       .signInWithPopup(provider)
       .then(({user}) => {
         setUser(user);
-        console.log(user)
         navigate("/browseDeals")
       })
   };

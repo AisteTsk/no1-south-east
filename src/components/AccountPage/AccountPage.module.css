@@ -40,11 +40,30 @@
   width: 200%;
   overflow: hidden;
 }
-.wrapper .cardRender .offerForm {
+
+.wrapperRedeemed {
+  overflow: hidden;
+  margin: 30px 0;
+  height: auto;
+  background-color: #233D2A;
+}
+.wrapperRedeemed .cardRenderRedeemed {
+  padding: 0 0;
+  margin: 0;
+  background-color: #233D2A;
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffffff;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  width: 200%;
+  overflow: hidden;
+}
+.wrapperRedeemed .cardRenderRedeemed .offerForm {
   font-size: 40px;
   text-align: center;
 }
-.wrapper .cardRender .offerForm .offer {
+.wrapperRedeemed .cardRenderRedeemed .offerForm .offer {
   position: relative;
   background-color: #CF6B58;
   border: 3px #82A28B solid;
@@ -53,23 +72,23 @@
   padding: 20px 10px;
   width: 90%;
 }
-.wrapper .cardRender .offerForm .offer p {
+.wrapperRedeemed .cardRenderRedeemed .offerForm .offer p {
   color: #ECBC9D;
   margin: 5px;
-  font-size: 18px;
+  font-size: 34px;
 }
-.wrapper .cardRender .offerForm .offer .offerRestaurant {
+.wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerRestaurant {
   color: #ECBC9D;
   display: block;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 3rem;
   margin: 5px;
 }
-.wrapper .cardRender .offerForm .offer .offerCode {
+.wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerCode {
   color: #ffffff;
   display: block;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 3rem;
   margin: 10px;
   word-break: break-all;
   white-space: normal;

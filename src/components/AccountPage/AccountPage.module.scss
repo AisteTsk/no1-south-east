@@ -29,6 +29,24 @@
   transform-origin: 0 0;
   box-sizing: border-box;
   width: 200%;
+  overflow: hidden;}}
+
+.wrapperRedeemed{
+  overflow: hidden;
+  margin: 30px 0;
+  height: auto;
+  background-color: $color-green;
+
+.cardRenderRedeemed{
+  padding: 0 0;
+  margin: 0;
+  background-color: $color-green;
+  font-family: 'Josefin Sans', sans-serif;
+  color: $color-white;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  width: 200%;
   overflow: hidden;
 
   .offerForm{
@@ -47,14 +65,14 @@
       p{
         color: $color-desert;
         margin: 5px;
-        font-size: 18px;
+        font-size: 34px;
       }
   
       .offerRestaurant {
         color: $color-desert;
         display: block;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 3rem;
         margin: 5px;
       }
   
@@ -62,7 +80,7 @@
         color: $color-white;
         display: block;
         font-weight: bold;
-        font-size: 1.1rem;
+        font-size: 3rem;
         margin: 10px;
         word-break: break-all;
         white-space: normal;

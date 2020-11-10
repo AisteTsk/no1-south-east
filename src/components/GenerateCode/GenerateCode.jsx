@@ -12,7 +12,6 @@ const GenerateCode = ({handleClick, user, restaurantData}) => {
     // save offer code in saved offers on profile page.
     // on profile page check the db for any offers that contain the user uid and return.
     // check if offer for this restaurant has already been created/exists if true show that rather than creating another.
-    console.log(user)
     useEffect(() => {
 
         let matchingOffer = [];

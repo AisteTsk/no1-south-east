@@ -6,8 +6,11 @@
     position:fixed;
     padding: 1%;
 
+    .profileButton {
+        color: $color-white;
+        background-color: $color-green;
+    }
 }
-
 
 .RestaurantDetails {
     height: 100%;
