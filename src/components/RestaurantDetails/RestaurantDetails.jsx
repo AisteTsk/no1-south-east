@@ -110,7 +110,6 @@ const RestaurantDetails = (props) => {
                     <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
-                   
                 </span>
                 {redeemOfferButton}
             </div>
