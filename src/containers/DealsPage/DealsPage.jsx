@@ -19,14 +19,21 @@ import { Link } from "@reach/router";
 const DealsPage = (props) => {
   const { user, google } = props;
 
+  
+  // set up states
+  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants] = useState();
+  const [filteredList, setFilteredList] = useState();
+  const [userLocation, setUserLocation] = useState("");
+  const [distanceSortedList, setDistanceSortedList] = useState([]);
   const [favourites, setFavourites] = useState([]);
+
+  let restaurants = []
 
   useEffect(() => {
     fetchFavourites();
   }, []);
 
-  //*****importing data from firestore*****//
-  let restaurants = [];
 
   const fetchRestaurants = () => {
     firestore
@@ -282,7 +289,7 @@ const DealsPage = (props) => {
     <div className={styles.container}>
       <div className={styles.searchbar}>
         <Link to="/">
-          <img src={logoImage} />
+          <img src={logoImage} alt="logo image" />
         </Link>
         <SearchBar
           placeholder="Search by restaurants or cuisine..."
@@ -291,8 +298,13 @@ const DealsPage = (props) => {
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
-        <div className={styles.profilelink}>
-          <ManageAccountButton />
+        <Link to="/account">
+          <span className={styles.profilelink}>
+          <FontAwesomeIcon icon={["fas", "user"]} />
+          </span>
+        </Link>
+        <div className={styles.location}>
+          {renderLocationBtn}
         </div>
         <div className={styles.location}>{renderLocationBtn}</div>
       </div>

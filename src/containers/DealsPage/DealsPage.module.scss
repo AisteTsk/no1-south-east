@@ -57,18 +57,19 @@
       }
     }
 
-    .profilelink {
-      display: flex;
-      height: 200px;
-      width: 200px;
-      color: $color-green;
-      font-size: 200%;
-      z-index: 10;
-      top: 15px;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      margin: 0;
+        .profilelink {
+            display: flex;
+            height: 200px;
+            width: 200px;
+            color: $color-green;
+            font-size: 200%;
+            z-index: 10;
+            top: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
     }
   }
 
