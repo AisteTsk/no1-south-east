@@ -4,36 +4,29 @@
   box-sizing: border-box;
 }
 
-* {
+.card {
   font-family: "Josefin Sans", sans-serif;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   width: 350px;
-  height: 500px;
-  background-color: #ffffff;
-  margin: 0 0 3px 3px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.055);
-  display: flex;
-  flex-direction: column;
-  margin: 30px auto;
-}
-.card:hover {
-  box-shadow: 7px 7px rgba(0, 0, 0, 0.055);
-  transform: translateY(-4px);
+  height: 560px;
+  background-color: #233D2A;
 }
 .card a {
   text-decoration: none;
+  outline: none;
+}
+.card hr {
+  border-top: 3px solid #ffffff;
+  margin: 0px 0 20px 0;
 }
 .card h1 {
-  background-color: #CF6B58;
-  text-align: center;
+  text-align: left;
   font-size: 34px;
-  margin: 0;
+  margin: 0 auto;
   padding: 10px 0 3px;
-  color: #14144B;
+  color: #ffffff;
 }
 .card img {
   height: 250px;
@@ -41,46 +34,55 @@
   margin: 0;
 }
 .card h2 {
-  padding: 15px 0 8px 10px;
-  font-size: 32px;
-  border-bottom: 1px black solid;
-  color: #233D2A;
+  padding: 15px 0 8px 0px;
+  font-size: 16px;
+  line-height: 1.4rem;
+  color: #ffffff;
+  opacity: 0.5;
 }
-.card p, .card h3 {
-  padding: 0 10px;
-  padding-top: 5px;
-  font-size: 21px;
-  width: auto;
-  color: #14144B;
-}
-.card .info {
+.card .locationContainer {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  width: 100%;
-  background-color: #E2C7CA;
-  font-weight: bold;
+  align-items: center;
 }
-.card .expiry {
-  background-color: #E2C7CA;
-  font-weight: bold;
-  padding-top: 8px;
-  padding-bottom: 17px;
+.card .locationContainer .pin {
+  color: #ffffff;
+  height: 20px;
+  width: auto;
+  margin-right: 3%;
+  display: flex;
+  align-items: center;
 }
-.card .expiry p {
-  padding: 15px 10px;
-  text-decoration: underline;
-  color: #14144B;
-  padding-top: 5px;
+.card button {
+  font-size: 20px;
+  width: 120px;
+  margin: 20px auto;
+  background-color: #82A28B;
+  color: #ffffff;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
 }
-.card .expiry h3 {
-  border: 1px solid black;
-  width: 55%;
-  height: 35px;
-  border-radius: 10px;
-  text-align: center;
-  margin: auto;
-  color: #233D2A;
-  background-color: #ECBC9D;
-  padding-top: 8px;
+.card button:hover {
+  box-shadow: 0px 0px 2px black, 0 0 5px lightgrey, 0 0 5px black;
+}
+
+@media (min-width: 1000px) {
+  .card {
+    width: 550px;
+    height: 750px;
+    margin: 0 3%;
+  }
+  .card h1 {
+    font-size: 42px;
+  }
+  .card h2 {
+    font-size: 22px;
+  }
+  .card img {
+    height: 350px;
+    margin: 0;
+  }
 }
