@@ -42,6 +42,7 @@
             flex-direction: column;
             align-items: flex-end;
             color: $color-green;
+            cursor: pointer;
 
             .fa {
                 color: $color-copper;
@@ -62,7 +63,6 @@
          //   position: fixed;
             height: 200px;
             width: 200px;
-            color: $color-green;
             font-size: 200%;
             z-index: 10;
             top: 15px;
@@ -70,6 +70,10 @@
             align-items: center;
             padding: 0;
             margin: 0;
+
+            a {
+                color: $color-green;
+            }
         }
     }
 

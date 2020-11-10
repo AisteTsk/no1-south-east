@@ -45,8 +45,11 @@ const SignIn = (props) => {
                             <input type="password" name="password" placeholder="Password" onChange={handlePasswordChange} required />
                         </div>
                         <button type="submit" className={styles.sign_in_btn}>Sign in</button>
-                        <div className ={styles.google_sign_in} onClick={handleGoogleSignInClick}>
-                            <p>Sign in with <span><FontAwesomeIcon icon={["fab", "google"]}/></span>oogle</p>
+                        <div className={styles.googleBtn} onClick={handleGoogleSignInClick}>
+                            <div className={styles.googleIconWrapper}>
+                                <img className={styles.googleIcon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                            </div>
+                            <p className={styles.btnText}><b>Sign in with Google</b></p>
                         </div>
                     </form>
                     <p className={styles.terms}>
