@@ -5,7 +5,9 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
-// import logo from '../../assets/images/logocut.png';
+import logoImage from '../../assets/images/logocut.png';
+
+
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
@@ -24,23 +26,23 @@ const DealsPage = ({ google }) => {
   const [userLocation, setUserLocation] = useState("");
   const [distanceSortedList, setDistanceSortedList] = useState([]);
 
+  let restaurants = []
   const fetchRestaurants = () => {
     firestore
       .collection("deals")
       .get()
       .then((querySnapshot) => {
-        const restaurants = querySnapshot.docs.map((doc) => {
-          return {
-            ...doc.data(), 
-            id: doc.id,
-            //format offAdded to time since last epoch (use getTime()) property in restaurants array
-            offerAdded: new Date(doc.offerAdded).getTime()
-          };
+        querySnapshot.forEach((doc) => {
+          const retaurantData = doc.data();
+          restaurants.push({ ...retaurantData, databaseId: doc.id })
         })
-
-        const latestRestaurants = restaurants.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
-        console.log(latestRestaurants)
-        setAllRestaurants(restaurants);
+        //format offAdded to time since last epoch (use getTime()) property in rastaurants array
+        const restaurantsEpochTime = restaurants.map((restaurant) => {
+          restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
+          return restaurant;
+        });
+        const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
+        setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
   };
@@ -171,10 +173,18 @@ const DealsPage = ({ google }) => {
     );
   }
 
-  const renderLocationBtn = userLocation ?
-    <span className={styles.fa} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.fa} /></span> :
-    <span className={styles.faActive} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.faActive} /></span>
-
+  const renderLocationBtn = userLocation ? (
+    <div className={styles.fa} onClick={() => getLocation()}>
+      <FontAwesomeIcon icon={["fas", "map-marker-alt"]} className={styles.fa} />
+    </div>
+  ) : (
+    <div className={styles.faActive} onClick={() => getLocation()}>
+      <FontAwesomeIcon
+        icon={["fas", "map-marker-alt"]}
+        className={styles.faActive}
+      />
+    </div>
+  );
   const renderList = userLocation ? distanceSortedList : filteredList;
 
   // create and pass the filtered restaurants list to CardList
@@ -195,8 +205,10 @@ const DealsPage = ({ google }) => {
   return (
     <div className={styles.container}>
       <div className={styles.searchbar}>
-        {/* <img src={logo} /> */}
-        <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter} />
+        <Link to="/">
+          <img src={logoImage} alt="logo image" />
+        </Link>
+        <SearchBar placeholder="Search by restaurants or cuisine..." searchFilter={searchFilter} />
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />

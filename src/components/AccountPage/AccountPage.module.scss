@@ -16,7 +16,7 @@
 .wrapper{
   overflow: hidden;
   margin: 30px 0;
-  height: 120vh;
+  height: 240vh;
   background-color: $color-green;
 
 .cardRender {
@@ -30,6 +30,45 @@
   box-sizing: border-box;
   width: 200%;
   overflow: hidden;
+
+  .offerForm{
+    font-size: 40px;
+    text-align: center;
+  
+    .offer{
+      position: relative;
+      background-color: $color-copper;
+      border: 3px $color-lightgreen solid;
+      border-radius: 15px;
+      margin: 15px auto;
+      padding: 20px 10px;
+      width: 90%;
+  
+      p{
+        color: $color-desert;
+        margin: 5px;
+        font-size: 18px;
+      }
+  
+      .offerRestaurant {
+        color: $color-desert;
+        display: block;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin: 5px;
+      }
+  
+      .offerCode{
+        color: $color-white;
+        display: block;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin: 10px;
+        word-break: break-all;
+        white-space: normal;
+      }
+    }
+  }
 }
 }
 
@@ -177,6 +216,12 @@
     display: none;
   }
 
+  @media (min-width: 390px) {
+    .wrapper {
+      height: 120vh;
+    }
+  }
+
 
 @media (min-height: 800px) {
   .page {
@@ -194,15 +239,40 @@
       p {
         font-size: 20px;
       }
-    }
+    }  
   }
-
 }
+
 
 @media (min-width: 525px) {
   .wrapper {
     height: 90vh;
   }
+}
+
+@media (min-width: 600px) {
+  .page {
+    .form {
+      .register {
+        input {
+          padding: 10px 15px;
+          width: 175px;
+        }
+      }
+    }
+    .offerForm{
+      .offer{
+    
+        .offerRestaurant {
+          font-size: 1.2rem;
+        }
+    
+        .offerCode{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  } 
 }
 
 @media (min-width: 700px) {
@@ -227,6 +297,36 @@
 }
 }
 
+@media (min-height: 800px) {
+  .page {
+    .form {
+      .register {
+        h3 {
+          font-size: 30px;
+          margin-bottom: 30px;
+        }
+        input {
+          padding: 8px 10px;
+          margin: 7.5px 0;
+        }
+
+        .terms {
+          margin: 5px 0;
+        }
+
+        .update_btn {
+          height: 40px;
+          width: 170px;
+          margin-bottom: 15px;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 920px) {
   .page {
     .form {
@@ -235,6 +335,12 @@
       h3 {
         font-size: 44px;
       }
+    }
+    .offerForm{
+      width: 50%;
+    }
+  }
+}
 
       input {
         width: 200px;
@@ -243,9 +349,19 @@
       .form_container {
         flex-direction: column;
       }
+    
+    .offerForm{
+      .offer{
+    
+        .offerRestaurant {
+          font-size: 1.5rem;
+        }
+    
+        .offerCode{
+          font-size: 1.7rem;
+        }
+      }
     }
-  }
-}
 
 @media (min-width: 1000px) {
   .wrapper{
@@ -254,10 +370,6 @@
 }
 @media (max-width: 600px) {
 
-
-  .cardRender {
-    zoom: 90%;
-  }
   .page {
 
     .boxtitle {
