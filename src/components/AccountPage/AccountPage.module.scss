@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: $color-green;
-  font-family: 'Josefin Sans', sans-serif;
 
   .form {
     width: 40px;
@@ -23,7 +22,6 @@
     justify-content: center;
     text-align: center;
     border: 8px solid $color-copper;
-    font-family: 'Josefin Sans', sans-serif;
 
       h3 {
         height: auto;
@@ -121,7 +119,6 @@
   margin: auto;
   text-align: center;
   border: 8px solid $color-copper;
-  font-family: 'Josefin Sans', sans-serif;
 
   .offer{
     position: relative;
@@ -273,7 +270,6 @@
   bottom: 5px;
   align-items: center;
   z-index: 1;
-  font-family: 'Josefin Sans', sans-serif;
 
 
   .buttons {
@@ -307,7 +303,6 @@
 .boxtitle {
   color: white;
   font-size: 50px;
-  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
   padding: 0;
   margin: 0;

@@ -4,10 +4,6 @@ import footerLogo from "../../assets/images/footerLogo.png"
 import Logo from "../../components/Logo";
 
 const FaQs = () => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 8eb333e548270ea63c10c052c4322b6ac0062930
   return (
     <section className={styles.page}>
       <Logo />

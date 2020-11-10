@@ -15,7 +15,6 @@
   flex-direction: column;
   justify-content: center;
   background-color: #233D2A;
-  font-family: "Josefin Sans", sans-serif;
 }
 .page .form {
   width: 40px;
@@ -31,7 +30,6 @@
   justify-content: center;
   text-align: center;
   border: 8px solid #CF6B58;
-  font-family: "Josefin Sans", sans-serif;
 }
 .page .form h3 {
   height: auto;
@@ -73,16 +71,16 @@
 .page .form .update_btn .faqs :link {
   margin-left: 4px;
 }
-.page .form .update_btn .register_btn {
+.page .form .update_btn .account_btn {
   font-size: 22px;
   height: 30px;
   width: 150px;
   background-color: #82A28B;
   color: #ffffff;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin: 5px;
 }
-.page .form .update_btn .register_btn:hover {
+.page .form .update_btn .account_btn:hover {
   background-color: #233D2A;
   text-shadow: 0 0 2px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
@@ -107,6 +105,58 @@
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
 }
 
+.offerForm {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #233D2A;
+  width: 80%;
+  height: 70vh;
+  margin: auto;
+  text-align: center;
+  border: 8px solid #CF6B58;
+}
+.offerForm .offer {
+  position: relative;
+  background-color: #CF6B58;
+  border: 3px #82A28B solid;
+  border-radius: 15px;
+  margin: 15px auto;
+  padding: 20px 10px;
+  width: 90%;
+}
+.offerForm .offer p {
+  color: #ECBC9D;
+  margin: 5px;
+}
+.offerForm .offer .offerRestaurant {
+  color: #ECBC9D;
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+.offerForm .offer .offerCode {
+  color: #ffffff;
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 10px;
+  word-break: break-all;
+  white-space: normal;
+}
+
+@media (min-width: 600px) {
+  .page .form .register input {
+    padding: 10px 15px;
+    width: 175px;
+  }
+  .page .offerForm .offer .offerRestaurant {
+    font-size: 1.2rem;
+  }
+  .page .offerForm .offer .offerCode {
+    font-size: 1.5rem;
+  }
+}
 @media (min-height: 800px) {
   .page .form .register h3 {
     font-size: 30px;
@@ -128,12 +178,6 @@
     font-size: 20px;
   }
 }
-@media (min-width: 600px) {
-  .page .form .register input {
-    padding: 10px 15px;
-    width: 175px;
-  }
-}
 @media (min-width: 920px) {
   .page .form {
     width: 50%;
@@ -147,10 +191,19 @@
   .page .form .register .form_container {
     flex-direction: row;
   }
+  .page .offerForm {
+    width: 50%;
+  }
 }
 @media (min-width: 1200px) {
   .page .form .register input {
     width: 275px;
+  }
+  .page .offerForm .offer .offerRestaurant {
+    font-size: 1.5rem;
+  }
+  .page .offerForm .offer .offerCode {
+    font-size: 1.7rem;
   }
 }
 .bottomRight {
@@ -164,7 +217,6 @@
   bottom: 5px;
   align-items: center;
   z-index: 1;
-  font-family: "Josefin Sans", sans-serif;
 }
 .bottomRight .buttons {
   display: flex;
@@ -191,7 +243,6 @@
 .boxtitle {
   color: white;
   font-size: 50px;
-  font-family: "Josefin Sans", sans-serif;
   text-align: center;
   padding: 0;
   margin: 0;

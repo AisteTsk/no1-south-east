@@ -11,25 +11,21 @@ const SignIn = (props) => {
     const [email, setEmail] = useState("");
 
     useEffect((user) => {
-        console.log(user)
         if (user) navigate("/browseDeals");
     }, []);
 
     const handleEmailChange = (e) => {
         const email = e.target.value;
-        console.log(email)
         setEmail(email);
     };
 
     const handlePasswordChange = (e) => {
         const password = e.target.value;
-        console.log(password)
         setPassword(password);
     };
 
     const handleSignInClick = (e) => {
         e.preventDefault();
-        console.log(email, password);
         signIn(email, password);
     }
 
