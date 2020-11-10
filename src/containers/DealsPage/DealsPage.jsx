@@ -14,14 +14,19 @@ import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
 // import Location from '../../components/filterFunctionality/Location';
+import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
 
 const DealsPage = ({ google }) => {
+  // set up states
+  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants] = useState();
+  const [filteredList, setFilteredList] = useState();
+  const [userLocation, setUserLocation] = useState("");
+  const [distanceSortedList, setDistanceSortedList] = useState([]);
 
-  //*****importing data from firestore*****//
-  let restaurants = [];
-
+  let restaurants = []
   const fetchRestaurants = () => {
     firestore
       .collection("deals")
@@ -31,15 +36,12 @@ const DealsPage = ({ google }) => {
           const retaurantData = doc.data();
           restaurants.push({ ...retaurantData, databaseId: doc.id })
         })
-
         //format offAdded to time since last epoch (use getTime()) property in rastaurants array
         const restaurantsEpochTime = restaurants.map((restaurant) => {
           restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
           return restaurant;
         });
-
         const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
-        
         setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
@@ -48,18 +50,10 @@ const DealsPage = ({ google }) => {
   useEffect(() => {
     fetchRestaurants()
   }, [])
-
-  // set up states
-  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
-  const [allRestaurants, setAllRestaurants]  = useState();
-  const [filteredList, setFilteredList] = useState();
-  const [userLocation, setUserLocation] = useState("");
-  const [distanceSortedList, setDistanceSortedList] = useState([]);
   
 
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
-
     // just incase it hasn't been reset
     let filteredRestaurants = allRestaurants;
 
@@ -219,10 +213,10 @@ const DealsPage = ({ google }) => {
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
         <Link to="/account">
-        <span className={styles.profilelink}>
+          <span className={styles.profilelink}>
           <FontAwesomeIcon icon={["fas", "user"]} />
-        </span>
-      </Link>
+          </span>
+        </Link>
         <div className={styles.location}>
           {renderLocationBtn}
         </div>
