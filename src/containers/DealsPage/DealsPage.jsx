@@ -20,7 +20,7 @@ import { Link } from "@reach/router";
 
 const DealsPage = ({ google }) => {
 
-  //*****importing data from firestore*****//
+ //*****importing data from firestore*****//
   let restaurants = [];
 
   const fetchRestaurants = () => {
@@ -212,6 +212,9 @@ const DealsPage = ({ google }) => {
   return (
     <div className={styles.container}>
       <div className={styles.searchbar}>
+        <Link to="/adminpanel">
+              <button type="submit" className={styles.admin_btn}>Admin Settings</button>
+              </Link>
         <Link to="/">
           <img src={logoImage} alt="logo image" />
         </Link>

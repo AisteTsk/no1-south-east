@@ -131,9 +131,8 @@ const AccountPage = ({ signOut, user }) => {
                 <a name="referFriend"></a>
                 <h2 className={styles.boxtitle}>Refer a Friend</h2>
                 <section className={styles.form}>
-                <div className={styles.refer}>
-                    <button className={styles.update_btn}>Click for a referral code:</button>
-                    <p></p>
+                    <div className={styles.refer}>
+                        <button className={styles.account_btn}>Click for a referral code:</button>
                     </div>
                 </section>
 

@@ -2,7 +2,7 @@
 
 .container {
     position: relative;
-
+    
     .searchbar {
         width: 100%;
         line-height: 10px;
@@ -16,7 +16,24 @@
         justify-content: space-between;
         align-items :center;
         background-color: $color-lightgreen;
-
+        
+        .admin_btn {
+            font-size: 15px;
+            height: 30px;
+            width: 150px;
+            background-color: $color-green;
+            color: $color-white;
+            cursor: pointer;
+            margin-bottom: 5px;
+            border:black;
+            font-family: 'Josefin Sans', sans-serif;
+        
+            &:hover {
+                background-color: $color-green;
+                text-shadow: 0 0 2px white;
+                box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+            }
+        }
         img {
             height: 50px;
             width: auto;
@@ -83,9 +100,9 @@
             font-size: 4rem;
             text-align: center;
             padding-bottom: 1.5%;
+            
         }
     }
 }
-
 
 @media (min-width: 1000px){}

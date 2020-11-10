@@ -12,6 +12,7 @@ import Logo from "../../components/Logo";
 import AccountPage from "../../components/AccountPage";
 import RedeemOfferPage from "../../components/RedeemOfferPage";
 import PrivateRoutes from "../PrivateRoutes";
+import AdminPanel from "../../components/AdminPanel";
 
 const Routes = (props) => {
   const { user, googleSignIn, signIn, signOut } = props;
@@ -30,6 +31,7 @@ const Routes = (props) => {
       <PrivateRoutes path="/" user={user} >
           <AccountPage path="/account" signOut={signOut} user={user}/>
           <RedeemOfferPage path="/redeem-offer" /> 
+          <AdminPanel path="/adminpanel" signOut={signOut} user={user}/>
       </PrivateRoutes> 
     </Router>
   )
