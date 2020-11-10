@@ -1,0 +1,122 @@
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.adminPage {
+  background-color: #82A28B;
+  height: 100%;
+}
+.adminPage h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.form {
+  width: 40px;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #233D2A;
+  width: 80%;
+  height: 70vh;
+  margin: 50px auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 8px solid #CF6B58;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+.form .form_container {
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+.form .form_container label {
+  color: #ffffff;
+}
+
+.formInput {
+  box-sizing: border-box;
+  padding: 30px 30px;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.offerContainer {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #233D2A;
+  width: 80%;
+  height: 70vh;
+  margin: 50px auto;
+  text-align: center;
+  border: 8px solid #CF6B58;
+  font-family: "Josefin Sans", sans-serif;
+}
+.offerContainer h3 {
+  margin: 20px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.offerContainer .offer {
+  position: relative;
+  background-color: #CF6B58;
+  border: 3px #82A28B solid;
+  border-radius: 15px;
+  margin: 15px auto;
+  padding: 20px 10px;
+  width: 90%;
+}
+.offerContainer .offer p {
+  color: #ECBC9D;
+  margin: 5px;
+}
+.offerContainer .offer .offerRestaurant {
+  color: #ECBC9D;
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+.offerContainer .offer .offerCode {
+  color: #ffffff;
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 10px;
+  word-break: break-all;
+  white-space: normal;
+}
+.offerContainer .offer button {
+  font-size: 17px;
+  font-weight: bold;
+  height: 30px;
+  width: 150px;
+  background-color: #82A28B;
+  color: #ffffff;
+  cursor: pointer;
+  margin: 10px;
+}
+.offerContainer .offer button:hover {
+  background-color: #233D2A;
+  text-shadow: 0 0 2px white;
+  box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
