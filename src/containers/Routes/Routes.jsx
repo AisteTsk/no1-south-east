@@ -25,10 +25,10 @@ const Routes = (props) => {
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" />
       <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
-      <Register path="/register" />
-      <RestaurantDetails path="/restaurants/:databaseId"/>
+      <Register path="/register" signOut={signOut} user={user} />
+      <RestaurantDetails path="/restaurants/:databaseId" user={user}/>
       <PrivateRoutes path="/" user={user} >
-          <AccountPage path="/account" signOut={signOut} />
+          <AccountPage path="/account" signOut={signOut} user={user}/>
           <RedeemOfferPage path="/redeem-offer" /> 
       </PrivateRoutes> 
     </Router>
