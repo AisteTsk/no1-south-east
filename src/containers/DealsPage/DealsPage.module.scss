@@ -1,61 +1,61 @@
 @import "../../sass/main.module.scss";
 
 .container {
-  position: relative;
+    position: relative;
 
-  .searchbar {
-    width: 100%;
-    line-height: 10px;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    padding: 0.3% 2%;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $color-lightgreen;
+    .searchbar {
+        width: 100%;
+        line-height: 10px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        padding: 0.3% 2%;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $color-lightgreen;
 
-    img {
-      height: 50px;
-      width: auto;
+        img {
+            height: 50px;
+            width: auto;
+        }
     }
-  }
 
-  .filterOptions {
-    width: 100%;
-    height: 50px;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    // padding: 10px;
-    background-color: $color-lightgreen;
+    .filterOptions {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        // padding: 10px;
+        background-color: $color-lightgreen;
 
-    .location {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      color: $color-green;
+        .location {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: $color-green;
 
-      .fa {
-        color: $color-copper;
-        height: 40px;
-        width: 40px;
-      }
+            .fa {
+                color: $color-copper;
+                height: 40px;
+                width: 40px;
+            }
 
-      .faActive {
-        color: $color-green;
-        // font-size: 4rem;
-        height: 40px;
-        width: 40px;
-      }
-    }
+            .faActive {
+                color: $color-green;
+                // font-size: 4rem;
+                height: 40px;
+                width: 40px;
+            }
+        }
 
         .profilelink {
             display: flex;
@@ -71,21 +71,20 @@
             margin: 0;
         }
     }
-  }
 
-  .dealsPage {
-    background-color: $color-green;
-    padding-top: 80px;
 
-    .title {
-      @extend %main-font;
-      color: $color-white;
-      font-size: 4rem;
-      text-align: center;
-      padding-bottom: 1.5%;
+    .dealsPage {
+        background-color: $color-green;
+        padding-top: 80px;
+
+        .title {
+            @extend %main-font;
+            color: $color-white;
+            font-size: 4rem;
+            text-align: center;
+            padding-bottom: 1.5%;
+        }
     }
-  }
 }
 
-@media (min-width: 1000px) {
-}
+@media (min-width: 1000px) {}

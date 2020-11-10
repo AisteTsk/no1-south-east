@@ -67,8 +67,6 @@ const DealsPage = (props) => {
   }, []);
 
   const toggleFav = (restaurant) => {
-    console.log("BELOW THIS IS THE USER.....");
-    console.log(user);
     if (user != null) {
       restaurant.isFav = !restaurant.isFav;
       restaurant.isFav ? addToFav(restaurant) : removeFromFav(restaurant);
@@ -79,8 +77,9 @@ const DealsPage = (props) => {
 
   const removeFromFav = (restaurant) => {
     firestore
-      .collection("deals")
-      .doc(restaurant.restaurantId)
+      .collection("user")
+      .doc(user.uid)
+      .collection("favourites")
       .delete()
       .then(fetchFavourites)
       .catch((err) => console.error(err));
@@ -88,11 +87,9 @@ const DealsPage = (props) => {
 
   // add to favourites function
   const addToFav = (restaurant) => {
-    console.log("HERE IS TEH RESTAUARANTTTT");
-    console.log(restaurant);
     firestore
-      .collection("deals")
-      .doc(restaurant.restaurantId)
+      .collection("user")
+      .doc("favourites")
       .set(restaurant)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
@@ -101,24 +98,20 @@ const DealsPage = (props) => {
   // fetch for the database a list of favourite restaurants
   const fetchFavourites = () => {
     firestore
-      .collection("deals")
+      .collection("user")
+      .doc("favourites")
       .get()
       .then((querySnapshot) => {
         const favourites = querySnapshot.docs
-          .filter((doc) => doc.data().isFav === true)
           .map((doc) => doc.data());
         setFavourites(favourites);
+        console.log(favourites);
       })
       .catch((err) => console.error(err));
   };
 
-  console.log(fetchFavourites);
-  // set up states
-  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
-  const [allRestaurants, setAllRestaurants] = useState();
-  const [filteredList, setFilteredList] = useState();
-  const [userLocation, setUserLocation] = useState("");
-  const [distanceSortedList, setDistanceSortedList] = useState([]);
+
+
 
   // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
@@ -306,7 +299,6 @@ const DealsPage = (props) => {
         <div className={styles.location}>
           {renderLocationBtn}
         </div>
-        <div className={styles.location}>{renderLocationBtn}</div>
       </div>
       <section className={styles.dealsPage}>
         <h1 className={styles.title}>Latest Offers</h1>
