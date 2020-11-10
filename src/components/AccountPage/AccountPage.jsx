@@ -16,7 +16,7 @@ const AccountPage = (props) => {
         <CardList className={styles.cardList} restaurants={favourites.slice(0, 5)} />
     ) : (
             <FeedbackPanel
-                header="No matches"
+                header="No favourites"
             />
         )
 
