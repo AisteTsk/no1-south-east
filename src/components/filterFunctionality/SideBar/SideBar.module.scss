@@ -8,7 +8,7 @@
   /* Place content 60px from the top */
   width: 320px;
   right: 0px;
-  height: calc(100%);
+  height: calc(100% - 30px);
   background-color: $color-copper;
   color: rgb(44, 41, 38);
   border-bottom-left-radius: 140px;
@@ -44,7 +44,7 @@
   }
 
   .whenNeed, .timeNeed, .dealNeed, .dietaryNeed, .slider {
-    padding: 8px;
+    padding: 6px;
     
     p{
       text-align: center;
@@ -56,6 +56,6 @@
   .icons {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 8px;
   }
 }

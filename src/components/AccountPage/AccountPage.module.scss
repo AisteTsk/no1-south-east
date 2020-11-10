@@ -137,12 +137,82 @@
         outline: none;
         border: none;
       }
+    }  
+  }
+}
+
+.offerForm{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: $color-green;
+  width: 80%;
+  height: 70vh;
+  margin: auto;
+  text-align: center;
+  border: 8px solid $color-copper;
+  font-family: 'Josefin Sans', sans-serif;
+
+  .offer{
+    position: relative;
+    background-color: $color-copper;
+    border: 3px $color-lightgreen solid;
+    border-radius: 15px;
+    margin: 15px auto;
+    padding: 20px 10px;
+    width: 90%;
+
+    p{
+      color: $color-desert;
+      margin: 5px;
+    }
+
+    .offerRestaurant {
+      color: $color-desert;
+      display: block;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 5px;
+    }
+
+    .offerCode{
+      color: $color-white;
+      display: block;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 10px;
+      word-break: break-all;
+      white-space: normal;
     }
   }
 
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+@media (min-width: 600px) {
+  .page {
+    .form {
+      .register {
+        input {
+          padding: 10px 15px;
+          width: 175px;
+        }
+      }
+    }
+    .offerForm{
+      .offer{
+    
+        .offerRestaurant {
+          font-size: 1.2rem;
+        }
+    
+        .offerCode{
+          font-size: 1.5rem;
+        }
+      }
+    }
+  } 
 }
 
 @media (min-height: 800px) {
@@ -188,13 +258,31 @@
       input {
         width: 200px;
       }
+    }
+    .offerForm{
+      width: 50%;
+    }
+  }
+}
 
       .form_container {
         flex-direction: column;
       }
+    
+    .offerForm{
+      .offer{
+    
+        .offerRestaurant {
+          font-size: 1.5rem;
+        }
+    
+        .offerCode{
+          font-size: 1.7rem;
+        }
+      }
     }
-  }
-}
+  
+
 
 @media (max-width: 600px) {
   .page {
@@ -209,13 +297,23 @@
       width: 100%;
     }
   }
+}
+
+.boxtitle {
+  color: white;
+  font-size: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
 
   .profileBox {
     width: 100%;
     height: 90vh;
     margin-top: 70px;
   }
-}
+
 
 @media (min-width: 1200px) {
   .page {
@@ -226,3 +324,23 @@
     }
   }
 }
+.favourites {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 200px;
+}
+
+//SECTIONS
+
+// .favourites {
+//     overflow: hidden; /* Hide scrollbars */
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+//     margin: 200px;
+// }
