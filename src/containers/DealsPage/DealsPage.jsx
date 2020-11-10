@@ -16,8 +16,8 @@ import FeedbackPanel from "../../components/filterFunctionality/FeedbackPanel";
 import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
-const DealsPage = ({ google }, props) => {
-  const { user } = props;
+const DealsPage = (props) => {
+  const { user, google } = props;
 
   const [favourites, setFavourites] = useState([]);
 
@@ -60,7 +60,9 @@ const DealsPage = ({ google }, props) => {
   }, []);
 
   const toggleFav = (restaurant) => {
-    if (user) {
+    console.log("BELOW THIS IS THE USER.....");
+    console.log(user);
+    if (user != null) {
       restaurant.isFav = !restaurant.isFav;
       restaurant.isFav ? addToFav(restaurant) : removeFromFav(restaurant);
     } else {
@@ -79,6 +81,8 @@ const DealsPage = ({ google }, props) => {
 
   // add to favourites function
   const addToFav = (restaurant) => {
+    console.log("HERE IS TEH RESTAUARANTTTT");
+    console.log(restaurant);
     firestore
       .collection("deals")
       .doc(restaurant.restaurantId)
@@ -100,6 +104,7 @@ const DealsPage = ({ google }, props) => {
       })
       .catch((err) => console.error(err));
   };
+
   console.log(fetchFavourites);
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
