@@ -1,6 +1,17 @@
 @import '../../sass/abstracts/variables';
 @import '../../sass/base/typography';
 
+
+.accountLink {
+    position:fixed;
+    padding: 1%;
+
+    .profileButton {
+        color: $color-white;
+        background-color: $color-green;
+    }
+}
+
 .RestaurantDetails {
     height: 100%;
     width: 100%;
@@ -10,6 +21,7 @@
     justify-content: space-evenly;
     padding-top: 25%;
     background-color: $color-green;
+
     
     .fontawesomeContainer{
         display: flex;
