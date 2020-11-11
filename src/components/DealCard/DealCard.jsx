@@ -17,7 +17,7 @@ const DealCard = (props) => {
     }
     return (
         <div className={styles.card} >
-            <Link to={`/restaurants/${databaseId}`}>
+            <Link to={`/restaurants/${databaseId}`}> 
                 <hr />
                 <img src={"https://miro.medium.com/max/12000/1*tSRiLvTkqtMkYYC6zxUP5Q.jpeg"} alt="restaurant" />
                 <h1>{name}</h1>

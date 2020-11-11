@@ -4,6 +4,8 @@ import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
 import Footer from '../Footer';
+import ManageAccountButton from "../../components/ManageAccountButton";
+
 
 
 import { firestore } from '../../firebase';
@@ -52,7 +54,6 @@ const RestaurantDetails = (props) => {
             <button>Get Code</button>
         </Link>
     )
-
     const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick} user={props.user} restaurantData={restaurantData}/> : null;
 
     if(restaurantData) {
@@ -76,11 +77,15 @@ const RestaurantDetails = (props) => {
         return (
             <>
             <Logo/>
+            <div className={styles.accountLink}>    
+            <ManageAccountButton className={styles.profileButton}/>
+            </div>
             <div className={styles.RestaurantDetails}>
+
                 <h1>{name}</h1>
                 <div className={styles.image}>
                     <img className={styles.responsiveImage} src={image} alt={name}/> 
-                </div>          
+                </div>         
                 <p>Location: {location}</p><br/>
                 <p>Offer Details:</p>
                 <p>{offerDescription}</p><br/>
@@ -105,6 +110,7 @@ const RestaurantDetails = (props) => {
                     <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
+                   
                 </span>
                 {redeemOfferButton}
             </div>
