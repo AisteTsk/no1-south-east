@@ -23,9 +23,9 @@ const AccountPage = ({ signOut, user }) => {
         .collection("offerCodes")
         .get()
         .then((querySnapshot) => {
-            const allOffers = []
+            const allOffers = [];
             querySnapshot.forEach((doc) => {
-                const offers = {...doc.data(), codeid: doc.id};
+                const offers = { ...doc.data(), codeid: doc.id };
                 allOffers.push(offers)
             });
             

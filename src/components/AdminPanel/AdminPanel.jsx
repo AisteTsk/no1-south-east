@@ -47,7 +47,7 @@ return (
                 {/* <div class="ui checkbox"><input type="checkbox"><label>True</label></div> */}
 
                 <p>Which days is the offer available?</p>
-                <div class="ui checkbox" className={checkbox}><input type="checkbox"/><label>Monday</label></div>
+                <div class="ui checkbox" className={styles.checkbox}><input type="checkbox"/><label>Monday</label></div>
                 <div class="ui checkbox"><input type="checkbox"/><label>Tuesday</label></div>
                 <div class="ui checkbox"><input type="checkbox"/><label>Wednesday</label></div>
                 <div class="ui checkbox"><input type="checkbox"/><label>Thursday</label></div>
