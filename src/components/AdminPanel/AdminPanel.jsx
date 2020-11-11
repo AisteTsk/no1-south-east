@@ -2,10 +2,12 @@ import React, { useState, useEffect} from 'react';
 import { Link } from '@reach/router'
 import styles from './AdminPanel.module.scss';
 import 'semantic-ui-css/semantic.min.css'
+import { functions } from '../../firebase';
 
 
 const AdminPanel = () => {
 
+    const [adminEmail, setAdminEmail] = useState('')
     // CREATE
     // add a state that will capture form inputs
     // can update functions to each form input field which updates the respective state field
@@ -15,13 +17,41 @@ const AdminPanel = () => {
     // load in all restaurant offers to display in deletion panel
     // add a function to the delete button which takes the offer and removes it from the database - maybe add a warning panel?
 
+    // AUTHORISATION
+    // prevent any normal users from seeing the admin panel and creating admins
+    // to do this we need to use the following in our app.jsx call auth.onAuthStateChanged
+    // user.getIdTokenResult().then(idTokenResult => {
+        // user.admin = idTokenResult.claims.admin;
+    // })
+    // This will add a property to the user called admin, and if the user is not an admin it will be equal to undefined and if they are will be true
+    // we can then use this for our private routing
+
     const signOut = () => {
         console.log('you  signed out');
+    }
+
+    const handleInput = (e) => {
+        setAdminEmail(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const addAdminRole = functions.httpsCallable('addAdminRole');
+        addAdminRole({email: adminEmail}).then(result => {
+            console.log(result);
+        });
     }
 
 return (
     <section className={styles.adminPage}>
     <h1>Admin Panel</h1>
+    <div className="adminContainer">
+        <form onSubmit={handleSubmit}>
+            <input type="email" placeholder="User Email" id="adminEmail" onInput={handleInput} required />
+            <button>Make Admin</button>
+        </form>
+    </div>
     <div className={styles.profileBox}>
         <section className={styles.form}>
             <h3>Add an Offer</h3>
