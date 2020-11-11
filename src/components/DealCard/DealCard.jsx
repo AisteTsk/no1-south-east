@@ -12,7 +12,7 @@ const DealCard = (props) => {
         if (props.restaurant.distanceToText) {
             return <h2>You are {props.restaurant.distanceToText} away</h2>
         } else {
-            return <h2>You're location is inactive</h2>
+            return <h2>Your location is inactive</h2>
         }
     }
     return (

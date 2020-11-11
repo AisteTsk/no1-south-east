@@ -24,6 +24,7 @@
   font-size: 25px;
   width: 60%;
   color: #ffffff;
+  margin-top: 10px;
 }
 .RestaurantDetails .fontawesomeContainer a {
   text-decoration: none;
@@ -50,6 +51,7 @@
   border-radius: 5%;
   padding: 10px;
   margin: 5px;
+  width: 40%;
 }
 .RestaurantDetails p {
   text-align: left;
@@ -79,7 +81,7 @@
   }
   .RestaurantDetails .fontawesomeContainer {
     font-size: 30px;
-    margin-top: 5px;
+    margin-top: 10px;
   }
   .RestaurantDetails p {
     font-size: 20px;

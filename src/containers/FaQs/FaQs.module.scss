@@ -1,5 +1,4 @@
 @import "../../sass/main.module.scss";
-
 .page {
     height: 100vh;
     width: 100%;
@@ -7,7 +6,6 @@
     flex-direction: column;
     justify-content: center;
     background-color: $color-green;
-
     .faqs {
         display: flex;
         background-color: $color-white;
@@ -19,7 +17,6 @@
         justify-content: center;
         text-align: center;
         border: 8px solid $color-copper;
-        
         .faqscontainer{
             h3 {
             height: auto;
@@ -28,16 +25,13 @@
             cursor: default;
             margin-bottom: 5px;
             }
-
             span {
                 margin-top: 10px;
-
                 p {
                     font-size: 10px;
                     color: black;
                     width: 100%;
                     padding: 1px 10px;
-                    
                     &:nth-child(odd) {
                         font-weight: bold;
                     }
@@ -51,7 +45,6 @@
         }
     }
 }
-
 @media (min-height: 820px) {
     .page {
         .faqs {
@@ -69,24 +62,39 @@
         }
     } 
 }    
-
 @media (min-width: 920px) {
     .page {
         .faqs {
             width: 50%;
-
             .faqscontainer{
                 h3 {
                 font-size: 44px;
                 }
                 span {
                     p {
-                        font-size: 12px;
+                        font-size: 11px;
                     }
                 }
                 img {
                     height: 130px;
                     width: 380px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .page {
+        .faqs {
+            .faqscontainer{
+                span {
+                    p {
+                        font-size: 13px;
+                    }
+                }
+                img {
+                    height: 110px;
                 }
             }
         }

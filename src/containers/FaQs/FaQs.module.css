@@ -66,10 +66,18 @@
     font-size: 44px;
   }
   .page .faqs .faqscontainer span p {
-    font-size: 12px;
+    font-size: 11px;
   }
   .page .faqs .faqscontainer img {
     height: 130px;
     width: 380px;
+  }
+}
+@media (min-width: 1200px) {
+  .page .faqs .faqscontainer span p {
+    font-size: 13px;
+  }
+  .page .faqs .faqscontainer img {
+    height: 110px;
   }
 }
