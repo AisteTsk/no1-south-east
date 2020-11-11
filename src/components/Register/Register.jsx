@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from '@reach/router'
 import styles from './Register.module.scss'
 import Logo from "../Logo/Logo";
+import Footer from '../Footer';
 
-const Register = () => {
-    return(
-        <div className={styles.page}>
-            <Logo />
-            <div className={styles.form}>
+const Register = (props) => {
+    const { user, signOut } = props;
+
+    const checkSignIn = () => {
+        if (user === null) {
+            return (
                 <div className={styles.register}>
                     <h3>Register to redeem great offers!</h3>
                     <form action="">
@@ -35,24 +37,31 @@ const Register = () => {
                         <Link to="/faq">FAQ's</Link>
                     </p>
                 </div>
+            )   
+        } else {
+            return (
+                <div className={styles.signedInMessage}>
+                    <h3>You are already signed in</h3>
+                    <Link to="/browseDeals">
+                        <button><span>Continue as </span> <span>{user.email}</span></button>
+                    </Link>
+                    <button onClick={signOut}>Sign Out</button>
+                </div>    
+            )   
+        }
+    }
+
+    return(
+        <>
+            <div className={styles.page}>
+                <Logo />
+                <div className={styles.form}>
+                    {checkSignIn()}
+                </div>
             </div>
-        </div>
-    );
+            <Footer/>
+        </>
+    )
 };
 
 export default Register;
-
-// useEffect ( () => {
-//     const individualUser = userData.forEach( (user) => {
-//       firestore
-//       .collection('users')
-//       .doc(user.uid)
-//       .set({...user})
-//       .then( () => {
-//         console.log('succesfully uploaded')
-//       })
-//       .catch( (err) =>{
-//         console.log(err)
-//       })
-//     })
-//   }, [])

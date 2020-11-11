@@ -3,12 +3,18 @@ import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
+import Footer from '../Footer';
+import ManageAccountButton from "../../components/ManageAccountButton";
+
+
 
 import { firestore } from '../../firebase';
+import GenerateCode from '../GenerateCode/GenerateCode';
 
 const RestaurantDetails = (props) => {
 
     const [restaurantData, setrestaurantData] = useState()
+    const [isClicked, setIsClicked] = useState(false);
 
     //*****importing data from firestore*****//    
     
@@ -19,7 +25,9 @@ const RestaurantDetails = (props) => {
         .doc(props.databaseId)
         .get()
         .then((doc) => {
-            setrestaurantData(doc.data());
+            const data = doc.data();
+            data.uid = (doc.id)
+            setrestaurantData(data);
         }).catch((err) => console.log(err));
     };
 
@@ -28,14 +36,26 @@ const RestaurantDetails = (props) => {
     },[])
 
     // function for each diary requirment image - can be improved
-       
     const ConvertBooleanToText = (inputBooleanArray) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
         return outputString ;
     };
 
-    if(restaurantData) {
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
 
+    const redeemOfferButton = props.user !== null ? ( 
+        <button onClick={handleClick}>Get Code</button>
+    ) :
+    (
+        <Link to="/SignUp" >   
+            <button>Get Code</button>
+        </Link>
+    )
+    const offerCodeModal = isClicked ? <GenerateCode handleClick={handleClick} user={props.user} restaurantData={restaurantData}/> : null;
+
+    if(restaurantData) {
         const { 
             name, 
             image, 
@@ -56,11 +76,15 @@ const RestaurantDetails = (props) => {
         return (
             <>
             <Logo/>
+            <div className={styles.accountLink}>    
+            <ManageAccountButton className={styles.profileButton}/>
+            </div>
             <div className={styles.RestaurantDetails}>
+
                 <h1>{name}</h1>
                 <div className={styles.image}>
                     <img className={styles.responsiveImage} src={image} alt={name}/> 
-                </div>          
+                </div>         
                 <p>Location: {location}</p><br/>
                 <p>Offer Details:</p>
                 <p>{offerDescription}</p><br/>
@@ -69,9 +93,9 @@ const RestaurantDetails = (props) => {
                 <p>Cuisine: {cuisine.join(', ')}</p><br/>
                 <p>Sitting: {ConvertBooleanToText(sitting)}</p><br/>
                 <p>Valid until: {validUntil}</p><br/>
-                <p>Days Avalible: {daysAvailable.join(', ')}</p><br/>
-                <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
-                <p>{ConvertBooleanToText(dietaryRequirements)}</p>
+                <p>Days Available: {daysAvailable.join(', ')}</p><br/>
+                <p>Maximum Table Size: {maximumTableSize}</p> <br/>           
+                <p>Dietary requirements: {ConvertBooleanToText(dietaryRequirements)}</p>
                 <span className={styles.fontawesomeContainer}>
                     <a href={instagram} target="_blank" rel="noopener noreferrer" > 
                         <FontAwesomeIcon icon={["fab", "instagram"]}/>
@@ -86,10 +110,9 @@ const RestaurantDetails = (props) => {
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
                 </span>
-                <Link to="/SignUp" >   
-                    <button>Get Code</button>
-                </Link>
+                {redeemOfferButton}
             </div>
+            {offerCodeModal}
             </>
         )
     } else { 

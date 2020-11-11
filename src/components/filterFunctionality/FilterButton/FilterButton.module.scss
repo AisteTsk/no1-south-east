@@ -2,8 +2,7 @@
 
 .filter {
     button {
-        font-size: 20px;
-        width: 60px;
+        font-size: 30px;
         margin: 20px auto;
         background-color: $color-lightgreen;
         color: $color-green;
@@ -13,5 +12,7 @@
         display: flex;
         justify-content: center;
         border-radius: 2px;
+        border: none;
+        outline:none;
     }
 }

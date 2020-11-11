@@ -5,21 +5,28 @@ import { GoogleApiWrapper } from 'google-maps-react';
 import googleMapsApiKey from '../../data/googleMapsConfig';
 import { firestore } from '../../firebase';
 
-// import logo from '../../assets/images/logocut.png';
+import logoImage from '../../assets/images/logocut.png';
+
+
 // components
 import CardList from "../../components/CardList";
 import FilterButton from '../../components/filterFunctionality/FilterButton';
 import SearchBar from '../../components/filterFunctionality/SearchBar';
 import FeedbackPanel from '../../components/filterFunctionality/FeedbackPanel';
 // import Location from '../../components/filterFunctionality/Location';
+import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
 
 const DealsPage = ({ google }) => {
+  // set up states
+  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
+  const [allRestaurants, setAllRestaurants] = useState();
+  const [filteredList, setFilteredList] = useState();
+  const [userLocation, setUserLocation] = useState("");
+  const [distanceSortedList, setDistanceSortedList] = useState([]);
 
-  //*****importing data from firestore*****//
-  let restaurants = [];
-
+  let restaurants = []
   const fetchRestaurants = () => {
     firestore
       .collection("deals")
@@ -29,15 +36,12 @@ const DealsPage = ({ google }) => {
           const retaurantData = doc.data();
           restaurants.push({ ...retaurantData, databaseId: doc.id })
         })
-
         //format offAdded to time since last epoch (use getTime()) property in rastaurants array
         const restaurantsEpochTime = restaurants.map((restaurant) => {
           restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
           return restaurant;
         });
-
         const latestRestaurants = restaurantsEpochTime.sort((restaurantA, restaurantB) => restaurantA.offerAdded - restaurantB.offerAdded);
-        
         setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
       }).catch((err) => console.log(err));
@@ -46,18 +50,10 @@ const DealsPage = ({ google }) => {
   useEffect(() => {
     fetchRestaurants()
   }, [])
-
-  // set up states
-  // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
-  const [allRestaurants, setAllRestaurants]  = useState();
-  const [filteredList, setFilteredList] = useState();
-  const [userLocation, setUserLocation] = useState("");
-  const [distanceSortedList, setDistanceSortedList] = useState([]);
   
 
     // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
-
     // just incase it hasn't been reset
     let filteredRestaurants = allRestaurants;
 
@@ -177,10 +173,18 @@ const DealsPage = ({ google }) => {
     );
   }
 
-  const renderLocationBtn = userLocation ?
-    <span className={styles.fa} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.fa} /></span> :
-    <span className={styles.faActive} onClick={() => getLocation()}><FontAwesomeIcon icon={["far", "compass"]} className={styles.faActive} /></span>
-
+  const renderLocationBtn = userLocation ? (
+    <div className={styles.fa} onClick={() => getLocation()}>
+      <FontAwesomeIcon icon={["fas", "map-marker-alt"]} className={styles.fa} />
+    </div>
+  ) : (
+    <div className={styles.faActive} onClick={() => getLocation()}>
+      <FontAwesomeIcon
+        icon={["fas", "map-marker-alt"]}
+        className={styles.faActive}
+      />
+    </div>
+  );
   const renderList = userLocation ? distanceSortedList : filteredList;
 
   // create and pass the filtered restaurants list to CardList
@@ -201,16 +205,18 @@ const DealsPage = ({ google }) => {
   return (
     <div className={styles.container}>
       <div className={styles.searchbar}>
-        {/* <img src={logo} /> */}
-        <SearchBar placeholder="Search for restaurants or by cuisine type..." searchFilter={searchFilter} />
+        <Link to="/">
+          <img src={logoImage} alt="logo image" />
+        </Link>
+        <SearchBar placeholder="Search by restaurants or cuisine..." searchFilter={searchFilter} />
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
-        <Link to="/account">
         <span className={styles.profilelink}>
-          <FontAwesomeIcon icon={["fas", "user"]} />
+          <Link to="/account">
+            <FontAwesomeIcon icon={["fas", "user"]} />
+          </Link>
         </span>
-      </Link>
         <div className={styles.location}>
           {renderLocationBtn}
         </div>

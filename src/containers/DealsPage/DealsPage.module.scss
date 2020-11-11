@@ -3,12 +3,9 @@
 .container {
     position: relative;
 
-
-    
-
     .searchbar {
         width: 100%;
-        line-height: 50px;
+        line-height: 10px;
         position: fixed;
         top: 0px;
         left: 0px;
@@ -19,7 +16,6 @@
         justify-content: space-between;
         align-items :center;
         background-color: $color-lightgreen;
-
 
         img {
             height: 50px;
@@ -37,8 +33,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
-        // padding: 10px;
+        justify-content: space-around;
         background-color: $color-lightgreen;
 
         .location {
@@ -46,6 +41,7 @@
             flex-direction: column;
             align-items: flex-end;
             color: $color-green;
+            cursor: pointer;
 
             .fa {
                 color: $color-copper;
@@ -55,7 +51,6 @@
 
             .faActive {
                 color: $color-green;
-                // font-size: 4rem;
                 height: 40px;
                 width: 40px;
             }
@@ -63,17 +58,15 @@
 
         .profilelink {
             display: flex;
-         //   position: fixed;
-            height: 200px;
-            width: 200px;
-            color: $color-green;
             font-size: 200%;
             z-index: 10;
             top: 15px;
-           justify-content: center;
-            align-items: center;
             padding: 0;
             margin: 0;
+
+            a {
+                color: $color-green;
+            }
         }
     }
 
