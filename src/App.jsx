@@ -7,7 +7,6 @@ import libary from "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
-  console.log(user);
   const signOut = () => {
     firebase
       .auth()
@@ -35,7 +34,6 @@ const App = () => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(({ user }) => {
-        console.log(user);
         setUser(user);
         navigate("/browseDeals");
       })

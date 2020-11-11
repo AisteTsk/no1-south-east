@@ -15,7 +15,6 @@ import PrivateRoutes from "../PrivateRoutes";
 
 const Routes = (props) => {
   const { user, googleSignIn, signIn, signOut } = props;
-
   return (
     <Router>
       <Dashboard path="/" />

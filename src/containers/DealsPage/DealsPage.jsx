@@ -18,7 +18,6 @@ import { Link } from "@reach/router";
 
 const DealsPage = (props) => {
   const { user, google } = props;
-
   
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
@@ -29,11 +28,6 @@ const DealsPage = (props) => {
   const [favourites, setFavourites] = useState([]);
 
   let restaurants = []
-
-  useEffect(() => {
-    fetchFavourites();
-  }, []);
-
 
   const fetchRestaurants = () => {
     firestore
@@ -58,54 +52,77 @@ const DealsPage = (props) => {
 
         setAllRestaurants(latestRestaurants);
         setFilteredList(latestRestaurants);
+        if (user) fetchFavourites(latestRestaurants);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     fetchRestaurants();
-  }, []);
+  }, [user]);
 
   const toggleFav = (restaurant) => {
-    if (user != null) {
-      restaurant.isFav = !restaurant.isFav;
-      restaurant.isFav ? addToFav(restaurant) : removeFromFav(restaurant);
-    } else {
-      alert("Please login using the Google button");
+    if (user) {
+      firestore
+        .collection("users")
+        .doc(user.uid)
+        .collection("favourites")
+        .get()
+        .then((querySnapshot) => {
+          const restaurantIds = querySnapshot.docs.map((doc) => doc.data().restaurantId)
+          if (restaurantIds.includes(restaurant.restaurantId)) {
+            removeFromFav(restaurant);
+          } else {
+            addToFav(restaurant);
+          }
+        });
     }
   };
 
   const removeFromFav = (restaurant) => {
     firestore
-      .collection("user")
+      .collection("users")
       .doc(user.uid)
       .collection("favourites")
-      .delete()
-      .then(fetchFavourites)
+      .where("restaurantId", "==", restaurant.restaurantId)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.docs[0].ref.delete();
+        fetchFavourites(allRestaurants);
+      })
       .catch((err) => console.error(err));
   };
 
   // add to favourites function
   const addToFav = (restaurant) => {
     firestore
-      .collection("user")
-      .doc("favourites")
-      .set(restaurant)
-      .then((res) => console.log(res))
+      .collection("users")
+      .doc(user.uid)
+      .collection("favourites")
+      .add(restaurant)
+      .then((res) => res)
       .catch((err) => console.log(err));
   };
 
   // fetch for the database a list of favourite restaurants
-  const fetchFavourites = () => {
+  const fetchFavourites = (restaurants) => {
     firestore
-      .collection("user")
-      .doc("favourites")
+      .collection("users")
+      .doc(user.uid)
+      .collection("favourites")
       .get()
       .then((querySnapshot) => {
-        const favourites = querySnapshot.docs
-          .map((doc) => doc.data());
+        const restaurantIds = restaurants.map((restaurant) => restaurant.restaurantId);
+        const favourites = querySnapshot.docs.map((doc) => {
+          const favourite = doc.data();
+          if (restaurantIds.includes(favourite.restaurantId)) {
+            const restaurant = restaurants[restaurantIds.indexOf(favourite.restaurantId)];
+            restaurant.isFav = true; 
+          } 
+          return favourite;
+        });
         setFavourites(favourites);
-        console.log(favourites);
+        setAllRestaurants(restaurants);
       })
       .catch((err) => console.error(err));
   };
@@ -267,7 +284,7 @@ const DealsPage = (props) => {
     if (renderList === undefined) {
       return <p>Deals loading...</p>;
     } else if (renderList.length) {
-      return <CardList restaurants={renderList} toggleFav={toggleFav} />;
+      return <CardList restaurants={renderList} toggleFav={toggleFav} favourites={favourites} />;
     } else {
       return (
         <FeedbackPanel

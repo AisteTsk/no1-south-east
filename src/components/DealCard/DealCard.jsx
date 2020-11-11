@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./DealCard.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,24 +7,24 @@ const DealCard = (props) => {
   const {
     name,
     offerPercent,
-    cuisine,
-    validUntil,
     databaseId,
     restaurantDescription,
-    isFav,
+    isFav
   } = props.restaurant;
 
+  const [heartIcon, setHeartIcon] = useState();
   const { restaurant, toggleFav } = props;
 
-  const [favState, setFavState] = useState(isFav);
+  useEffect(() => {
+    setHeartIcon(isFav ? "fas" : "far")
+  }, [isFav])
 
   const handleFavClick = (e) => {
     e.stopPropagation();
+    const newHeartIcon = heartIcon === "far" ? "fas" : "far";
+    setHeartIcon(newHeartIcon);
     toggleFav(restaurant);
-    setFavState(!isFav);
   };
-
-  const heartIcon = favState ? ["fas", "heart"] : ["far", "heart"];
 
   const distanceFromRestaurant = () => {
     if (props.restaurant.distanceToText) {
@@ -44,7 +44,7 @@ const DealCard = (props) => {
       <div className={styles.restaurantName}>
         <h1>{name}</h1>
         <span className={styles.heart} onClick={handleFavClick}>
-          <FontAwesomeIcon icon={heartIcon} className={styles.heart} />
+          <FontAwesomeIcon icon={[heartIcon, "heart"]} className={styles.heart} />
         </span>
       </div>
       <h2 className={styles.offer}>

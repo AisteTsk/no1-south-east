@@ -3,7 +3,7 @@ import styles from "./CardList.module.scss";
 import DealCard from "../DealCard/DealCard";
 
 const CardList = (props) => {
-  const { toggleFav } = props;
+  const { toggleFav} = props;
   return (
     <>
       <section className={styles.cardlist}>
