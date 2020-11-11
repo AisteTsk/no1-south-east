@@ -18,7 +18,7 @@ import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
 
-const DealsPage = ({ google }) => {
+const DealsPage = ({ google, user }) => {
 
  //*****importing data from firestore*****//
   let restaurants = [];
@@ -209,12 +209,15 @@ const DealsPage = ({ google }) => {
     }
   }
 
-  return (
-    <div className={styles.container}>
+  const isAdmin = user && user.admin ? 
+      (<Link to="/adminpanel">
+       <button type="submit" className={styles.admin_btn}>Admin Settings</button>
+      </Link>)  : null ;
+  
+      return (
+      <div className={styles.container}>
       <div className={styles.searchbar}>
-        <Link to="/adminpanel">
-              <button type="submit" className={styles.admin_btn}>Admin Settings</button>
-              </Link>
+        {isAdmin}
         <Link to="/">
           <img src={logoImage} alt="logo image" />
         </Link>
@@ -231,9 +234,9 @@ const DealsPage = ({ google }) => {
         <h1 className={styles.title}>Latest Offers</h1>
         {contentJsx()}
       </section>
-    </div>
-  )
-}
+      </div>
+      )
+      }
 
 export default GoogleApiWrapper({
   apiKey: (googleMapsApiKey)

@@ -2,8 +2,9 @@
 @import "../../sass/main.module.scss";
 
 .adminPage{
+    width: 100%;
     background-color: $color-lightgreen;
-    height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
 
     h1 {
         text-align: center;
@@ -11,7 +12,7 @@
         font-weight: bold;
         font-size: 3rem;
     }
-}
+
 
     .form {
         width: 40px;
@@ -29,7 +30,7 @@
         border: 8px solid $color-copper;
         font-family: 'Josefin Sans', sans-serif;
         color:white;
-    
+
     .form_container {
         padding-top:10px;
         width: 100%;
@@ -40,16 +41,8 @@
         color:white;
         font-family: 'Josefin Sans', sans-serif;
 
-        label {
-            color:$color-white;
-        }
     }
 }
-
-    .formInput{
-        box-sizing: border-box;
-        padding: 30px 30px;
-    }
 
     .colorWhite{
         color:white;
@@ -72,37 +65,13 @@
             font-weight: bold;
         }
     
-        .offer{
-        position: relative;
-        background-color: $color-copper;
-        border: 3px $color-lightgreen solid;
-        border-radius: 15px;
-        margin: 15px auto;
-        padding: 20px 10px;
-        width: 90%;
+
     
         p{
             color: $color-desert;
             margin: 5px;
         }
     
-        .offerRestaurant {
-            color: $color-desert;
-            display: block;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 5px;
-        }
-    
-        .offerCode{
-            color: $color-white;
-            display: block;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin: 10px;
-            word-break: break-all;
-            white-space: normal;
-        }
 
         button {
             font-size: 17px;
@@ -121,8 +90,11 @@
             }
           }
         }
+
     }
   
     ::-webkit-scrollbar {
       display: none;
     }
+
+

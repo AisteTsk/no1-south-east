@@ -21,18 +21,18 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <Logo path="/" />
-      <NotFound path="/404" />
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
-      <DealsPage path="/browseDeals" />
+      <DealsPage path="/browseDeals" user={user}/>
       <SignIn path="/sign-in" googleSignIn={googleSignIn} signIn={signIn} signOut={signOut} user={user} /> 
       <Register path="/register" signOut={signOut} user={user} />
       <RestaurantDetails path="/restaurants/:databaseId" user={user}/>
       <PrivateRoutes path="/" user={user} >
           <AccountPage path="/account" signOut={signOut} user={user}/>
           <RedeemOfferPage path="/redeem-offer" /> 
-          <AdminPanel path="/adminpanel" signOut={signOut} user={user}/>
       </PrivateRoutes> 
+      <AdminPanel path="/adminpanel" user={user}/>
+      <NotFound default />
     </Router>
   )
 };
