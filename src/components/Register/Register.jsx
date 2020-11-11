@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@reach/router'
 import styles from './Register.module.scss'
 import Logo from "../Logo/Logo";
+import Footer from '../Footer';
 
 const Register = (props) => {
     const { user, signOut } = props;
@@ -51,12 +52,15 @@ const Register = (props) => {
     }
 
     return(
-        <div className={styles.page}>
-            <Logo />
-            <div className={styles.form}>
-                {checkSignIn()}
+        <>
+            <div className={styles.page}>
+                <Logo />
+                <div className={styles.form}>
+                    {checkSignIn()}
+                </div>
             </div>
-        </div>
+            <Footer/>
+        </>
     )
 };
 

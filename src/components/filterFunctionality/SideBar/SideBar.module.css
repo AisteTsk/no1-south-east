@@ -16,7 +16,6 @@
   /* Disable horizontal scroll */
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
-  font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   display: flex;
   flex-direction: column;

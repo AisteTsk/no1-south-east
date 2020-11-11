@@ -3,6 +3,7 @@ import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
+import Footer from '../Footer';
 import ManageAccountButton from "../../components/ManageAccountButton";
 
 
@@ -35,7 +36,6 @@ const RestaurantDetails = (props) => {
     },[])
 
     // function for each diary requirment image - can be improved
-       
     const ConvertBooleanToText = (inputBooleanArray) => {
         const outputString = Object.keys(inputBooleanArray).filter((x) => (inputBooleanArray[x])).join(', ');
         return outputString ;
@@ -93,9 +93,9 @@ const RestaurantDetails = (props) => {
                 <p>Cuisine: {cuisine.join(', ')}</p><br/>
                 <p>Sitting: {ConvertBooleanToText(sitting)}</p><br/>
                 <p>Valid until: {validUntil}</p><br/>
-                <p>Days Avalible: {daysAvailable.join(', ')}</p><br/>
-                <p>Maximim Table Size: {maximumTableSize}</p> <br/>           
-                <p>{ConvertBooleanToText(dietaryRequirements)}</p>
+                <p>Days Available: {daysAvailable.join(', ')}</p><br/>
+                <p>Maximum Table Size: {maximumTableSize}</p> <br/>           
+                <p>Dietary requirements: {ConvertBooleanToText(dietaryRequirements)}</p>
                 <span className={styles.fontawesomeContainer}>
                     <a href={instagram} target="_blank" rel="noopener noreferrer" > 
                         <FontAwesomeIcon icon={["fab", "instagram"]}/>
@@ -109,7 +109,6 @@ const RestaurantDetails = (props) => {
                     <a href={`mailto: ${email}`} target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={["fas", "envelope"]} />
                     </a>
-                   
                 </span>
                 {redeemOfferButton}
             </div>

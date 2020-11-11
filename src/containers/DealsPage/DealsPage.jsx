@@ -212,11 +212,11 @@ const DealsPage = ({ google }) => {
       </div>
       <div className={styles.filterOptions}>
         <FilterButton filterRestaurants={filterRestaurants} />
-        <Link to="/account">
-          <span className={styles.profilelink}>
-          <FontAwesomeIcon icon={["fas", "user"]} />
-          </span>
-        </Link>
+        <span className={styles.profilelink}>
+          <Link to="/account">
+            <FontAwesomeIcon icon={["fas", "user"]} />
+          </Link>
+        </span>
         <div className={styles.location}>
           {renderLocationBtn}
         </div>

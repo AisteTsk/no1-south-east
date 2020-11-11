@@ -50,7 +50,7 @@
   width: 250px;
 }
 
-@media (min-height: 800px) {
+@media (min-height: 820px) {
   .page .terms h3 {
     font-size: 30px;
     margin-bottom: 10px;

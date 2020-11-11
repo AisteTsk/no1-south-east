@@ -15,7 +15,7 @@
 .page .faqs {
   display: flex;
   background-color: #ffffff;
-  width: 100%;
+  width: 80%;
   height: 70vh;
   margin: auto;
   flex-direction: column;
@@ -35,7 +35,7 @@
   margin-top: 10px;
 }
 .page .faqs .faqscontainer span p {
-  font-size: 11px;
+  font-size: 10px;
   color: black;
   width: 100%;
   padding: 1px 10px;
@@ -49,29 +49,35 @@
   width: 250px;
 }
 
-@media (min-height: 800px) {
-  .page .faqs h3 {
+@media (min-height: 820px) {
+  .page .faqs .faqscontainer h3 {
     font-size: 30px;
     margin-bottom: 5px;
   }
-  .page .faqs p {
-    font-size: 18px;
+  .page .faqs .faqscontainer span p {
+    font-size: 16px;
   }
 }
 @media (min-width: 920px) {
   .page .faqs {
-    width: 70%;
-    height: auto;
-    margin-top: 100px;
+    width: 50%;
   }
   .page .faqs .faqscontainer h3 {
     font-size: 44px;
   }
   .page .faqs .faqscontainer span p {
-    font-size: 12px;
+    font-size: 11px;
   }
   .page .faqs .faqscontainer img {
     height: 130px;
     width: 380px;
+  }
+}
+@media (min-width: 1200px) {
+  .page .faqs .faqscontainer span p {
+    font-size: 10px;
+  }
+  .page .faqs .faqscontainer img {
+    height: 110px;
   }
 }
