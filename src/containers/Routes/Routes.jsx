@@ -31,9 +31,9 @@ const Routes = (props) => {
         user={user}
       />
       <Register path="/register" signOut={signOut} user={user} />
-      <RestaurantDetails path="/restaurants/:databaseId" user={user}/>
       <PrivateRoutes path="/" user={user} >
           <AccountPage path="/account" signOut={signOut} user={user}/>
+          <RestaurantDetails path="/restaurants/:databaseId" user={user}/>
           <RedeemOfferPage path="/redeem-offer" /> 
       </PrivateRoutes> 
     </Router>

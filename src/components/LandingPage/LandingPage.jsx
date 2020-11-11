@@ -6,6 +6,7 @@ import imageStepThree from '../../assets/images/imagestep3.png';
 import logoCutlery from "../../assets/images/logoCutlery.png";
 import imagePin from '../../assets/images/pin-white.png';
 import { Link } from "@reach/router";
+import Footer from '../Footer';
 
 const LandingPage = () => {
 
@@ -51,7 +52,9 @@ const LandingPage = () => {
                         <p> 3- Present your unique code to the venue, sit back and enjoy your discounted meal.</p>
                     </div>
             </div>
+            <Footer/>
         </section>
-    )}
+    )
+}
 
 export default LandingPage;

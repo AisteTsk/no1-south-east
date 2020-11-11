@@ -3,9 +3,9 @@ import styles from "./Terms.module.scss";
 import { Link } from '@reach/router';
 import footerLogo from "../../assets/images/footerLogo.png"
 import Logo from "../../components/Logo";
+import Footer from '../../components/Footer';
 
 const Terms = () => {
-
   return (
     <section className={styles.page}>
       <Logo />
@@ -20,6 +20,7 @@ const Terms = () => {
         </p>
         <img src={footerLogo} alt="footer logo"/>
       </div>
+      <Footer/>
     </section>
   );
 };
