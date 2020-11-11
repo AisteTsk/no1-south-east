@@ -3,6 +3,7 @@ import styles from "./RestaurantDetails.module.scss";
 import { Link } from "@reach/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Logo from "../Logo/Logo";
+import Footer from '../Footer';
 
 
 import { firestore } from '../../firebase';

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./FaQs.module.scss";
 import footerLogo from "../../assets/images/footerLogo.png"
 import Logo from "../../components/Logo";
+import Footer from '../../components/Footer';
 
 const FaQs = () => {
   return (
@@ -45,6 +46,7 @@ const FaQs = () => {
         <img src={footerLogo} alt="footer logo"/>
       </div>
       </div>
+      <Footer/>
     </section>
   );
 };

@@ -1,50 +1,78 @@
-* {
-  background-color: #186E62;
-  color: #ffffff;
-}
-
 .RestaurantDetails {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
-  padding: 10px;
+  justify-content: space-evenly;
+  padding-top: 25%;
+  background-color: #233D2A;
 }
-.RestaurantDetails .imageLogo {
+.RestaurantDetails .fontawesomeContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 25px;
   width: 60%;
+  color: #ffffff;
 }
-.RestaurantDetails .imageLogo .responsiveImageLogo {
-  height: auto;
+.RestaurantDetails .fontawesomeContainer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.RestaurantDetails .fontawesomeContainer .span {
   width: 100%;
 }
 .RestaurantDetails .image {
   display: flex;
-  width: 50%;
+  width: 30%;
+  padding: 1%;
 }
 .RestaurantDetails .image .responsiveImage {
   height: auto;
   width: 100%;
 }
 .RestaurantDetails button {
-  width: 100%;
   height: 50px;
   font-size: 20px;
-  background-color: #E2C7CA;
+  background-color: #D4BCB6;
   color: #ffffff;
   font-size: 20px;
   border-radius: 5%;
+  padding: 10px;
+  margin: 5px;
 }
 .RestaurantDetails p {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  font-size: 15px;
-  justify-content: center;
-  align-items: center;
+  text-align: left;
+  width: 40%;
+  height: 80%;
+  font-size: 10px;
+  color: #ffffff;
 }
 .RestaurantDetails h1 {
+  width: 60%;
   margin-top: 10px;
   text-align: center;
-  font-size: 200%;
+  font-size: 300%;
+  border-bottom: 2px white solid;
+  color: #ffffff;
+}
+
+@media (min-width: 500px) {
+  .RestaurantDetails {
+    padding-top: 12%;
+  }
+}
+@media (min-width: 800px) {
+  .RestaurantDetails {
+    padding-top: 8%;
+    height: auto;
+  }
+  .RestaurantDetails .fontawesomeContainer {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+  .RestaurantDetails p {
+    font-size: 20px;
+  }
 }

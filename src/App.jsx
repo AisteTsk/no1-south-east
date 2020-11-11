@@ -68,7 +68,6 @@ const App = () => {
           signOut={signOut}
         />
       </div>
-      <footer class={styles.footer}>Copyright © 2020 No1SouthEast. All Rights Reserved.</footer>
     </>
   )
 };

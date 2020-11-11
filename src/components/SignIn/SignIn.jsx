@@ -3,6 +3,7 @@ import { Link, navigate } from '@reach/router'
 import styles from './SignIn.module.scss'
 import Logo from "../Logo/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from '../Footer';
 // import firebase, { provider } from "../../firebase";
 
 const SignIn = (props) => {
@@ -76,12 +77,15 @@ const SignIn = (props) => {
     }
 
     return(
-        <div className={styles.page}>
-            <Logo />
-            <div className={styles.form}>
-                {checkSignIn()}
+        <>
+            <div className={styles.page}>
+                <Logo />
+                <div className={styles.form}>
+                    {checkSignIn()}
+                </div>
             </div>
-        </div>
+            <Footer/>
+        </>   
     );
 };
 
