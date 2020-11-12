@@ -6,8 +6,11 @@
     position:fixed;
     padding: 1%;
 
+    .profileButton {
+        color: $color-white;
+        background-color: $color-green;
+    }
 }
-
 
 .RestaurantDetails {
     height: 100%;
@@ -18,7 +21,6 @@
     justify-content: space-evenly;
     padding-top: 25%;
     background-color: $color-green;
-
     
     .fontawesomeContainer{
         display: flex;
@@ -27,6 +29,7 @@
         font-size: 25px;
         width:60%;
         color: $color-white;
+        margin-top: 10px;;
 
     // change default link behavior
         a { 
@@ -61,6 +64,7 @@
     border-radius: 5%;
     padding: 10px;
     margin: 5px;
+    width: 40%;
     }
 
     p {
@@ -95,7 +99,7 @@
 
         .fontawesomeContainer{
             font-size: 30px;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
         p {

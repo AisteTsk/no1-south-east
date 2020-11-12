@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Routes from "./containers/Routes";
 import styles from "./App.module.scss";
 import firebase, { provider } from "./firebase";
@@ -7,7 +7,6 @@ import libary from "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
-
   const signOut = () => {
     firebase
       .auth()
@@ -24,25 +23,27 @@ const App = () => {
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then(({user}) => {
+      .then(({ user }) => {
         setUser(user);
-        navigate("/browseDeals")
-      })
+        navigate("/browseDeals");
+      });
   };
-  
+
   const signIn = (email, password) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(({user}) => {
-        console.log(user)
+      .then(({ user }) => {
         setUser(user);
-        navigate("/browseDeals")
-      }).catch((error) => {
-        (alert("The email or password you have entered is incorrect, please try again."));
+        navigate("/browseDeals");
+      })
+      .catch((error) => {
+        alert(
+          "The email or password you have entered is incorrect, please try again."
+        );
         console.log(error);
       });
-  }
+  };
 
   const getUser = () => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -52,7 +53,7 @@ const App = () => {
         setUser(user);
         })
       } else {
-        setUser(null)
+        setUser(null);
       }
     });
   };
@@ -64,16 +65,15 @@ const App = () => {
   return (
     <>
       <div>
-        <Routes 
+        <Routes
           user={user}
           googleSignIn={googleSignIn}
           signIn={signIn}
           signOut={signOut}
         />
       </div>
-      <footer class={styles.footer}>Copyright © 2020 No1SouthEast. All Rights Reserved.</footer>
     </>
-  )
+  );
 };
 
 export default App;
