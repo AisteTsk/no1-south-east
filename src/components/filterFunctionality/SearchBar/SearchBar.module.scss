@@ -1,6 +1,9 @@
 ﻿@import '../../../sass/abstracts/variables';
 
 .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: $color-green;
   width: auto;
 

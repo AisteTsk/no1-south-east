@@ -6,6 +6,7 @@ import CardList from "../CardList";
 import FeedbackPanel from '../filterFunctionality/FeedbackPanel';
 import { firestore } from '../../firebase';
 import moment from 'moment';
+import { Link } from '@reach/router';
 
 const AccountPage = ({ signOut, user }) => {
 
@@ -82,37 +83,40 @@ const AccountPage = ({ signOut, user }) => {
                         <a href="#profile">
                             <button className={styles.navButton}>Profile</button>
                         </a>
-                        <a href="#favourites">
+                        {/* <a href="#favourites">
                             <button className={styles.navButton}>Favourites</button>
                         </a>
                         <a href="#recentlyViewed">
                             <button className={styles.navButton} >Recently Viewed</button>
-                        </a>
+                        </a> */}
                         <a href="#redeemed">
                             <button className={styles.navButton}>Redeemed Offers</button>
                         </a>
                         <a href="#referFriend">
-                            <button className={styles.navButton}>Refer a Friend</button>
+                            <button >Refer a Friend</button>
                         </a>
+                        <Link to="/browseDeals">
+                        <button>Back to Offers</button>
+                        </Link>
                     </div>
                 </div>
             </div>
 
-            <a name="favourites"></a>
+            {/* <a name="favourites"></a>
             <h2 className={styles.boxtitle}>Favourites</h2>
             <div className={styles.wrapper}>
                 <div className={styles.cardRender}>
                     {renderCards}
                 </div>
-            </div>
+            </div> */}
 
-            <a name="recentlyViewed"></a>
+            {/* <a name="recentlyViewed"></a>
             <h2 className={styles.boxtitle}> Recently Viewed</h2>
             <div className={styles.wrapper}>
                 <div className={styles.cardRender}>
                     {renderCards}
                 </div>
-            </div>
+            </div> */}
 
             <a name="redeemed"></a>
             <h2 className={styles.boxtitle}> Redeemed Offers</h2>

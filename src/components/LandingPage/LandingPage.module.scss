@@ -83,7 +83,7 @@
             @extend %main-font;
             font-size: 12px;
             background-color: $color-copper;
-            width: 90px;
+            width: 85px;
             text-align: center;
             align-items: center;
             &:focus {
@@ -99,6 +99,7 @@
     flex-direction: column;
     justify-content: center;
     align-self: flex-start;
+    padding-bottom: 5%;
     
     .registrationProcess {
         padding: 1% 13% 0% 0%;
@@ -198,8 +199,9 @@
         justify-content: space-evenly;
         margin-top: 0%;
         margin-bottom: 20px;
+        padding-bottom: 0;
         .registrationProcess {
-            padding: 2.6% 5% 0% 5%;
+            padding: 1.5% 5% 0% 5%;
             img {
                 width: 150px;
                 height: 150px;
