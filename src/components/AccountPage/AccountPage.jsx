@@ -92,7 +92,7 @@ const AccountPage = ({ signOut, user }) => {
                             <button className={styles.navButton}>Redeemed Offers</button>
                         </a>
                         <a href="#referFriend">
-                            <button >Refer a Friend</button>
+                            <button>Refer a Friend</button>
                         </a>
                         <Link to="/browseDeals">
                         <button>Back to Offers</button>
@@ -132,7 +132,7 @@ const AccountPage = ({ signOut, user }) => {
                 <h2 className={styles.boxtitle}>Refer a Friend</h2>
                 <section className={styles.form}>
                     <div className={styles.refer}>
-                        <button className={styles.account_btn}>Click for a referral code:</button>
+                        <button className={styles.refer_btn}>Click for a referral code:</button>
                     </div>
                 </section>
             </div>
