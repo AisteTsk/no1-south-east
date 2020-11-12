@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.navButtons .navButton, .page {
+.page {
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -22,25 +22,6 @@
   margin: 0;
 }
 
-.wrapper {
-  overflow: hidden;
-  margin: 30px 0;
-  height: 240vh;
-  background-color: #233D2A;
-}
-.wrapper .cardRender {
-  padding: 0 0;
-  margin: 0;
-  background-color: #233D2A;
-  font-family: "Josefin Sans", sans-serif;
-  color: #ffffff;
-  transform: scale(0.5);
-  transform-origin: 0 0;
-  box-sizing: border-box;
-  width: 200%;
-  overflow: hidden;
-}
-
 .wrapperRedeemed {
   overflow: hidden;
   margin: 30px 0;
@@ -53,14 +34,11 @@
   background-color: #233D2A;
   font-family: "Josefin Sans", sans-serif;
   color: #ffffff;
-  transform: scale(0.5);
-  transform-origin: 0 0;
   box-sizing: border-box;
-  width: 200%;
+  width: 100%;
   overflow: hidden;
 }
 .wrapperRedeemed .cardRenderRedeemed .offerForm {
-  font-size: 40px;
   text-align: center;
 }
 .wrapperRedeemed .cardRenderRedeemed .offerForm .offer {
@@ -75,20 +53,20 @@
 .wrapperRedeemed .cardRenderRedeemed .offerForm .offer p {
   color: #ECBC9D;
   margin: 5px;
-  font-size: 34px;
+  font-size: 16px;
 }
 .wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerRestaurant {
   color: #ECBC9D;
   display: block;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1rem;
   margin: 5px;
 }
 .wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerCode {
   color: #ffffff;
   display: block;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1rem;
   margin: 10px;
   word-break: break-all;
   white-space: normal;
@@ -107,7 +85,7 @@
   display: flex;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: #233D2A;
+  background-color: #ffffff;
   width: 80%;
   height: 70vh;
   margin: auto;
@@ -120,7 +98,7 @@
 .page .form h3 {
   height: auto;
   font-size: 23px;
-  color: #ffffff;
+  color: #233D2A;
   cursor: default;
   margin-top: 5px;
 }
@@ -136,11 +114,18 @@
   cursor: pointer;
   margin: 5px;
   margin-bottom: 5px;
+  outline: none;
 }
 .page .form .account_btn:hover {
   background-color: #233D2A;
-  text-shadow: 0 0 1px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+}
+.page .form .form_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 .page .form input {
   padding: 6px 8px;
@@ -149,13 +134,6 @@
   border: 2px solid black;
   font-size: 18px;
   outline: none;
-}
-.page .form .form_container {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
 }
 .page .form p {
   font-size: 19px;
@@ -172,10 +150,11 @@
   flex-wrap: nowrap;
   position: fixed;
   width: 100%;
-  padding: 0;
-  bottom: 2%;
+  padding: 5px;
+  bottom: 0%;
   z-index: 1;
   font-family: "Josefin Sans", sans-serif;
+  background-color: #82A28B;
 }
 .navButtons .buttons {
   display: flex;
@@ -188,26 +167,17 @@
 }
 .navButtons .buttons button {
   height: 40px;
-  width: 66px;
+  width: 70px;
   margin: 0%;
-  padding: 0%;
-}
-.navButtons .navButton {
-  text-align: left;
-  margin: 20px 10px;
-  height: 40px;
-  border-radius: 2px;
-  border: none;
+  padding: 1%;
+  background-color: #233D2A;
   color: #ffffff;
-  transition: 0.3s ease;
-  font-size: 12px;
-  background-color: #CF6B58;
-  text-align: center;
-  align-items: center;
+  border-radius: 2px;
 }
-.navButtons .navButton:focus {
-  outline: none;
-  border: none;
+.navButtons .buttons button:hover {
+  background-color: #CF6B58;
+  text-shadow: 0 0 1px white;
+  cursor: pointer;
 }
 
 .boxtitle {
@@ -251,11 +221,8 @@
     padding: 10px 15px;
     width: 175px;
   }
-  .page .offerForm .offer .offerRestaurant {
-    font-size: 1.2rem;
-  }
-  .page .offerForm .offer .offerCode {
-    font-size: 1.5rem;
+  .page .navButtons {
+    padding: 10px;
   }
 }
 @media (min-width: 700px) {
@@ -301,25 +268,17 @@
   .page .form h3 {
     font-size: 44px;
   }
-  .page .offerForm {
-    width: 50%;
+
+  .wrapperRedeemed .cardRenderRedeemed .offerForm .offer p {
+    font-size: 2rem;
+  }
+  .wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerRestaurant {
+    font-size: 2rem;
+  }
+  .wrapperRedeemed .cardRenderRedeemed .offerForm .offer .offerCode {
+    font-size: 2rem;
   }
 }
-input {
-  width: 200px;
-}
-
-.form_container {
-  flex-direction: column;
-}
-
-.offerForm .offer .offerRestaurant {
-  font-size: 1.5rem;
-}
-.offerForm .offer .offerCode {
-  font-size: 1.7rem;
-}
-
 @media (min-width: 1000px) {
   .wrapper {
     height: 140vh;
