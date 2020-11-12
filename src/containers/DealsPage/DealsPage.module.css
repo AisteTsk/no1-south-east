@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   background-color: #82A28B;
 }
 .container .filterOptions .location {
@@ -47,6 +47,7 @@
   flex-direction: column;
   align-items: flex-end;
   color: #233D2A;
+  cursor: pointer;
 }
 .container .filterOptions .location .fa {
   color: #CF6B58;
@@ -60,16 +61,14 @@
 }
 .container .filterOptions .profilelink {
   display: flex;
-  height: 200px;
-  width: 200px;
-  color: #233D2A;
   font-size: 200%;
   z-index: 10;
   top: 15px;
-  justify-content: center;
-  align-items: center;
   padding: 0;
   margin: 0;
+}
+.container .filterOptions .profilelink a {
+  color: #233D2A;
 }
 .container .dealsPage {
   background-color: #233D2A;
