@@ -107,7 +107,7 @@ const AdminPanel = ({user}) => {
                     
 
 
-                    <button type="submit" className={styles.account_btn}>Add New Restaurant</button>
+                    <button type="submit" className={styles.account_btn} onClick={handleSubmit}>Add New Restaurant</button>
 
                 </form>
                 </div>
