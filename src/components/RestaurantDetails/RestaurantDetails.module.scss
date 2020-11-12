@@ -30,7 +30,9 @@
 
         .responsiveImage {
             height: auto;
-            width: 90%;
+            max-width: 90%;
+            width: auto;
+            object-fit: scale-down;
         }
     }
 
