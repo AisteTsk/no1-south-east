@@ -12,7 +12,6 @@ const AdminPanel = ({user}) => {
 
     const [adminEmail, setAdminEmail] = useState('');
     const [newOffer, setNewOffer] = useState({
-        restaurantId: 1,
         name: '',
         offerPercent: '',
         offerDescription: '',
@@ -34,7 +33,7 @@ const AdminPanel = ({user}) => {
         restaurantDescription: '',
         termsAndConditions: ''
     });
-    
+    console.log(newOffer);
     useEffect(() => {
         if (!user || !user.admin){
             navigate("/sign-in");
@@ -86,7 +85,7 @@ const AdminPanel = ({user}) => {
 
         switch (e.target.name){
             case 'cuisine':
-                updateNewOffer[`${e.target.name}`] = e.target.value.toLowerCase().split(' ');
+                updateNewOffer[`${e.target.name}`] = e.target.value.toLowerCase().replace(/,/g, '').split(' ');
                 break;
             case 'location':
                 if(e.target.id === 'latitude'){
@@ -96,11 +95,17 @@ const AdminPanel = ({user}) => {
                 }
                 break;
             case 'daysAvailable':
-                const dayCheckboxes = document.querySelectorAll('[name = "daysAvailable"]');
-                updateNewOffer[]
+                const dayCheckboxes = document.querySelectorAll('input[name = "daysAvailable"]');
+                updateNewOffer[`${e.target.name}`] = dayCheckboxes.filter(day => {
+                    if(day.checked){
+                        return day.value
+                    }
+                });
+                break;
             default:
-
+                console.log('no value set');
         }
+        setNewOffer(updateNewOffer);
     }
     
     
@@ -130,7 +135,7 @@ const AdminPanel = ({user}) => {
                     <input type="text" placeholder="Restuarant Name" name="name" onInput={handleStringInput} required />
                     <textarea placeholder="Offer Description" name="offerDescription" onInput={handleStringInput} required />
                     <textarea placeholder="Restaurant Description" name="restaurantDescription" onInput={handleStringInput} required />
-                    <input type="text" placeholder="What type of cuisine does the restaurant serve? (please use lowercase and seperate cuisines with single space)" name="cuisine" required />
+                    <input type="text" placeholder="What type of cuisine does the restaurant serve? (please use lowercase and seperate cuisines with single space)" name="cuisine" onInput={handleArrayInput} required />
                     <input type="text" placeholder= "Insert restaurant image url here" name="image" onInput={handleStringInput} required />
                     </section>
 
@@ -140,8 +145,8 @@ const AdminPanel = ({user}) => {
                 <input type="range" min="1" max="100" value="50"></input></div> */}
                     
                     <span>
-                    <input type="number" placeholder="Restaurant Latitude" name= "location" id="latitude" required />
-                    <input type="number" placeholder="Restaurant Longitude" name= "location" id="longitude" required />
+                    <input type="number" placeholder="Restaurant Latitude" name= "location" id="latitude" onInput={handleArrayInput} required />
+                    <input type="number" placeholder="Restaurant Longitude" name= "location" id="longitude" onInput={handleArrayInput} required />
                     </span>
 
                     <input type="text" name="email" placeholder="Email Address" onInput={handleStringInput} required />
@@ -154,29 +159,36 @@ const AdminPanel = ({user}) => {
 
                     <div className={styles.days}>
                     <p>Which days is the offer available?</p>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="monday"/><label>Monday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="tuesday"/><label>Tuesday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="wednesday"/><label>Wednesday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="thursday"/><label>Thursday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="friday"/><label>Friday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="saturday"/><label>Saturday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="sunday"/><label>Sunday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="monday" onInput={handleArrayInput}/><label>Monday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="tuesday" onInput={handleArrayInput}/><label>Tuesday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="wednesday" onInput={handleArrayInput}/><label>Wednesday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="thursday" onInput={handleArrayInput}/><label>Thursday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="friday" onInput={handleArrayInput}/><label>Friday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="saturday" onInput={handleArrayInput}/><label>Saturday</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="sunday" onInput={handleArrayInput}/><label>Sunday</label></div>
                     </div>
                     <div className={styles.breakfast}>
                     <p>When is the offer available?</p>
                     <div className="li checkbox"><input type="checkbox" name="sitting" id="breakfast" onInput={handleCheckboxInput}/><label>Breakfast</label></div>
                     <div className="li checkbox"><input type="checkbox" name="sitting" id="lunch" onInput={handleCheckboxInput}/><label>Lunch</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="sitting" id="dinner" /><label>Dinner</label></div>
+                    <div className="li checkbox"><input type="checkbox" name="sitting" id="dinner" onInput={handleCheckboxInput}/><label>Dinner</label></div>
                     </div>
-                    </div>
-                    
-                    
 
-                    <input type="percentage" placeholder="Offer Percentage" name="offerPercent" onInput={handleStringInput} required />
+                    <div className={styles.diet}>
+                    <p>Which dietary requirements are catered for?</p>
+                    <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="vegetarian" onInput={handleCheckboxInput}/><label>Vegetarian</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="vegan" onInput={handleCheckboxInput}/><label>Vegan</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="halal" onInput={handleCheckboxInput}/><label>Halal</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="glutenfree" onInput={handleCheckboxInput}/><label>Gluten-Free</label></div>
+                    <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="dairyfree" onInput={handleCheckboxInput}/><label>Dairy-Free</label></div>
+                    </div>
+                    </div>  
+                    
                     <input type="date" placeholder= "Date Offer Added" name="offerAdded" required />
                     <input type="date" placeholder= "Date Offer Valid Until" name="validUntil" required />
+                    <input type="percentage" placeholder="Offer Percentage" name="offerPercent" onInput={handleStringInput} required />
                     
-                    <input type="tel" placeholder="Phone Number" name="phoneNumber" required /> 
+                    <input type="tel" placeholder="Phone Number" name="phoneNumber" onInput={handleStringInput} required /> 
                     
 
 
@@ -184,32 +196,32 @@ const AdminPanel = ({user}) => {
                     <input type="url" placeholder="Website url" name="website" onInput={handleStringInput} required />
                     
 
-
+                    <div className={styles.buttonRow}>
                     <button type="submit" className={styles.account_btn} onClick={handleSubmit}>Add New Restaurant</button>
-
+                    <button onClick={signOut} className={styles.account_btn}>Sign out</button>
+                    </div>
                 </form>
                 </div>
-                <button onClick={signOut} className={styles.account_btn}>Sign out</button>
             </section>
         </div>
         <div className={styles.offerContainer}>
             <h3>Delete an Offer</h3>
             <div className={styles.offer}>
-                <span className={styles.offerCode}>offer id or restuarant name</span>
-                <span className={styles.offerRestaurant}>something about somthin</span>
-                <p>maybe some more information</p>
+                <span className={styles.offerCode}>Offer ID/</span>
+                <span className={styles.offerRestaurant}>Restaurant Name</span>
+                <p>Further information about offer.</p>
                 <button>Delete</button>
             </div>
             <div className={styles.offer}>
-                <span className={styles.offerCode}>offer id or restuarant name</span>
-                <span className={styles.offerRestaurant}>something about somthin</span>
-                <p>maybe some more information</p>
+                <span className={styles.offerCode}>Offer ID/</span>
+                <span className={styles.offerRestaurant}>Restaurant Name</span>
+                <p>Further information about offer.</p>
                 <button>Delete</button>
             </div>
             <div className={styles.offer}>
-                <span className={styles.offerCode}>offer id or restuarant name</span>
-                <span className={styles.offerRestaurant}>something about somthin</span>
-                <p>maybe some more information</p>
+                <span className={styles.offerCode}>Offer ID</span>
+                <span className={styles.offerRestaurant}>Restaurant Name</span>
+                <p>Further information about offer.</p>
                 <button>Delete</button>
             </div>
         </div>
