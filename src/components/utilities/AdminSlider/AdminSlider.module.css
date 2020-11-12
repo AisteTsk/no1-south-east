@@ -1,17 +1,27 @@
-.slidecontainer {
+.sliderOuterContainer {
+  width: 80%;
+  align-self: center;
+  /* Mouse-over effects */
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+}
+.sliderOuterContainer .slidecontainer {
   width: 100%;
   /* Width of the outside container */
 }
-
-.slider {
+.sliderOuterContainer .party {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+.sliderOuterContainer .slider {
   -webkit-appearance: none;
   /* Override default CSS styles */
   appearance: none;
   width: 100%;
   /* Full-width */
-  height: 25px;
+  height: 10px;
   /* Specified height */
-  background: #D3D3D3;
+  background: #ad6050;
   /* Grey background */
   outline: none;
   /* Remove outline */
@@ -20,16 +30,18 @@
   -webkit-transition: 0.2s;
   /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+  border-radius: 8px;
+  padding: 8px;
 }
-
-/* Mouse-over effects */
-.slider:hover {
+.sliderOuterContainer .displayNumber {
+  font-size: 25px;
+  color: #233D2A;
+}
+.sliderOuterContainer .slider:hover {
   opacity: 1;
   /* Fully shown on mouse-over */
 }
-
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-.slider::-webkit-slider-thumb {
+.sliderOuterContainer .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   /* Override default look */
   appearance: none;
@@ -37,18 +49,18 @@
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #4CAF50;
+  border-radius: 8px;
+  background: #233D2A;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
 }
-
-.slider::-moz-range-thumb {
+.sliderOuterContainer .slider::-moz-range-thumb {
   width: 25px;
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #4CAF50;
+  background: #233D2A;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
