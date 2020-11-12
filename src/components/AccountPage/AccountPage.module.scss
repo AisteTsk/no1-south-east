@@ -134,6 +134,7 @@
       cursor: pointer;
       margin: 5px;
       margin-bottom: 5px;
+      outline: none;
 
       &:hover {
         background-color: $color-green;
@@ -202,6 +203,7 @@
         &:hover {
           background-color: $color-copper;
           text-shadow: 0 0 1px white;
+          cursor: pointer;
         }
       }
     }

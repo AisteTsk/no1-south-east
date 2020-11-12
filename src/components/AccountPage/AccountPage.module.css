@@ -114,6 +114,7 @@
   cursor: pointer;
   margin: 5px;
   margin-bottom: 5px;
+  outline: none;
 }
 .page .form .account_btn:hover {
   background-color: #233D2A;
@@ -176,6 +177,7 @@
 .navButtons .buttons button:hover {
   background-color: #CF6B58;
   text-shadow: 0 0 1px white;
+  cursor: pointer;
 }
 
 .boxtitle {
