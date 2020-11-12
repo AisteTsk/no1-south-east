@@ -2,20 +2,43 @@
   position: fixed;
   padding: 1%;
 }
-.accountLink .profileButton {
-  color: #ffffff;
-  background-color: #233D2A;
-}
 
 .RestaurantDetails {
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding-top: 25%;
+  padding: 25% 5% 0% 3%;
   background-color: #233D2A;
+  color: #ffffff;
+}
+.RestaurantDetails h1 {
+  margin-top: 10px;
+  display: flex;
+  text-align: center;
+  font-size: 300%;
+  border-bottom: 2px white solid;
+}
+.RestaurantDetails .image {
+  display: flex;
+  justify-content: center;
+  padding: 3% 2% 2% 2%;
+}
+.RestaurantDetails .image .responsiveImage {
+  height: auto;
+  width: 90%;
+}
+.RestaurantDetails .restaurantDescription {
+  font-size: 15px;
+  padding: 3% 5%;
+}
+.RestaurantDetails .restaurantDescription .paragraph {
+  padding-bottom: 8px;
+}
+.RestaurantDetails .restaurantDescription .paragraph h4, .RestaurantDetails .restaurantDescription .paragraph p {
+  display: inline;
+}
+.RestaurantDetails .restaurantDescription .paragraph p {
+  opacity: 0.5;
 }
 .RestaurantDetails .fontawesomeContainer {
   display: flex;
@@ -24,7 +47,7 @@
   font-size: 25px;
   width: 60%;
   color: #ffffff;
-  margin-top: 10px;
+  margin: 10px;
 }
 .RestaurantDetails .fontawesomeContainer a {
   text-decoration: none;
@@ -33,40 +56,16 @@
 .RestaurantDetails .fontawesomeContainer .span {
   width: 100%;
 }
-.RestaurantDetails .image {
-  display: flex;
-  width: 30%;
-  padding: 1%;
-}
-.RestaurantDetails .image .responsiveImage {
-  height: auto;
-  width: 100%;
-}
 .RestaurantDetails button {
-  height: 50px;
-  font-size: 20px;
-  background-color: #D4BCB6;
+  height: 45px;
+  background-color: #CF6B58;
   color: #ffffff;
-  font-size: 20px;
-  border-radius: 5%;
-  padding: 10px;
-  margin: 5px;
-  width: 40%;
-}
-.RestaurantDetails p {
-  text-align: left;
-  width: 40%;
-  height: 80%;
-  font-size: 10px;
-  color: #ffffff;
-}
-.RestaurantDetails h1 {
-  width: 60%;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 300%;
-  border-bottom: 2px white solid;
-  color: #ffffff;
+  transition: 0.3s ease;
+  font-size: 15px;
+  border-radius: 2%;
+  cursor: pointer;
+  margin: 5px 0 15px 0;
+  width: 33%;
 }
 
 @media (min-width: 500px) {
@@ -79,11 +78,18 @@
     padding-top: 8%;
     height: auto;
   }
+  .RestaurantDetails .restaurantDescription {
+    font-size: 20px;
+  }
+  .RestaurantDetails .image .responsiveImage {
+    width: 75%;
+  }
   .RestaurantDetails .fontawesomeContainer {
     font-size: 30px;
     margin-top: 10px;
   }
-  .RestaurantDetails p {
-    font-size: 20px;
+  .RestaurantDetails button {
+    margin: 15px 0 25px 0;
+    width: 15%;
   }
 }
