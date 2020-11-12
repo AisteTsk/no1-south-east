@@ -9,7 +9,9 @@
   /* Width of the outside container */
 }
 .sliderOuterContainer .party {
-  font-size: 15px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
 }
 .sliderOuterContainer .slider {
   -webkit-appearance: none;
@@ -29,10 +31,11 @@
   /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
   border-radius: 8px;
+  padding: 8px;
 }
 .sliderOuterContainer .displayNumber {
   font-size: 25px;
-  color: #186E62;
+  color: #233D2A;
 }
 .sliderOuterContainer .slider:hover {
   opacity: 1;
@@ -47,7 +50,7 @@
   height: 25px;
   /* Slider handle height */
   border-radius: 8px;
-  background: #186E62;
+  background: #233D2A;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
@@ -57,7 +60,7 @@
   /* Set a specific slider handle width */
   height: 25px;
   /* Slider handle height */
-  background: #186E62;
+  background: #233D2A;
   /* Green background */
   cursor: pointer;
   /* Cursor on hover */
