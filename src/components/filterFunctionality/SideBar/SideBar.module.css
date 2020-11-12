@@ -1,4 +1,9 @@
-/* The side navigation menu */
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .filtermenu {
   position: fixed;
   /* Stay in place */
@@ -10,7 +15,6 @@
   background-color: #CF6B58;
   color: #2c2926;
   border-bottom-left-radius: 140px;
-  z-index: 2;
   /* Stay on top */
   overflow-x: hidden;
   /* Disable horizontal scroll */
@@ -26,6 +30,7 @@
   box-sizing: initial;
   border: initial;
   margin: initial;
+  z-index: 200;
 }
 .filtermenu .closebtn {
   position: absolute;
@@ -38,10 +43,18 @@
   text-decoration: none;
   color: #233D2A;
 }
-.filtermenu .whenNeed, .filtermenu .timeNeed, .filtermenu .dealNeed, .filtermenu .dietaryNeed, .filtermenu .slider {
+.filtermenu .whenNeed,
+.filtermenu .timeNeed,
+.filtermenu .dealNeed,
+.filtermenu .dietaryNeed,
+.filtermenu .slider {
   padding: 6px;
 }
-.filtermenu .whenNeed p, .filtermenu .timeNeed p, .filtermenu .dealNeed p, .filtermenu .dietaryNeed p, .filtermenu .slider p {
+.filtermenu .whenNeed p,
+.filtermenu .timeNeed p,
+.filtermenu .dealNeed p,
+.filtermenu .dietaryNeed p,
+.filtermenu .slider p {
   text-align: center;
   font-weight: 700;
   font-size: 18px;
