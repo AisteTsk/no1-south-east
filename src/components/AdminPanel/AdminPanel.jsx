@@ -95,7 +95,8 @@ const AdminPanel = ({user}) => {
                 }
                 break;
             case 'daysAvailable':
-                const dayCheckboxes = document.querySelectorAll('input[name = "daysAvailable"]');
+                const dayCheckboxes = document.querySelectorAll('input[name="daysAvailable"]');
+                console.log(dayCheckboxes)
                 updateNewOffer[`${e.target.name}`] = dayCheckboxes.filter(day => {
                     if(day.checked){
                         return day.value
@@ -184,8 +185,8 @@ const AdminPanel = ({user}) => {
                     </div>
                     </div>  
                     
-                    <input type="date" placeholder= "Date Offer Added" name="offerAdded" required />
-                    <input type="date" placeholder= "Date Offer Valid Until" name="validUntil" required />
+                    <input type="date" placeholder= "Date Offer Added" name="offerAdded" required /><label>Date Offer Added</label>
+                    <input type="date" placeholder= "Date Offer Valid Until" name="validUntil" required /><label>Date Offer Valid Until</label>
                     <input type="percentage" placeholder="Offer Percentage" name="offerPercent" onInput={handleStringInput} required />
                     
                     <input type="tel" placeholder="Phone Number" name="phoneNumber" onInput={handleStringInput} required /> 
