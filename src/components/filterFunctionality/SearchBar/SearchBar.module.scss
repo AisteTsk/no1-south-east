@@ -3,7 +3,6 @@
 .search {
   display: flex;
   flex-direction: row;
-  align-items: center;
   color: $color-green;
   width: auto;
 
@@ -14,10 +13,26 @@
   }
 
   input {
-    width: 70%;
+    width: 200px;
     padding: 3%;
     margin: 0 10px;
     border: none;
     outline:none;
+  }
+}
+
+@media (max-width: 400px) {
+  .search {
+    input {
+      width: 90px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .search {
+    input {
+      width: 250px;
+    }
   }
 }
