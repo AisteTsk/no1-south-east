@@ -48,7 +48,7 @@
   color: #233D2A;
 }
 .form .form_container {
-  padding-top: 20%;
+  padding-top: 5%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -56,8 +56,11 @@
   color: white;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
+  display: grid;
 }
 .form .form_container .checkboxColumn {
+  top: 10px;
+  right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -77,7 +80,7 @@
   overflow-x: scroll;
   background-color: #82A28B;
   width: 90%;
-  height: 80vh;
+  height: 60vh;
   text-align: center;
   border: 8px solid #CF6B58;
   font-family: "Josefin Sans", sans-serif;
@@ -170,4 +173,9 @@ textarea {
   width: 110px;
   display: flex;
   flex-direction: row;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

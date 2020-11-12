@@ -3,7 +3,7 @@ import { Link } from '@reach/router'
 import styles from './AdminPanel.module.scss';
 import 'semantic-ui-css/semantic.min.css'
 import { functions } from '../../firebase';
-import firebase from "../../firebase";
+import firebase, { firestore } from "../../firebase";
 import { navigate, } from "@reach/router";
 import logoImage from "../../assets/images/logocut.png";
 
@@ -33,23 +33,48 @@ const AdminPanel = ({user}) => {
         restaurantDescription: '',
         termsAndConditions: ''
     });
-    console.log(newOffer);
+    console.log(newOffer)
+
     useEffect(() => {
         if (!user || !user.admin){
             navigate("/sign-in");
         }
+
+        
       }, []);
       
-    // 
+    
     // CREATE
     // add a state that will capture form inputs
     // can update functions to each form input field which updates the respective state field
     // create on sumbit function that takes the state object and creates a new database entry - maybe add a success response panel?
     
+    // const formSubmit = (e) => {
+    //     e.preventDefault();
+
+        //     const addRestaurant = () => {
+        //     firestore
+        //         .collection("restaurants")
+        //         .doc(restaurant.id)
+        //         .set({...restaurant})
+        //     };
+    //     });
+    // }
+
+
     // DELETE
     // load in all restaurant offers to display in deletion panel
     // add a function to the delete button which takes the offer and removes it from the database - maybe add a warning panel?
+    
+    // const removeRestaurant = () => {
+    //     firestore
+    //       .collection("restaurants")
+    //       .doc(restaurant.id)
+    //       .delete()
+    //       .catch((err) => console.log(err));
+    // };
 
+    
     const signOut = () => {
         console.log('you  signed out');
     }
@@ -68,8 +93,15 @@ const AdminPanel = ({user}) => {
     }
     
     const handleStringInput = (e) => {
+
         const updateNewOffer = {...newOffer};
         updateNewOffer[`${e.target.name}`] = e.target.value;
+
+        // catch offer percentage for formatting
+        if(e.target.name === 'offerPercent' && !e.target.value.includes('%')){
+            updateNewOffer[`${e.target.name}`] = `${e.target.value}%`;
+        }
+
         setNewOffer(updateNewOffer);
     }
 
@@ -79,8 +111,14 @@ const AdminPanel = ({user}) => {
         setNewOffer(updateNewOffer);
     }
 
-    const handleArrayInput = (e) => {
+    const handleDateInput = (e) => {
         console.log(e.target.value)
+        const updateNewOffer = {...newOffer};
+        updateNewOffer[`${e.target.name}`] = e.target.value;
+        setNewOffer(updateNewOffer);
+    }
+
+    const handleArrayInput = (e) => {
         const updateNewOffer = {...newOffer};
 
         switch (e.target.name){
@@ -89,19 +127,13 @@ const AdminPanel = ({user}) => {
                 break;
             case 'location':
                 if(e.target.id === 'latitude'){
-                    updateNewOffer[`${e.target.name}`][0] = e.target.value;
+                    updateNewOffer[`${e.target.name}`][0] = parseFloat(e.target.value);
                 } else {
-                    updateNewOffer[`${e.target.name}`][1] = e.target.value;
+                    updateNewOffer[`${e.target.name}`][1] = parseFloat(e.target.value);
                 }
                 break;
             case 'daysAvailable':
-                const dayCheckboxes = document.querySelectorAll('input[name="daysAvailable"]');
-                console.log(dayCheckboxes)
-                updateNewOffer[`${e.target.name}`] = dayCheckboxes.filter(day => {
-                    if(day.checked){
-                        return day.value
-                    }
-                });
+                    updateNewOffer[`${e.target.name}`] = e.target.value.toLowerCase().replace(/,/g, '').split(' ');
                 break;
             default:
                 console.log('no value set');
@@ -140,6 +172,11 @@ const AdminPanel = ({user}) => {
                     <input type="text" placeholder= "Insert restaurant image url here" name="image" onInput={handleStringInput} required />
                     </section>
 
+                    <div className={styles.days}>
+                    <p>Which days is the offer available?</p>
+                    <div className="?">
+                        <input type="text" name="daysAvailable" placeholder="Insert the days of the week the offer is available e.g. monday wednesday sunday" onInput={handleArrayInput}/></div>
+                    </div>
                     
                     {/* <label for="maximumTableSize">Maximum Table Size:</label>
                     <div class="slidecontainer"><p>Default range slider:</p>
@@ -150,7 +187,7 @@ const AdminPanel = ({user}) => {
                     <input type="number" placeholder="Restaurant Longitude" name= "location" id="longitude" onInput={handleArrayInput} required />
                     </span>
 
-                    <input type="text" name="email" placeholder="Email Address" onInput={handleStringInput} required />
+                    <input type="email" name="email" placeholder="Email Address" onInput={handleStringInput} required />
                     <div className={styles.checkboxColumn}>
                     <div className={styles.food}>
                     <p>What's the discount on? </p> 
@@ -158,16 +195,6 @@ const AdminPanel = ({user}) => {
                     <div className="li checkbox"><input type="checkbox" name="discount" id="drink" onInput={handleCheckboxInput}/><label>Drink</label></div>
                     </div>
 
-                    <div className={styles.days}>
-                    <p>Which days is the offer available?</p>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="monday" onInput={handleArrayInput}/><label>Monday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="tuesday" onInput={handleArrayInput}/><label>Tuesday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="wednesday" onInput={handleArrayInput}/><label>Wednesday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="thursday" onInput={handleArrayInput}/><label>Thursday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="friday" onInput={handleArrayInput}/><label>Friday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="saturday" onInput={handleArrayInput}/><label>Saturday</label></div>
-                    <div className="li checkbox"><input type="checkbox" name= "daysAvailable" value="sunday" onInput={handleArrayInput}/><label>Sunday</label></div>
-                    </div>
                     <div className={styles.breakfast}>
                     <p>When is the offer available?</p>
                     <div className="li checkbox"><input type="checkbox" name="sitting" id="breakfast" onInput={handleCheckboxInput}/><label>Breakfast</label></div>
@@ -184,18 +211,23 @@ const AdminPanel = ({user}) => {
                     <div className="li checkbox"><input type="checkbox" name= "dietaryRequirements" value="dairyfree" onInput={handleCheckboxInput}/><label>Dairy-Free</label></div>
                     </div>
                     </div>  
-                    
-                    <input type="date" placeholder= "Date Offer Added" name="offerAdded" required /><label>Date Offer Added</label>
-                    <input type="date" placeholder= "Date Offer Valid Until" name="validUntil" required /><label>Date Offer Valid Until</label>
-                    <input type="percentage" placeholder="Offer Percentage" name="offerPercent" onInput={handleStringInput} required />
-                    
+                    <div className={styles.grid}>
+                    <div className={styles.offerPercentage}>
+                    <input type="number" placeholder="Offer Percentage" name="offerPercent" onInput={handleStringInput} required />
+                    </div>
+                     <div className={styles.phoneNumber}>
                     <input type="tel" placeholder="Phone Number" name="phoneNumber" onInput={handleStringInput} required /> 
-                    
-
-
-                    <input type="Instagram" placeholder="Instagram handle" name="instagram" onInput={handleStringInput} required />
+                    </div>
+                    <div className={styles.validUntil}>
+                    <label>Date Offer Valid Until</label><input type="date" placeholder= "Date Offer Valid Until" name="validUntil" onInput= {handleDateInput} required />
+                    </div>
+                    <div className={styles.instagram}>
+                    <input type="url" placeholder="Instagram handle" name="instagram" onInput={handleStringInput} required />
+                    </div>
+                    <div className={styles.website}>
                     <input type="url" placeholder="Website url" name="website" onInput={handleStringInput} required />
-                    
+                    </div>
+                    </div>
 
                     <div className={styles.buttonRow}>
                     <button type="submit" className={styles.account_btn} onClick={handleSubmit}>Add New Restaurant</button>
@@ -220,7 +252,7 @@ const AdminPanel = ({user}) => {
                 <button>Delete</button>
             </div>
             <div className={styles.offer}>
-                <span className={styles.offerCode}>Offer ID</span>
+                <span className={styles.offerCode}>Offer ID/</span>
                 <span className={styles.offerRestaurant}>Restaurant Name</span>
                 <p>Further information about offer.</p>
                 <button>Delete</button>
