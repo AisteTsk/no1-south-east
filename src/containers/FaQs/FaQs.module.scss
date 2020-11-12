@@ -98,7 +98,7 @@
   }
 }
 
-@media (min-height: 820px) {
+@media (min-height: 900px) {
   .page {
     .faqs {
       .faqscontainer {
@@ -106,20 +106,6 @@
           font-size: 30px;
           margin-bottom: 5px;
         }
-        span {
-          p {
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-height: 1000px) {
-  .page {
-    .faqs {
-      .faqscontainer {
         span {
           p {
             font-size: 16px;
