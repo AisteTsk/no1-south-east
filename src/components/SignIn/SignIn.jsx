@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, navigate } from "@reach/router";
 import styles from "./SignIn.module.scss";
 import Logo from "../Logo/Logo";
@@ -33,16 +33,26 @@ const SignIn = (props) => {
     googleSignIn();
   };
 
+  const input = useRef(null);
+
+  useEffect(() => {
+    input.current.onfocus = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+    };
+  });
+
   const checkSignIn = () => {
     if (user === null) {
       return (
         <div className={styles.signin}>
           <h3>Welcome back!</h3>
-          <form action="" onSubmit={handleSignInClick}>
+          <form onSubmit={handleSignInClick}>
             <div className={styles.form_container}>
               <input
                 type="text"
                 name="email"
+                ref={input}
                 placeholder="Email Address"
                 onChange={handleEmailChange}
                 required
@@ -50,6 +60,7 @@ const SignIn = (props) => {
               <input
                 type="password"
                 name="password"
+                ref={input}
                 placeholder="Password"
                 onChange={handlePasswordChange}
                 required
