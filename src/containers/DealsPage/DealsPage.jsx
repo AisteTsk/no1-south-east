@@ -304,7 +304,7 @@ const DealsPage = ({ google, user }) => {
       <div className={styles.searchbar}>
         {isAdmin}
         <Link to="/">
-          <img src={logoImage} alt="logo image" />
+          <img src={logoImage} alt="logo img" />
         </Link>
         <SearchBar
           placeholder="Search by restaurants or cuisine..."

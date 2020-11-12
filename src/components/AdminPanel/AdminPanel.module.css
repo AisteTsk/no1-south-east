@@ -4,10 +4,25 @@
   box-sizing: border-box;
 }
 
-.adminPage {
-  width: 100%;
-  background-color: #82A28B;
+.form .form_container .btn .account_btn {
   font-family: "Josefin Sans", sans-serif;
+}
+
+.adminPage {
+  background-color: #233D2A;
+  height: 100%;
+}
+.adminPage .logoLink {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.adminPage img {
+  height: 80px;
+  width: 125px;
+  text-align: center;
 }
 .adminPage h1 {
   text-align: center;
@@ -15,14 +30,14 @@
   font-weight: bold;
   font-size: 3rem;
 }
-.adminPage .form {
+
+.form {
   width: 40px;
   display: flex;
-  overflow-x: hidden;
   overflow-y: scroll;
-  background-color: #233D2A;
-  width: 80%;
-  height: 70vh;
+  background-color: #82A28B;
+  width: 90%;
+  height: 80vh;
   margin: 50px auto;
   flex-direction: column;
   align-items: center;
@@ -30,43 +45,84 @@
   text-align: center;
   border: 8px solid #CF6B58;
   font-family: "Josefin Sans", sans-serif;
-  color: white;
+  color: #233D2A;
 }
-.adminPage .form .form_container {
-  padding-top: 10px;
+.form .form_container {
+  padding-top: 180px;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   color: white;
   font-family: "Josefin Sans", sans-serif;
-}
-.adminPage .colorWhite {
-  color: white;
-}
-.adminPage .offerContainer {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: #233D2A;
-  width: 80%;
-  height: 70vh;
-  margin: 50px auto;
   text-align: center;
-  border: 8px solid #CF6B58;
-  font-family: "Josefin Sans", sans-serif;
 }
-.adminPage .offerContainer h3 {
-  margin: 20px;
+.form .form_container .checkboxColumn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.form .form_container h3 {
+  margin: 5px;
   color: #ffffff;
   font-size: 2rem;
   font-weight: bold;
 }
-.adminPage .offerContainer p {
+.form .form_container .btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.form .form_container .btn .account_btn {
+  margin: 20px 10px;
+  height: 40px;
+  border-radius: 2px;
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-size: 12px;
+  background-color: #CF6B58;
+  width: 110px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.offerContainer {
+  overflow-x: scroll;
+  background-color: #82A28B;
+  width: 90%;
+  height: 80vh;
+  text-align: center;
+  border: 8px solid #CF6B58;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.offerContainer h3 {
+  margin: 20px;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.offerContainer .offer {
+  background-color: #ffffff;
+  border: 3px #ad6050 solid;
+  border-radius: 5px;
+  margin: 15px auto;
+  padding: 20px 10px;
+  width: 90%;
+}
+.offerContainer .offer p {
   color: #ECBC9D;
   margin: 5px;
 }
-.adminPage .offerContainer .account_btn {
+.offerContainer .offer button {
   font-size: 17px;
   font-weight: bold;
   height: 30px;
@@ -75,23 +131,9 @@
   color: #ffffff;
   cursor: pointer;
   margin: 10px;
+  border-radius: 2px solid black;
 }
-.adminPage .offerContainer .account_btn:hover {
-  background-color: #233D2A;
-  text-shadow: 0 0 2px white;
-  box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
-}
-.adminPage .offerContainer button {
-  font-size: 17px;
-  font-weight: bold;
-  height: 30px;
-  width: 150px;
-  background-color: #82A28B;
-  color: #ffffff;
-  cursor: pointer;
-  margin: 10px;
-}
-.adminPage .offerContainer button:hover {
+.offerContainer .offer button:hover {
   background-color: #233D2A;
   text-shadow: 0 0 2px white;
   box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
@@ -99,4 +141,33 @@
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+input[type=text], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 90%;
+  height: 10%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+@media (max-width: 600px) {
+  .offerContainer {
+    flex-direction: column;
+    padding-top: 100px;
+  }
 }

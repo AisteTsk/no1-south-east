@@ -2,26 +2,37 @@
 @import "../../sass/main.module.scss";
 
 .adminPage{
-    width: 100%;
-    background-color: $color-lightgreen;
-    font-family: 'Josefin Sans', sans-serif;
+    background-color: $color-green;
+    height: 100%;
 
+    .logoLink{
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+    }        
+        img{            
+            height:80px;
+            width:125px;
+            text-align: center;
+        
+        }
     h1 {
         text-align: center;
         color: $color-white;
         font-weight: bold;
         font-size: 3rem;
     }
-
+}
 
     .form {
         width: 40px;
         display: flex;
-        overflow-x: hidden;
         overflow-y: scroll;
-        background-color: $color-green;
-        width: 80%;
-        height: 70vh;
+        background-color: $color-lightgreen;
+        width: 90%;
+        height: 80vh;
         margin: 50px auto;
         flex-direction: column;
         align-items: center;
@@ -29,65 +40,114 @@
         text-align: center;
         border: 8px solid $color-copper;
         font-family: 'Josefin Sans', sans-serif;
-        color:white;
-
+        color:$color-green;
+    
     .form_container {
-        padding-top:10px;
+        padding-top:180px;
         width: 100%;
         display: flex;
-        justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
         color:white;
         font-family: 'Josefin Sans', sans-serif;
+        text-align: center;
 
+        .checkboxColumn {
+
+        display: flex;
+        align-items: center;
+
+        justify-content: space-evenly;
+        }
+
+        h3 {
+            margin: 5px;
+            color: $color-white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        .account_btn {
+                margin: 20px 10px;
+                height: 40px;
+                border-radius: 2px ;
+                color: $color-white;
+                transition: 0.3s ease;
+                @extend %main-font;
+                font-size: 12px;
+                background-color: $color-copper;
+                width: 110px;
+                text-align: center;
+                display: flex;
+                flex-direction: row;
+        }
+    }
     }
 }
+
+    // .formInput{
+    //     box-sizing: border-box;
+    //     padding: 30px 30px;
+    // }
 
     .colorWhite{
         color:white;
     }
     .offerContainer{
-        overflow-x: hidden;
-        overflow-y: scroll;
-        background-color: $color-green;
-        width: 80%;
-        height: 70vh;
-        margin:  50px auto;
+    //     overflow-x: hidden;
+        overflow-x: scroll;
+        background-color: $color-lightgreen;
+        width: 90%;
+        height: 80vh;
         text-align: center;
         border: 8px solid $color-copper;
         font-family: 'Josefin Sans', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
 
         h3 {
             margin: 20px;
             color: $color-white;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
     
-
+        .offer{
+        // position: relative;
+        background-color: $color-white;
+        border: 3px $color-darkercopper solid;
+        border-radius: 5px;
+        margin: 15px auto;
+        padding: 20px 10px;
+        width: 90%;
     
         p{
             color: $color-desert;
             margin: 5px;
         }
     
-        .account_btn{
-            font-size: 17px;
-            font-weight: bold;
-            height: 30px;
-            width: 150px;
-            background-color: $color-lightgreen;
-            color: $color-white;
-            cursor: pointer;
-            margin: 10px;
-        
-            &:hover {
-              background-color: $color-green;
-              text-shadow: 0 0 2px white;
-              box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
-            }
-        }
+        // .offerRestaurant {
+        //     color: $color-desert;
+        //     display: block;
+        //     font-weight: bold;
+        //     font-size: 1.2rem;
+        //     margin: 5px;
+        // }
+    
+        // .offerCode{
+        //     color: $color-white;
+        //     display: block;
+        //     font-weight: bold;
+        //     font-size: 1.1rem;
+        //     margin: 10px;
+        //     word-break: break-all;
+        //     white-space: normal;
+        // }
 
         button {
             font-size: 17px;
@@ -98,6 +158,7 @@
             color: $color-white;
             cursor: pointer;
             margin: 10px;
+            border-radius: 2px solid black;
         
             &:hover {
               background-color: $color-green;
@@ -106,11 +167,38 @@
             }
           }
         }
-
     }
   
     ::-webkit-scrollbar {
       display: none;
     }
 
+    input[type=text], select {
+        width: 90%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
+      textarea {
+        width: 90%;
+        height: 10%;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: none;
+      }
+
+
+      @media (max-width: 600px) {
+        .offerContainer {
+        flex-direction: column;
+        padding-top: 100px;
+        }
+    }
