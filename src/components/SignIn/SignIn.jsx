@@ -3,6 +3,7 @@ import { Link, navigate } from '@reach/router'
 import styles from './SignIn.module.scss'
 import Logo from "../Logo/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from '../Footer';
 // import firebase, { provider } from "../../firebase";
 
 const SignIn = (props) => {
@@ -11,25 +12,21 @@ const SignIn = (props) => {
     const [email, setEmail] = useState("");
 
     useEffect((user) => {
-        console.log(user)
         if (user) navigate("/browseDeals");
     }, []);
 
     const handleEmailChange = (e) => {
         const email = e.target.value;
-        console.log(email)
         setEmail(email);
     };
 
     const handlePasswordChange = (e) => {
         const password = e.target.value;
-        console.log(password)
         setPassword(password);
     };
 
     const handleSignInClick = (e) => {
         e.preventDefault();
-        console.log(email, password);
         signIn(email, password);
     }
 
@@ -49,8 +46,11 @@ const SignIn = (props) => {
                             <input type="password" name="password" placeholder="Password" onChange={handlePasswordChange} required />
                         </div>
                         <button type="submit" className={styles.sign_in_btn}>Sign in</button>
-                        <div className ={styles.google_sign_in} onClick={handleGoogleSignInClick}>
-                            <p>Sign in with <span><FontAwesomeIcon icon={["fab", "google"]}/></span>oogle</p>
+                        <div className={styles.googleBtn} onClick={handleGoogleSignInClick}>
+                            <div className={styles.googleIconWrapper}>
+                                <img className={styles.googleIcon} src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                            </div>
+                            <p className={styles.btnText}><b>Sign in with Google</b></p>
                         </div>
                     </form>
                     <p className={styles.terms}>
@@ -77,12 +77,15 @@ const SignIn = (props) => {
     }
 
     return(
-        <div className={styles.page}>
-            <Logo />
-            <div className={styles.form}>
-                {checkSignIn()}
+        <>
+            <div className={styles.page}>
+                <Logo />
+                <div className={styles.form}>
+                    {checkSignIn()}
+                </div>
             </div>
-        </div>
+            <Footer/>
+        </>   
     );
 };
 

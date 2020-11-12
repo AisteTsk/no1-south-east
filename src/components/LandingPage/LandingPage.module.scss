@@ -4,6 +4,7 @@
 //------------------------------
 .landingPage {
     background-color: $color-green;
+    min-height: 100vh;
 }
 .gridContainer {
     display: grid;
@@ -41,7 +42,7 @@
         border-radius: 30px 0px 0px 0;
         p{
             @extend %main-font;
-            font-size: 50px;
+            font-size: 35px;
             font-weight: 800;
             color: $color-green;
             padding: 5%;
@@ -82,7 +83,7 @@
             @extend %main-font;
             font-size: 12px;
             background-color: $color-copper;
-            width: 90px;
+            width: 85px;
             text-align: center;
             align-items: center;
             &:focus {
@@ -98,6 +99,8 @@
     flex-direction: column;
     justify-content: center;
     align-self: flex-start;
+    padding-bottom: 5%;
+    
     .registrationProcess {
         padding: 1% 13% 0% 0%;
         color: $color-white;
@@ -122,6 +125,20 @@
         }
     }
 }
+
+//------------------------------------------
+// medium sizes devices  
+//------------------------------------------
+@media (min-width: 550px) {
+    .gridContainer {
+        .middle {
+            p{
+                font-size: 45px;
+                font-weight: 800;
+            }
+        }
+    }
+}
 //------------------------------------------
 // Large devices laptops 
 //------------------------------------------
@@ -142,12 +159,12 @@
             margin-top: 10%;
         }
         .middle {
-            grid-area: middle;
+            display: flex;
+            align-items: center;
             p{
-                font-size: 150px;
+                font-size: 120px;
                 font-weight: 800;
                 margin-bottom: 0;
-                padding: 5% 13% 0% 5%;
                 line-height: 1;
             }
         }
@@ -181,8 +198,10 @@
         flex-direction: row;
         justify-content: space-evenly;
         margin-top: 0%;
+        margin-bottom: 20px;
+        padding-bottom: 0;
         .registrationProcess {
-            padding: 2.6% 5% 0% 5%;
+            padding: 1.5% 5% 0% 5%;
             img {
                 width: 150px;
                 height: 150px;

@@ -1,4 +1,7 @@
 .search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #233D2A;
   width: auto;
 }

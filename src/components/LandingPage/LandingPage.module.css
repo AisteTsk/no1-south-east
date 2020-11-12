@@ -14,6 +14,7 @@
 
 .landingPage {
   background-color: #233D2A;
+  min-height: 100vh;
 }
 
 .gridContainer {
@@ -50,7 +51,7 @@
   border-radius: 30px 0px 0px 0;
 }
 .gridContainer .middle p {
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 800;
   color: #233D2A;
   padding: 5%;
@@ -68,6 +69,10 @@
   align-items: center;
   justify-content: center;
 }
+.gridContainer .bottomRightMobile img {
+  transform: rotate(-50deg);
+  height: 50px;
+}
 .gridContainer .bottomRight {
   grid-area: buttons;
   display: flex;
@@ -79,27 +84,15 @@
   text-align: left;
   margin: 20px 10px;
   height: 35px;
-  border-radius: 15px;
+  border-radius: 2px;
   border: none;
   color: #ffffff;
   transition: 0.3s ease;
-  font-size: 10px;
+  font-size: 12px;
   background-color: #CF6B58;
-  box-shadow: 0 10px #ad6050;
-  width: 90px;
+  width: 85px;
   text-align: center;
   align-items: center;
-}
-.gridContainer .bottomRight .LandingPageButton:hover {
-  box-shadow: 0 8px #ad6050;
-  transform: translateY(1px);
-}
-.gridContainer .bottomRight .LandingPageButton:active {
-  background-color: #ad6050;
-  box-shadow: 0 5px #ad6050;
-  transform: translateY(4px);
-  text-decoration: none;
-  outline: none;
 }
 .gridContainer .bottomRight .LandingPageButton:focus {
   outline: none;
@@ -112,6 +105,7 @@
   flex-direction: column;
   justify-content: center;
   align-self: flex-start;
+  padding-bottom: 5%;
 }
 .registration .registrationProcess {
   padding: 1% 13% 0% 0%;
@@ -133,15 +127,22 @@
 }
 .registration .registrationProcess p {
   padding: 5%;
+  line-height: 1.2;
 }
 
+@media (min-width: 550px) {
+  .gridContainer .middle p {
+    font-size: 45px;
+    font-weight: 800;
+  }
+}
 @media (min-width: 1000px) {
   .gridContainer {
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 280px 280px;
     grid-template-areas: "topleft    middle topright" "bottomleft middle buttons";
-    padding: 3% 10% 0 10%;
+    padding: 2.4% 10% 0 10%;
   }
   .gridContainer .topLeft {
     margin-top: 30%;
@@ -151,13 +152,14 @@
     margin-top: 10%;
   }
   .gridContainer .middle {
-    grid-area: middle;
+    display: flex;
+    align-items: center;
   }
   .gridContainer .middle p {
-    font-size: 150px;
+    font-size: 120px;
     font-weight: 800;
     margin-bottom: 0;
-    padding: 5% 13% 0% 5%;
+    line-height: 1;
   }
   .gridContainer .topRight {
     grid-area: topright;
@@ -189,9 +191,11 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 0%;
+    margin-bottom: 20px;
+    padding-bottom: 0;
   }
   .registration .registrationProcess {
-    padding: 2.6% 5% 0% 5%;
+    padding: 1.5% 5% 0% 5%;
   }
   .registration .registrationProcess img {
     width: 150px;
