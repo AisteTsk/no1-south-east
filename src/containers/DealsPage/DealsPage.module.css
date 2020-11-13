@@ -27,6 +27,23 @@
   align-items: center;
   background-color: #82A28B;
 }
+.container .searchbar .admin_btn {
+  font-size: 15px;
+  height: 30px;
+  width: 150px;
+  background-color: #233D2A;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border: black;
+  border-radius: 5px;
+  font-family: "Josefin Sans", sans-serif;
+}
+.container .searchbar .admin_btn:hover {
+  background-color: #233D2A;
+  text-shadow: 0 0 2px white;
+  box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+}
 .container .searchbar img {
   height: 50px;
   width: auto;

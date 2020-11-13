@@ -48,7 +48,10 @@ const App = () => {
   const getUser = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        user.getIdTokenResult().then(idTokenResult => {
+          user.admin = idTokenResult.claims.admin;
         setUser(user);
+        })
       } else {
         setUser(null);
       }
