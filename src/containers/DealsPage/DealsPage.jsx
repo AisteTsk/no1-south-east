@@ -4,21 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GoogleApiWrapper } from "google-maps-react";
 import googleMapsApiKey from "../../data/googleMapsConfig";
 import { firestore } from "../../firebase";
-
 import logoImage from "../../assets/images/logocut.png";
-
-// components
 import CardList from "../../components/CardList";
 import FilterButton from "../../components/filterFunctionality/FilterButton";
 import SearchBar from "../../components/filterFunctionality/SearchBar";
 import FeedbackPanel from "../../components/filterFunctionality/FeedbackPanel";
-// import Location from '../../components/filterFunctionality/Location';
-import ManageAccountButton from "../../components/ManageAccountButton";
 import { Link } from "@reach/router";
 
 const DealsPage = (props) => {
   const { user, google } = props;
-  
+
   // set up states
   // filtered list = search or filter functions, user location = user tracking location, distance sorted list = filtered list if tracking is active.
   const [allRestaurants, setAllRestaurants] = useState();
@@ -27,7 +22,7 @@ const DealsPage = (props) => {
   const [distanceSortedList, setDistanceSortedList] = useState([]);
   const [favourites, setFavourites] = useState([]);
 
-  let restaurants = []
+  let restaurants = [];
 
   const fetchRestaurants = () => {
     firestore
@@ -69,7 +64,9 @@ const DealsPage = (props) => {
         .collection("favourites")
         .get()
         .then((querySnapshot) => {
-          const restaurantIds = querySnapshot.docs.map((doc) => doc.data().restaurantId)
+          const restaurantIds = querySnapshot.docs.map(
+            (doc) => doc.data().restaurantId
+          );
           if (restaurantIds.includes(restaurant.restaurantId)) {
             removeFromFav(restaurant);
           } else {
@@ -112,13 +109,16 @@ const DealsPage = (props) => {
       .collection("favourites")
       .get()
       .then((querySnapshot) => {
-        const restaurantIds = restaurants.map((restaurant) => restaurant.restaurantId);
+        const restaurantIds = restaurants.map(
+          (restaurant) => restaurant.restaurantId
+        );
         const favourites = querySnapshot.docs.map((doc) => {
           const favourite = doc.data();
           if (restaurantIds.includes(favourite.restaurantId)) {
-            const restaurant = restaurants[restaurantIds.indexOf(favourite.restaurantId)];
-            restaurant.isFav = true; 
-          } 
+            const restaurant =
+              restaurants[restaurantIds.indexOf(favourite.restaurantId)];
+            restaurant.isFav = true;
+          }
           return favourite;
         });
         setFavourites(favourites);
@@ -126,9 +126,6 @@ const DealsPage = (props) => {
       })
       .catch((err) => console.error(err));
   };
-
-
-
 
   // function cycles over all filter properties and filters the restaurants array using only matching values
   const filterRestaurants = (filterParameters) => {
@@ -284,7 +281,13 @@ const DealsPage = (props) => {
     if (renderList === undefined) {
       return <p>Deals loading...</p>;
     } else if (renderList.length) {
-      return <CardList restaurants={renderList} toggleFav={toggleFav} favourites={favourites} />;
+      return (
+        <CardList
+          restaurants={renderList}
+          toggleFav={toggleFav}
+          favourites={favourites}
+        />
+      );
     } else {
       return (
         <FeedbackPanel
@@ -313,9 +316,7 @@ const DealsPage = (props) => {
             <FontAwesomeIcon icon={["fas", "user"]} />
           </Link>
         </span>
-        <div className={styles.location}>
-          {renderLocationBtn}
-        </div>
+        <div className={styles.location}>{renderLocationBtn}</div>
       </div>
       <section className={styles.dealsPage}>
         <h1 className={styles.title}>Latest Offers</h1>

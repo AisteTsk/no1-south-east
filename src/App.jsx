@@ -3,7 +3,7 @@ import Routes from "./containers/Routes";
 import styles from "./App.module.scss";
 import firebase, { provider } from "./firebase";
 import { navigate } from "@reach/router";
-import libary from "./data/fa-library";
+import library from "./data/fa-library";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -60,16 +60,14 @@ const App = () => {
   });
 
   return (
-    <>
-      <div>
-        <Routes
-          user={user}
-          googleSignIn={googleSignIn}
-          signIn={signIn}
-          signOut={signOut}
-        />
-      </div>
-    </>
+    <div>
+      <Routes
+        user={user}
+        googleSignIn={googleSignIn}
+        signIn={signIn}
+        signOut={signOut}
+      />
+    </div>
   );
 };
 
