@@ -23,22 +23,20 @@
         border-bottom: 2px white solid;
     }
 
-    .image {
+    .responsiveImage {
         display: flex;
         justify-content: center;
-        padding: 3% 2% 2% 2%;
-
-        .responsiveImage {
-            height: auto;
-            max-width: 90%;
-            width: auto;
-            object-fit: scale-down;
-        }
+        height: auto;
+        max-width: 80%;
+        width: auto;
+        object-fit: scale-down;
+        padding: 20px 0;
     }
+
 
     .restaurantDescription {
         font-size: 15px;
-        padding: 3% 5%;
+        padding: 10px 5%;
 
         .paragraph {
             padding-bottom: 8px;
