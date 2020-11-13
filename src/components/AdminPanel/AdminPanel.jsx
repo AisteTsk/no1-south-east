@@ -69,9 +69,8 @@ const AdminPanel = ({user}) => {
                     
                 }).catch((err) => console.log(err)); 
         }
-      }, []);
+    }, []);
     
-   
     const handleEmail = (e) => {
         setAdminEmail(e.target.value);
     }
@@ -95,7 +94,7 @@ const AdminPanel = ({user}) => {
             updateNewOffer[`${e.target.name}`] = `${e.target.value}%`;
         } else if (e.target.name === 'validUntil') {
             updateNewOffer[`${e.target.name}`] = moment(new Date(e.target.value)).format("DD MMM YYYY");
-        }
+            }
 
         setNewOffer(updateNewOffer);
     }
@@ -150,10 +149,10 @@ const AdminPanel = ({user}) => {
 
     const handleDelete = (e) => {
         firestore
-          .collection("deals")
-          .doc(e.target.id)
-          .delete()
-          .catch((err) => console.log(err));
+            .collection("deals")
+            .doc(e.target.id)
+            .delete()
+            .catch((err) => console.log(err));
 
         const updateOffersList = offersList.filter(offer => offer.offerId !== e.target.id)
         setOffersList(updateOffersList);
@@ -180,26 +179,25 @@ const AdminPanel = ({user}) => {
                     </Link>         
                 </div>
         <h1>Admin Panel</h1>
-        <div className="adminContainer">
-            <form onSubmit={handleSubmit}>
-                <input type="email" placeholder="User Email" id="adminEmail" onInput={handleEmail} required />
-                <button type="submit">Make Admin</button>
-            </form>
-        </div>
+            <div className="adminContainer">
+                <form onSubmit={handleSubmit}>
+                    <input type="email" placeholder="User Email" id="adminEmail" onInput={handleEmail} required />
+                    <button type="submit">Make Admin</button>
+                </form>
+            </div>
         <div className={styles.profileBox}>
-            <section className={styles.form}>
-                
+            <section className={styles.form}>                
                 <div className={styles.form_container}>
-                <form onSubmit={handleAdd}>
-                    <section className = {styles.formInput}>
-                    <h3>Add an Offer</h3>
-                    <input type="text" placeholder="Restaurant Name" name="name" onInput={handleStringInput} required />
-                    <textarea placeholder="Offer Description" name="offerDescription" onInput={handleStringInput} required />
-                    <textarea placeholder="Restaurant Description" name="restaurantDescription" onInput={handleStringInput} required />
-                    <input type="text" placeholder="What type of cuisine does the restaurant serve? (please use lowercase and seperate cuisines with a comma)" name="cuisine" onInput={handleArrayInput} required />
-                    <input type="text" placeholder= "Insert restaurant image url here" name="image" onInput={handleStringInput} required />
-                    <input type= "text" placeholder="Insert full address of restaurant here (number, street, city, postcode)" name="address" onInput={handleStringInput} required/> 
-                    </section>
+                    <form onSubmit={handleAdd}>
+                        <section className = {styles.formInput}>
+                            <h3>Add an Offer</h3>
+                                <input type="text" placeholder="Restaurant Name" name="name" onInput={handleStringInput} required />
+                                <textarea placeholder="Offer Description" name="offerDescription" onInput={handleStringInput} required />
+                                <textarea placeholder="Restaurant Description" name="restaurantDescription" onInput={handleStringInput} required />
+                                <input type="text" placeholder="What type of cuisine does the restaurant serve? (please use lowercase and seperate cuisines with a comma)" name="cuisine" onInput={handleArrayInput} required />
+                                <input type="text" placeholder= "Insert restaurant image url here" name="image" onInput={handleStringInput} required />
+                                <input type= "text" placeholder="Insert full address of restaurant here (number, street, city, postcode)" name="address" onInput={handleStringInput} required/> 
+                        </section>
 
                     <div className={styles.days}>
                     <p>Which days is the offer available?</p>
@@ -208,63 +206,61 @@ const AdminPanel = ({user}) => {
                     {/* <label for="maximumTableSize">Maximum Table Size:</label>
                     <div class="slidecontainer"><p>Default range slider:</p>
                 <input type="range" min="1" max="100" value="50"></input></div> */}
-                    
-                    <span className ={styles.coordinatesStyles}>
-                    <input type="text" placeholder="Restaurant Latitude" name= "location" id="latitude" onInput={handleArrayInput} required />
-                    <input type="text" placeholder="Restaurant Longitude" name= "location" id="longitude" onInput={handleArrayInput} required />
+                
+                    <span className={styles.coordinates}>
+                        <input type="text" placeholder="Restaurant Latitude" name= "location" id="latitude" onInput={handleArrayInput} required />
+                        <input type="text" placeholder="Restaurant Longitude" name= "location" id="longitude" onInput={handleArrayInput} required />
                     </span>
 
-                    <input type="email" name="email" placeholder="Email Address" onInput={handleStringInput} required />
                     <div className={styles.checkboxColumn}>
-                    <div className={styles.food}>
-                    <p>What's the discount on? </p> 
-                    <div className="li checkbox"><input type="checkbox" name="discount" id="food" onInput={handleCheckboxInput} /><label>Food</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="discount" id="drink" onInput={handleCheckboxInput}/><label>Drink</label></div>
-                    </div>
+                        <div className={styles.food}>
+                            <p>What's the discount on? </p> 
+                            <div className="li checkbox"><input type="checkbox" name="discount" id="food" onInput={handleCheckboxInput} /><label>Food</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="discount" id="drink" onInput={handleCheckboxInput}/><label>Drink</label></div>
+                        </div>
 
                     <div className={styles.breakfast}>
-                    <p>When is the offer available?</p>
-                    <div className="li checkbox"><input type="checkbox" name="sitting" id="breakfast" onInput={handleCheckboxInput}/><label>Breakfast</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="sitting" id="lunch" onInput={handleCheckboxInput}/><label>Lunch</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="sitting" id="dinner" onInput={handleCheckboxInput}/><label>Dinner</label></div>
+                        <p>When is the offer available?</p>
+                            <div className="li checkbox"><input type="checkbox" name="sitting" id="breakfast" onInput={handleCheckboxInput}/><label>Breakfast</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="sitting" id="lunch" onInput={handleCheckboxInput}/><label>Lunch</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="sitting" id="dinner" onInput={handleCheckboxInput}/><label>Dinner</label></div>
                     </div>
 
                     <div className={styles.diet}>
-                    <p>Which dietary requirements are catered for?</p>
-                    <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="vegetarian" onInput={handleCheckboxInput}/><label>Vegetarian</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="vegan" onInput={handleCheckboxInput}/><label>Vegan</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="halal" onInput={handleCheckboxInput}/><label>Halal</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="glutenfree" onInput={handleCheckboxInput}/><label>Gluten-Free</label></div>
-                    <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="dairyfree" onInput={handleCheckboxInput}/><label>Dairy-Free</label></div>
+                        <p>Dietary requirements?</p>
+                            <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="vegetarian" onInput={handleCheckboxInput}/><label>Vegetarian</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="vegan" onInput={handleCheckboxInput}/><label>Vegan</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="halal" onInput={handleCheckboxInput}/><label>Halal</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="glutenfree" onInput={handleCheckboxInput}/><label>Gluten-Free</label></div>
+                            <div className="li checkbox"><input type="checkbox" name="dietaryRequirements" id="dairyfree" onInput={handleCheckboxInput}/><label>Dairy-Free</label></div>
                     </div>
                     </div>   
                     <div className={styles.grid}>
                     <div className={styles.offerPercentage}>
-                    <input type="number" placeholder="Offer Percentage" onInput={handleStringInput} name="offerPercent"  required />
+                        <input type="number" placeholder="Offer Percentage" onInput={handleStringInput} name="offerPercent"  required />
                     </div>
-                     <div className={styles.phoneNumber}>
-                    <input type="number" placeholder="Phone Number" name="phoneNumber" onInput={handleStringInput} required /> 
+                    <div className={styles.phoneNumber}>
+                        <input type="number" placeholder="Phone Number" name="phoneNumber" onInput={handleStringInput} required /> 
                     </div>
                     <div className={styles.validUntil}>
-                    <label>Date Offer Valid Until</label><input type="date" placeholder= "Date Offer Valid Until" name="validUntil" onInput= {handleStringInput} required />
+                        <label>Date Offer Valid Until</label><input type="date" placeholder= "Date Offer Valid Until" name="validUntil" onInput= {handleStringInput} required />
                     </div>
                     <div className={styles.instagram}>
-                    <input type="url" placeholder="Instagram handle" name="instagram" onInput={handleStringInput}  />
+                        <input type="url" placeholder="Instagram handle" name="instagram" onInput={handleStringInput}  />
                     </div>
+                        <input type="email" name="email" placeholder="Email Address" onInput={handleStringInput} required />
 
                     <div className={styles.website}>
-                    <input type="url" placeholder="Website url" name="website" onInput={handleStringInput}  />
+                        <input type="url" placeholder="Website url" name="website" onInput={handleStringInput}  />
                     </div>
                     <div className={styles.slider}>
-                    <label for="maximumTableSize">Maximum Table Size:</label>
-                    <AdminSlider handleSliderInput={handleSliderInput}/>
+                        <label for="maximumTableSize">Maximum Table Size:</label>
+                        <AdminSlider handleSliderInput={handleSliderInput}/>
                     </div>
                     </div>
 
                     <button type="submit" className={styles.account_btn} >Add New Restaurant</button>
                     <div className={styles.buttonRow}>
-                    
-                    
                     </div>
                 </form>
                 </div>

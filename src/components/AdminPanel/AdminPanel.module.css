@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-.buttonRow .account_btn {
-  font-family: "Josefin Sans", sans-serif;
-}
-
 .adminPage {
   background-color: #233D2A;
   height: 100%;
@@ -50,7 +46,7 @@ label {
   border: 8px solid #CF6B58;
   font-family: "Josefin Sans", sans-serif;
   color: #233D2A;
-  padding-top: 40%;
+  padding-top: 43%;
 }
 .form .form_container {
   width: 100%;
@@ -228,17 +224,22 @@ textarea {
     border: 8px solid #CF6B58;
     font-family: "Josefin Sans", sans-serif;
     color: #233D2A;
+    padding-top: 1px;
   }
   .form .form_container {
     width: 100%;
     background-color: #82A28B;
     height: 1%;
   }
-  .form .formInput {
-    background-color: #82A28B;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
+  .form .checkboxColumn {
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .form h3 {
+    padding-top: 1px;
   }
   .form .grid {
     display: grid;
@@ -246,30 +247,78 @@ textarea {
   }
   .form textarea {
     height: 50px;
+    margin: 5px;
+    width: 95%;
   }
-  .form input[type=email], .form select {
-    width: 200px;
+  .form input[type=email] {
+    margin: 5px;
+    height: 50px;
+    width: 300px;
+    margin-left: 8%;
+  }
+  .form input[type=text] {
+    margin: 5px;
+    height: 50px;
+    width: 95%;
+    align-items: center;
+  }
+  .form input[type=number] {
+    margin: 5px;
+    height: 50px;
+    width: 300px;
+  }
+  .form input[type=date] {
+    margin: 5px;
+    height: 50px;
+    width: 300px;
+  }
+  .form input[type=url] {
+    margin: 5px;
+    height: 50px;
+    width: 300px;
+  }
+  .form input[type=checkbox] {
+    margin-left: 3px;
+    margin-right: 5px;
+  }
+  .form .coordinatesStyles {
+    width: 1000px;
+    border: 2px solid black;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
-.buttonRow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.buttonRow .account_btn {
+.account_btn {
   margin: 20px 10px;
   height: 40px;
   border-radius: 2px;
   color: #ffffff;
   transition: 0.3s ease;
   font-size: 16px;
-  background-color: #233D2A;
   width: 110px;
   flex-direction: row;
+  background-color: #CF6B58;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+@media (min-width: 1200px) {
+  .form_container {
+    padding-top: 70px;
+  }
+  .form_container input[type=email] {
+    margin: 5px;
+    height: 40px;
+    width: 200px;
+  }
+  .form_container .coordinates {
+    margin: 5px;
+    height: 60px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 28%;
+  }
 }
