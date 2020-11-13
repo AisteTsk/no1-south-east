@@ -85,9 +85,7 @@ const RestaurantDetails = (props) => {
         </div>
         <div className={styles.RestaurantDetails}>
           <h1>{name}</h1>
-          <div className={styles.image}>
-            <img className={styles.responsiveImage} src={image} alt={name} />
-          </div>
+          <img className={styles.responsiveImage} src={image} alt={name} />
           <div className={styles.restaurantDescription}>
             <div className={styles.paragraph}>
               <h4>Location: </h4>
