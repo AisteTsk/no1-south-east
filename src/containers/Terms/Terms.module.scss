@@ -38,10 +38,11 @@
         }
 
         p {
-            font-size: 12px;
+            font-size: 10px;
             color: black;
             margin-top: 2px;
-            width: 70%;
+            width: 100%;
+            padding: 1px 10px;
         }
 
         img {
@@ -52,23 +53,39 @@
     }
 }
 
-@media (min-height: 820px) {
+@media (min-height: 600px) {
     .page {
         .terms {
             h3 {
                 font-size: 30px;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
             .faqs {
                 margin: 5px 0;
             }
             p {
-                font-size: 22px;
-                margin-top: 10px;
+                font-size: 11px;
+                margin-top: 5px;
             }
         }
     } 
-}    
+}
+
+@media (min-height: 900px) {
+    .page {
+        .terms {
+            h3 {
+                font-size: 44px;
+                margin-bottom: 0;
+            }
+            span {
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
 
 @media (min-width: 920px) {
     .page {
@@ -77,9 +94,25 @@
             h3 {
             font-size: 44px;
             }
+            p {
+                font-size: 18px;
+            }
             img {
                 height: 130px;
                 width: 380px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .page {
+      .terms {
+            p {
+              font-size: 20px;
+            }
+            img {
+                height: 110px;
             }
         }
     }
