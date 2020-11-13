@@ -26,10 +26,18 @@ const Register = (props) => {
 
         firebase.auth().createUserWithEmailAndPassword(userDetails.email, userDetails.password)
         .then(cred => {
+
+            const userData = {
+                firstName: userDetails.firstName,
+                lastName: userDetails.lastName,
+                email: userDetails.email,
+            }
+
             firestore
                 .collection('users')
                 .doc(cred.user.uid)
-                .set(userDetails)
+                .set(userData);
+
         }).then(() => {
             setUserDetails({
                 firstName: '',
