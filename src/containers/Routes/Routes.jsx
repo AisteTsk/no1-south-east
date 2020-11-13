@@ -12,6 +12,7 @@ import Logo from "../../components/Logo";
 import AccountPage from "../../components/AccountPage";
 import RedeemOfferPage from "../../components/RedeemOfferPage";
 import PrivateRoutes from "../PrivateRoutes";
+import AdminPanel from "../../components/AdminPanel";
 
 const Routes = (props) => {
   const { user, googleSignIn, signIn, signOut } = props;
@@ -19,7 +20,6 @@ const Routes = (props) => {
     <Router>
       <Dashboard path="/" />
       <Logo path="/" />
-      <NotFound path="/404" />
       <FaQs path="/faq" />
       <Terms path="/terms-and-conditions" />
       <DealsPage path="/browseDeals" user={user} />
@@ -36,6 +36,8 @@ const Routes = (props) => {
           <RestaurantDetails path="/restaurants/:databaseId" user={user}/>
           <RedeemOfferPage path="/redeem-offer" /> 
       </PrivateRoutes> 
+      <AdminPanel path="/adminpanel" user={user}/>
+      <NotFound default />
     </Router>
   );
 };

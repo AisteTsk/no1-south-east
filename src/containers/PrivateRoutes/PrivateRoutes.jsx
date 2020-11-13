@@ -7,6 +7,7 @@ const PrivateRoutes = (props) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
+      
       if (!user) {
         navigate("/sign-in");
       }
@@ -17,3 +18,4 @@ const PrivateRoutes = (props) => {
 };
 
 export default PrivateRoutes;
+

@@ -34,7 +34,7 @@ const DealsPage = (props) => {
           restaurants.push({ ...retaurantData, databaseId: doc.id });
         });
 
-        //format offAdded to time since last epoch (use getTime()) property in rastaurants array
+        //format offAdded to time since last epoch (use getTime()) property in restaurants array
         const restaurantsEpochTime = restaurants.map((restaurant) => {
           restaurant.offerAdded = new Date(restaurant.offerAdded).getTime();
           return restaurant;
@@ -298,11 +298,17 @@ const DealsPage = (props) => {
     }
   };
 
-  return (
-    <div className={styles.container}>
+  const isAdmin = user && user.admin ? 
+      (<Link to="/adminpanel">
+        <button type="submit" className={styles.admin_btn}>Admin Settings</button>
+      </Link>)  : null ;
+  
+      return (
+      <div className={styles.container}>
       <div className={styles.searchbar}>
+        {isAdmin}
         <Link to="/">
-          <img src={logoImage} alt="logo image" />
+          <img src={logoImage} alt="logo img" />
         </Link>
         <SearchBar
           placeholder="Search by restaurants or cuisine..."
@@ -322,9 +328,10 @@ const DealsPage = (props) => {
         <h1 className={styles.title}>Latest Offers</h1>
         {contentJsx()}
       </section>
-    </div>
-  );
-};
+      </div>
+      )
+}  
+
 
 export default GoogleApiWrapper({
   apiKey: googleMapsApiKey,
