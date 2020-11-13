@@ -12,8 +12,10 @@
         padding: 0.3% 2%;
         z-index: 1;
         display: flex;
+        display: -webkit-flex;
         flex-direction: row;
         justify-content: space-between;
+        -webkit-justify-content: space-between;
         align-items: center;
         background-color: $color-lightgreen;
         

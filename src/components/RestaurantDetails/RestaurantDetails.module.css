@@ -18,18 +18,18 @@
   font-size: 300%;
   border-bottom: 2px white solid;
 }
-.RestaurantDetails .image {
+.RestaurantDetails .responsiveImage {
   display: flex;
   justify-content: center;
-  padding: 3% 2% 2% 2%;
-}
-.RestaurantDetails .image .responsiveImage {
   height: auto;
-  width: 90%;
+  max-width: 80%;
+  width: auto;
+  object-fit: scale-down;
+  padding: 20px 0;
 }
 .RestaurantDetails .restaurantDescription {
   font-size: 15px;
-  padding: 3% 5%;
+  padding: 10px 5%;
 }
 .RestaurantDetails .restaurantDescription .paragraph {
   padding-bottom: 8px;
