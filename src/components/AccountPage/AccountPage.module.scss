@@ -12,24 +12,26 @@
   padding: 0;
   margin: 0;
 }
+// ***** This relates to the favourites and recently viewed *****
+// .wrapper{
+//   overflow: hidden;
+//   margin: 30px 0;
+//   height: 240vh;
+//   background-color: $color-green;
 
-.wrapper{
-  overflow: hidden;
-  margin: 30px 0;
-  height: 240vh;
-  background-color: $color-green;
-
-.cardRender {
-  padding: 0 0;
-  margin: 0;
-  background-color: $color-green;
-  font-family: 'Josefin Sans', sans-serif;
-  color: $color-white;
-  transform: scale(.5);
-  transform-origin: 0 0;
-  box-sizing: border-box;
-  width: 200%;
-  overflow: hidden;}}
+//   .cardRender {
+//     padding: 0 0;
+//     margin: 0;
+//     background-color: $color-green;
+//     font-family: 'Josefin Sans', sans-serif;
+//     color: $color-white;
+//     transform: scale(.5);
+//     transform-origin: 0 0;
+//     box-sizing: border-box;
+//     width: 200%;
+//     overflow: hidden;
+//   }
+// }
 
 .wrapperRedeemed{
   overflow: hidden;
@@ -43,14 +45,11 @@
   background-color: $color-green;
   font-family: 'Josefin Sans', sans-serif;
   color: $color-white;
-  transform: scale(.5);
-  transform-origin: 0 0;
   box-sizing: border-box;
-  width: 200%;
+  width: 100%;
   overflow: hidden;
 
   .offerForm{
-    font-size: 40px;
     text-align: center;
   
     .offer{
@@ -65,14 +64,14 @@
       p{
         color: $color-desert;
         margin: 5px;
-        font-size: 34px;
+        font-size: 16px;
       }
   
       .offerRestaurant {
         color: $color-desert;
         display: block;
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 1rem;
         margin: 5px;
       }
   
@@ -80,7 +79,7 @@
         color: $color-white;
         display: block;
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 1rem;
         margin: 10px;
         word-break: break-all;
         white-space: normal;
@@ -104,7 +103,7 @@
     display: flex;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-color: $color-green;
+    background-color: $color-white;
     width: 80%;
     height: 70vh;
     margin: auto;
@@ -117,7 +116,7 @@
     h3 {
       height: auto;
       font-size: 23px;
-      color: $color-white;
+      color: $color-green;
       cursor: default;
       margin-top: 5px;
     }
@@ -135,12 +134,34 @@
       cursor: pointer;
       margin: 5px;
       margin-bottom: 5px;
+      outline: none;
 
       &:hover {
         background-color: $color-green;
-        text-shadow: 0 0 1px white;
         box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
       }
+    }
+
+    .refer_btn{
+      font-size: 22px;
+      background-color: $color-lightgreen;
+      color: $color-white;
+      cursor: pointer;
+      outline: none;
+      padding: 20px;
+
+      &:hover {
+        background-color: $color-green;
+        box-shadow: 0px 0px 2px black, 0 0 25px lightgrey, 0 0 5px black;
+      }
+    }
+
+    .form_container {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
     }
 
     input {
@@ -150,14 +171,6 @@
       border: 2px solid black;
       font-size: 18px;
       outline: none;
-    }
-
-    .form_container {
-      width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-direction: column;
     }
 
     p {
@@ -177,10 +190,11 @@
     flex-wrap: nowrap;
     position: fixed;
     width: 100%;
-    padding: 0;
-    bottom: 2%;
+    padding: 5px;
+    bottom: 0%;
     z-index: 1;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: $color-lightgreen;
 
     .buttons {
       display: flex;
@@ -193,31 +207,40 @@
 
       button {
         height: 40px;
-        width: 66px;
+        width: 70px;
         margin: 0%;
-        padding: 0%;
+        padding: 1%;
+        background-color: $color-green;
+        color: $color-white;
+        border-radius: 2px;
+        
+        &:hover {
+          background-color: $color-copper;
+          text-shadow: 0 0 1px white;
+          cursor: pointer;
+        }
       }
     }
 
-    .navButton {
-      text-align: left;
-      margin: 20px 10px;
-      height: 40px;
-      border-radius: 2px;
-      border: none;
-      color: $color-white;
-      transition: 0.3s ease;
-      @extend %main-font;
-      font-size: 12px;
-      background-color: $color-copper;
-      text-align: center;
-      align-items: center;
+    // .navButton {
+    //   text-align: left;
+    //   margin: 20px 10px;
+    //   height: 40px;
+    //  
+    //   border: none;
+    //   
+    //   transition: 0.3s ease;
+    //   @extend %main-font;
+    //   font-size: 12px;
+    //   background-color: $color-copper;
+    //   text-align: center;
+    //   align-items: center;
 
-      &:focus {
-        outline: none;
-        border: none;
-      }
-    }
+    //   &:focus {
+    //     outline: none;
+    //     border: none;
+    //   }
+    // }
   }
 
   .boxtitle {
@@ -277,19 +300,10 @@
         }
       }
     }
-    .offerForm{
-      .offer{
-    
-        .offerRestaurant {
-          font-size: 1.2rem;
-        }
-    
-        .offerCode{
-          font-size: 1.5rem;
-        }
-      }
+    .navButtons {
+      padding: 10px;
     }
-  } 
+  }
 }
 
 @media (min-width: 700px) {
@@ -348,37 +362,30 @@
   .page {
     .form {
       width: 50%;
-
       h3 {
         font-size: 44px;
       }
     }
-    .offerForm{
-      width: 50%;
+  }
+  .wrapperRedeemed{
+    .cardRenderRedeemed{
+      .offerForm{
+        .offer{
+          p{
+            font-size: 2rem;
+          }
+          .offerRestaurant{
+            font-size: 2rem;
+          }
+          .offerCode{
+            font-size: 2rem;
+          }
+        }
+      } 
     }
   }
 }
 
-      input {
-        width: 200px;
-      }
-
-      .form_container {
-        flex-direction: column;
-      }
-    
-    .offerForm{
-      .offer{
-    
-        .offerRestaurant {
-          font-size: 1.5rem;
-        }
-    
-        .offerCode{
-          font-size: 1.7rem;
-        }
-      }
-    }
 
 @media (min-width: 1000px) {
   .wrapper{
@@ -428,3 +435,25 @@
     height: 90vh;
   }
 }
+
+
+// input {
+//   width: 200px;
+// }
+
+// .form_container {
+//   flex-direction: column;
+// }
+
+// .offerForm{
+// .offer{
+
+//   .offerRestaurant {
+//     font-size: 1.5rem;
+//   }
+
+//   .offerCode{
+//     font-size: 1.7rem;
+//   }
+// }
+// }

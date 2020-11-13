@@ -20,13 +20,12 @@
   /* Disable horizontal scroll */
   transition: 0.5s;
   /* 0.5 second transition effect to slide in the sidenav */
-  font-size: 15px;
+  font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: space-around;
   padding: 10px;
-  padding-top: 10px;
-  line-height: 1.6;
+  padding-top: 10%;
   box-sizing: initial;
   border: initial;
   margin: initial;
@@ -35,11 +34,9 @@
 .filtermenu .closebtn {
   position: absolute;
   background: none;
-  height: 30px;
-  width: 30px;
-  top: -15px;
-  right: 15px;
-  font-size: 72px;
+  top: 1%;
+  right: 5%;
+  font-size: 65px;
   text-decoration: none;
   color: #233D2A;
 }
@@ -48,7 +45,7 @@
 .filtermenu .dealNeed,
 .filtermenu .dietaryNeed,
 .filtermenu .slider {
-  padding: 6px;
+  padding: 4px;
 }
 .filtermenu .whenNeed p,
 .filtermenu .timeNeed p,
@@ -57,10 +54,48 @@
 .filtermenu .slider p {
   text-align: center;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
 }
 .filtermenu .icons {
   display: flex;
   justify-content: space-around;
-  padding: 8px;
+  padding: 2px;
+}
+.filtermenu .icons img {
+  width: 50px;
+}
+.filtermenu button {
+  margin: 6px;
+}
+
+@media (min-width: 700px) {
+  .filtermenu {
+    font-size: 15px;
+    padding-top: 10px;
+  }
+  .filtermenu .closebtn {
+    top: -26px;
+    right: -2%;
+    font-size: 75px;
+  }
+  .filtermenu .whenNeed,
+.filtermenu .timeNeed,
+.filtermenu .dealNeed,
+.filtermenu .dietaryNeed,
+.filtermenu .slider {
+    padding-top: 5%;
+  }
+  .filtermenu .whenNeed p,
+.filtermenu .timeNeed p,
+.filtermenu .dealNeed p,
+.filtermenu .dietaryNeed p,
+.filtermenu .slider p {
+    font-size: 18px;
+  }
+  .filtermenu .icons {
+    padding: 8px;
+  }
+  .filtermenu button {
+    margin: 10px;
+  }
 }
